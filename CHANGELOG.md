@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.3.0] — 2026-04-03
 
-**Discovery scanner MVP — delivered.** First complete milestone: local privacy-first scan, **`impact.v0.3`** profile schema, JSON + HTML outputs, optional consent-based submission, CI + fixtures, public README/doc hierarchy, **Path B** macOS install smoke-verified. **Not** a benchmark system or consumer “v1” app — see [docs/user-expectations-mvp.md](docs/user-expectations-mvp.md). **`@impact/cli` 0.3.0** aligns CLI semver with the profile schema generation.
+**Discovery scanner MVP — delivered.** First complete milestone: local privacy-first scan, **`impact.v0.3`** profile schema, JSON + HTML outputs, optional consent-based submission, CI + fixtures, public README/doc hierarchy, **Path B** macOS install smoke-verified. **Not** a benchmark system or consumer “v1” app — see [docs/user-expectations-mvp.md](docs/user-expectations-mvp.md). **`@impact/cli` 0.3.0** aligns npm semver with the profile schema generation; **`impact --version`** reads **`apps/cli/package.json`** (single source of truth).
 
 ### Added
 
@@ -28,6 +28,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Fixtures:** expanded `fixtures/scenarios/*`, `fixtures/invalid/*`, `npm run validate-invalid-fixtures`, CI step for invalid fixtures.
 - **Submission:** per-attempt timeout (15s default), bounded retries with backoff, `impact-submission-preview.json` + `impact-submission-receipt.json`, **HTTP 409 duplicate** path (`outcome: "duplicate"`, no retries), Vitest tests in `@impact/submission`.
 - **Core:** fixture-backed merge-path tests; readiness tests updated for v0.3.
+
+### Fixed
+
+- **CLI:** `impact --version` no longer hardcoded; stays aligned with package release bumps.
 
 ### Added (Sprint A baseline)
 
