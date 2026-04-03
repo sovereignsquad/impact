@@ -32,6 +32,16 @@ npm run impact -- scan --no-submit -o ./reports
 
 Open `reports/impact-report.html` locally. JSON profile: `reports/impact-profile.json`.
 
+### Platform support (this repo)
+
+| OS | Level |
+| -- | ----- |
+| **macOS** | **Supported** — primary target for host probes (Metal hint, `df`). |
+| **Linux** | **Partial / targeted** — common userland (`df`, `which`) best-effort. |
+| **Windows** | **Experimental** — disk and some probes may return unknown until parity work lands. |
+
+Wire contract for optional upload: [docs/submission-contract.md](docs/submission-contract.md).
+
 ### Optional submission
 
 Set an endpoint and run **without** `--no-submit` on a TTY:
@@ -49,7 +59,7 @@ You will be prompted; you must confirm the payload. If `IMPACT_SUBMIT_URL` is un
 | ------- | ---- |
 | `@impact/cli` | `impact` command |
 | `@impact/core` | Orchestration + merge + readiness hints |
-| `@impact/schemas` | `impact.v0.1` Zod schema |
+| `@impact/schemas` | `impact.v0.2` Zod schema (provenance + semantics) |
 | `@impact/scanner-host` | Host / OS signals |
 | `@impact/scanner-runtimes` | Ollama, MLX, … |
 | `@impact/scanner-tools` | Allowlisted tools on `PATH` |
@@ -69,10 +79,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 | [docs/product.md](docs/product.md) | Programme + v0.x MVP definition |
 | [docs/architect-handoff.md](docs/architect-handoff.md) | Architect onboarding & delivery summary |
 | [docs/privacy-policy.md](docs/privacy-policy.md) | Data handling & submission |
+| [docs/submission-contract.md](docs/submission-contract.md) | HTTP ingest contract (provisional client timeouts) |
 | [docs/architecture.md](docs/architecture.md) | Code layout & data flow |
 | [docs/project-management.md](docs/project-management.md) | Board = kanban; issues = SSOT |
 | [CHANGELOG.md](CHANGELOG.md) | Release notes |
-| [fixtures/baseline-profile.sample.json](fixtures/baseline-profile.sample.json) | Example validated `impact.v0.1` profile |
+| [fixtures/baseline-profile.sample.json](fixtures/baseline-profile.sample.json) | Example validated `impact.v0.2` profile |
 
 ## Local delivery path
 

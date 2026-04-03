@@ -1,4 +1,5 @@
 import type { ModelRecord, RuntimeRecord } from "@impact/schemas";
+import { ps } from "@impact/schemas";
 
 type OllamaTagsResponse = {
   models?: Array<{ name: string; details?: { quantization_level?: string } }>;
@@ -8,7 +9,10 @@ export async function scanModelsForOllama(
   ollama: RuntimeRecord | undefined
 ): Promise<ModelRecord[]> {
   if (!ollama?.installed) return [];
+  if (ollama.status === "installed_unreachable") return [];
+  if (ollama.reachable !== true) return [];
 
+  const probe = "GET http://127.0.0.1:11434/api/tags";
   try {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), 4000);
@@ -21,20 +25,31 @@ export async function scanModelsForOllama(
     }
     const body = (await res.json()) as OllamaTagsResponse;
     const models = body.models ?? [];
-    return models.map((m) => ({
-      id: m.name,
-      runtime_id: "ollama",
-      locality: "local" as const,
-      detected: true,
-      quantization: m.details?.quantization_level ?? null,
-      confidence: "detected" as const,
-    }));
+    return models.map((m) => {
+      const q = m.details?.quantization_level ?? null;
+      const row: ModelRecord = {
+        id: m.name,
+        runtime_id: "ollama",
+        locality: "local",
+        discovery_status: "detected",
+        source: "api",
+        probe,
+        confidence: "high",
+      };
+      if (q != null) {
+        row.quantization = ps(q, "api", "ollama_json.details", "medium");
+      }
+      return row;
+    });
   } catch {
     return [];
   }
 }
 
-/** Placeholder for MLX-managed paths; conservative unknown until paths are defined */
+/**
+ * MLX: honest empty inventory until path policy exists.
+ * When runtime is partial, callers may still expect zero models.
+ */
 export function scanModelsForMlx(mlx: RuntimeRecord | undefined): ModelRecord[] {
   if (!mlx?.installed) return [];
   return [];

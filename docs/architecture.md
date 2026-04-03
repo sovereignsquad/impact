@@ -7,7 +7,7 @@
 ```text
 apps/cli                 CLI entry (`impact` command)
 packages/core            Scan orchestration, merge, readiness hints
-packages/schemas         Zod schema + types (`impact.v0.1`)
+packages/schemas         Zod schema + types (`impact.v0.2`, provenance)
 packages/scanner-host    OS / hardware coarse signals
 packages/scanner-runtimes Ollama, MLX (pip), …
 packages/scanner-tools   Curated PATH allowlist
@@ -50,7 +50,7 @@ flowchart LR
 1. **Load/create salt** (`~/.impact/salt`) via `@impact/privacy`.  
 2. **Parallel scans:** host, runtimes, tools.  
 3. **Model enumeration** depends on runtime signals (e.g. Ollama reachability).  
-4. **Merge + validate** → `ImpactProfileV01`.  
+4. **Merge + validate** → `ImpactProfile` (`impact.v0.2`).  
 5. **Optional** coarse readiness string (conservative, not a benchmark).  
 6. **Write** JSON + HTML; **optional** guided submission.
 

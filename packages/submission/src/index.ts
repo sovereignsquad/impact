@@ -1,6 +1,6 @@
 import { appendFile, mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import type { ImpactProfileV01 } from "@impact/schemas";
+import type { ImpactProfile } from "@impact/schemas";
 
 export type SubmissionResult =
   | { ok: true; submission_id: string; raw?: string }
@@ -14,7 +14,7 @@ const RECEIPT_FILE = "submission-receipts.log";
  * Without URL, returns a clear error (no silent network).
  */
 export async function submitProfile(
-  profile: ImpactProfileV01,
+  profile: ImpactProfile,
   opts?: { signal?: AbortSignal }
 ): Promise<SubmissionResult> {
   const url = process.env.IMPACT_SUBMIT_URL?.trim();
@@ -61,7 +61,7 @@ export async function appendLocalReceipt(
   await appendFile(file, `${new Date().toISOString()} ${line}\n`, "utf8");
 }
 
-export async function writePayloadPreview(dir: string, profile: ImpactProfileV01): Promise<string> {
+export async function writePayloadPreview(dir: string, profile: ImpactProfile): Promise<string> {
   await mkdir(dir, { recursive: true });
   const file = path.join(dir, "impact-submit-preview.json");
   await writeFile(file, `${JSON.stringify(profile, null, 2)}\n`, "utf8");

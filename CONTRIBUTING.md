@@ -24,8 +24,10 @@ See [docs/project-management.md](docs/project-management.md) for maintainers’ 
 
 ```bash
 npm install
+npm run lint
 npm run build
 npm test
+npm run validate-fixtures
 npm run impact -- scan --no-submit -o ./reports
 ```
 

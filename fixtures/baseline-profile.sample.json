@@ -1,39 +1,63 @@
 {
-  "schema_version": "impact.v0.1",
+  "schema_version": "impact.v0.2",
   "run_id": "550e8400-e29b-41d4-a716-446655440000",
   "created_at": "2026-04-03T12:00:00.000Z",
   "host": {
-    "machine_class": "apple_m1_pro_16gb_arm64",
-    "fingerprint_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
-    "os_name": "macOS",
-    "os_version": "13.x",
-    "architecture": "arm64",
-    "chip": "Apple M1 Pro",
-    "memory_gb": 16,
-    "core_count": 10,
+    "machine_class": {
+      "value": "apple_m1_pro_16gb_arm64",
+      "source": "derived",
+      "probe": "impact:machine_class",
+      "confidence": "medium"
+    },
+    "fingerprint_hash": {
+      "value": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "source": "derived",
+      "probe": "impact:fingerprint_host_v0",
+      "confidence": "high"
+    },
+    "os_name": { "value": "macOS", "source": "derived", "probe": "node:os.platform+mapping", "confidence": "high" },
+    "os_version": { "value": "14.0", "source": "derived", "probe": "node:os.release", "confidence": "high" },
+    "architecture": { "value": "arm64", "source": "derived", "probe": "node:os.arch", "confidence": "high" },
+    "chip": { "value": "Apple M1 Pro", "source": "derived", "probe": "node:os.cpus[0].model", "confidence": "medium" },
+    "memory_gb": { "value": 16, "source": "derived", "probe": "node:os.totalmem", "confidence": "high" },
+    "core_count": { "value": 10, "source": "derived", "probe": "node:os.cpus.length", "confidence": "high" },
     "gpu_acceleration": {
-      "metal_available": true
+      "metal_available": { "value": true, "source": "derived", "probe": "impact:metal_hint_darwin", "confidence": "medium" }
     },
     "disk": {
-      "free_gb": 128
+      "free_gb": { "value": 128, "source": "command", "probe": "df -k /", "confidence": "medium" }
     }
   },
   "runtimes": [
     {
       "id": "ollama",
+      "status": "installed_reachable",
       "installed": true,
-      "version": "0.5.0",
       "reachable": true,
-      "confidence": "detected"
+      "version": { "value": "0.5.0", "source": "command", "probe": "ollama --version", "confidence": "high" },
+      "semantic": "detected",
+      "capabilities": { "model_inventory": "full", "notes": "Model list via local Ollama HTTP API." }
+    },
+    {
+      "id": "mlx_python",
+      "status": "partial",
+      "installed": true,
+      "reachable": null,
+      "version": { "value": "0.14.0", "source": "command", "probe": "python3 -m pip show mlx", "confidence": "high" },
+      "semantic": "partial",
+      "capabilities": {
+        "model_inventory": "none",
+        "notes": "MLX Python package detected only. Model inventory is not configured in v0.x (no path policy); do not treat as full MLX support."
+      }
     }
   ],
   "tools": [
     {
       "id": "codex_cli",
       "installed": true,
-      "version": "example 0.0.0",
+      "version": { "value": "codex 0.0.0", "source": "command", "probe": "codex --version", "confidence": "medium" },
       "kind": "agent",
-      "confidence": "detected"
+      "presence": "detected"
     }
   ],
   "models": [
@@ -41,9 +65,10 @@
       "id": "llama3.1:8b",
       "runtime_id": "ollama",
       "locality": "local",
-      "detected": true,
-      "quantization": null,
-      "confidence": "detected"
+      "discovery_status": "detected",
+      "source": "api",
+      "probe": "GET http://127.0.0.1:11434/api/tags",
+      "confidence": "high"
     }
   ],
   "privacy": {
@@ -51,7 +76,7 @@
     "consent_required_for_submission": true
   },
   "readiness": {
-    "summary": "Example only — real runs use live detection results.",
+    "summary": "Example fixture only — not generated from a live scan.",
     "confidence": "inferred"
   }
 }

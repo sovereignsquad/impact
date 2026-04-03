@@ -1,9 +1,5 @@
 import { randomUUID } from "node:crypto";
-import {
-  ImpactProfileV01Schema,
-  type ImpactProfileV01,
-  type ToolRecord,
-} from "@impact/schemas";
+import { ImpactProfileSchema, type ImpactProfile, type ToolRecord } from "@impact/schemas";
 import { loadOrCreateSalt, privacyBlock } from "@impact/privacy";
 import { scanHost } from "@impact/scanner-host";
 import { scanModelsForMlx, scanModelsForOllama } from "@impact/scanner-models";
@@ -19,7 +15,7 @@ export type ScanOptions = {
 /**
  * Full local scan: host, runtimes, tools (allowlist), models, privacy block, optional readiness.
  */
-export async function runScan(opts: ScanOptions = {}): Promise<ImpactProfileV01> {
+export async function runScan(opts: ScanOptions = {}): Promise<ImpactProfile> {
   const includeReadiness = opts.includeReadiness !== false;
   const salt = await loadOrCreateSalt();
 
@@ -39,8 +35,8 @@ export async function runScan(opts: ScanOptions = {}): Promise<ImpactProfileV01>
 
   const tools: ToolRecord[] = toolsRaw.filter((t) => t.installed);
 
-  const base: ImpactProfileV01 = {
-    schema_version: "impact.v0.1",
+  const base: ImpactProfile = {
+    schema_version: "impact.v0.2",
     run_id: randomUUID(),
     created_at: new Date().toISOString(),
     host,
@@ -54,5 +50,5 @@ export async function runScan(opts: ScanOptions = {}): Promise<ImpactProfileV01>
     ? { ...base, readiness: coarseReadiness(base) ?? undefined }
     : base;
 
-  return ImpactProfileV01Schema.parse(withReadiness);
+  return ImpactProfileSchema.parse(withReadiness);
 }

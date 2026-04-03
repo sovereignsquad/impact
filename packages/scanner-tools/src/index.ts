@@ -2,6 +2,7 @@ import { execFile } from "node:child_process";
 import os from "node:os";
 import { promisify } from "node:util";
 import type { ToolRecord } from "@impact/schemas";
+import { ps } from "@impact/schemas";
 import { TOOL_ALLOWLIST } from "./allowlist.js";
 
 const execFileAsync = promisify(execFile);
@@ -21,48 +22,57 @@ async function which(binary: string): Promise<string | null> {
   }
 }
 
-async function versionHint(binary: string): Promise<string | null> {
-  for (const args of [["--version"], ["-v"], ["version"]]) {
+async function versionHint(binary: string): Promise<{ text: string | null; probe: string }> {
+  for (const args of [["--version"], ["-v"], ["version"]] as const) {
+    const probe = `${binary} ${args.join(" ")}`;
     try {
-      const { stdout } = await execFileAsync(binary, args, {
+      const { stdout } = await execFileAsync(binary, [...args], {
         timeout: 4000,
         maxBuffer: 64 * 1024,
         windowsHide: true,
       });
       const first = stdout.trim().split(/\r?\n/)[0]?.trim();
-      if (first) return first.slice(0, 120);
+      if (first) return { text: first.slice(0, 120), probe };
     } catch {
       /* try next */
     }
   }
-  return null;
+  return { text: null, probe: `${binary} --version|-v|version` };
 }
 
 export async function scanTools(): Promise<ToolRecord[]> {
   const out: ToolRecord[] = [];
   for (const tool of TOOL_ALLOWLIST) {
     let path: string | null = null;
+    let usedBin: string | null = null;
     for (const bin of tool.binaries) {
       path = await which(bin);
       if (path) {
-        const version = await versionHint(bin);
-        out.push({
-          id: tool.id,
-          installed: true,
-          version,
-          kind: tool.kind,
-          confidence: "detected",
-        });
+        usedBin = bin;
         break;
       }
     }
-    if (!path) {
+    if (path && usedBin) {
+      const { text, probe } = await versionHint(usedBin);
+      out.push({
+        id: tool.id,
+        installed: true,
+        version: ps(
+          text,
+          "command",
+          probe,
+          text ? "medium" : "unknown"
+        ),
+        kind: tool.kind,
+        presence: "detected",
+      });
+    } else {
       out.push({
         id: tool.id,
         installed: false,
-        version: null,
+        version: ps(null, "unknown", null, "unknown"),
         kind: tool.kind,
-        confidence: "unknown",
+        presence: "unknown",
       });
     }
   }

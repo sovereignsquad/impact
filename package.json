@@ -14,12 +14,16 @@
     "clean": "rm -rf packages/*/dist apps/*/dist",
     "test": "npm run test -w @impact/schemas && npm run test -w @impact/core",
     "impact": "node apps/cli/dist/cli.js",
-    "lint": "npm run lint --workspaces --if-present"
+    "lint": "eslint .",
+    "validate-fixtures": "node scripts/validate-fixtures.mjs"
   },
   "devDependencies": {
+    "@eslint/js": "^9.24.0",
     "@types/node": "^22.14.0",
+    "eslint": "^9.24.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
+    "typescript-eslint": "^8.29.1",
     "vitest": "^3.0.9"
   }
 }

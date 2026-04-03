@@ -13,7 +13,7 @@
 
 It is a programme for a **fully sovereign** evaluation stack spanning **system + tool + LLM**, aimed at **industrial-grade** rigour and **global** usefulness. The long-term destination is a **benchmark system** with clear phases (discovery → readiness hints → atomic probes → capability benchmarks), not a single throwaway script.
 
-**v0.x today** delivers the **discovery layer**: a **privacy-first local CLI** that inventories host signals, runtimes (e.g. Ollama, MLX pip), **allowlisted** AI tools on `PATH`, and models exposed via supported local APIs. It emits **canonical JSON** (`impact.v0.1`) and an **offline HTML report**, with **opt-in** anonymous submission gated by explicit consent and `IMPACT_SUBMIT_URL`.
+**v0.x today** delivers the **discovery layer**: a **privacy-first local CLI** that inventories host signals, runtimes (e.g. Ollama, MLX pip), **allowlisted** AI tools on `PATH`, and models exposed via supported local APIs. It emits **canonical JSON** (`impact.v0.2`) and an **offline HTML report**, with **opt-in** anonymous submission gated by explicit consent and `IMPACT_SUBMIT_URL`.
 
 This positions later benchmark phases on **ground truth** about what can run where, under **explicit privacy rules**.
 
@@ -26,7 +26,7 @@ This positions later benchmark phases on **ground truth** about what can run whe
 | Language / runtime | TypeScript on **Node.js ≥ 20** |
 | Packaging | **npm workspaces** monorepo |
 | Entry | `apps/cli` → `impact` binary after `npm run build` |
-| Validation | `@impact/schemas` — **Zod** `ImpactProfileV01Schema` |
+| Validation | `@impact/schemas` — **Zod** `ImpactProfileSchema` (`impact.v0.2`) |
 | Orchestration | `@impact/core` — `runScan()`, merge, optional readiness |
 | Host | `@impact/scanner-host` — OS, CPU string, memory, `df` disk, Metal hint, salted fingerprint |
 | Runtimes | `@impact/scanner-runtimes` — Ollama version + localhost reachability; MLX via pip |

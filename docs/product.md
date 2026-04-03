@@ -52,7 +52,7 @@ Do **not** start with: cloud-first architecture, mandatory accounts, invasive pe
 
 ## Output schema
 
-The machine-readable profile is versioned (`schema_version: "impact.v0.1"`). See `packages/schemas` and [fixtures/baseline-profile.sample.json](../fixtures/baseline-profile.sample.json).
+The machine-readable profile is versioned (`schema_version: "impact.v0.2"`) with **field provenance** (`source`, `probe`, `confidence`) and controlled **discovery semantics**. See `packages/schemas` and [fixtures/baseline-profile.sample.json](../fixtures/baseline-profile.sample.json).
 
 ## Roadmap phases (high level)
 

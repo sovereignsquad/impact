@@ -1,0 +1,39 @@
+{
+  "schema_version": "impact.v0.2",
+  "run_id": "650e8400-e29b-41d4-a716-446655440001",
+  "created_at": "2026-04-03T12:00:00.000Z",
+  "host": {
+    "machine_class": { "value": "unknown_chip_unknown_mem_x64", "source": "derived", "probe": "impact:machine_class", "confidence": "low" },
+    "fingerprint_hash": { "value": "sha256:aaa", "source": "derived", "probe": "impact:fingerprint_host_v0", "confidence": "high" },
+    "os_name": { "value": "Linux", "source": "derived", "probe": "node:os.platform+mapping", "confidence": "high" },
+    "os_version": { "value": "6.0.0", "source": "derived", "probe": "node:os.release", "confidence": "high" },
+    "architecture": { "value": "x64", "source": "derived", "probe": "node:os.arch", "confidence": "high" },
+    "chip": { "value": null, "source": "derived", "probe": "node:os.cpus[0].model", "confidence": "low" },
+    "memory_gb": { "value": 8, "source": "derived", "probe": "node:os.totalmem", "confidence": "high" },
+    "core_count": { "value": 4, "source": "derived", "probe": "node:os.cpus.length", "confidence": "high" },
+    "disk": { "free_gb": { "value": null, "source": "command", "probe": "df -k /", "confidence": "unknown" } }
+  },
+  "runtimes": [
+    {
+      "id": "ollama",
+      "status": "not_installed",
+      "installed": false,
+      "reachable": null,
+      "version": { "value": null, "source": "unknown", "probe": null, "confidence": "unknown" },
+      "semantic": "unknown",
+      "capabilities": { "model_inventory": "none", "notes": "Ollama not found on PATH." }
+    },
+    {
+      "id": "mlx_python",
+      "status": "not_installed",
+      "installed": false,
+      "reachable": null,
+      "version": { "value": null, "source": "unknown", "probe": null, "confidence": "unknown" },
+      "semantic": "unknown",
+      "capabilities": { "model_inventory": "none", "notes": "MLX Python package not reported by pip." }
+    }
+  ],
+  "tools": [],
+  "models": [],
+  "privacy": { "raw_identifiers_stored": false, "consent_required_for_submission": true }
+}

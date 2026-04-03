@@ -2,12 +2,12 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { homedir } from "node:os";
 import path from "node:path";
 import { randomBytes } from "node:crypto";
-import type { ImpactProfileV01 } from "@impact/schemas";
+import type { ImpactProfile } from "@impact/schemas";
 
 const DIR = ".impact";
 const SALT_FILE = "salt";
 
-export function privacyBlock(): ImpactProfileV01["privacy"] {
+export function privacyBlock(): ImpactProfile["privacy"] {
   return {
     raw_identifiers_stored: false,
     consent_required_for_submission: true,

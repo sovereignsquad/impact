@@ -1,6 +1,7 @@
 import { createHash, randomBytes } from "node:crypto";
 import os from "node:os";
 import type { HostProfile } from "@impact/schemas";
+import { pn, ps, pbool, pi } from "@impact/schemas";
 import { execText } from "./exec.js";
 
 function osDisplayName(platform: NodeJS.Platform): string {
@@ -18,16 +19,16 @@ function osDisplayName(platform: NodeJS.Platform): string {
   }
 }
 
-async function freeDiskGb(): Promise<number | null> {
+async function freeDiskGb(): Promise<{ gb: number | null; ok: boolean }> {
   const out = await execText("df", ["-k", "/"], 3000);
-  if (!out) return null;
+  if (!out) return { gb: null, ok: false };
   const lines = out.split(/\r?\n/).filter(Boolean);
   const data = lines.find((l) => !l.toLowerCase().startsWith("filesystem"));
-  if (!data) return null;
+  if (!data) return { gb: null, ok: false };
   const parts = data.trim().split(/\s+/);
   const availKb = Number(parts[parts.length - 3]);
-  if (!Number.isFinite(availKb)) return null;
-  return Math.round(availKb / 1e6);
+  if (!Number.isFinite(availKb)) return { gb: null, ok: false };
+  return { gb: Math.round(availKb / 1e6), ok: true };
 }
 
 function metalHint(platform: NodeJS.Platform, arch: string, chip: string | null): boolean | null {
@@ -47,13 +48,15 @@ function deriveMachineClass(chip: string | null, memoryGb: number | null, arch: 
   return `${chipSlug}_${mem}_${arch}`.replace(/__+/g, "_");
 }
 
-/**
- * Coarse, privacy-safe fingerprint: no serial numbers or hardware UUIDs.
- * Salt is supplied by caller (persisted locally under user control).
- */
 export function fingerprintHost(
   salt: string,
-  input: Pick<HostProfile, "os_name" | "os_version" | "architecture" | "chip" | "memory_gb">
+  input: {
+    os_name: string;
+    os_version: string;
+    architecture: string;
+    chip: string | null;
+    memory_gb: number | null;
+  }
 ): string {
   const canonical = JSON.stringify({
     os_name: input.os_name,
@@ -80,12 +83,13 @@ export async function scanHost(salt: string): Promise<HostProfile> {
   const osName = osDisplayName(platform);
   const osVersion = os.release();
 
-  const diskFree = await freeDiskGb();
+  const diskResult = await freeDiskGb();
+  const diskProbe = "df -k /";
+  const diskField = diskResult.ok
+    ? pn(diskResult.gb, "command", diskProbe, diskResult.gb != null ? "medium" : "unknown")
+    : pn(null, "command", diskProbe, "unknown");
 
-  const hostPartial: Pick<
-    HostProfile,
-    "os_name" | "os_version" | "architecture" | "chip" | "memory_gb" | "core_count"
-  > = {
+  const hostPartial = {
     os_name: osName,
     os_version: osVersion,
     architecture: arch,
@@ -94,17 +98,40 @@ export async function scanHost(salt: string): Promise<HostProfile> {
     core_count: coreCount,
   };
 
-  const fingerprint_hash = fingerprintHost(salt, hostPartial);
+  const fingerprint_hash = fingerprintHost(salt, {
+    os_name: hostPartial.os_name,
+    os_version: hostPartial.os_version,
+    architecture: hostPartial.architecture,
+    chip: hostPartial.chip,
+    memory_gb: hostPartial.memory_gb,
+  });
 
   const metal = metalHint(platform, arch, chip);
+  const machineClass = deriveMachineClass(chip, memoryGb, arch);
 
   return {
-    machine_class: deriveMachineClass(chip, memoryGb, arch),
-    fingerprint_hash,
-    ...hostPartial,
+    machine_class: ps(machineClass, "derived", "impact:machine_class", "medium"),
+    fingerprint_hash: ps(fingerprint_hash, "derived", "impact:fingerprint_host_v0", "high"),
+    os_name: ps(osName, "derived", "node:os.platform+mapping", "high"),
+    os_version: ps(osVersion, "derived", "node:os.release", "high"),
+    architecture: ps(arch, "derived", "node:os.arch", "high"),
+    chip: ps(chip, "derived", "node:os.cpus[0].model", chip ? "medium" : "low"),
+    memory_gb: pn(memoryGb, "derived", "node:os.totalmem", memoryGb != null ? "high" : "unknown"),
+    core_count: pi(coreCount, "derived", "node:os.cpus.length", coreCount != null ? "high" : "unknown"),
     gpu_acceleration:
-      platform === "darwin" ? { metal_available: metal } : { metal_available: null },
-    disk: { free_gb: diskFree },
+      platform === "darwin"
+        ? {
+            metal_available: pbool(
+              metal,
+              "derived",
+              "impact:metal_hint_darwin",
+              metal === null ? "low" : "medium"
+            ),
+          }
+        : {
+            metal_available: pbool(null, "unknown", null, "unknown"),
+          },
+    disk: { free_gb: diskField },
   };
 }
 

@@ -1,16 +1,42 @@
 export {
-  ImpactProfileV01Schema,
-  type ImpactProfileV01,
+  ImpactProfileSchema,
+  type ImpactProfile,
   type HostProfile,
   type RuntimeRecord,
   type ToolRecord,
   type ModelRecord,
   type ToolKind,
-  DetectionConfidenceSchema,
-} from "./profile-v01.js";
+  type RuntimeOperationalStatus,
+  RuntimeOperationalStatusSchema,
+  ReadinessConfidenceSchema,
+} from "./profile.js";
 
-import { ImpactProfileV01Schema, type ImpactProfileV01 } from "./profile-v01.js";
+export {
+  ValueSourceSchema,
+  FieldConfidenceSchema,
+  DiscoverySemanticSchema,
+  ProvenancedStringSchema,
+  ProvenancedNumberSchema,
+  ProvenancedBooleanSchema,
+  type ValueSource,
+  type FieldConfidence,
+  type DiscoverySemantic,
+  type ProvenancedString,
+  type ProvenancedNumber,
+  type ProvenancedBoolean,
+  ps,
+  pn,
+  pbool,
+  pi,
+} from "./provenance.js";
 
-export function validateProfileV01(data: unknown): ImpactProfileV01 {
-  return ImpactProfileV01Schema.parse(data);
+import { ImpactProfileSchema, type ImpactProfile } from "./profile.js";
+
+export function validateImpactProfile(data: unknown): ImpactProfile {
+  return ImpactProfileSchema.parse(data);
+}
+
+/** @deprecated Use validateImpactProfile; v0.1 removed in favour of v0.2 */
+export function validateProfileV01(data: unknown): ImpactProfile {
+  return validateImpactProfile(data);
 }

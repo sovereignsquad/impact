@@ -1,20 +1,27 @@
-import type { ImpactProfileV01 } from "@impact/schemas";
+import type { ImpactProfile } from "@impact/schemas";
 
 /**
  * Coarse, conservative guidance — no benchmark claims (Phase 2 / P1).
  */
-export function coarseReadiness(profile: ImpactProfileV01): NonNullable<
-  ImpactProfileV01["readiness"]
+export function coarseReadiness(profile: ImpactProfile): NonNullable<
+  ImpactProfile["readiness"]
 > | null {
   const { host, runtimes, models } = profile;
   const ollama = runtimes.find((r) => r.id === "ollama");
-  const hasLocalModels = models.some((m) => m.locality === "local" && m.detected);
-  const mem = host.memory_gb ?? 0;
-  const appleSilicon =
-    host.architecture === "arm64" &&
-    (host.chip?.toLowerCase().includes("apple") ?? false);
+  const hasLocalModels = models.some(
+    (m) => m.locality === "local" && m.discovery_status === "detected"
+  );
+  const mem = host.memory_gb.value ?? 0;
+  const arch = host.architecture.value ?? "";
+  const chip = host.chip.value ?? "";
+  const appleSilicon = arch === "arm64" && chip.toLowerCase().includes("apple");
 
-  if (ollama?.installed && ollama.reachable === true && hasLocalModels && appleSilicon && mem >= 8) {
+  if (
+    ollama?.status === "installed_reachable" &&
+    hasLocalModels &&
+    appleSilicon &&
+    mem >= 8
+  ) {
     return {
       summary:
         "This machine appears suitable for lightweight local AI workflows (Ollama reachable with local models, Apple Silicon, sufficient RAM for small models). This is a coarse hint, not a performance guarantee.",
@@ -22,7 +29,7 @@ export function coarseReadiness(profile: ImpactProfileV01): NonNullable<
     };
   }
 
-  if (ollama?.installed && ollama.reachable === false) {
+  if (ollama?.status === "installed_unreachable") {
     return {
       summary:
         "Ollama appears installed but the local API was not reachable during the scan. Start the service or check configuration before relying on local inference.",

@@ -43,6 +43,9 @@ If you choose to submit, a preview file such as `impact-submit-preview.json` may
 
 ## Submission (opt-in)
 
+Normative HTTP rules (request/response, retries, no-PII on the wire): [submission-contract.md](submission-contract.md).
+
+
 **No data is transmitted** unless you:
 
 1. Choose to submit when prompted (interactive CLI), and  
