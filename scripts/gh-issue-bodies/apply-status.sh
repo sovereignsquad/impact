@@ -105,9 +105,9 @@ done
 set_status "$(item_for_issue 23)" "$DONE"
 set_status "$(item_for_issue 27)" "$DONE"
 
-# Post-MVP programme (from issue #1 directive)
-set_status "$(item_for_issue 33)" "$TODO"
-set_status "$(item_for_issue 34)" "$TODO"
+# Post-MVP programme (from issue #1 directive) — CTO 2026-04: #33 done; #34 primary; #38 exploratory in Backlog
+set_status "$(item_for_issue 33)" "$DONE"
+set_status "$(item_for_issue 34)" "$IN_PROGRESS"
 for n in 35 36 37 38; do
   set_status "$(item_for_issue "$n")" "$BACKLOG"
 done

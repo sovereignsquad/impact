@@ -1,3 +1,5 @@
+**Status:** closed on GitHub (accepted 2026-04). Do not reopen for optional second-machine smoke — add evidence as a comment only.
+
 ## Objective
 
 **Post-MVP release hardening** — short stabilisation after **v0.3.0** MVP tag.
