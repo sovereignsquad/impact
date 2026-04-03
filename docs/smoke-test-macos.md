@@ -76,7 +76,7 @@ Record each **fresh-clone** Path B run here after `main` changes that affect ins
 | Date | Clone source | `node -v` | `impact --version` | `schema_version` (from profile) | Result |
 | ---- | ------------ | --------- | ------------------ | --------------------------------- | ------ |
 | 2026-04-03 | Fresh `git clone` of `https://github.com/moldovancsaba/impact` @ `55f01a6` (`main`) | v25.8.2 | `0.1.0` | `impact.v0.3` | PASS — pre-release CLI semver |
-| 2026-04-03 | Fresh `git clone` **tag `v0.3.0`** (`1885146` on `main`) | v25.8.2 | `0.3.0` | `impact.v0.3` | PASS — Path B; `impact --version` from `package.json`; `--no-submit` |
+| 2026-04-03 | Fresh `git clone` at **tag `v0.3.0`** | v25.8.2 | `0.3.0` | `impact.v0.3` | PASS — Path B; `impact --version` from `package.json`; `--no-submit` |
 
 ## Future: published npm package
 
