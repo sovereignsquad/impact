@@ -1,5 +1,5 @@
 {
-  "schema_version": "impact.v0.2",
+  "schema_version": "impact.v0.3",
   "run_id": "650e8400-e29b-41d4-a716-446655440003",
   "created_at": "2026-04-03T12:00:00.000Z",
   "host": {
@@ -23,7 +23,7 @@
       "installed": false,
       "reachable": null,
       "version": { "value": null, "source": "unknown", "probe": null, "confidence": "unknown" },
-      "semantic": "unknown",
+      "presence": "unknown",
       "capabilities": { "model_inventory": "none", "notes": "Ollama not found on PATH." }
     },
     {
@@ -32,7 +32,7 @@
       "installed": true,
       "reachable": null,
       "version": { "value": "0.14.0", "source": "command", "probe": "python3 -m pip show mlx", "confidence": "high" },
-      "semantic": "partial",
+      "presence": "detected",
       "capabilities": {
         "model_inventory": "none",
         "notes": "MLX Python package detected only. Model inventory is not configured in v0.x (no path policy); do not treat as full MLX support."

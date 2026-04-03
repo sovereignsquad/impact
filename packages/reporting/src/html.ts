@@ -1,4 +1,5 @@
 import type { ImpactProfile, ProvenancedString, ProvenancedNumber, ProvenancedBoolean } from "@impact/schemas";
+import { buildDiagnostics } from "./diagnostics.js";
 
 function esc(s: string): string {
   return s
@@ -8,11 +9,7 @@ function esc(s: string): string {
     .replace(/"/g, "&quot;");
 }
 
-function meta(
-  source: string,
-  probe: string | null,
-  confidence: string
-): string {
+function meta(source: string, probe: string | null, confidence: string): string {
   return `<span class="muted"> · ${esc(source)}${probe ? ` · ${esc(probe)}` : ""} · ${esc(confidence)}</span>`;
 }
 
@@ -31,10 +28,24 @@ function cellBool(f: ProvenancedBoolean): string {
   return `${esc(v)}${meta(f.source, f.probe, f.confidence)}`;
 }
 
+function confidenceLegendCard(): string {
+  return `<div class="card">
+    <h2>Field confidence (legend)</h2>
+    <p class="muted">Per-field <code>confidence</code> is assigned from deterministic rules (see <code>docs/confidence-rules.md</code>).</p>
+    <ul class="tight">
+      <li><strong>high</strong> — direct successful probe from an authoritative source (e.g. CLI version that exited zero, runtime HTTP API success).</li>
+      <li><strong>medium</strong> — indirect or partial evidence from a credible source (e.g. derived OS mapping, tool version parse ambiguity).</li>
+      <li><strong>low</strong> — weak inference or degraded probe (use with care).</li>
+      <li><strong>unknown</strong> — no reliable signal for this field.</li>
+    </ul>
+  </div>`;
+}
+
 export function renderHtmlReport(profile: ImpactProfile): string {
   const { host, runtimes, tools, models, privacy, readiness } = profile;
   const toolsInstalled = tools.filter((t) => t.installed);
   const mlx = runtimes.find((r) => r.id === "mlx_python");
+  const diagnostics = buildDiagnostics(profile);
 
   const mlxNotice =
     mlx && mlx.installed
@@ -44,6 +55,13 @@ export function renderHtmlReport(profile: ImpactProfile): string {
         )}</p><p class="muted">Model inventory support: <strong>${esc(
           mlx.capabilities?.model_inventory ?? "none"
         )}</strong> — do not assume full MLX model discovery.</p></div>`
+      : "";
+
+  const diagnosticsCard =
+    diagnostics.length > 0
+      ? `<div class="card"><h2>Diagnostics</h2><ul class="tight">${diagnostics
+          .map((d) => `<li>${esc(d)}</li>`)
+          .join("")}</ul></div>`
       : "";
 
   return `<!DOCTYPE html>
@@ -72,7 +90,9 @@ export function renderHtmlReport(profile: ImpactProfile): string {
 <body>
   <h1>I.M.P.A.C.T. <span class="pill">${esc(profile.schema_version)}</span></h1>
   <p class="muted">Local, privacy-first scan. Run ID: <code>${esc(profile.run_id)}</code> · ${esc(profile.created_at)}</p>
-  <p class="muted">Values show <strong>source · probe · field confidence</strong> where applicable (epistemic discipline).</p>
+  <p class="muted">Values show <strong>source · probe · field confidence</strong> where applicable (provenance). Runtime rows separate <strong>status</strong> (availability) from <strong>presence</strong> (how we know the row applies).</p>
+
+  ${confidenceLegendCard()}
 
   <div class="card">
     <h2>Host</h2>
@@ -93,19 +113,21 @@ export function renderHtmlReport(profile: ImpactProfile): string {
 
   ${mlxNotice}
 
+  ${diagnosticsCard}
+
   ${
     readiness
-      ? `<div class="card"><h2>Readiness (coarse)</h2><p>${esc(readiness.summary)}</p><p class="muted">Semantic: ${esc(readiness.confidence)} — not a benchmark score.</p></div>`
+      ? `<div class="card"><h2>Readiness (coarse)</h2><p>${esc(readiness.summary)}</p><p class="muted">Presence (epistemic basis): <code>${esc(readiness.presence)}</code> — not a benchmark score.</p></div>`
       : ""
   }
 
   <div class="card">
     <h2>Runtimes</h2>
-    <table><thead><tr><th>ID</th><th>Status</th><th>Installed</th><th>Reachable</th><th>Semantic</th><th>Version</th><th>Model inventory</th></tr></thead><tbody>
+    <table><thead><tr><th>ID</th><th>Status</th><th>Installed</th><th>Reachable</th><th>Presence</th><th>Version</th><th>Model inventory</th></tr></thead><tbody>
     ${runtimes
       .map(
         (r) =>
-          `<tr><td><code>${esc(r.id)}</code></td><td><code>${esc(r.status)}</code></td><td>${r.installed}</td><td>${r.reachable === null ? "—" : String(r.reachable)}</td><td>${esc(r.semantic)}</td><td>${cellStr(r.version)}</td><td>${esc(r.capabilities?.model_inventory ?? "—")}</td></tr>`
+          `<tr><td><code>${esc(r.id)}</code></td><td><code>${esc(r.status)}</code></td><td>${r.installed}</td><td>${r.reachable === null ? "—" : String(r.reachable)}</td><td><code>${esc(r.presence)}</code></td><td>${cellStr(r.version)}</td><td>${esc(r.capabilities?.model_inventory ?? "—")}</td></tr>`
       )
       .join("")}
     </tbody></table>
@@ -134,11 +156,11 @@ export function renderHtmlReport(profile: ImpactProfile): string {
 
   <div class="card">
     <h2>Models</h2>
-    <table><thead><tr><th>ID</th><th>Runtime</th><th>Locality</th><th>Discovery</th><th>Source / probe</th><th>Confidence</th><th>Quantization</th></tr></thead><tbody>
+    <table><thead><tr><th>ID</th><th>Runtime</th><th>Locality</th><th>Presence</th><th>Source / probe</th><th>Confidence</th><th>Quantization</th></tr></thead><tbody>
     ${models
       .map((m) => {
         const q = m.quantization ? cellStr(m.quantization) : "—";
-        return `<tr><td><code>${esc(m.id)}</code></td><td>${esc(m.runtime_id)}</td><td>${esc(m.locality)}</td><td>${esc(m.discovery_status)}</td><td>${esc(m.source)}${m.probe ? ` · ${esc(m.probe)}` : ""}</td><td>${esc(m.confidence)}</td><td>${q}</td></tr>`;
+        return `<tr><td><code>${esc(m.id)}</code></td><td>${esc(m.runtime_id)}</td><td>${esc(m.locality)}</td><td><code>${esc(m.presence)}</code></td><td>${esc(m.source)}${m.probe ? ` · ${esc(m.probe)}` : ""}</td><td>${esc(m.confidence)}</td><td>${q}</td></tr>`;
       })
       .join("")}
     ${models.length === 0 ? "<tr><td colspan='7'>No models enumerated (runtime offline, not installed, or inventory not configured).</td></tr>" : ""}
@@ -170,7 +192,7 @@ export function renderHtmlReport(profile: ImpactProfile): string {
       <li><strong>Linux</strong> — partial / best-effort; probes depend on common userland (<code>df</code>, <code>which</code>).</li>
       <li><strong>Windows</strong> — experimental; disk and some shell probes may return unknown until parity work lands.</li>
     </ul>
-    <p class="muted">Schema: ${esc(profile.schema_version)} · Report is a point-in-time snapshot; re-run after changing your environment.</p>
+    <p class="muted">See <code>docs/support-matrix.md</code> for detail. Schema: ${esc(profile.schema_version)} · Report is a point-in-time snapshot; re-run after changing your environment.</p>
   </footer>
 </body>
 </html>`;

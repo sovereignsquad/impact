@@ -1,17 +1,17 @@
 import { z } from "zod";
 import {
-  DiscoverySemanticSchema,
   FieldConfidenceSchema,
+  PresenceSchema,
   ProvenancedBooleanSchema,
   ProvenancedNumberSchema,
   ProvenancedStringSchema,
   ProvenancedIntSchema,
 } from "./provenance.js";
 
-export { DiscoverySemanticSchema, FieldConfidenceSchema };
+export { FieldConfidenceSchema, PresenceSchema };
 
-/** Aggregate readiness line still uses discovery semantics (not field confidence) */
-export const ReadinessConfidenceSchema = DiscoverySemanticSchema;
+/** Readiness summary epistemic basis (same vocabulary as presence) */
+export const ReadinessPresenceSchema = PresenceSchema;
 
 export const RuntimeOperationalStatusSchema = z.enum([
   "not_installed",
@@ -51,13 +51,13 @@ export const RuntimeCapabilitiesSchema = z.object({
 
 export const RuntimeRecordSchema = z.object({
   id: z.string(),
-  /** Single operational status for the runtime row */
+  /** Lifecycle / availability (operational) */
   status: RuntimeOperationalStatusSchema,
   installed: z.boolean(),
   reachable: z.boolean().nullable(),
   version: ProvenancedStringSchema,
-  /** Row-level discovery semantic (aligned with controlled vocabulary) */
-  semantic: DiscoverySemanticSchema,
+  /** How we know this runtime row applies (epistemic) — not the same as `status` */
+  presence: PresenceSchema,
   capabilities: RuntimeCapabilitiesSchema.optional(),
 });
 
@@ -74,8 +74,7 @@ export const ToolRecordSchema = z.object({
   installed: z.boolean(),
   version: ProvenancedStringSchema,
   kind: ToolKindSchema,
-  /** PATH / binary presence semantic */
-  presence: DiscoverySemanticSchema,
+  presence: PresenceSchema,
 });
 
 export const ModelLocalitySchema = z.enum(["local", "cloud", "unknown"]);
@@ -84,7 +83,7 @@ export const ModelRecordSchema = z.object({
   id: z.string(),
   runtime_id: z.string(),
   locality: ModelLocalitySchema,
-  discovery_status: DiscoverySemanticSchema,
+  presence: PresenceSchema,
   source: z.enum(["command", "api", "derived", "manual", "unknown"]),
   probe: z.string().nullable(),
   confidence: FieldConfidenceSchema,
@@ -97,7 +96,7 @@ export const PrivacyBlockSchema = z.object({
 });
 
 export const ImpactProfileSchema = z.object({
-  schema_version: z.literal("impact.v0.2"),
+  schema_version: z.literal("impact.v0.3"),
   run_id: z.string().uuid(),
   created_at: z.string().datetime(),
   host: HostSchema,
@@ -108,7 +107,7 @@ export const ImpactProfileSchema = z.object({
   readiness: z
     .object({
       summary: z.string(),
-      confidence: ReadinessConfidenceSchema,
+      presence: ReadinessPresenceSchema,
     })
     .optional(),
 });

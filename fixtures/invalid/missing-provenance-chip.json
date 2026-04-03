@@ -1,0 +1,38 @@
+{
+  "schema_version": "impact.v0.3",
+  "run_id": "750e8400-e29b-41d4-a716-446655440098",
+  "created_at": "2026-04-03T12:00:00.000Z",
+  "host": {
+    "machine_class": { "value": "x", "source": "derived", "probe": "impact:machine_class", "confidence": "low" },
+    "fingerprint_hash": { "value": "sha256:x", "source": "derived", "probe": "impact:fingerprint_host_v0", "confidence": "high" },
+    "os_name": { "value": "macOS", "source": "derived", "probe": "node:os", "confidence": "high" },
+    "os_version": { "value": "14.0", "source": "derived", "probe": "node:os.release", "confidence": "high" },
+    "architecture": { "value": "arm64", "source": "derived", "probe": "node:os.arch", "confidence": "high" },
+    "chip": { "value": "Apple M1", "source": "derived", "probe": "node:os.cpus" },
+    "memory_gb": { "value": 16, "source": "derived", "probe": "node:os.totalmem", "confidence": "high" },
+    "core_count": { "value": 8, "source": "derived", "probe": "node:os.cpus.length", "confidence": "high" }
+  },
+  "runtimes": [
+    {
+      "id": "ollama",
+      "status": "not_installed",
+      "installed": false,
+      "reachable": null,
+      "version": { "value": null, "source": "unknown", "probe": null, "confidence": "unknown" },
+      "presence": "unknown",
+      "capabilities": { "model_inventory": "none" }
+    },
+    {
+      "id": "mlx_python",
+      "status": "not_installed",
+      "installed": false,
+      "reachable": null,
+      "version": { "value": null, "source": "unknown", "probe": null, "confidence": "unknown" },
+      "presence": "unknown",
+      "capabilities": { "model_inventory": "none" }
+    }
+  ],
+  "tools": [],
+  "models": [],
+  "privacy": { "raw_identifiers_stored": false, "consent_required_for_submission": true }
+}

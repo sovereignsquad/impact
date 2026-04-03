@@ -54,3 +54,5 @@ Open PR; reference this issue; comment enforcement email or GitHub reporting flo
 ## Developer Notes
 
 - Board **Status** tracks delivery; title has no `Todo:` prefix.
+
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).

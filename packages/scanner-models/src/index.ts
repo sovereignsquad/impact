@@ -1,5 +1,5 @@
 import type { ModelRecord, RuntimeRecord } from "@impact/schemas";
-import { ps } from "@impact/schemas";
+import { fieldConfidence, ps } from "@impact/schemas";
 
 type OllamaTagsResponse = {
   models?: Array<{ name: string; details?: { quantization_level?: string } }>;
@@ -31,13 +31,13 @@ export async function scanModelsForOllama(
         id: m.name,
         runtime_id: "ollama",
         locality: "local",
-        discovery_status: "detected",
+        presence: "detected",
         source: "api",
         probe,
-        confidence: "high",
+        confidence: fieldConfidence("model_from_ollama_api"),
       };
       if (q != null) {
-        row.quantization = ps(q, "api", "ollama_json.details", "medium");
+        row.quantization = ps(q, "api", "ollama_json.details", fieldConfidence("model_from_ollama_api"));
       }
       return row;
     });
@@ -46,11 +46,6 @@ export async function scanModelsForOllama(
   }
 }
 
-/**
- * MLX: honest empty inventory until path policy exists.
- * When runtime is partial, callers may still expect zero models.
- */
-export function scanModelsForMlx(mlx: RuntimeRecord | undefined): ModelRecord[] {
-  if (!mlx?.installed) return [];
+export function scanModelsForMlx(_mlx: RuntimeRecord | undefined): ModelRecord[] {
   return [];
 }

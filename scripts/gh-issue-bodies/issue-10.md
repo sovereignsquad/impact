@@ -54,3 +54,5 @@ When MLX paths defined, extend scanner + schema if needed + update acceptance he
 ## Developer Notes
 
 - Board **Status** may be **Review** until MLX path spec exists.
+
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).

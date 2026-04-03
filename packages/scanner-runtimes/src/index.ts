@@ -1,5 +1,5 @@
 import type { RuntimeRecord } from "@impact/schemas";
-import { ps } from "@impact/schemas";
+import { fieldConfidence, ps } from "@impact/schemas";
 import { execText } from "./exec.js";
 
 const OLLAMA_TIMEOUT_MS = 4000;
@@ -37,8 +37,8 @@ export async function scanRuntimes(): Promise<RuntimeRecord[]> {
       status: "not_installed",
       installed: false,
       reachable: null,
-      version: ps(null, "command", versionProbe, "unknown"),
-      semantic: "unknown",
+      version: ps(null, "command", versionProbe, fieldConfidence("ollama_version_missing")),
+      presence: "unknown",
       capabilities: { model_inventory: "none", notes: "Ollama not found on PATH." },
     };
   } else {
@@ -48,8 +48,9 @@ export async function scanRuntimes(): Promise<RuntimeRecord[]> {
       status: reachable ? "installed_reachable" : "installed_unreachable",
       installed: true,
       reachable,
-      version: ps(versionStr, "command", versionProbe, "high"),
-      semantic: reachable ? "detected" : "unreachable",
+      version: ps(versionStr, "command", versionProbe, fieldConfidence("ollama_version_cli")),
+      /** Binary/version probe succeeded — epistemic detection; reachability is in `status` */
+      presence: "detected",
       capabilities: {
         model_inventory: reachable ? "full" : "partial",
         notes: reachable
@@ -79,8 +80,8 @@ async function detectMlx(): Promise<RuntimeRecord> {
       status: "not_installed",
       installed: false,
       reachable: null,
-      version: ps(null, "command", pipProbe, "unknown"),
-      semantic: "unknown",
+      version: ps(null, "command", pipProbe, fieldConfidence("mlx_pip_absent")),
+      presence: "unknown",
       capabilities: {
         model_inventory: "none",
         notes: "MLX Python package not reported by pip.",
@@ -93,8 +94,8 @@ async function detectMlx(): Promise<RuntimeRecord> {
     status: "partial",
     installed: true,
     reachable: null,
-    version: ps(versionStr, "command", pipProbe, versionStr ? "high" : "medium"),
-    semantic: "partial",
+    version: ps(versionStr, "command", pipProbe, fieldConfidence("mlx_pip_show")),
+    presence: "detected",
     capabilities: {
       model_inventory: "none",
       notes:

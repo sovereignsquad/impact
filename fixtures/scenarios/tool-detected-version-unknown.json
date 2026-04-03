@@ -1,0 +1,47 @@
+{
+  "schema_version": "impact.v0.3",
+  "run_id": "650e8400-e29b-41d4-a716-446655440006",
+  "created_at": "2026-04-03T12:00:00.000Z",
+  "host": {
+    "machine_class": { "value": "apple_m2_16gb_arm64", "source": "derived", "probe": "impact:machine_class", "confidence": "medium" },
+    "fingerprint_hash": { "value": "sha256:fff", "source": "derived", "probe": "impact:fingerprint_host_v0", "confidence": "high" },
+    "os_name": { "value": "macOS", "source": "derived", "probe": "node:os.platform+mapping", "confidence": "high" },
+    "os_version": { "value": "14.5", "source": "derived", "probe": "node:os.release", "confidence": "high" },
+    "architecture": { "value": "arm64", "source": "derived", "probe": "node:os.arch", "confidence": "high" },
+    "chip": { "value": "Apple M2", "source": "derived", "probe": "node:os.cpus[0].model", "confidence": "medium" },
+    "memory_gb": { "value": 16, "source": "derived", "probe": "node:os.totalmem", "confidence": "high" },
+    "core_count": { "value": 8, "source": "derived", "probe": "node:os.cpus.length", "confidence": "high" },
+    "disk": { "free_gb": { "value": 100, "source": "command", "probe": "df -k /", "confidence": "medium" } }
+  },
+  "runtimes": [
+    {
+      "id": "ollama",
+      "status": "not_installed",
+      "installed": false,
+      "reachable": null,
+      "version": { "value": null, "source": "unknown", "probe": null, "confidence": "unknown" },
+      "presence": "unknown",
+      "capabilities": { "model_inventory": "none" }
+    },
+    {
+      "id": "mlx_python",
+      "status": "not_installed",
+      "installed": false,
+      "reachable": null,
+      "version": { "value": null, "source": "unknown", "probe": null, "confidence": "unknown" },
+      "presence": "unknown",
+      "capabilities": { "model_inventory": "none" }
+    }
+  ],
+  "tools": [
+    {
+      "id": "codex_cli",
+      "installed": true,
+      "version": { "value": null, "source": "command", "probe": "codex --version", "confidence": "unknown" },
+      "kind": "agent",
+      "presence": "detected"
+    }
+  ],
+  "models": [],
+  "privacy": { "raw_identifiers_stored": false, "consent_required_for_submission": true }
+}

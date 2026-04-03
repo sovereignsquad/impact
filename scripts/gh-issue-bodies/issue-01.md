@@ -78,4 +78,13 @@ Keep this issue current: when doctrine changes, **edit the issue** and reference
 ## Developer Notes
 
 - Priority label **P0** reflects programme criticality, not board column.
-- Reference example issue style: [mvp-factory-control#495](https://github.com/moldovancsaba/mvp-factory-control/issues/495).
+- Reference example issue style: [mvp-factory-control#495](https://github.com/moldovancsaba/mvp-factory-control/issues/495) and [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).
+
+## Scope / Non-Goals
+
+Non-goals are listed under **Scope → Out of scope (here)** above; do not expand v0.x into benchmark theatre from this card alone.
+
+## Out of Scope
+
+- Implementation workstreams owned by child issues (#6–#15, #2–#5)
+- Kanban state in titles (board **Status** only)

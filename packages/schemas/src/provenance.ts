@@ -4,23 +4,17 @@ import { z } from "zod";
 export const ValueSourceSchema = z.enum(["command", "api", "derived", "manual", "unknown"]);
 export type ValueSource = z.infer<typeof ValueSourceSchema>;
 
-/** Epistemic strength of the value */
+/** Epistemic strength of a field value (rule-based; see docs/confidence-rules.md) */
 export const FieldConfidenceSchema = z.enum(["high", "medium", "low", "unknown"]);
 export type FieldConfidence = z.infer<typeof FieldConfidenceSchema>;
 
 /**
- * Semantic status for discovery rows (runtime/tool/model), closed vocabulary.
- * Aligns with architect Sprint A: detected | inferred | configured | unreachable | unknown | partial
+ * Epistemic basis: how we know an entity exists or applies.
+ * Operational availability belongs in `status` (runtimes), not here.
+ * `configured` reserved for future explicit user/config sources — do not emit until wired.
  */
-export const DiscoverySemanticSchema = z.enum([
-  "detected",
-  "inferred",
-  "configured",
-  "unreachable",
-  "unknown",
-  "partial",
-]);
-export type DiscoverySemantic = z.infer<typeof DiscoverySemanticSchema>;
+export const PresenceSchema = z.enum(["detected", "inferred", "configured", "unknown"]);
+export type Presence = z.infer<typeof PresenceSchema>;
 
 export const ProvenancedStringSchema = z.object({
   value: z.string().nullable(),

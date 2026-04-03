@@ -19,7 +19,7 @@ Define how the **optional** anonymous profile submission works over HTTP when `I
 | Method | `POST` |
 | URL | Value of `IMPACT_SUBMIT_URL` (HTTPS recommended in production) |
 | Headers | `Content-Type: application/json` |
-| Body | **Exactly** one JSON document: an `ImpactProfile` validating `impact.v0.2` schema (`packages/schemas`). No wrapping envelope unless a future version bumps this doc. |
+| Body | **Exactly** one JSON document: an `ImpactProfile` validating `impact.v0.3` schema (`packages/schemas`). No wrapping envelope unless a future version bumps this doc. |
 
 ### No-PII guarantee on the wire
 
@@ -40,7 +40,7 @@ Servers **must not** log full payloads at info level in shared systems without p
 | `2xx` | Accepted | Parse body if JSON; extract id (below). Treat as success. |
 | `400` | Bad payload | Do not retry without user intervention; local files unchanged. |
 | `401` / `403` | Auth / forbidden | No retry unless credentials are added (out of scope for default client). |
-| `409` | Conflict / duplicate | See **Duplicate handling**. |
+| `409` | Conflict / duplicate | **No retry.** Client treats as **terminal success with `duplicate: true`** when a `submission_id` can be parsed (or synthesises `duplicate_<run_id>`). See **Duplicate handling**. |
 | `429` | Rate limited | Retry with backoff (below). |
 | `5xx` | Server error | Retry with backoff; local files unchanged. |
 
@@ -63,9 +63,9 @@ Servers **must not** log full payloads at info level in shared systems without p
 
 | Phase | Default |
 | ----- | ------- |
-| Connect + transfer | Use `fetch` default / platform; **recommended** upper bound **15s** total per attempt for v0.x (tighten in code when implemented). |
+| Per HTTP attempt | **15s** total (`AbortController` timeout around `fetch` in `packages/submission`). |
 
-Until explicit timeout is wired in `packages/submission`, environments rely on system defaults — treat as **provisional**.
+Configurable via `submitProfile(profile, { timeoutMs })` for tests or constrained networks.
 
 ---
 
@@ -73,32 +73,44 @@ Until explicit timeout is wired in `packages/submission`, environments rely on s
 
 | Condition | Action |
 | --------- | ------ |
-| Network error, `408`, `429`, `5xx` | At most **3** attempts with exponential backoff (e.g. 0.5s, 2s, 8s) — **implementation follow-up** in submission package. |
-| `400` | No retry. |
-| Success | Stop; append **local receipt** (see below). |
+| Network error, `408`, `429`, `5xx` | At most **3** attempts with backoff **0.5s, 2s, 8s** between attempts (implemented in `submitProfile`). |
+| `400` / `401` / `403` | No retry. |
+| `409` | No retry — duplicate handling path (below). |
+| Success (`2xx` or duplicate success path) | Stop; write structured receipt + append log line (see below). |
 
 ---
 
 ## Duplicate handling
 
-- Servers **may** deduplicate by `run_id` or content hash; if they return `409`, body should explain whether the prior `submission_id` stands.  
-- Clients **must not** delete or alter local `impact-profile.json` on duplicate; they should surface the server message.
+- Servers **may** deduplicate by `run_id` or content hash. On duplicate they **should** return **`409 Conflict`** with a JSON body that includes **`submission_id`** (or **`id`**) referring to the **existing** ingest the server considers authoritative.
+- **Client behaviour (`submitProfile`):**
+  - Does **not** retry on `409`.
+  - Returns **`ok: true`**, **`duplicate: true`**, and **`submission_id`** from the body when JSON parses; otherwise **`submission_id`** defaults to `duplicate_<run_id>` for local audit.
+  - **Local `impact-profile.json` / HTML report / `impact-submission-preview.json` are never modified** by submission.
+  - **`impact-submission-receipt.json`** uses **`outcome: "duplicate"`** and **`duplicate: true`** so the trail is explicit.
+- If a server returns `409` with an empty body, the client still completes the duplicate path with a synthetic id; operators should prefer returning JSON with the prior `submission_id`.
 
 ---
 
-## Local receipt
+## Local artefacts (audit)
 
-On success or final failure after retries, the CLI may append a line to `~/.impact/submission-receipts.log` (see `packages/submission`). Receipts are **local audit**, not telemetry.
+| File | When |
+| ---- | ---- |
+| `impact-submission-preview.json` | After consent, **before** POST — exact bytes that will be sent (same canonical object as the profile payload). |
+| `impact-submission-receipt.json` | After the HTTP attempt sequence completes (success or final failure) — timestamp, endpoint, `payload_sha256`, `preview_payload_sha256` (same hash when preview unchanged), outcome, attempts, optional `submission_id` / error / `last_status`. |
+| `~/.impact/submission-receipts.log` | Append-only one-line audit (legacy-friendly). |
+
+Receipts are **local audit**, not telemetry.
 
 ---
 
 ## Versioning
 
-- **`schema_version`** inside the profile (`impact.v0.2` today) is independent of this HTTP contract revision.  
+- **`schema_version`** inside the profile (`impact.v0.3` today) is independent of this HTTP contract revision.  
 - Breaking HTTP changes should bump a `X-Impact-Contract-Version` header **or** a path version — not yet required for v0.x.
 
 ---
 
 ## Acceptance
 
-This document satisfies Sprint A exit criteria for “submission behaviour fully documented” alongside the client implementation. Code-level timeout/retry enforcement may trail by one PR; track in issue #13.
+Normative contract for optional submission. Client timeout, bounded retry, and structured receipt files are implemented in `packages/submission` and wired from the CLI after explicit consent.

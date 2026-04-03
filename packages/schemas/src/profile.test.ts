@@ -18,7 +18,7 @@ const minimalHost = {
 };
 
 const minimalValid = {
-  schema_version: "impact.v0.2" as const,
+  schema_version: "impact.v0.3" as const,
   run_id: "550e8400-e29b-41d4-a716-446655440000",
   created_at: "2026-04-03T12:00:00.000Z",
   host: minimalHost,
@@ -29,7 +29,7 @@ const minimalValid = {
       installed: false,
       reachable: null,
       version: ps(null, "unknown", null, "unknown"),
-      semantic: "unknown" as const,
+      presence: "unknown" as const,
       capabilities: { model_inventory: "none" as const },
     },
   ],
@@ -41,7 +41,7 @@ const minimalValid = {
   },
 };
 
-describe("ImpactProfileSchema v0.2", () => {
+describe("ImpactProfileSchema v0.3", () => {
   it("accepts a minimal valid profile", () => {
     const r = ImpactProfileSchema.safeParse(minimalValid);
     expect(r.success).toBe(true);
@@ -51,6 +51,25 @@ describe("ImpactProfileSchema v0.2", () => {
     const r = ImpactProfileSchema.safeParse({
       ...minimalValid,
       schema_version: "impact.v0.9",
+    });
+    expect(r.success).toBe(false);
+  });
+
+  it("rejects illegal runtime presence (partial is status, not presence)", () => {
+    const r = ImpactProfileSchema.safeParse({
+      ...minimalValid,
+      runtimes: [
+        {
+          id: "ollama",
+          status: "partial",
+          installed: true,
+          reachable: null,
+          version: ps("0.1", "command", "x", "high"),
+          presence: "partial",
+          capabilities: { model_inventory: "none" },
+        },
+        ...minimalValid.runtimes.slice(1),
+      ],
     });
     expect(r.success).toBe(false);
   });

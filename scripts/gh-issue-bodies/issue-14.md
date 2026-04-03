@@ -53,3 +53,5 @@ Tune rules via PR with **before/after** examples in issue comment.
 ## Developer Notes
 
 - **Status** reflects product review of wording.
+
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).

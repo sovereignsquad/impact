@@ -56,3 +56,5 @@ Add tests in same PR as features; block regressions.
 ## Developer Notes
 
 - **Status** may stay **In Progress** while programme grows.
+
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).

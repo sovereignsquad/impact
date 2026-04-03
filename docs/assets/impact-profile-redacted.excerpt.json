@@ -1,0 +1,31 @@
+{
+  "schema_version": "impact.v0.3",
+  "run_id": "00000000-0000-4000-8000-000000000001",
+  "created_at": "2026-04-03T12:00:00.000Z",
+  "host": {
+    "machine_class": {
+      "value": "example_laptop_16gb_arm64",
+      "source": "derived",
+      "probe": "impact:machine_class",
+      "confidence": "medium"
+    },
+    "fingerprint_hash": {
+      "value": "sha256:REDACTED_REDACTED_REDACTED_REDACTED_REDACTED_REDACTED_REDACTED_REDACTED",
+      "source": "derived",
+      "probe": "impact:fingerprint_host_v0",
+      "confidence": "high"
+    },
+    "os_name": { "value": "macOS", "source": "derived", "probe": "node:os.platform+mapping", "confidence": "high" },
+    "os_version": { "value": "14.x", "source": "derived", "probe": "node:os.release", "confidence": "high" },
+    "architecture": { "value": "arm64", "source": "derived", "probe": "node:os.arch", "confidence": "high" }
+  },
+  "runtimes": [
+    {
+      "id": "ollama",
+      "status": "installed_reachable",
+      "installed": true,
+      "reachable": true,
+      "presence": "detected"
+    }
+  ]
+}

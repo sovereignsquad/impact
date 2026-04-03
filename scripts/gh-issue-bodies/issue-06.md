@@ -70,3 +70,5 @@ Treat this issue as **foundation complete** when acceptance below is met; file f
 
 - **Board Status** should reflect delivery (e.g. **Done**)—**not** the title.
 - Evidence: repo tree + README quick start.
+
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).

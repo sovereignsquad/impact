@@ -12,24 +12,29 @@ Thank you for your interest in **Impact**. This project is open source under the
 
 | What | Where |
 | ---- | ----- |
-| Roadmap themes, epics, sequencing | [GitHub Project #2 — board view](https://github.com/users/moldovancsaba/projects/2/views/1) |
+| Roadmap themes, epics, sequencing | [GitHub Project #2 — Programme (Not Done)](https://github.com/users/moldovancsaba/projects/2/views/3) ([full board](https://github.com/users/moldovancsaba/projects/2/views/1)) |
 | Bug reports, feature requests, design discussion | [GitHub Issues](https://github.com/moldovancsaba/impact/issues) |
 | Code review | Pull requests |
 
 **Rule of thumb:** If it belongs on a roadmap, backlog, or todo list for Impact, it should exist as a **GitHub Issue** (or linked PR) and be **on the project board** with the right Status and fields. Avoid parallel trackers that drift out of sync.
 
-See [docs/project-management.md](docs/project-management.md) for maintainers’ workflow details.
+See [docs/README.md](docs/README.md) for the documentation map and [docs/project-management.md](docs/project-management.md) for board workflow.
 
 ## Build from source
 
+**Release parity:** use `npm ci` (same as README Quick start and [docs/install-macos.md](docs/install-macos.md)). For local iteration, `npm install` is acceptable.
+
 ```bash
-npm install
+npm ci
 npm run lint
 npm run build
 npm test
 npm run validate-fixtures
+npm run validate-invalid-fixtures
 npm run impact -- scan --no-submit -o ./reports
 ```
+
+Releases: follow [docs/release-checklist.md](docs/release-checklist.md) and [docs/smoke-test-macos.md](docs/smoke-test-macos.md).
 
 ## How to contribute
 

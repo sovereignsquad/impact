@@ -2,7 +2,7 @@ import { execFile } from "node:child_process";
 import os from "node:os";
 import { promisify } from "node:util";
 import type { ToolRecord } from "@impact/schemas";
-import { ps } from "@impact/schemas";
+import { fieldConfidence, ps } from "@impact/schemas";
 import { TOOL_ALLOWLIST } from "./allowlist.js";
 
 const execFileAsync = promisify(execFile);
@@ -54,15 +54,11 @@ export async function scanTools(): Promise<ToolRecord[]> {
     }
     if (path && usedBin) {
       const { text, probe } = await versionHint(usedBin);
+      const vConf = text ? fieldConfidence("tool_version_cli") : fieldConfidence("tool_version_probe_fail");
       out.push({
         id: tool.id,
         installed: true,
-        version: ps(
-          text,
-          "command",
-          probe,
-          text ? "medium" : "unknown"
-        ),
+        version: ps(text, "command", probe, vConf),
         kind: tool.kind,
         presence: "detected",
       });
@@ -70,7 +66,7 @@ export async function scanTools(): Promise<ToolRecord[]> {
       out.push({
         id: tool.id,
         installed: false,
-        version: ps(null, "unknown", null, "unknown"),
+        version: ps(null, "unknown", null, fieldConfidence("tool_which_miss")),
         kind: tool.kind,
         presence: "unknown",
       });

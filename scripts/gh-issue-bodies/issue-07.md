@@ -64,3 +64,5 @@ Extend with new signals only via **schema bump** + privacy review.
 ## Developer Notes
 
 - Board **Status** reflects verification (e.g. Done after review on target OSes).
+
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).

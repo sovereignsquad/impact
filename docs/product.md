@@ -4,7 +4,9 @@
 
 **IMPACT** = **(I)ndustrial (M)ulti-(P)latform (A)gent (C)onnector (T)est**.
 
-The programme targets a **fully sovereign** evaluation stack for **system + tool + LLM** behaviour—ultimately a **rigorous benchmark system** suitable for industrial and global use. **Open planning and acceptance criteria** live in [GitHub Issues](https://github.com/moldovancsaba/impact/issues) and on the [Project board](https://github.com/users/moldovancsaba/projects/2/views/1) (SSOT).
+The programme targets a **fully sovereign** evaluation stack for **system + tool + LLM** behaviour—ultimately a **rigorous benchmark system** suitable for industrial and global use. **Open planning and acceptance criteria** live in [GitHub Issues](https://github.com/moldovancsaba/impact/issues) and on the [Project board](https://github.com/users/moldovancsaba/projects/2/views/3) (SSOT; [full board](https://github.com/users/moldovancsaba/projects/2/views/1)).
+
+**Trust (users):** [privacy-for-users.md](privacy-for-users.md) · **Policy:** [privacy-policy.md](privacy-policy.md).
 
 ## v0.x discovery slice (shipping now)
 
@@ -52,7 +54,7 @@ Do **not** start with: cloud-first architecture, mandatory accounts, invasive pe
 
 ## Output schema
 
-The machine-readable profile is versioned (`schema_version: "impact.v0.2"`) with **field provenance** (`source`, `probe`, `confidence`) and controlled **discovery semantics**. See `packages/schemas` and [fixtures/baseline-profile.sample.json](../fixtures/baseline-profile.sample.json).
+The machine-readable profile is versioned (`schema_version: "impact.v0.3"`) with **field provenance** (`source`, `probe`, `confidence`), **operational `status`** vs epistemic **`presence`**, and rule-based confidence ([confidence-rules.md](confidence-rules.md)). See `packages/schemas` and [fixtures/baseline-profile.sample.json](../fixtures/baseline-profile.sample.json).
 
 ## Roadmap phases (high level)
 

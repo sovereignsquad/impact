@@ -56,3 +56,5 @@ Add new runtime → update schema if needed → tests → issue comment with evi
 ## Developer Notes
 
 - **Status** on board only.
+
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).

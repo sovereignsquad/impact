@@ -1,5 +1,5 @@
 {
-  "schema_version": "impact.v0.2",
+  "schema_version": "impact.v0.3",
   "run_id": "650e8400-e29b-41d4-a716-446655440001",
   "created_at": "2026-04-03T12:00:00.000Z",
   "host": {
@@ -20,7 +20,7 @@
       "installed": false,
       "reachable": null,
       "version": { "value": null, "source": "unknown", "probe": null, "confidence": "unknown" },
-      "semantic": "unknown",
+      "presence": "unknown",
       "capabilities": { "model_inventory": "none", "notes": "Ollama not found on PATH." }
     },
     {
@@ -29,7 +29,7 @@
       "installed": false,
       "reachable": null,
       "version": { "value": null, "source": "unknown", "probe": null, "confidence": "unknown" },
-      "semantic": "unknown",
+      "presence": "unknown",
       "capabilities": { "model_inventory": "none", "notes": "MLX Python package not reported by pip." }
     }
   ],

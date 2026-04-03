@@ -5,7 +5,12 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ["**/dist/**", "**/node_modules/**", "scripts/validate-fixtures.mjs"],
+    ignores: [
+      "**/dist/**",
+      "**/node_modules/**",
+      "scripts/validate-fixtures.mjs",
+      "scripts/validate-invalid-fixtures.mjs",
+    ],
   },
   {
     rules: {

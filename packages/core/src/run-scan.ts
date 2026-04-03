@@ -36,7 +36,7 @@ export async function runScan(opts: ScanOptions = {}): Promise<ImpactProfile> {
   const tools: ToolRecord[] = toolsRaw.filter((t) => t.installed);
 
   const base: ImpactProfile = {
-    schema_version: "impact.v0.2",
+    schema_version: "impact.v0.3",
     run_id: randomUUID(),
     created_at: new Date().toISOString(),
     host,

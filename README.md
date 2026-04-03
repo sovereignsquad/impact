@@ -1,92 +1,173 @@
-# I.M.P.A.C.T.
+# IMPACT
 
-**IMPACT** = **(I)ndustrial (M)ulti-(P)latform (A)gent (C)onnector (T)est** — a programme for a **fully sovereign** evaluation stack (**system + tool + LLM**), evolving toward a **rigorous benchmark system** for serious, global use.
+**IMPACT is a privacy-first local scanner** that inventories the AI-relevant environment of a machine — system signals, runtimes, curated tools, and models discovered through supported local APIs — then writes a **structured profile** and **HTML report** on disk. **Optional** anonymous submission exists only after you configure an endpoint and **explicitly** consent; **nothing is uploaded by default.**
 
-**What ships in this repo today (v0.x):** a **privacy-first local scanner** that inventories a machine’s AI-relevant environment (OS, coarse hardware, runtimes, curated tools, discovered models), writes **HTML + JSON** reports, and supports **optional, explicit-consent** anonymous submission. That discovery layer **feeds** later benchmark phases described in [docs/product.md](docs/product.md).
+**I.M.P.A.C.T.** = **(I)ndustrial (M)ulti-(P)latform (A)gent (C)onnector (T)est**: a long-horizon programme toward sovereign evaluation of **system + tool + LLM** stacks. **Today you get the discovery scanner and reports** — not capability benchmarks (those are programme roadmap).
 
-- **Repository:** [github.com/moldovancsaba/impact](https://github.com/moldovancsaba/impact)  
-- **License:** [MIT](LICENSE)  
-- **Doctrine / planning (SSOT):** [GitHub Issues](https://github.com/moldovancsaba/impact/issues) + [Project board](https://github.com/users/moldovancsaba/projects/2/views/1)  
-- **Product spec:** [docs/product.md](docs/product.md)  
-- **Architect handoff:** [docs/architect-handoff.md](docs/architect-handoff.md)  
-- **Current state (snapshot):** [docs/current-state.md](docs/current-state.md)  
-- **Privacy:** [docs/privacy-policy.md](docs/privacy-policy.md)  
-- **Architecture:** [docs/architecture.md](docs/architecture.md)
+**Next step:** use the row below or jump straight to [Quick start](#quick-start-recommended).
 
-## Project board (roadmap & backlog)
+| Quick start | Privacy & trust | Programme board | Current state |
+| ----------- | --------------- | --------------- | ------------- |
+| [Jump](#quick-start-recommended) | [Jump](#privacy-and-trust) | [Open board](https://github.com/users/moldovancsaba/projects/2/views/3) | [Read snapshot](docs/current-state.md) |
 
-Planning is tracked on **[Impact — roadmap & backlog](https://github.com/users/moldovancsaba/projects/2/views/1)**. Use GitHub Issues for discussion; use the board for priority and status.
+---
 
-Details: [docs/project-management.md](docs/project-management.md).
+## Why IMPACT exists
 
-## Quick start
+Many people run or evaluate **local AI** and wonder what their machine can actually support. Most lack a single, honest picture of what is installed, reachable, and worth trying. IMPACT starts with an **inventory you can inspect**: conservative detection, provenance on fields, and clear confidence — not a hype score.
 
-Requirements: **Node.js 20+**.
+Later programme phases (see [product spec](docs/product.md) and [phase ladder](https://github.com/moldovancsaba/impact/issues/16)) aim at **readiness hints**, **atomic tests**, and **capability benchmarks**. Those are **not** shipped as product truth in v0.x.
+
+---
+
+## What you get
+
+1. **System inventory** — OS, architecture, coarse hardware class, memory/disk hints where available, optional GPU/acceleration hints (conservative).
+2. **Runtime, tool, and model discovery** — supported runtimes (e.g. Ollama with local API), **allowlisted** CLI tools on `PATH`, models when the runtime exposes them.
+3. **Anonymous shareable profile** — versioned JSON suitable for review or optional submission, plus a readable HTML report.
+
+**Artifacts** (default scan, output directory you choose):
+
+| File | Purpose |
+| ---- | ------- |
+| `impact-profile.json` | Machine-readable **profile** (`impact.v0.3` schema) |
+| `impact-report.html` | Human-readable **report** in the browser |
+| `impact-submission-preview.json` | Only if you opt into submission — **exact** JSON that would be sent |
+| `impact-submission-receipt.json` | Only after a submission attempt — outcome metadata for your records |
+
+---
+
+## How it works
+
+```mermaid
+flowchart LR
+  A[Scan locally] --> B[Build privacy-aware profile]
+  B --> C[Write JSON + HTML]
+  C --> D[Optional: preview payload]
+  D --> E[Submit only with explicit consent]
+```
+
+1. **Scan locally** — probes use local OS and, where applicable, localhost services (e.g. Ollama on `127.0.0.1`). Default scan needs **no network upload**.
+2. **Build profile** — structured data with field provenance, **`status`** (operational) vs **`presence`** (what we know), and confidence labels.
+3. **Generate reports** — same facts as HTML and JSON.
+4. **Preview** — if you enable submission, the CLI can write the exact outbound payload for inspection.
+5. **Submit** — only after configuration, prompts, and confirmation; see [privacy for users](docs/privacy-for-users.md) and [submission contract](docs/submission-contract.md).
+
+**Sample HTML report** (captured from a real local scan; yours will match your environment):
+
+![Sample IMPACT HTML report](docs/assets/impact-report-sample.png)
+
+**Redacted profile excerpt** (structure only; values anonymised for documentation):
+
+```json
+{
+  "schema_version": "impact.v0.3",
+  "run_id": "00000000-0000-4000-8000-000000000001",
+  "host": {
+    "machine_class": { "value": "example_laptop_16gb_arm64", "confidence": "medium" },
+    "fingerprint_hash": { "value": "sha256:REDACTED_…", "confidence": "high" },
+    "os_name": { "value": "macOS", "confidence": "high" },
+    "architecture": { "value": "arm64", "confidence": "high" }
+  },
+  "runtimes": [{ "id": "ollama", "status": "installed_reachable", "presence": "detected" }]
+}
+```
+
+Full validated example: [fixtures/baseline-profile.sample.json](fixtures/baseline-profile.sample.json). Redacted excerpt file: [docs/assets/impact-profile-redacted.excerpt.json](docs/assets/impact-profile-redacted.excerpt.json).
+
+---
+
+## Quick start (recommended)
+
+**Honest status:** the **canonical** path today is **install from source** (clone → build → global CLI). That is **Path B**, tracked to completion under [#27](https://github.com/moldovancsaba/impact/issues/27). There is **no** published `npm install -g @impact/cli` from the registry yet. When packaging and a **clean macOS smoke test** are finished, this section will be reduced to the minimal **install → run → inspect** flow only — see [docs/docs-alignment-after-packaging.md](docs/docs-alignment-after-packaging.md).
+
+**Platform:** **macOS** is the supported primary path. **Linux** is partial; **Windows** is experimental — [support matrix](docs/support-matrix.md).
+
+**The three steps (today):**
+
+1. **Install** the CLI from a clone (commands below).  
+2. **Run** `impact scan --no-submit -o ./reports`.  
+3. **Inspect** `reports/impact-profile.json` and `reports/impact-report.html`.
 
 ```bash
 git clone https://github.com/moldovancsaba/impact.git
 cd impact
-npm install
+npm ci
 npm run build
-npm run impact -- scan --no-submit -o ./reports
+npm install -g ./apps/cli
+mkdir -p ./reports
+impact scan --no-submit -o ./reports
+open ./reports/impact-report.html   # or open the file from your file manager
 ```
 
-Open `reports/impact-report.html` locally. JSON profile: `reports/impact-profile.json`.
+Full detail and secondary (dev-only) path: [docs/install-macos.md](docs/install-macos.md). **Release QA:** [docs/smoke-test-macos.md](docs/smoke-test-macos.md).
 
-### Platform support (this repo)
+**Without global install** (repo developers): from repo root after `npm ci` && `npm run build`: `npm run impact -- scan --no-submit -o ./reports`.
+
+---
+
+## Privacy and trust
+
+- **Local-first:** default scan does not send data off your machine.
+- **No raw serials / hardware UUIDs**, usernames, hostnames as identifiers, arbitrary file contents, or env secrets — see [Privacy for users](docs/privacy-for-users.md) (plain language) and [Privacy policy](docs/privacy-policy.md) (formal).
+- **Submission is optional** and requires a configured endpoint plus explicit confirmation; you can inspect **`impact-submission-preview.json`** before anything is sent.
+- **Fingerprinting** used for optional anonymous aggregation is **salted** and stored locally (`~/.impact/salt`); it is not a vendor serial.
+
+---
+
+## Today vs later
+
+This table is **conservative on purpose**: it sets expectations and **does not** track marketing language. It changes when **scope** changes, not for polish.
+
+| Today (v0.x) | Later (programme) |
+| ------------ | ------------------- |
+| Discovery **scanner** + HTML/JSON **profile** | Atomic reliability tests, **capability benchmarks** |
+| Coarse **readiness hints** (not benchmark scores) | Deeper evaluation ladder — [issue #16](https://github.com/moldovancsaba/impact/issues/16) |
+| **Privacy-first**, optional anonymous **submission** | Richer programme surfaces as scoped in [product.md](docs/product.md) |
+
+Discovery comes first so later benchmarks attach to **observable truth** about what can run where — not guesses.
+
+---
+
+## Support matrix (summary)
 
 | OS | Level |
 | -- | ----- |
-| **macOS** | **Supported** — primary target for host probes (Metal hint, `df`). |
-| **Linux** | **Partial / targeted** — common userland (`df`, `which`) best-effort. |
-| **Windows** | **Experimental** — disk and some probes may return unknown until parity work lands. |
+| **macOS** | **Supported** — primary target for host and runtime probes. |
+| **Linux** | **Partial** — best-effort; expect more unknowns than on macOS. |
+| **Windows** | **Experimental** — do not assume parity until documented. |
 
-Wire contract for optional upload: [docs/submission-contract.md](docs/submission-contract.md).
+Full detail: [docs/support-matrix.md](docs/support-matrix.md).
 
-### Optional submission
+---
 
-Set an endpoint and run **without** `--no-submit` on a TTY:
+## Documentation
 
-```bash
-export IMPACT_SUBMIT_URL="https://example.com/api/ingest"
-npm run impact -- scan -o ./reports
-```
+Curated index: **[docs/README.md](docs/README.md)**  
 
-You will be prompted; you must confirm the payload. If `IMPACT_SUBMIT_URL` is unset, the client refuses to send (no silent network).
+| Topic | Document |
+| ----- | -------- |
+| Install & run | [docs/install-macos.md](docs/install-macos.md) |
+| Privacy (plain language) | [docs/privacy-for-users.md](docs/privacy-for-users.md) |
+| Privacy (policy) | [docs/privacy-policy.md](docs/privacy-policy.md) |
+| Support by OS | [docs/support-matrix.md](docs/support-matrix.md) |
+| What ships now | [docs/current-state.md](docs/current-state.md) |
+| Product / programme | [docs/product.md](docs/product.md) |
+| Board & contributor ops | [docs/project-management.md](docs/project-management.md) |
+| Submission HTTP contract | [docs/submission-contract.md](docs/submission-contract.md) |
+| Architecture | [docs/architecture.md](docs/architecture.md) |
+| Release QA | [docs/release-checklist.md](docs/release-checklist.md) · [docs/smoke-test-macos.md](docs/smoke-test-macos.md) |
 
-## Monorepo packages
+**Doctrine & planning (SSOT):** [GitHub Issues](https://github.com/moldovancsaba/impact/issues) · [Programme board — not Done](https://github.com/users/moldovancsaba/projects/2/views/3) · [full board](https://github.com/users/moldovancsaba/projects/2/views/1)
 
-| Package | Role |
-| ------- | ---- |
-| `@impact/cli` | `impact` command |
-| `@impact/core` | Orchestration + merge + readiness hints |
-| `@impact/schemas` | `impact.v0.2` Zod schema (provenance + semantics) |
-| `@impact/scanner-host` | Host / OS signals |
-| `@impact/scanner-runtimes` | Ollama, MLX, … |
-| `@impact/scanner-tools` | Allowlisted tools on `PATH` |
-| `@impact/scanner-models` | Models from runtimes |
-| `@impact/privacy` | Salt + privacy metadata |
-| `@impact/reporting` | HTML + JSON writers |
-| `@impact/submission` | Opt-in HTTP client + receipt log |
+---
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+Bug reports, ideas, and code: [CONTRIBUTING.md](CONTRIBUTING.md). MIT License — see [LICENSE](LICENSE).
 
-## Documentation index
+---
 
-| Document | Purpose |
-| -------- | ------- |
-| [docs/product.md](docs/product.md) | Programme + v0.x MVP definition |
-| [docs/architect-handoff.md](docs/architect-handoff.md) | Architect onboarding & delivery summary |
-| [docs/current-state.md](docs/current-state.md) | What ships on `main` + board alignment |
-| [docs/privacy-policy.md](docs/privacy-policy.md) | Data handling & submission |
-| [docs/submission-contract.md](docs/submission-contract.md) | HTTP ingest contract (provisional client timeouts) |
-| [docs/architecture.md](docs/architecture.md) | Code layout & data flow |
-| [docs/project-management.md](docs/project-management.md) | Board = kanban; issues = SSOT |
-| [CHANGELOG.md](CHANGELOG.md) | Release notes |
-| [fixtures/baseline-profile.sample.json](fixtures/baseline-profile.sample.json) | Example validated `impact.v0.2` profile |
+## Programme note
 
-## Local delivery path
-
-Maintainers may keep a working copy under `/Users/Shared/projects/impact` (or any path); the GitHub repo remains the source of truth.
+IMPACT is **open source**. The **scanner** and **reports** are the current product slice; **benchmarks** in the programme sense are **roadmap**, not current claims. If anything here disagrees with the code, **the repo implementation wins** — file an issue.

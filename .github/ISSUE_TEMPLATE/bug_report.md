@@ -26,4 +26,4 @@ assignees: ''
 
 ## Notes
 
-After filing, maintainers may add this issue to the [Impact project board](https://github.com/users/moldovancsaba/projects/2/views/1) for prioritization.
+After filing, maintainers may add this issue to the [Impact project board](https://github.com/users/moldovancsaba/projects/2/views/3) for prioritization.

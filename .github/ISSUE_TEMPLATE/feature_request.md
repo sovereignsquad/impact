@@ -18,4 +18,4 @@ assignees: ''
 
 ## Project board
 
-Roadmap and backlog work is tracked on the [Impact project board](https://github.com/users/moldovancsaba/projects/2/views/1). This issue should be added there once scope is agreed.
+Roadmap and backlog work is tracked on the [Impact project board](https://github.com/users/moldovancsaba/projects/2/views/3). This issue should be added there once scope is agreed.

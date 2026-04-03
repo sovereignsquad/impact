@@ -5,11 +5,12 @@ import readline from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
 import { Command } from "commander";
 import { runScan } from "@impact/core";
-import { writeHtmlReport, writeJsonReport } from "@impact/reporting";
+import { buildDiagnostics, writeHtmlReport, writeJsonReport } from "@impact/reporting";
 import {
   appendLocalReceipt,
   submitProfile,
   writePayloadPreview,
+  writeSubmissionReceiptJson,
 } from "@impact/submission";
 
 const PREAMBLE = `
@@ -64,6 +65,12 @@ program
       console.log(`Wrote ${jsonPath}`);
       console.log(`Wrote ${htmlPath}`);
 
+      const diag = buildDiagnostics(profile);
+      if (diag.length > 0) {
+        console.log("\nDiagnostics:");
+        for (const line of diag) console.log(`  · ${line}`);
+      }
+
       if (!opts.submit) {
         console.log("\nSkipping submission (--no-submit).");
         return;
@@ -98,13 +105,45 @@ program
           }
         }
 
+        const endpoint = process.env.IMPACT_SUBMIT_URL?.trim() ?? "";
         const result = await submitProfile(profile);
+        const receiptPath = await writeSubmissionReceiptJson(outDir, {
+          schema_version: "impact.submission_receipt.v1",
+          created_at: new Date().toISOString(),
+          endpoint,
+          payload_sha256: result.payload_sha256,
+          preview_payload_sha256: result.payload_sha256,
+          outcome: result.ok
+            ? result.duplicate
+              ? "duplicate"
+              : "success"
+            : "failure",
+          submission_id: result.ok ? result.submission_id : undefined,
+          attempts: result.attempts,
+          error: result.ok ? undefined : result.error,
+          last_status: result.ok ? undefined : result.last_status,
+          duplicate: result.ok ? result.duplicate === true : undefined,
+          run_id: profile.run_id,
+        });
+        console.log(`\nSubmission receipt written to:\n  ${receiptPath}`);
+
         if (result.ok) {
-          console.log(`\nSubmitted. receipt id: ${result.submission_id}`);
-          await appendLocalReceipt(
-            homedir(),
-            `ok submission_id=${result.submission_id} run_id=${profile.run_id}`
-          );
+          if (result.duplicate) {
+            console.log(
+              `\nServer reported duplicate (HTTP 409). Prior ingest reference: ${result.submission_id}\n` +
+                "Local profile and preview files are unchanged. See docs/submission-contract.md — Duplicate handling."
+            );
+            await appendLocalReceipt(
+              homedir(),
+              `duplicate_409 submission_id=${result.submission_id} run_id=${profile.run_id}`
+            );
+          } else {
+            console.log(`\nSubmitted. receipt id: ${result.submission_id}`);
+            await appendLocalReceipt(
+              homedir(),
+              `ok submission_id=${result.submission_id} run_id=${profile.run_id}`
+            );
+          }
         } else {
           console.error(`\nSubmission failed: ${result.error}`);
           await appendLocalReceipt(homedir(), `fail run_id=${profile.run_id} ${result.error}`);

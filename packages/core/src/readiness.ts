@@ -8,9 +8,7 @@ export function coarseReadiness(profile: ImpactProfile): NonNullable<
 > | null {
   const { host, runtimes, models } = profile;
   const ollama = runtimes.find((r) => r.id === "ollama");
-  const hasLocalModels = models.some(
-    (m) => m.locality === "local" && m.discovery_status === "detected"
-  );
+  const hasLocalModels = models.some((m) => m.locality === "local" && m.presence === "detected");
   const mem = host.memory_gb.value ?? 0;
   const arch = host.architecture.value ?? "";
   const chip = host.chip.value ?? "";
@@ -25,7 +23,7 @@ export function coarseReadiness(profile: ImpactProfile): NonNullable<
     return {
       summary:
         "This machine appears suitable for lightweight local AI workflows (Ollama reachable with local models, Apple Silicon, sufficient RAM for small models). This is a coarse hint, not a performance guarantee.",
-      confidence: "inferred",
+      presence: "inferred",
     };
   }
 
@@ -33,7 +31,7 @@ export function coarseReadiness(profile: ImpactProfile): NonNullable<
     return {
       summary:
         "Ollama appears installed but the local API was not reachable during the scan. Start the service or check configuration before relying on local inference.",
-      confidence: "detected",
+      presence: "detected",
     };
   }
 
@@ -41,7 +39,7 @@ export function coarseReadiness(profile: ImpactProfile): NonNullable<
     return {
       summary:
         "A local runtime was detected but no models were listed. Pull models or check connectivity to the runtime API.",
-      confidence: "inferred",
+      presence: "inferred",
     };
   }
 
@@ -49,13 +47,13 @@ export function coarseReadiness(profile: ImpactProfile): NonNullable<
     return {
       summary:
         "Limited system memory may constrain local model size; cloud-hosted or smaller quantisations may be more reliable.",
-      confidence: "inferred",
+      presence: "inferred",
     };
   }
 
   return {
     summary:
       "Capabilities could not be fully assessed from this scan. Prefer conservative model choices or cloud APIs until your environment is verified.",
-    confidence: "unknown",
+    presence: "unknown",
   };
 }

@@ -69,3 +69,13 @@ Implement CI, document it, and paste **workflow run links** as delivery evidence
 ## Developer Notes
 
 - Board **Status** tracks readiness (e.g. Backlog → In Progress → Done)—**not** the issue title.
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).
+
+## Scope / Non-Goals
+
+Non-goals: npm publication, binary packaging (see #23 / #27), self-hosted runners — listed under Scope above.
+
+## Out of Scope
+
+- Publishing packages to the public npm registry (separate packaging track)
+- Self-hosted GitHub Actions runners

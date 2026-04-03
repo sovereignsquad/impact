@@ -7,7 +7,7 @@
 ```text
 apps/cli                 CLI entry (`impact` command)
 packages/core            Scan orchestration, merge, readiness hints
-packages/schemas         Zod schema + types (`impact.v0.2`, provenance)
+packages/schemas         Zod schema + types (`impact.v0.3`, provenance, confidence rules)
 packages/scanner-host    OS / hardware coarse signals
 packages/scanner-runtimes Ollama, MLX (pip), …
 packages/scanner-tools   Curated PATH allowlist
@@ -15,7 +15,7 @@ packages/scanner-models  Models via runtime APIs (e.g. Ollama tags)
 packages/privacy         Salt file, privacy block, denylist constants
 packages/reporting       `impact-profile.json`, `impact-report.html`
 packages/submission      Opt-in POST client, local receipt log
-docs/                    Product spec, privacy policy, this file
+docs/                    [README](README.md) index, product, privacy, this file
 fixtures/                Sample validated JSON profiles
 scripts/                 Automation placeholders
 ```
@@ -50,7 +50,7 @@ flowchart LR
 1. **Load/create salt** (`~/.impact/salt`) via `@impact/privacy`.  
 2. **Parallel scans:** host, runtimes, tools.  
 3. **Model enumeration** depends on runtime signals (e.g. Ollama reachability).  
-4. **Merge + validate** → `ImpactProfile` (`impact.v0.2`).  
+4. **Merge + validate** → `ImpactProfile` (`impact.v0.3`).  
 5. **Optional** coarse readiness string (conservative, not a benchmark).  
 6. **Write** JSON + HTML; **optional** guided submission.
 

@@ -39,7 +39,7 @@ By default, `impact scan` writes:
 - `impact-profile.json` — structured profile  
 - `impact-report.html` — human-readable report  
 
-If you choose to submit, a preview file such as `impact-submit-preview.json` may be written so you can inspect the **exact** payload.
+If you choose to submit, the CLI writes **`impact-submission-preview.json`** (exact outbound JSON) before any POST so you can inspect the **exact** payload. See also [privacy-for-users.md](privacy-for-users.md).
 
 ## Submission (opt-in)
 
@@ -56,7 +56,7 @@ If submission fails, **local results are preserved**. A short line may be append
 
 ## Changes
 
-This policy will evolve with the project. Material changes should be reflected in release notes and on the [project board](https://github.com/users/moldovancsaba/projects/2/views/1).
+This policy will evolve with the project. Material changes should be reflected in release notes and on the [project board](https://github.com/users/moldovancsaba/projects/2/views/3).
 
 ## Contact
 

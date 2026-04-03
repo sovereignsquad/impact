@@ -1,7 +1,7 @@
 import { createHash, randomBytes } from "node:crypto";
 import os from "node:os";
 import type { HostProfile } from "@impact/schemas";
-import { pn, ps, pbool, pi } from "@impact/schemas";
+import { fieldConfidence, pn, ps, pbool, pi } from "@impact/schemas";
 import { execText } from "./exec.js";
 
 function osDisplayName(platform: NodeJS.Platform): string {
@@ -85,9 +85,10 @@ export async function scanHost(salt: string): Promise<HostProfile> {
 
   const diskResult = await freeDiskGb();
   const diskProbe = "df -k /";
-  const diskField = diskResult.ok
-    ? pn(diskResult.gb, "command", diskProbe, diskResult.gb != null ? "medium" : "unknown")
-    : pn(null, "command", diskProbe, "unknown");
+  const diskConf = diskResult.ok
+    ? fieldConfidence("host_disk_df_success")
+    : fieldConfidence("host_disk_df_fail");
+  const diskField = pn(diskResult.gb, "command", diskProbe, diskConf);
 
   const hostPartial = {
     os_name: osName,
@@ -109,15 +110,17 @@ export async function scanHost(salt: string): Promise<HostProfile> {
   const metal = metalHint(platform, arch, chip);
   const machineClass = deriveMachineClass(chip, memoryGb, arch);
 
+  const chipConf = chip ? fieldConfidence("host_chip_from_cpus") : fieldConfidence("host_chip_absent");
+
   return {
-    machine_class: ps(machineClass, "derived", "impact:machine_class", "medium"),
-    fingerprint_hash: ps(fingerprint_hash, "derived", "impact:fingerprint_host_v0", "high"),
-    os_name: ps(osName, "derived", "node:os.platform+mapping", "high"),
-    os_version: ps(osVersion, "derived", "node:os.release", "high"),
-    architecture: ps(arch, "derived", "node:os.arch", "high"),
-    chip: ps(chip, "derived", "node:os.cpus[0].model", chip ? "medium" : "low"),
-    memory_gb: pn(memoryGb, "derived", "node:os.totalmem", memoryGb != null ? "high" : "unknown"),
-    core_count: pi(coreCount, "derived", "node:os.cpus.length", coreCount != null ? "high" : "unknown"),
+    machine_class: ps(machineClass, "derived", "impact:machine_class", fieldConfidence("host_machine_class")),
+    fingerprint_hash: ps(fingerprint_hash, "derived", "impact:fingerprint_host_v0", fieldConfidence("host_fingerprint")),
+    os_name: ps(osName, "derived", "node:os.platform+mapping", fieldConfidence("host_os_mapping")),
+    os_version: ps(osVersion, "derived", "node:os.release", fieldConfidence("host_os_release")),
+    architecture: ps(arch, "derived", "node:os.arch", fieldConfidence("host_arch")),
+    chip: ps(chip, "derived", "node:os.cpus[0].model", chipConf),
+    memory_gb: pn(memoryGb, "derived", "node:os.totalmem", fieldConfidence("host_memory")),
+    core_count: pi(coreCount, "derived", "node:os.cpus.length", fieldConfidence("host_core_count")),
     gpu_acceleration:
       platform === "darwin"
         ? {
@@ -125,11 +128,11 @@ export async function scanHost(salt: string): Promise<HostProfile> {
               metal,
               "derived",
               "impact:metal_hint_darwin",
-              metal === null ? "low" : "medium"
+              metal === null ? fieldConfidence("host_disk_df_fail") : fieldConfidence("host_metal_hint")
             ),
           }
         : {
-            metal_available: pbool(null, "unknown", null, "unknown"),
+            metal_available: pbool(null, "unknown", null, fieldConfidence("host_disk_df_fail")),
           },
     disk: { free_gb: diskField },
   };

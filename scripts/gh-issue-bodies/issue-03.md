@@ -67,3 +67,5 @@ Update docs in **small PRs** tied to this issue; comment with diff summary when 
 ## Developer Notes
 
 - **Status** on board only; title remains descriptive.
+
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).

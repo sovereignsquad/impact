@@ -54,3 +54,5 @@ UI tweaks via PRs; benchmark sections appear only when schema supports them.
 ## Developer Notes
 
 - Board **Status** for polish vs done.
+
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).

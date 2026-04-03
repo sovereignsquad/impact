@@ -54,3 +54,5 @@ Each new tool: issue → privacy note → PR updating allowlist + docs.
 ## Developer Notes
 
 - Title has **no** workflow prefix; use board **Status**.
+
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).

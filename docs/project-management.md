@@ -1,75 +1,170 @@
 # Project management for IMPACT
 
-This document defines how **roadmap**, **backlog**, and **todo** work is recorded for the IMPACT open source programme.
+This document defines how **roadmap**, **backlog**, **todo**, and **board navigation** work for the IMPACT programme.
 
 ## Single board
 
-**Canonical board:** [Impact — roadmap & backlog](https://github.com/users/moldovancsaba/projects/2/views/1)
+**Stakeholder default (Programme — not Done):** [Project #2 · Programme (Not Done)](https://github.com/users/moldovancsaba/projects/2/views/3)
 
-GitHub Project URL (same project): `https://github.com/users/moldovancsaba/projects/2`
+**Full board (all columns / legacy default):** [views/1](https://github.com/users/moldovancsaba/projects/2/views/1)
 
-**Status columns** on the board include: `IDEABANK (SOMEDAY)`, `Roadmap (LATER)`, `Backlog (SOONER)`, `Todo (NEXT)`, `In Progress (NOW)`, `Review (ALMOST)`, `Done`, `Declined (NEVER)`.
+GitHub Project URL: `https://github.com/users/moldovancsaba/projects/2`
 
-### Critical rule: state lives on the board, not in titles
+**Status field** (single select) includes: `IDEABANK (SOMEDAY)`, `Roadmap (LATER)`, `Backlog (SOONER)`, `Todo (NEXT)`, `In Progress (NOW)`, `Review (ALMOST)`, `Done`, `Declined (NEVER)`.
 
-- **Do not** encode workflow state in issue titles — no `Roadmap:`, `Backlog:`, `Todo:`, `Done`, or open/closed wording in the title.
-- **Do** set the **Status** field on the Project item. That is the **only** authoritative place for “where this card sits in the kanban.”
-- **Priority** (e.g. P0/P1) may appear as **labels** and/or in the title as programme priority (see [mvp-factory-control#495](https://github.com/moldovancsaba/mvp-factory-control/issues/495) for the style bar).
+---
 
-### Issue bodies (SSOT)
+## 1. North star / vision — SSOT (no duplicates)
 
-Issues are the **system of record** for intent and delivery. Use a **rich structure**: Objective, Unified Context, Problem, Goal, Scope, Execution Prompt, Acceptance Checks, Dependencies, Risks, Delivery Artifacts, Developer Notes — same class of rigour as internal programme tickets.
+The **only** authoritative sources for programme direction are:
 
-Reproducible bulk bodies for refresh live under `scripts/gh-issue-bodies/`; after edit, **GitHub** remains authoritative.
+| Source | Role |
+| ------ | ---- |
+| **[Issue #1](https://github.com/moldovancsaba/impact/issues/1)** | Doctrine / north-star operating intent |
+| **[Issue #16](https://github.com/moldovancsaba/impact/issues/16)** | Phase ladder 0–4 / roadmap spine |
+| **[docs/product.md](product.md)** | Narrative product and programme framing |
 
-**In-repo snapshot** of delivery vs board: [current-state.md](current-state.md) (update when phases change materially).
+**Ruling:** Do **not** create extra “vision” issues that restate doctrine. **Do** maintain **one** **board-visible navigation artifact** — preferably the GitHub Project **short description** plus **README** tab (see §2) — that **links** to the three SSOTs above. A single lightweight **Roadmap** issue with links only is the fallback if the project fields are insufficient. That artifact is **navigation only**, not a second strategy document.
 
-All planning-oriented work should be visible on the board:
+---
 
-- **Roadmap** — themes spanning phases (e.g. doctrine #1, phase index #16).
-- **Backlog** — prioritised upcoming work.
-- **Todo** — next-up execution cards.
-- **In Progress / Review / Done** — literal delivery state.
+## 2. Board navigation artifact
+
+**Preference order:**
+
+1. **GitHub Project** short **description** + **README** tab with bullets linking **#1**, **#16**, and `docs/product.md` on `main`.
+2. If that is insufficient, a **single lightweight issue** (e.g. **IMPACT P0: Programme index and north-star links**) kept in **Roadmap (LATER)** — links and orientation only, **no new scope**.
+
+---
+
+## 3. Column semantics (strict)
+
+### Roadmap (LATER)
+
+- **Theme-level** or **deferred** work: directionally accepted, **not** execution-ready, **intentionally** above the day-to-day implementation horizon.
+- **Horizon markers** (3–5 theme cards) live here alongside **#16** — not implementation tickets.
+- **Anti-pattern:** moving cards here just to “fill” the column.
+
+### Backlog (SOONER)
+
+- Work that is **accepted as real**, **not conceptually blocked**, **not** the immediate next execution set.
+- **Near-future committed candidates** — likely pulled after the current sprint or in the **next planning window**.
+- **Not** for vague someday ideas (those belong in **IDEABANK** or remain unscheduled).
+
+### Todo (NEXT)
+
+- Work **selected** for the **active near-term execution queue**.
+- **Ready enough** to implement; expected to move to **In Progress** soon **without major reframing**.
+- **Not** the broad backlog — this is the **next-up stack**.
+
+### In Progress / Review / Done / Declined
+
+Literal delivery state; **Review** means “almost” / pending verification or sign-off.
+
+---
+
+## 4. Saved views (stakeholder defaults)
+
+The **default** board view must not be the only lens: **Done** dominates visually and hides direction.
+
+Create and maintain these **saved views** on Project #2 (board layout). **Created via API** (2026-04): use login `moldovancsaba` in the path `POST /users/moldovancsaba/projectsV2/2/views` (numeric `user_id` can 404).
+
+| View | Direct link | Filter (approx.) | Purpose |
+| ---- | ----------- | ----------------- | -------- |
+| **A — Programme (Not Done)** | [views/3](https://github.com/users/moldovancsaba/projects/2/views/3) | `-status:Done -status:"Declined (NEVER)"` | Primary stakeholder entry: future + active work visible immediately |
+| **B — Upcoming** | [views/4](https://github.com/users/moldovancsaba/projects/2/views/4) | Roadmap, Backlog, Todo, In Progress, Review | Live planning horizon |
+| **C — Execution** | [views/5](https://github.com/users/moldovancsaba/projects/2/views/5) | Todo, In Progress, Review | Day-to-day delivery |
+| **D — Done / Audit** | [views/6](https://github.com/users/moldovancsaba/projects/2/views/6) | `status:Done` | Release and traceability |
+
+**Ruling:** **Programme (Not Done)** should be the **default** stakeholder-facing view. If the GitHub UI offers “set as default” for a view, use it for **Programme (Not Done)**; otherwise bookmark [views/3](https://github.com/users/moldovancsaba/projects/2/views/3) and use it in links from the repo.
+
+See [Managing views](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/managing-your-views) and [Filtering projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects).
+
+---
+
+## 5. Roadmap theme cards (horizon markers)
+
+**#16** remains the **master phase ladder**. The **Roadmap** column should also hold **3–5 theme-level** cards (P1), each linking to relevant issues/docs but **not** replacing executable work:
+
+1. **Benchmark phases / evaluation ladder** — discovery → atomic → capability → benchmark programme (board: **#29**, links **#16** + product doc).
+2. **Anonymous submission and ingest services** — contract, storage, aggregation, governance (**#30**, links **#13** + docs).
+3. **Platform parity and runtime coverage** — macOS-first → Linux partial → Windows experimental (**#31**, links **#10** + README).
+4. **Release / distribution and adoption** — packaging, install paths, onboarding (**#32**, links **#27** + install/release docs).
+
+These are **not** executable sprint tickets; they orient stakeholders.
+
+---
+
+## 6. Current board rules (CTO)
+
+- **Backlog:** **#4** (CoC), **#5** (Discussions / security reporting); **#13** when ingest is **not** the immediate sprint; other platform-parity planning **not** selected for next execution.
+- **Todo:** **#27** (packaging completion) and any item that is the **actual** next implementation move.
+- **#10 / #13 / #14:** **Do not split** merely to populate Backlog. Split only if acceptance criteria are incoherent or shipped vs future work is mixed unhelpfully. Otherwise **comment** (done vs pending) and move **Status** to reflect **truth**.
+
+---
+
+## 7. Anti-patterns
+
+- Moving cards for **visual cosmetics** without a **status truth** change.
+- Duplicating product doctrine across many issues that will **drift**.
+- Artificial **issue splitting** to fill columns.
+
+---
+
+## Critical rule: state lives on the board, not in titles
+
+- **Do not** encode workflow state in issue titles.
+- **Do** set the **Status** field on the Project item.
+- **Priority** (P0/P1) may appear as **labels** and in titles as programme priority (see [mvp-factory-control#495](https://github.com/moldovancsaba/mvp-factory-control/issues/495)).
+
+### Issue bodies (SSOT for work)
+
+Issues are the **system of record** for **implementable** intent. Use a rich structure (Objective, Unified Context, …). Bodies under `scripts/gh-issue-bodies/` refresh GitHub; **GitHub remains authoritative** after push.
+
+**In-repo snapshot:** [current-state.md](current-state.md).
+
+---
 
 ## Required habits for maintainers
 
 1. **Create a GitHub Issue** for every meaningful unit of work (feature, bug, doc set, infra task).
 2. **Add the issue to Project #2** (`gh project item-add` or the GitHub UI).
-3. **Set Status** (and other fields) on the board so the default view reflects reality.
-4. **Link PRs** to issues so the board and code history stay connected.
+3. **Set Status** so **Roadmap / Backlog / Todo** semantics match §3.
+4. **Link PRs** to issues.
+
+---
 
 ## GitHub CLI examples
-
-Authenticated `gh` with `project` scope can manage the board from the terminal.
-
-Add an existing issue to the project:
 
 ```bash
 gh project item-add 2 --owner moldovancsaba \
   --url https://github.com/moldovancsaba/impact/issues/<number>
 ```
 
-Create an issue and then add it (two steps):
-
-```bash
-gh issue create --repo moldovancsaba/impact --title "Short title" --body "Details..."
-# Then copy the issue URL from the output and:
-gh project item-add 2 --owner moldovancsaba --url "<issue URL>"
-```
-
-View the project:
-
 ```bash
 gh project view 2 --owner moldovancsaba
 ```
 
+Board status template (maintainer machine): `scripts/gh-issue-bodies/apply-status.sh`  
+Ensure issues on board: `scripts/gh-ensure-issues-on-project.sh`
+
+---
+
 ## Visibility
 
-The project is intended to be **public** so contributors and users can see the same roadmap and backlog as the core team. If you change visibility, document the reason in an issue.
+The project is intended to be **public**. If you change visibility, document the reason in an issue.
+
+### If Roadmap / Backlog look empty
+
+- Use **saved views** (§4), especially **Programme (Not Done)**.
+- Ensure **theme roadmap** cards (§5) and **#16** are in **Roadmap**.
+- **Backlog** should hold **near-future** candidates (§3), not empty by default.
+
+---
 
 ## Relation to this repository
 
-- **Code and deep technical docs** live in this repo under version control.
-- **What we plan to do and in what order** lives on the GitHub Project board plus issues.
+- **Code and deep technical docs** — this repo.
+- **Plan and order** — GitHub Issues + Project #2 **Status** + saved views.
 
-That split keeps the repo clean while keeping planning discoverable and participatory.
+That split keeps the repo clean while planning stays discoverable.

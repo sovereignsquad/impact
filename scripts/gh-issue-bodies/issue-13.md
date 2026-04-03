@@ -57,3 +57,5 @@ Add `docs/api/ingest.md` + link from README; update this issue with versioned co
 ## Developer Notes
 
 - **Status** tracks contract readiness vs implementation polish.
+
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).

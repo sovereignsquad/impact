@@ -57,3 +57,5 @@ Any new field → privacy review + schema + this issue comment.
 ## Developer Notes
 
 - **Status** on board reflects audit state, not title text.
+
+- Programme card quality bar: [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498).

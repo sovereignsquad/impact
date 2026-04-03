@@ -20,7 +20,7 @@ function baseProfile(overrides: Partial<ImpactProfile> = {}): ImpactProfile {
   };
 
   return {
-    schema_version: "impact.v0.2",
+    schema_version: "impact.v0.3",
     run_id: "550e8400-e29b-41d4-a716-446655440000",
     created_at: "2026-04-03T12:00:00.000Z",
     host,
@@ -31,7 +31,7 @@ function baseProfile(overrides: Partial<ImpactProfile> = {}): ImpactProfile {
         installed: true,
         reachable: true,
         version: ps("0.3.0", "command", "ollama --version", "high"),
-        semantic: "detected",
+        presence: "detected",
         capabilities: { model_inventory: "full" },
       },
     ],
@@ -41,7 +41,7 @@ function baseProfile(overrides: Partial<ImpactProfile> = {}): ImpactProfile {
         id: "llama3.1:8b",
         runtime_id: "ollama",
         locality: "local",
-        discovery_status: "detected",
+        presence: "detected",
         source: "api",
         probe: "ollama_tags",
         confidence: "high",
@@ -55,7 +55,7 @@ function baseProfile(overrides: Partial<ImpactProfile> = {}): ImpactProfile {
 describe("coarseReadiness", () => {
   it("suggests lightweight local workflows when signals align", () => {
     const r = coarseReadiness(baseProfile());
-    expect(r?.confidence).toBe("inferred");
+    expect(r?.presence).toBe("inferred");
     expect(r?.summary.toLowerCase()).toContain("lightweight");
   });
 
@@ -68,7 +68,7 @@ describe("coarseReadiness", () => {
           installed: true,
           reachable: false,
           version: ps("0.3.0", "command", "ollama --version", "high"),
-          semantic: "unreachable",
+          presence: "detected",
           capabilities: { model_inventory: "partial" },
         },
       ],
@@ -76,5 +76,6 @@ describe("coarseReadiness", () => {
     });
     const r = coarseReadiness(p);
     expect(r?.summary.toLowerCase()).toContain("not reachable");
+    expect(r?.presence).toBe("detected");
   });
 });
