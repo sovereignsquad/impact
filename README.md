@@ -1,6 +1,6 @@
 # IMPACT
 
-**MVP — delivered:** The **discovery scanner MVP** is complete on `main` (release **v0.3.0**; profile schema **`impact.v0.3`**). This is **not** “v1” and **not** a finished **benchmark programme** — it is the first shippable **local inventory + reports** slice. See [What users have today](docs/user-expectations-mvp.md).
+**MVP — delivered:** The **discovery scanner MVP** is complete on `main` ([**v0.3.0** release](https://github.com/moldovancsaba/impact/releases/tag/v0.3.0); profile schema **`impact.v0.3`**). This is **not** “v1” and **not** a finished **benchmark programme** — it is the first shippable **local inventory + reports** slice. See [What users have today](docs/user-expectations-mvp.md).
 
 **IMPACT is a privacy-first local scanner** that inventories the AI-relevant environment of a machine — system signals, runtimes, curated tools, and models discovered through supported local APIs — then writes a **structured profile** and **HTML report** on disk. **Optional** anonymous submission exists only after you configure an endpoint and **explicitly** consent; **nothing is uploaded by default.**
 
