@@ -1,10 +1,14 @@
 # I.M.P.A.C.T.
 
-**I.M.P.A.C.T. v0.1** is a **privacy-first local scanner** that inventories a machine’s AI-relevant environment (OS, coarse hardware, runtimes, curated tools, discovered models), then writes **HTML + JSON** reports and supports **optional, explicit-consent** anonymous submission.
+**IMPACT** = **(I)ndustrial (M)ulti-(P)latform (A)gent (C)onnector (T)est** — a programme for a **fully sovereign** evaluation stack (**system + tool + LLM**), evolving toward a **rigorous benchmark system** for serious, global use.
+
+**What ships in this repo today (v0.x):** a **privacy-first local scanner** that inventories a machine’s AI-relevant environment (OS, coarse hardware, runtimes, curated tools, discovered models), writes **HTML + JSON** reports, and supports **optional, explicit-consent** anonymous submission. That discovery layer **feeds** later benchmark phases described in [docs/product.md](docs/product.md).
 
 - **Repository:** [github.com/moldovancsaba/impact](https://github.com/moldovancsaba/impact)  
 - **License:** [MIT](LICENSE)  
+- **Doctrine / planning (SSOT):** [GitHub Issues](https://github.com/moldovancsaba/impact/issues) + [Project board](https://github.com/users/moldovancsaba/projects/2/views/1)  
 - **Product spec:** [docs/product.md](docs/product.md)  
+- **Architect handoff:** [docs/architect-handoff.md](docs/architect-handoff.md)  
 - **Privacy:** [docs/privacy-policy.md](docs/privacy-policy.md)  
 - **Architecture:** [docs/architecture.md](docs/architecture.md)
 
@@ -62,10 +66,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 | Document | Purpose |
 | -------- | ------- |
-| [docs/product.md](docs/product.md) | MVP definition, principles, backlog epics |
+| [docs/product.md](docs/product.md) | Programme + v0.x MVP definition |
+| [docs/architect-handoff.md](docs/architect-handoff.md) | Architect onboarding & delivery summary |
 | [docs/privacy-policy.md](docs/privacy-policy.md) | Data handling & submission |
 | [docs/architecture.md](docs/architecture.md) | Code layout & data flow |
-| [docs/project-management.md](docs/project-management.md) | GitHub Projects workflow |
+| [docs/project-management.md](docs/project-management.md) | Board = kanban; issues = SSOT |
 | [CHANGELOG.md](CHANGELOG.md) | Release notes |
 | [fixtures/baseline-profile.sample.json](fixtures/baseline-profile.sample.json) | Example validated `impact.v0.1` profile |
 

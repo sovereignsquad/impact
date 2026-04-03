@@ -1,6 +1,6 @@
 # I.M.P.A.C.T. — architecture
 
-**I.M.P.A.C.T.** v0.1 is a **TypeScript / Node.js** monorepo. A single **orchestrator** in `@impact/core` runs modular scanners, merges a typed profile, validates it against `@impact/schemas`, then `@impact/reporting` and `@impact/submission` handle exports and optional upload.
+**IMPACT** (**I**ndustrial **M**ulti-**P**latform **A**gent **C**onnector **T**est) is implemented here as a **TypeScript / Node.js** monorepo. The **v0.x** slice is a local discovery scanner; later phases add benchmarks per [docs/product.md](product.md). A single **orchestrator** in `@impact/core` runs modular scanners, merges a typed profile, validates it against `@impact/schemas`, then `@impact/reporting` and `@impact/submission` handle exports and optional upload.
 
 ## Repository layout
 

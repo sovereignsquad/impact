@@ -1,8 +1,18 @@
-# I.M.P.A.C.T. v0.1 — product definition
+# I.M.P.A.C.T. — product definition
 
-**I.M.P.A.C.T.** (this repository) is a **privacy-first local scanner** that inventories a machine’s AI-relevant environment: installed runtimes, curated tools, and discovered models. It produces a **shareable anonymous profile** (JSON + HTML) and supports **optional, explicit-consent** submission.
+## Programme name (expanded)
 
-This document is the canonical product spec for **v0.1 / MVP**. Planning tickets live on the [GitHub Project board](https://github.com/users/moldovancsaba/projects/2/views/1).
+**IMPACT** = **(I)ndustrial (M)ulti-(P)latform (A)gent (C)onnector (T)est**.
+
+The programme targets a **fully sovereign** evaluation stack for **system + tool + LLM** behaviour—ultimately a **rigorous benchmark system** suitable for industrial and global use. **Open planning and acceptance criteria** live in [GitHub Issues](https://github.com/moldovancsaba/impact/issues) and on the [Project board](https://github.com/users/moldovancsaba/projects/2/views/1) (SSOT).
+
+## v0.x discovery slice (shipping now)
+
+The **first concrete product** in the repo is a **privacy-first local scanner** that inventories a machine’s AI-relevant environment: installed runtimes, curated tools, and discovered models. It produces a **shareable anonymous profile** (JSON + HTML) and supports **optional, explicit-consent** submission. This **grounds** later benchmark phases in **observable truth** about what can run where.
+
+Architect-oriented summary: [architect-handoff.md](architect-handoff.md).
+
+This document is the canonical **product** spec for **v0.x / discovery MVP**. Issue **#1** is the living **doctrine anchor** on GitHub.
 
 ## MVP objective
 
@@ -75,6 +85,12 @@ impact scan -o ./reports
 
 (`impact export` / `impact submit` may be added later; `scan` is the primary flow for MVP.)
 
-## Internal product statement
+## Internal product statements
 
-> I.M.P.A.C.T. v0.1 is a privacy-first local scanner that inventories a machine’s AI-relevant environment, installed runtimes, tools, and discovered models, then generates a shareable anonymous profile and optional consent-based submission.
+**Programme:**
+
+> IMPACT is the Industrial Multi-Platform Agent Connector Test: a sovereign path to benchmarking **system + tool + LLM** stacks without sacrificing privacy, explainability, or operational honesty.
+
+**v0.x discovery:**
+
+> The v0.x scanner inventories the AI-relevant environment on a machine and exports an anonymised, consent-gated profile—before benchmark probes attach.
