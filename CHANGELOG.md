@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Post-MVP **release hardening** and programme tracks (see board + [issue #1](https://github.com/moldovancsaba/impact/issues/1)).
 
+### Changed
+
+- **Docs:** README + [install-macos.md](docs/install-macos.md) — optional `git checkout v0.3.0` for pinned installs; install page references MVP and follow-on issues **#34** / **#38**.
+
 ---
 
 ## [0.3.0] — 2026-04-03

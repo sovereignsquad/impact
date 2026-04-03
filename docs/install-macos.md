@@ -1,6 +1,6 @@
 # Install and run on macOS
 
-**Sprint B.1 canonical path (Path B):** *npm global install of the built CLI from a clean clone* — one primary method until a registry package or standalone binary ships.
+**MVP v0.3.0 — canonical path (Path B):** *npm global install of the built CLI from a clean clone* — one primary method until a registry package or standalone binary ships ([#34](https://github.com/moldovancsaba/impact/issues/34), [#38](https://github.com/moldovancsaba/impact/issues/38)).
 
 Do not mix multiple “official” flows; alternatives below are **secondary** only.
 
@@ -22,6 +22,21 @@ mkdir -p ./reports
 impact scan --no-submit -o ./reports
 open ./reports/impact-report.html
 ```
+
+### Optional: pin a released version
+
+To match a **tagged** MVP build instead of moving `main`:
+
+```bash
+git clone https://github.com/moldovancsaba/impact.git
+cd impact
+git checkout v0.3.0
+npm ci
+npm run build
+npm install -g ./apps/cli
+```
+
+Use the latest [**v0.3.0** release](https://github.com/moldovancsaba/impact/releases/tag/v0.3.0) notes when auditing installs.
 
 **Outputs (required for release acceptance):**
 

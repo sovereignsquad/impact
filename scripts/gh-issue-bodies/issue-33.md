@@ -15,8 +15,9 @@ Benchmark features, GUI, platform expansion, DMG.
 
 ## Acceptance
 
-- [ ] `main` green; docs consistent with **v0.3.0**
-- [ ] Follow-up issues linked for chosen distribution track
+- [x] `main` green; `npm run verify:release` passes locally / CI
+- [x] Docs consistent with **v0.3.0** (optional tag checkout; release link)
+- [x] Follow-up issues linked: **#34** (npm publish) default path; **#38** (binary spike); decision recorded in issue comments
 
 ## Based on
 
