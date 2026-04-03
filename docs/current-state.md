@@ -8,7 +8,7 @@
 
 ## MVP status — **delivered**
 
-The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3.0`** (`impact.v0.3` profile schema). Exit criteria met: canonical **Path B** install/run on fresh macOS, **`impact-profile.json`** + **`impact-report.html`**, optional submission suppressed with **`--no-submit`**, docs match the working path, packaging track closed ([#27](https://github.com/moldovancsaba/impact/issues/27)).
+The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3.0`** ([GitHub Release](https://github.com/moldovancsaba/impact/releases/tag/v0.3.0); `impact.v0.3` profile schema). Exit criteria met: canonical **Path B** install/run on fresh macOS, **`impact-profile.json`** + **`impact-report.html`**, optional submission suppressed with **`--no-submit`**, docs match the working path, packaging track closed ([#27](https://github.com/moldovancsaba/impact/issues/27)).
 
 **This is not** a shipped **benchmark system** or **“v1” product** in a consumer sense — it is the **first complete product milestone** for **local discovery + trust + export**.
 
