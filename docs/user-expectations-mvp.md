@@ -18,7 +18,7 @@ This page aligns **public messaging** with **shipped** behaviour. It complements
 
 ## How do users install today?
 
-**Canonical Path B (macOS):** clone → `npm ci` → `npm run build` → `npm install -g ./apps/cli` → `impact scan`. See [install-macos.md](install-macos.md) and [smoke-test-macos.md](smoke-test-macos.md). **Not** a drag-and-drop Mac app.
+**Path C (preferred):** `npm install -g @impact/cli` when the package is on the registry. **Path B (always):** clone → build → `npm install -g ./apps/cli`. See [install-macos.md](install-macos.md). **Not** a drag-and-drop Mac app.
 
 ## One-line answer for support
 

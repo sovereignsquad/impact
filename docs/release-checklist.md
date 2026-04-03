@@ -9,7 +9,8 @@ Use this for **tagged releases** and **release candidates**. Execute in order; d
 
 ## Version and changelog
 
-- [ ] Bump version in `apps/cli/package.json` (and root if versioned there later)
+- [ ] Bump **all** `@impact/*` workspace versions and **pinned** internal `dependencies` to the same semver (see `packages/*/package.json`, `apps/cli/package.json`)
+- [ ] `npm install` at repo root (refresh lockfile)
 - [ ] Update [CHANGELOG.md](../CHANGELOG.md) `[Unreleased]` → dated section with summary
 - [ ] Commit: `chore(release): vX.Y.Z` (or merge PR)
 
@@ -22,15 +23,21 @@ Use this for **tagged releases** and **release candidates**. Execute in order; d
 - [ ] `npm run validate-fixtures`
 - [ ] `npm run validate-invalid-fixtures`
 
-## Packaging / distribution (Sprint B.1 — Path B)
+## Packaging / distribution
 
-Canonical path is **npm global install from built workspace** — see [install-macos.md](install-macos.md).
+**Path C (registry):** preferred for users — see [install-macos.md](install-macos.md).
 
-- [ ] From clean clone: follow **Canonical install (Path B)** in [smoke-test-macos.md](smoke-test-macos.md)
-- [ ] Confirm `impact --version` matches released version
-- [ ] Confirm `impact scan --no-submit -o ./reports` produces `impact-profile.json` and `impact-report.html`
+- [ ] `npm run publish:npm:dry-run` — inspect tarballs (only `dist/` shipped)
+- [ ] `npm login` and `npm run publish:npm` per [npm-publish.md](npm-publish.md) (order preserved in script)
+- [ ] `npm view @impact/cli version` matches release
+- [ ] **Path C** smoke in [smoke-test-macos.md](smoke-test-macos.md): `npm install -g @impact/cli` → scan → artefacts
 
-*(Path A — standalone binary: add steps here when implemented.)*
+**Path B (source):** always valid fallback.
+
+- [ ] From clean clone: **Path B** in [smoke-test-macos.md](smoke-test-macos.md)
+- [ ] Confirm `impact --version` and scan outputs
+
+*(Path A — standalone binary: [#38](https://github.com/moldovancsaba/impact/issues/38).)*
 
 ## Git tag and GitHub
 
@@ -49,4 +56,4 @@ Canonical path is **npm global install from built workspace** — see [install-m
 
 ---
 
-**First packaged release:** complete this checklist once and link the evidence comment on [#27](https://github.com/moldovancsaba/impact/issues/27).
+**Evidence:** paste smoke output on the active distribution issue (e.g. [#34](https://github.com/moldovancsaba/impact/issues/34)) or the GitHub Release discussion.

@@ -29,3 +29,6 @@ venv/
 .idea/
 .vscode/*
 !.vscode/extensions.json
+
+# Vercel (local link metadata; not part of the repo)
+.vercel/

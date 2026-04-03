@@ -17,7 +17,9 @@
     "lint": "eslint .",
     "validate-fixtures": "node scripts/validate-fixtures.mjs",
     "validate-invalid-fixtures": "node scripts/validate-invalid-fixtures.mjs",
-    "verify:release": "npm run lint && npm run build && npm test && npm run validate-fixtures && npm run validate-invalid-fixtures"
+    "verify:release": "npm run lint && npm run build && npm test && npm run validate-fixtures && npm run validate-invalid-fixtures",
+    "publish:npm:dry-run": "DRY_RUN=1 bash scripts/publish-npm-packages.sh",
+    "publish:npm": "bash scripts/publish-npm-packages.sh"
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",

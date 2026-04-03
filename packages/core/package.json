@@ -1,9 +1,19 @@
 {
   "name": "@impact/core",
-  "version": "0.1.0",
+  "version": "0.3.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moldovancsaba/impact.git",
+    "directory": "packages/core"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -12,15 +22,16 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build",
     "test": "vitest run"
   },
   "dependencies": {
-    "@impact/schemas": "*",
-    "@impact/scanner-host": "*",
-    "@impact/scanner-models": "*",
-    "@impact/scanner-runtimes": "*",
-    "@impact/scanner-tools": "*",
-    "@impact/privacy": "*"
+    "@impact/schemas": "0.3.0",
+    "@impact/scanner-host": "0.3.0",
+    "@impact/scanner-models": "0.3.0",
+    "@impact/scanner-runtimes": "0.3.0",
+    "@impact/scanner-tools": "0.3.0",
+    "@impact/privacy": "0.3.0"
   },
   "devDependencies": {
     "typescript": "^5.8.2",

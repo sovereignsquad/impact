@@ -6,7 +6,7 @@ Start on the repo **[README.md](../README.md)** for value proposition, quick sta
 
 | Document | Why read it |
 | -------- | ----------- |
-| [install-macos.md](install-macos.md) | Canonical **install and run** (Path B) and outputs |
+| [install-macos.md](install-macos.md) | **Path C** (npm) + **Path B** (source) install and outputs |
 | [privacy-for-users.md](privacy-for-users.md) | **Plain-language** trust: what is collected, what is not, consent |
 | [privacy-policy.md](privacy-policy.md) | Formal **privacy policy** |
 | [support-matrix.md](support-matrix.md) | **macOS / Linux / Windows** behaviour and expectations |
@@ -28,6 +28,7 @@ Start on the repo **[README.md](../README.md)** for value proposition, quick sta
 | [architecture.md](architecture.md) | Code layout and data flow |
 | [architect-handoff.md](architect-handoff.md) | Architect onboarding summary |
 | [release-checklist.md](release-checklist.md) | Maintainer **release** steps |
+| [npm-publish.md](npm-publish.md) | Publish `@impact/*` to npm (order, login, dry-run) |
 | [smoke-test-macos.md](smoke-test-macos.md) | Fresh-mac **QA** |
 | [docs-alignment-after-packaging.md](docs-alignment-after-packaging.md) | **D6** — reconcile README/install after packaging |
 

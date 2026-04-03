@@ -2,21 +2,35 @@
   "name": "@impact/cli",
   "version": "0.3.0",
   "description": "I.M.P.A.C.T. CLI — local AI environment scanner",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moldovancsaba/impact.git",
+    "directory": "apps/cli"
+  },
   "type": "module",
   "bin": {
-    "impact": "./dist/cli.js"
+    "impact": "dist/cli.js"
+  },
+  "files": ["dist", "README.md"],
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build",
     "start": "node --enable-source-maps ./dist/cli.js"
   },
   "dependencies": {
-    "@impact/core": "*",
-    "@impact/reporting": "*",
-    "@impact/submission": "*",
+    "@impact/core": "0.3.0",
+    "@impact/reporting": "0.3.0",
+    "@impact/submission": "0.3.0",
     "commander": "^13.1.0"
   },
   "devDependencies": {
     "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

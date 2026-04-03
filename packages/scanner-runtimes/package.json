@@ -1,9 +1,19 @@
 {
   "name": "@impact/scanner-runtimes",
-  "version": "0.1.0",
+  "version": "0.3.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moldovancsaba/impact.git",
+    "directory": "packages/scanner-runtimes"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -11,10 +21,11 @@
     }
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@impact/schemas": "*"
+    "@impact/schemas": "0.3.0"
   },
   "devDependencies": {
     "typescript": "^5.8.2"

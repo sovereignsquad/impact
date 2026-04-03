@@ -81,15 +81,20 @@ Full validated example: [fixtures/baseline-profile.sample.json](fixtures/baselin
 
 ## Quick start (recommended)
 
-**Canonical path (Path B):** **install from source** — clone → `npm ci` → `npm run build` → `npm install -g ./apps/cli` → `impact scan`. **Verified** on macOS (fresh clone, Path B) — see [docs/smoke-test-macos.md](docs/smoke-test-macos.md) verification log (2026-04-03). There is still **no** published `npm install -g @impact/cli` from the **npm registry**; that remains future work. Packaging track [#27](https://github.com/moldovancsaba/impact/issues/27) is **closed** for Path B. **Primary delivery now:** [#34](https://github.com/moldovancsaba/impact/issues/34) — published npm install path. [#38](https://github.com/moldovancsaba/impact/issues/38) binary spike stays **exploratory** (Backlog); it does not replace **#34**.
+**Preferred (Path C):** install from npm once published:
+
+```bash
+npm install -g @impact/cli
+mkdir -p ./reports
+impact scan --no-submit -o ./reports
+open ./reports/impact-report.html
+```
+
+If that fails with **404**, use **Path B** (build from source) — same outputs. Full detail: [docs/install-macos.md](docs/install-macos.md). Maintainer publish: [docs/npm-publish.md](docs/npm-publish.md). **Smoke:** [docs/smoke-test-macos.md](docs/smoke-test-macos.md).
 
 **Platform:** **macOS** is the supported primary path. **Linux** is partial; **Windows** is experimental — [support matrix](docs/support-matrix.md).
 
-**The three steps (today):**
-
-1. **Install** the CLI from a clone (commands below).  
-2. **Run** `impact scan --no-submit -o ./reports`.  
-3. **Inspect** `reports/impact-profile.json` and `reports/impact-report.html`.
+**Path B (from clone):**
 
 ```bash
 git clone https://github.com/moldovancsaba/impact.git
@@ -100,12 +105,12 @@ npm run build
 npm install -g ./apps/cli
 mkdir -p ./reports
 impact scan --no-submit -o ./reports
-open ./reports/impact-report.html   # or open the file from your file manager
+open ./reports/impact-report.html
 ```
 
-Full detail and secondary (dev-only) path: [docs/install-macos.md](docs/install-macos.md). **Release QA:** [docs/smoke-test-macos.md](docs/smoke-test-macos.md).
+Packaging track [#27](https://github.com/moldovancsaba/impact/issues/27) is **closed**. **Primary delivery:** [#34](https://github.com/moldovancsaba/impact/issues/34) (npm path). [#38](https://github.com/moldovancsaba/impact/issues/38) binary spike is **exploratory** only.
 
-**Without global install** (repo developers): from repo root after `npm ci` && `npm run build`: `npm run impact -- scan --no-submit -o ./reports`.
+**Without global install** (repo developers): `npm run impact -- scan --no-submit -o ./reports` after `npm ci` && `npm run build`.
 
 ---
 

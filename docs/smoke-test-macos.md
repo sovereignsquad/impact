@@ -1,18 +1,47 @@
 # macOS smoke test — IMPACT (release candidate)
 
-**Purpose:** Prove the **canonical Path B** install works on a **clean** macOS machine (no prior clone, no guessed steps).
+**Purpose:** Prove installs work on a **clean** macOS machine — **Path C (registry)** when published, else **Path B (source)**.
 
-**Non-goals:** This test does **not** enable submission unless you explicitly add submission steps (default is `--no-submit`).
+**Non-goals:** Submission is off unless you add steps (default `--no-submit`).
 
 ## Environment
 
 - macOS 13+ (Apple Silicon or Intel)
 - [Node.js 20+](https://nodejs.org/) (`node -v`)
-- [Git](https://git-scm.com/)
+- [Git](https://git-scm.com/) — for **Path B** only
 
-## Canonical install (Path B — npm global from built repo)
+---
 
-Sprint B.1 locks **one** primary path: **clone → reproducible install → build → global CLI → scan**.
+## Path C — registry install (preferred when `@impact/cli` is on npm)
+
+**Prerequisite:** `npm view @impact/cli version` succeeds (package published per [npm-publish.md](npm-publish.md)).
+
+```bash
+npm install -g @impact/cli
+```
+
+Verify:
+
+```bash
+impact --version
+```
+
+Expected: **`0.3.0`** (or current published semver).
+
+### Run scan (no submission)
+
+```bash
+mkdir -p ~/impact-smoke-out
+impact scan --no-submit -o ~/impact-smoke-out
+```
+
+Same **acceptance checks** as Path B below. Teardown: `npm uninstall -g @impact/cli`.
+
+---
+
+## Path B — npm global from built repo
+
+**clone → install → build → global CLI → scan**
 
 ```bash
 git clone https://github.com/moldovancsaba/impact.git
@@ -28,7 +57,7 @@ Verify CLI:
 impact --version
 ```
 
-Expected: version string from `@impact/cli` (e.g. **`0.3.0`** on **v0.3.0** tag).
+Expected: **`0.3.0`** when aligned with the **v0.3.0** tag / release.
 
 ## Run scan (no submission)
 
@@ -52,14 +81,15 @@ Open the report:
 open ~/impact-smoke-out/impact-report.html
 ```
 
-## Handoff evidence (paste in #27 or Release)
+## Handoff evidence (paste in release / #34)
 
 Record:
 
 1. `node -v` and `npm -v`
-2. `impact --version`
-3. `ls -la ~/impact-smoke-out/impact-profile.json ~/impact-smoke-out/impact-report.html`
-4. Optional: one-line `jq .schema_version ~/impact-smoke-out/impact-profile.json` (expect `impact.v0.3`)
+2. Path **C** or **B**
+3. `impact --version`
+4. `ls -la ~/impact-smoke-out/impact-profile.json ~/impact-smoke-out/impact-report.html`
+5. Optional: `jq .schema_version ~/impact-smoke-out/impact-profile.json` (expect `impact.v0.3`)
 
 ## Teardown
 
@@ -71,13 +101,8 @@ rm -rf ~/impact-smoke-out
 
 ## Verification log (maintainers)
 
-Record each **fresh-clone** Path B run here after `main` changes that affect install or CLI output.
-
-| Date | Clone source | `node -v` | `impact --version` | `schema_version` (from profile) | Result |
-| ---- | ------------ | --------- | ------------------ | --------------------------------- | ------ |
+| Date | Source | `node -v` | `impact --version` | `schema_version` (from profile) | Result |
+| ---- | ------ | --------- | ------------------ | --------------------------------- | ------ |
 | 2026-04-03 | Fresh `git clone` of `https://github.com/moldovancsaba/impact` @ `55f01a6` (`main`) | v25.8.2 | `0.1.0` | `impact.v0.3` | PASS — pre-release CLI semver |
 | 2026-04-03 | Fresh `git clone` at **tag `v0.3.0`** | v25.8.2 | `0.3.0` | `impact.v0.3` | PASS — Path B; `impact --version` from `package.json`; `--no-submit` |
-
-## Future: published npm package
-
-When `@impact/cli` is published to the registry, add a **second** subsection here for `npm install -g @impact/cli` and mark it canonical in [install-macos.md](install-macos.md) — until then, **global install from `./apps/cli` after build** is the only supported Path B.
+| *(add row)* | **`npm install -g @impact/cli`** (Path C) | | `0.3.0` | `impact.v0.3` | *(after first npm publish)* |
