@@ -6,6 +6,21 @@
 
 ---
 
+## Operational status (source of truth)
+
+**What is true right now** — install reality, live vs prepared, gating, and sequencing:
+
+- **MVP:** complete
+- **Path B (repo-based install):** live and verified
+- **Path C (npm install):** implementation-complete on `main`, not yet publicly live
+- **Immediate gate:** [#34](https://github.com/moldovancsaba/impact/issues/34) requires maintainer publish + npm smoke evidence before closure
+- **Community stats:** not shipped
+- **Next sequence:** finish #34 → adoption/distribution → ingest/community visibility → benchmark foundation
+
+**Status:** IMPACT MVP is shipped. The repo-based macOS install path (Path B) is live and verified. The npm install path (Path C) is implementation-complete on main, but not yet publicly live until a maintainer publishes `@impact/cli`, verifies `npm view`, runs the published-package smoke test, and records evidence on issue #34. Community aggregate visibility is not shipped yet. The next sequence is: finish #34, improve adoption/distribution, then build ingest and community visibility, then benchmark foundations.
+
+---
+
 ## MVP status — **delivered**
 
 The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3.0`** ([GitHub Release](https://github.com/moldovancsaba/impact/releases/tag/v0.3.0); `impact.v0.3` profile schema). Exit criteria met: canonical **Path B** install/run on fresh macOS, **`impact-profile.json`** + **`impact-report.html`**, optional submission suppressed with **`--no-submit`**, docs match the working path, packaging track closed ([#27](https://github.com/moldovancsaba/impact/issues/27)).
@@ -28,7 +43,7 @@ The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3
 
 ### Post-MVP (not blockers)
 
-**Path B** remains canonical until a **published npm package** or **binary** is declared; track on the programme board. Next phase: **release hardening** (tag discipline, wording, small fixes) then **adoption** vs **benchmark foundation** tracks per [issue #1](https://github.com/moldovancsaba/impact/issues/1).
+**Path B** remains the **verified** default for users until **Path C** is publicly live on npm (repo implementation is on `main`; gate: [#34](https://github.com/moldovancsaba/impact/issues/34)). A **binary** distribution track may follow. Next phase: **release hardening** (tag discipline, wording, small fixes) then **adoption** vs **benchmark foundation** tracks per [issue #1](https://github.com/moldovancsaba/impact/issues/1).
 
 ---
 
