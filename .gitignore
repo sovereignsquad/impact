@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Common build and dependency dirs (adjust per stack as the project grows)
+node_modules/
+dist/
+build/
+out/
+target/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs and caches
+*.log
+.cache/
+.turbo/
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
