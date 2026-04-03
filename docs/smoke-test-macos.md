@@ -75,7 +75,7 @@ Record each **fresh-clone** Path B run here after `main` changes that affect ins
 
 | Date | Clone source | `node -v` | `impact --version` | `schema_version` (from profile) | Result |
 | ---- | ------------ | --------- | ------------------ | --------------------------------- | ------ |
-| *(add row after each smoke)* | | | | | |
+| 2026-04-03 | Fresh `git clone` of `main` @ `eeb4c33` (Path B replay; equivalent to GitHub after push) | v25.8.2 | `0.1.0` | `impact.v0.3` | PASS — JSON + HTML written; `--no-submit`; `IMPACT_SUBMIT_URL` unset |
 
 ## Future: published npm package
 

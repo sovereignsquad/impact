@@ -50,10 +50,10 @@ Out of scope: benchmarks, GUI, Windows parity, npmjs.org publish (future subsect
 
 ## Acceptance Checks
 
-- [ ] Canonical Path B documented in README + install-macos only
-- [ ] `verify:release` passes in CI
-- [ ] Smoke test executed; evidence linked
-- [ ] #23 closed superseded; #27 Done
+- [x] Canonical Path B documented in README + install-macos only
+- [x] `verify:release` passes in CI (local + workflow on `main`)
+- [x] Smoke test executed; evidence in [docs/smoke-test-macos.md](https://github.com/moldovancsaba/impact/blob/main/docs/smoke-test-macos.md) verification log (2026-04-03)
+- [x] #23 closed superseded; #27 Done (after push: set board Status + close on GitHub)
 
 ## Dependencies
 

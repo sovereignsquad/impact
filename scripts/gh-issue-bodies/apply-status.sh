@@ -89,8 +89,8 @@ set_status "$(item_for_issue 15)" "$DONE"
 for n in 17 18 19 20 21 22 24 25 26 28; do
   set_status "$(item_for_issue "$n")" "$DONE"
 done
-# B7 — #23 superseded by #27 (closed on GitHub); packaging track = #27 In Progress until release path is complete
+# B7 — #23 superseded by #27; Path B verified — #27 Done
 set_status "$(item_for_issue 23)" "$DONE"
-set_status "$(item_for_issue 27)" "$IN_PROGRESS"
+set_status "$(item_for_issue 27)" "$DONE"
 
 echo "Project Status field updated for issues 1–32 (board standardisation template)."

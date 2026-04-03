@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Packaging / #27:** Path B (clone → `npm ci` → build → `npm install -g ./apps/cli` → scan) **smoke-verified** on macOS; evidence in [docs/smoke-test-macos.md](docs/smoke-test-macos.md) verification log.
 - **Documentation sprint:** README rewritten as **public front door** (value, first-run, trust, today vs later, Mermaid workflow, sample report screenshot, redacted JSON excerpt); [docs/README.md](docs/README.md) curated index; [docs/privacy-for-users.md](docs/privacy-for-users.md) plain-language trust; [docs/docs-alignment-after-packaging.md](docs/docs-alignment-after-packaging.md) D6 checklist; assets under `docs/assets/`.
 - **Sprint B.1 (distribution):** [docs/release-checklist.md](docs/release-checklist.md), [docs/smoke-test-macos.md](docs/smoke-test-macos.md); [docs/install-macos.md](docs/install-macos.md) and README aligned to **one canonical Path B** (`npm ci` → build → `npm install -g ./apps/cli` → `impact scan`); root script `npm run verify:release`.
 - **Schema `impact.v0.3`:** runtime **`presence`** (epistemic) vs **`status`** (operational); model **`presence`** replaces `discovery_status`; readiness uses **`presence`**; [docs/schema-semantics-v0.3.md](docs/schema-semantics-v0.3.md).

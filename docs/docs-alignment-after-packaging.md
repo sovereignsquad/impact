@@ -2,6 +2,8 @@
 
 **Purpose:** when the canonical **packaging / install path** is finished (tracked on the [programme board](https://github.com/users/moldovancsaba/projects/2/views/3), e.g. [#27](https://github.com/moldovancsaba/impact/issues/27)), run a single **docs pass** so public copy matches what we ship.
 
+**2026-04-03 — Path B (source) done:** README, [install-macos.md](install-macos.md), and [smoke-test-macos.md](smoke-test-macos.md) match the verified commands; [smoke-test-macos.md](smoke-test-macos.md) verification log records the run. **Re-run this checklist** when adding a **registry package** or **standalone binary** as canonical.
+
 ## Checklist
 
 1. **[README.md](../README.md)** — **Quick start** matches the **one** canonical install path (npm global from clone, published `npm` package, or binary — whichever is declared done).

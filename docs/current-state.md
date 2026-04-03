@@ -18,7 +18,9 @@
 
 ### MVP readiness (snapshot)
 
-After the documentation sprint: **product communication** is strong enough for MVP. The **primary remaining gate** is **packaging and release proof**: canonical macOS Path B verified on a **clean** machine ([docs/smoke-test-macos.md](smoke-test-macos.md)), then README / [install-macos.md](install-macos.md) / this page aligned to that evidence — [#27](https://github.com/moldovancsaba/impact/issues/27). Roughly **~90%** of the v0.x MVP slice is in **code and docs**; the last **~10%** is **distribution verification** and **final install-doc alignment** (see [docs/docs-alignment-after-packaging.md](docs-alignment-after-packaging.md)).
+**Path B** (clone → build → global CLI → scan) is **smoke-verified** on macOS; evidence in [smoke-test-macos.md](smoke-test-macos.md) (verification log). **Registry publish** (`npm install -g @impact/cli`) is still **out of scope** until explicitly shipped. **#27** documents packaging/readiness closeout on the board.
+
+v0.x MVP slice: **~complete** for source install; remaining optional polish is **published package** / binary (programme roadmap), not a second undocumented install path.
 
 ---
 
