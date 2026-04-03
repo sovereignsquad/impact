@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # Set Project #2 Status from board columns (single source of truth for workflow).
 # Compatible with bash 3.2 (macOS).
-# Sprint B closeout + board standardisation (2026-04): issues 17–32 item IDs from `gh project item-list 2 --owner moldovancsaba`.
+# Sprint B closeout + board standardisation + post-MVP (2026-04): issues 17–43 item IDs from `gh project item-add` / item-list.
 set -euo pipefail
 PROJECT_ID="PVT_kwHOACGtF84BTnzN"
 STATUS_FIELD="PVTSSF_lAHOACGtF84BTnzNzhA1jZc"
 
+IDEABANK=97b637fb
 ROADMAP=6311d6f7
 BACKLOG=f44409d8
 TODO=f75ad846
@@ -56,6 +57,17 @@ item_for_issue() {
     30) echo PVTI_lAHOACGtF84BTnzNzgpFC7M ;;
     31) echo PVTI_lAHOACGtF84BTnzNzgpFC8k ;;
     32) echo PVTI_lAHOACGtF84BTnzNzgpFC8o ;;
+    33) echo PVTI_lAHOACGtF84BTnzNzgpFNWE ;;
+    34) echo PVTI_lAHOACGtF84BTnzNzgpFNWc ;;
+    35) echo PVTI_lAHOACGtF84BTnzNzgpFNZA ;;
+    36) echo PVTI_lAHOACGtF84BTnzNzgpFNZg ;;
+    37) echo PVTI_lAHOACGtF84BTnzNzgpFNbw ;;
+    38) echo PVTI_lAHOACGtF84BTnzNzgpFNdk ;;
+    39) echo PVTI_lAHOACGtF84BTnzNzgpFNe4 ;;
+    40) echo PVTI_lAHOACGtF84BTnzNzgpFNic ;;
+    41) echo PVTI_lAHOACGtF84BTnzNzgpFNj8 ;;
+    42) echo PVTI_lAHOACGtF84BTnzNzgpFNk8 ;;
+    43) echo PVTI_lAHOACGtF84BTnzNzgpFNm0 ;;
     *) echo ""; return 1 ;;
   esac
 }
@@ -93,4 +105,17 @@ done
 set_status "$(item_for_issue 23)" "$DONE"
 set_status "$(item_for_issue 27)" "$DONE"
 
-echo "Project Status field updated for issues 1–32 (board standardisation template)."
+# Post-MVP programme (from issue #1 directive)
+set_status "$(item_for_issue 33)" "$TODO"
+set_status "$(item_for_issue 34)" "$TODO"
+for n in 35 36 37 38; do
+  set_status "$(item_for_issue "$n")" "$BACKLOG"
+done
+for n in 39 40 41; do
+  set_status "$(item_for_issue "$n")" "$ROADMAP"
+done
+for n in 42 43; do
+  set_status "$(item_for_issue "$n")" "$IDEABANK"
+done
+
+echo "Project Status field updated for issues 1–43 (MVP delivered + post-MVP template)."

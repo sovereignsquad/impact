@@ -6,6 +6,16 @@
 
 ---
 
+## MVP status — **delivered**
+
+The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3.0`** (`impact.v0.3` profile schema). Exit criteria met: canonical **Path B** install/run on fresh macOS, **`impact-profile.json`** + **`impact-report.html`**, optional submission suppressed with **`--no-submit`**, docs match the working path, packaging track closed ([#27](https://github.com/moldovancsaba/impact/issues/27)).
+
+**This is not** a shipped **benchmark system** or **“v1” product** in a consumer sense — it is the **first complete product milestone** for **local discovery + trust + export**.
+
+**Honest user-facing scope:** [user-expectations-mvp.md](user-expectations-mvp.md) (local visibility only; no crowd dashboard; no DMG; install = repo-based CLI).
+
+---
+
 ## Programme framing
 
 | Item | Location |
@@ -16,11 +26,9 @@
 
 **IMPACT** = **(I)ndustrial (M)ulti-(P)latform (A)gent (C)onnector (T)est** — sovereign evaluation path for **system + tool + LLM**, toward benchmarks. **v0.x in this repo** is the **privacy-first discovery scanner** only (no capability benchmarks yet).
 
-### MVP readiness (snapshot)
+### Post-MVP (not blockers)
 
-**Path B** (clone → build → global CLI → scan) is **smoke-verified** on macOS; evidence in [smoke-test-macos.md](smoke-test-macos.md) (verification log). **Registry publish** (`npm install -g @impact/cli`) is still **out of scope** until explicitly shipped. **#27** documents packaging/readiness closeout on the board.
-
-v0.x MVP slice: **~complete** for source install; remaining optional polish is **published package** / binary (programme roadmap), not a second undocumented install path.
+**Path B** remains canonical until a **published npm package** or **binary** is declared; track on the programme board. Next phase: **release hardening** (tag discipline, wording, small fixes) then **adoption** vs **benchmark foundation** tracks per [issue #1](https://github.com/moldovancsaba/impact/issues/1).
 
 ---
 
@@ -50,6 +58,7 @@ v0.x MVP slice: **~complete** for source install; remaining optional polish is *
 | [docs/README.md](README.md) | **Curated doc index** |
 | [install-macos.md](install-macos.md) | **Canonical macOS install** — Path B for releases |
 | [privacy-for-users.md](privacy-for-users.md) | Plain-language **privacy & trust** |
+| [user-expectations-mvp.md](user-expectations-mvp.md) | **MVP scope** — local vs crowd, Path B vs DMG |
 | [privacy-policy.md](privacy-policy.md) | Formal **privacy policy** |
 | [release-checklist.md](release-checklist.md) | Version bump → CI gates → tag → smoke |
 | [smoke-test-macos.md](smoke-test-macos.md) | Fresh-machine proof for releases |

@@ -11,6 +11,7 @@ Start on the repo **[README.md](../README.md)** for value proposition, quick sta
 | [privacy-policy.md](privacy-policy.md) | Formal **privacy policy** |
 | [support-matrix.md](support-matrix.md) | **macOS / Linux / Windows** behaviour and expectations |
 | [current-state.md](current-state.md) | What is **implemented on `main`** today |
+| [user-expectations-mvp.md](user-expectations-mvp.md) | **Honest MVP scope** — local vs crowd stats, install vs DMG |
 
 ## Programme & product
 

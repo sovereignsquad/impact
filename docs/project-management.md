@@ -145,7 +145,7 @@ gh project item-add 2 --owner moldovancsaba \
 gh project view 2 --owner moldovancsaba
 ```
 
-Board status template (maintainer machine): `scripts/gh-issue-bodies/apply-status.sh`  
+Board status template (maintainer machine): `scripts/gh-issue-bodies/apply-status.sh` (includes **IDEABANK** option id for ideabank cards).  
 Ensure issues on board: `scripts/gh-ensure-issues-on-project.sh`
 
 ---

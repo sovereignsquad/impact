@@ -1,6 +1,6 @@
 {
   "name": "@impact/cli",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "I.M.P.A.C.T. CLI — local AI environment scanner",
   "type": "module",
   "bin": {

@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Planned
+
+- Post-MVP **release hardening** and programme tracks (see board + [issue #1](https://github.com/moldovancsaba/impact/issues/1)).
+
+---
+
+## [0.3.0] — 2026-04-03
+
+**Discovery scanner MVP — delivered.** First complete milestone: local privacy-first scan, **`impact.v0.3`** profile schema, JSON + HTML outputs, optional consent-based submission, CI + fixtures, public README/doc hierarchy, **Path B** macOS install smoke-verified. **Not** a benchmark system or consumer “v1” app — see [docs/user-expectations-mvp.md](docs/user-expectations-mvp.md). **`@impact/cli` 0.3.0** aligns CLI semver with the profile schema generation.
+
 ### Added
 
 - **Packaging / #27:** Path B (clone → `npm ci` → build → `npm install -g ./apps/cli` → scan) **smoke-verified** on macOS; evidence in [docs/smoke-test-macos.md](docs/smoke-test-macos.md) verification log.

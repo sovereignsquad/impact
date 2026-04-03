@@ -28,7 +28,7 @@ Verify CLI:
 impact --version
 ```
 
-Expected: version string from `@impact/cli` (e.g. `0.1.0`).
+Expected: version string from `@impact/cli` (e.g. **`0.3.0`** on **v0.3.0** tag).
 
 ## Run scan (no submission)
 
@@ -75,7 +75,7 @@ Record each **fresh-clone** Path B run here after `main` changes that affect ins
 
 | Date | Clone source | `node -v` | `impact --version` | `schema_version` (from profile) | Result |
 | ---- | ------------ | --------- | ------------------ | --------------------------------- | ------ |
-| 2026-04-03 | Fresh `git clone` of `https://github.com/moldovancsaba/impact` @ `55f01a6` (`main`) | v25.8.2 | `0.1.0` | `impact.v0.3` | PASS — JSON + HTML written; `--no-submit`; `IMPACT_SUBMIT_URL` unset |
+| 2026-04-03 | Fresh `git clone` of `https://github.com/moldovancsaba/impact` @ `55f01a6` (`main`) | v25.8.2 | `0.1.0` | `impact.v0.3` | PASS — pre-release CLI semver |
 
 ## Future: published npm package
 

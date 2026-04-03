@@ -10,6 +10,8 @@ The programme targets a **fully sovereign** evaluation stack for **system + tool
 
 ## v0.x discovery slice (shipping now)
 
+**MVP status — delivered (v0.3.0):** the **discovery scanner** milestone is complete on `main` — see [user-expectations-mvp.md](user-expectations-mvp.md) for what is and is not shipped.
+
 The **first concrete product** in the repo is a **privacy-first local scanner** that inventories a machine’s AI-relevant environment: installed runtimes, curated tools, and discovered models. It produces a **shareable anonymous profile** (JSON + HTML) and supports **optional, explicit-consent** submission. This **grounds** later benchmark phases in **observable truth** about what can run where.
 
 Architect-oriented summary: [architect-handoff.md](architect-handoff.md).
