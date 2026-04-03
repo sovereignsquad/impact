@@ -79,7 +79,7 @@ Full validated example: [fixtures/baseline-profile.sample.json](fixtures/baselin
 
 ## Quick start (recommended)
 
-**Canonical path (Path B):** **install from source** — clone → `npm ci` → `npm run build` → `npm install -g ./apps/cli` → `impact scan`. **Verified** on macOS (fresh clone, Path B) — see [docs/smoke-test-macos.md](docs/smoke-test-macos.md) verification log (2026-04-03). There is still **no** published `npm install -g @impact/cli` from the **npm registry**; that remains future work. Issue [#27](https://github.com/moldovancsaba/impact/issues/27) closes once this commit is on `main` and the board reflects Done.
+**Canonical path (Path B):** **install from source** — clone → `npm ci` → `npm run build` → `npm install -g ./apps/cli` → `impact scan`. **Verified** on macOS (fresh clone, Path B) — see [docs/smoke-test-macos.md](docs/smoke-test-macos.md) verification log (2026-04-03). There is still **no** published `npm install -g @impact/cli` from the **npm registry**; that remains future work. Packaging track [#27](https://github.com/moldovancsaba/impact/issues/27) is **closed** for Path B; the board should show **Done**.
 
 **Platform:** **macOS** is the supported primary path. **Linux** is partial; **Windows** is experimental — [support matrix](docs/support-matrix.md).
 
