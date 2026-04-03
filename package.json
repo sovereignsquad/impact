@@ -1,0 +1,25 @@
+{
+  "name": "impact-monorepo",
+  "private": true,
+  "description": "I.M.P.A.C.T. — privacy-first local AI environment scanner",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm run build -w @impact/schemas && npm run build -w @impact/scanner-host && npm run build -w @impact/scanner-runtimes && npm run build -w @impact/scanner-tools && npm run build -w @impact/scanner-models && npm run build -w @impact/privacy && npm run build -w @impact/reporting && npm run build -w @impact/submission && npm run build -w @impact/core && npm run build -w @impact/cli",
+    "clean": "rm -rf packages/*/dist apps/*/dist",
+    "test": "npm run test -w @impact/schemas && npm run test -w @impact/core",
+    "impact": "node apps/cli/dist/cli.js",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  }
+}

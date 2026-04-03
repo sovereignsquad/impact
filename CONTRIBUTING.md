@@ -20,6 +20,15 @@ Thank you for your interest in **Impact**. This project is open source under the
 
 See [docs/project-management.md](docs/project-management.md) for maintainers’ workflow details.
 
+## Build from source
+
+```bash
+npm install
+npm run build
+npm test
+npm run impact -- scan --no-submit -o ./reports
+```
+
 ## How to contribute
 
 1. **Open or pick an issue** — describe the problem or goal; maintainers may add it to the project board.

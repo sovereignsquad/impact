@@ -13,6 +13,7 @@ node_modules/
 dist/
 build/
 out/
+*.tsbuildinfo
 target/
 __pycache__/
 *.py[cod]

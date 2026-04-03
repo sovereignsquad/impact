@@ -1,0 +1,22 @@
+{
+  "name": "@impact/cli",
+  "version": "0.1.0",
+  "description": "I.M.P.A.C.T. CLI — local AI environment scanner",
+  "type": "module",
+  "bin": {
+    "impact": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --enable-source-maps ./dist/cli.js"
+  },
+  "dependencies": {
+    "@impact/core": "*",
+    "@impact/reporting": "*",
+    "@impact/submission": "*",
+    "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
