@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import path from "node:path";
 import readline from "node:readline/promises";
@@ -33,8 +34,15 @@ async function promptExact(rl: readline.Interface, question: string, token: stri
   return a === token;
 }
 
+const cliPackage = JSON.parse(
+  readFileSync(new URL("../package.json", import.meta.url), "utf8"),
+) as { version: string };
+
 const program = new Command();
-program.name("impact").description("I.M.P.A.C.T. — privacy-first local AI scanner").version("0.1.0");
+program
+  .name("impact")
+  .description("I.M.P.A.C.T. — privacy-first local AI scanner")
+  .version(cliPackage.version);
 
 program
   .command("scan")
