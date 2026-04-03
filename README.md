@@ -9,6 +9,7 @@
 - **Doctrine / planning (SSOT):** [GitHub Issues](https://github.com/moldovancsaba/impact/issues) + [Project board](https://github.com/users/moldovancsaba/projects/2/views/1)  
 - **Product spec:** [docs/product.md](docs/product.md)  
 - **Architect handoff:** [docs/architect-handoff.md](docs/architect-handoff.md)  
+- **Current state (snapshot):** [docs/current-state.md](docs/current-state.md)  
 - **Privacy:** [docs/privacy-policy.md](docs/privacy-policy.md)  
 - **Architecture:** [docs/architecture.md](docs/architecture.md)
 
@@ -78,6 +79,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 | -------- | ------- |
 | [docs/product.md](docs/product.md) | Programme + v0.x MVP definition |
 | [docs/architect-handoff.md](docs/architect-handoff.md) | Architect onboarding & delivery summary |
+| [docs/current-state.md](docs/current-state.md) | What ships on `main` + board alignment |
 | [docs/privacy-policy.md](docs/privacy-policy.md) | Data handling & submission |
 | [docs/submission-contract.md](docs/submission-contract.md) | HTTP ingest contract (provisional client timeouts) |
 | [docs/architecture.md](docs/architecture.md) | Code layout & data flow |

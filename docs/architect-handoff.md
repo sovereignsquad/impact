@@ -5,6 +5,8 @@
 **SSOT:** GitHub Issues in [moldovancsaba/impact](https://github.com/moldovancsaba/impact) + [Project board Status](https://github.com/users/moldovancsaba/projects/2/views/1)  
 **Style reference for issue quality:** [mvp-factory-control#495](https://github.com/moldovancsaba/mvp-factory-control/issues/495)
 
+**Living snapshot of the repo + board mapping:** [current-state.md](current-state.md).
+
 ---
 
 ## 1. What IMPACT is (north star)

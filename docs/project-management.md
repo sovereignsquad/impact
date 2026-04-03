@@ -22,6 +22,8 @@ Issues are the **system of record** for intent and delivery. Use a **rich struct
 
 Reproducible bulk bodies for refresh live under `scripts/gh-issue-bodies/`; after edit, **GitHub** remains authoritative.
 
+**In-repo snapshot** of delivery vs board: [current-state.md](current-state.md) (update when phases change materially).
+
 All planning-oriented work should be visible on the board:
 
 - **Roadmap** — themes spanning phases (e.g. doctrine #1, phase index #16).
