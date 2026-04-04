@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **CTO directive — background system delivery (2026-04-12):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — shell vs infra honesty (Paths B/C/D, dashboard gap, blockers), **six conceptual phases** mapped to **#58–#62**, simple architecture (one service/DB/API), **what not to do**, developer table, success criteria, management summary; Purpose/Established/Constraints/Definition of success/Developer directive aligned. [mlp-status-cto.md](docs/mlp-status-cto.md) · [mlp-execution.md](docs/mlp-execution.md) updated.
+
 - **CTO acceptance — tranche SSOT usability (2026-04-11):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) § *CTO acceptance* records **control-document** acceptance (index-at-top rationale, operating state, five **immediate next steps**); [mlp-status-cto.md](docs/mlp-status-cto.md) header + **Tranche SSOT** summary row.
 
 - **Tranche doc issue visibility:** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — **Project #2** board links + full **# / title** tables moved **above** CTO sections; anchor `#github-issue-index`; bottom § Related links back to top.

@@ -1,12 +1,12 @@
 # MLP — next delivery tranche (CTO directive)
 
-**Purpose:** SSOT for the **next** delivery work after the **frozen** public-web/doc tranche ([mlp-status-cto.md](mlp-status-cto.md)). **Product:** (1) **real community dashboard data** on the webapp, (2) **downloadable macOS distribution** — **not equal in readiness**; **dashboard** remains the **primary missing product-value layer**; **Path D** (DMG) is **real engineering progress** but **not** consumer-grade Mac delivery until **signing + notarization** ([#65](https://github.com/moldovancsaba/impact/issues/65)).
+**Purpose:** SSOT for the **next** delivery work after the **frozen** public-web/doc tranche ([mlp-status-cto.md](mlp-status-cto.md)). **Product:** (1) **real community dashboard data** on the webapp, (2) **downloadable macOS distribution** — **not equal in readiness**. **Reality:** the **product shell** (web pages, local scanner, docs) is **ahead** of **production infrastructure** (publish/trust, **data backend**). **Primary focus (CTO 2026-04-12):** **background system** — ingest → storage → aggregation → privacy → read API → web wiring (**#58–#62**). **Path D** (DMG) remains **not** consumer-grade until **signing + notarization** ([#65](https://github.com/moldovancsaba/impact/issues/65)).
 
 **Execution spine (this doc):** **[#34](https://github.com/moldovancsaba/impact/issues/34)** install gate → dashboard **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** → macOS packaging **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**. **Do not start** dashboard work until **#34** is **Done** (npm publish + smoke + evidence).
 
 **Project board (workflow SSOT):** [Project #2](https://github.com/users/moldovancsaba/projects/2) — [Programme (Not Done)](https://github.com/users/moldovancsaba/projects/2/views/3) · [Execution](https://github.com/users/moldovancsaba/projects/2/views/5) · [Full board](https://github.com/users/moldovancsaba/projects/2/views/1). **Status** on each card = column; issue **body** = scope/acceptance ([project-management.md](project-management.md), [ssot-map.md](ssot-map.md)).
 
-**Established:** CTO directive · **Accepted:** 2026-04-07 (initial) · **Confirmed SSOT:** 2026-04-08 · **Operating model:** 2026-04-09 · **Distribution reality + dual-track sequencing:** 2026-04-10 · **SSOT usability (board + index at top):** 2026-04-11.
+**Established:** CTO directive · **Accepted:** 2026-04-07 (initial) · **Confirmed SSOT:** 2026-04-08 · **Operating model:** 2026-04-09 · **Distribution reality + dual-track sequencing:** 2026-04-10 · **SSOT usability (board + index at top):** 2026-04-11 · **Background system first (#58–#62):** 2026-04-12.
 
 <a id="github-issue-index"></a>
 
@@ -151,6 +151,146 @@ Packaging progress is **accepted** (pipeline, app bundle, DMG, checksum, local s
 
 ---
 
+<a id="cto-directive-background"></a>
+
+## CTO directive — background system delivery (2026-04-12)
+
+### Why the product shell is ahead of production infrastructure
+
+**App / install paths — only one is fully finished**
+
+| Path | State |
+| ---- | ----- |
+| **B — repo install** | **Real** and **working** |
+| **C — npm** | **Prepared** in repo; **not live** until `@impact/cli` is **published** and **smoke-tested** (**[#34](https://github.com/moldovancsaba/impact/issues/34)**) |
+| **D — DMG** | **Pipeline** produces **`.app` + DMG**; **not consumer-grade** without **Developer ID** signing, **Apple notarization**, and **release/distribution validation** on the **published** artifact |
+
+**Honest summary:** we can **build** the Mac artifact; we have **not** finished the **trust / release** layer for a **proper** downloadable Mac app.
+
+**Dashboard — not delivered**
+
+**Pages exist**; the **data system** behind them does **not**. To show **real** historical community data we still need: **ingest backend** · **validation / deduplication** · **storage** · **aggregation** · **privacy thresholds** · **read API** · **frontend wiring** to real aggregates. Today: **shell** only — **not** the **live community data engine**.
+
+**Why it happened**
+
+Shipped: **MVP scanner**, **docs**, **web shell**, **report/recommendations**, **packaging progress**. **Still missing:** hard **operational** work — **publish/auth/release**, **signing/notarization**, **backend ingestion and analytics**.
+
+**Real blockers**
+
+| To ship the **app** properly | To ship the **dashboard** properly |
+| ---------------------------- | ------------------------------------ |
+| 1. Close **#34** (npm) | 1. Start **#58** |
+| 2. Finish signing / notarization | 2. Then **#59** |
+| 3. Publish DMG as **trusted** release | 3. Then **#60 → #61 → #62** |
+
+**Short answer:** stakeholders want **finished public surfaces**; the team delivered the **front layer** and **local engineering** layer — **not** the final **operational** layer. The gap is **not** “we don’t know what to build” — it is the **last mile**: **infrastructure, release, trust, and data plumbing**.
+
+**Deliver everything — yes.** Correct focus: **background system** so the shell becomes **true**.
+
+---
+
+### Product decision
+
+The **next missing product value** is the **backend** that powers **real community visibility**. **Front-end shell** is **no longer** the bottleneck. **Bottleneck:** **data path** behind it.
+
+**Treat the dashboard as a backend-driven product**, not a static-site problem.
+
+---
+
+### Delivery tranche — backend foundation for community visibility
+
+**Issue mapping (board):** conceptual phases below align with **D1–D5** / **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**; **#58** should include a **minimal persistent storage model** (Phases 1–2); **#59** covers normalization + aggregation (Phase 3); **#60–#62** follow as below.
+
+#### Phase 1 — Submission ingest (→ D1 / [#58](https://github.com/moldovancsaba/impact/issues/58))
+
+**Deliver:** HTTP endpoint for profile submission · **schema validation** on inbound payloads · **duplicate detection** · **write** accepted submissions to storage · **reject** invalid payloads cleanly · **minimal** operational logging.
+
+**Minimum result:** a submitted `impact-profile.json` can be **received** and **stored safely**.
+
+#### Phase 2 — Storage model (within D1 / [#58](https://github.com/moldovancsaba/impact/issues/58))
+
+**Persist at minimum:** submission id · received timestamp · schema version · normalized machine class · OS/platform · chip family · memory band · runtime/tool/model dimensions · raw or **canonical sanitized** profile payload · dedupe keys/hashes · processing status.
+
+**Minimum result:** backend can **persist records** suitable for **later aggregation**.
+
+#### Phase 3 — Normalization and aggregation (→ D2 / [#59](https://github.com/moldovancsaba/impact/issues/59))
+
+**Normalize** dimensions: machine classes · chip families · memory bands · platform families · runtime families · tool families · model families · locality split. **Then aggregate:** counts · averages · medians where useful · top-N · distribution buckets.
+
+**Minimum result:** **first dashboard summaries** computable from **real** submissions.
+
+#### Phase 4 — Privacy threshold enforcement (→ D3 / [#60](https://github.com/moldovancsaba/impact/issues/60)) — mandatory before public display
+
+**Rules:** minimum cohort size · low-sample suppression · safe grouping · no fingerprintable slices · no raw unique-machine exposure.
+
+**Minimum result:** system can decide what is **safe to publish**.
+
+#### Phase 5 — Read API for the webapp (→ D4 / [#61](https://github.com/moldovancsaba/impact/issues/61))
+
+**After** Phases 1–4. **Example** endpoint shapes: `/api/stats/overview` · `/api/stats/hardware` · `/api/stats/tools` · `/api/stats/models` (exact paths TBD; **stable contract** required).
+
+**Minimum result:** website can **stop using placeholders** and show **real aggregates** (after **#62** wiring).
+
+#### Phase 6 — Web wiring (→ D5 / [#62](https://github.com/moldovancsaba/impact/issues/62))
+
+Replace `data.html` (and related) placeholders with **real** aggregate data **only** when **D1–D4** are live.
+
+---
+
+### Execution order and WIP
+
+**Order (unchanged):** **#58 → #59 → #60 → #61 → #62**.
+
+**Low WIP:** **do not** implement all five at once. **#58** first · **#59** only when ingest is **materially** underway · **#60–#62** **staged** until unblocked.
+
+---
+
+### Product architecture (keep it simple)
+
+**Recommended first shape:** **one** backend service · **one** database · **one** aggregation job layer (or query layer) · **one** read API · **one** webapp consumer.
+
+**Suggested components:** Submission API → Database → Aggregation (scheduled rollup or query) → Stats API → Web frontend. **Enough** for first **live** community data — **no** complex platform **first**.
+
+---
+
+<a id="what-not-to-do-dashboard-tranche"></a>
+
+### What not to do (this tranche)
+
+**Do not** spend this tranche on: **more doc reshaping** · **landing-page polishing** · **DMG completion first** · **benchmark** logic · **leaderboards** · **account** systems · **compare-my-machine** features. **GUI/DMG** only **spare capacity**, separate from dashboard spine. **Bottleneck = data backend.**
+
+---
+
+### CTO directive — developer copy
+
+**Focus shifts to background system delivery.**
+
+**Primary objective:** build the foundation for: **anonymous submissions in** · **validate + dedupe** · **store safely** · **aggregate** to publishable metrics · **enforce privacy thresholds** · **read API** for the webapp.
+
+| Step | Issue | Deliver |
+| ---- | ----- | ------- |
+| 1 | [#58](https://github.com/moldovancsaba/impact/issues/58) | Ingest MVP: endpoint, validation, dup detection, **persistent** storage, logging, runbook |
+| 2 | [#59](https://github.com/moldovancsaba/impact/issues/59) | Normalized dimensions, aggregation schema, rollup/query layer, metric definitions |
+| 3 | [#60](https://github.com/moldovancsaba/impact/issues/60) | Low-sample suppression, publication thresholds, safe grouping |
+| 4 | [#61](https://github.com/moldovancsaba/impact/issues/61) | Stable stats endpoints (hardware, tools, models, overview) |
+| 5 | [#62](https://github.com/moldovancsaba/impact/issues/62) | Wire webapp to **real** aggregates **only** after D1–D4 live |
+
+**WIP:** only **#58** active first · **#59** when D1 materially underway · **#60–#62** staged · **no** scattering across all tickets.
+
+**Constraints:** **no** fake community data · **no** benchmark overlays · **no** accounts/profiles · **no** leaderboards · **no** GUI/DMG **in this tranche** except **separate spare capacity** · **privacy thresholds before** public aggregates.
+
+---
+
+### Definition of success (this tranche)
+
+**Success when:** real profiles **ingested safely** · system **computes** aggregate hardware/tool/model views · **publication safety** enforced · webapp **consumes real** aggregate endpoints **instead of placeholders**.
+
+### Immediate management summary
+
+**Yes** — focus **background system delivery**. The next milestone is **not** another prettier page: **real data** from submitted profiles into **safe public** aggregate views.
+
+---
+
 ## What was missing (management summary)
 
 ### 1. Downloadable macOS app
@@ -161,17 +301,9 @@ Packaging progress is **accepted** (pipeline, app bundle, DMG, checksum, local s
 
 ### 2. Web dashboard (real data)
 
-The **web shell** exists; the **dashboard** does not.
+The **web shell** exists; the **live data engine** does **not**. **Expanded deliverables, phases, architecture, and success criteria:** § [CTO directive — background system delivery](#cto-directive-background) (2026-04-12).
 
-Still required:
-
-- **Ingest** — receive, validate, dedupe, store ([#58](https://github.com/moldovancsaba/impact/issues/58)).
-- **Aggregation** — dimensions and rollups ([#59](https://github.com/moldovancsaba/impact/issues/59)).
-- **Privacy thresholds** — low-n suppression, safe grouping, publication rules ([#60](https://github.com/moldovancsaba/impact/issues/60)).
-- **Read API** — hardware / tools / models endpoints ([#61](https://github.com/moldovancsaba/impact/issues/61)).
-- **Web wiring** — replace `data.html` placeholders with **real** aggregates only when D1–D4 are live ([#62](https://github.com/moldovancsaba/impact/issues/62)).
-
-Relates to legacy programme **[#48](https://github.com/moldovancsaba/impact/issues/48)** (M5 umbrella) and **[#51](https://github.com/moldovancsaba/impact/issues/51)–[#53](https://github.com/moldovancsaba/impact/issues/53)** (aggregate MVPs on the board — superseded in detail by **#58–#62** as execution spine).
+**Issue spine:** **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**. Legacy context: **[#48](https://github.com/moldovancsaba/impact/issues/48)**, **[#51](https://github.com/moldovancsaba/impact/issues/51)–[#53](https://github.com/moldovancsaba/impact/issues/53)** — superseded in execution detail by **#58–#62**.
 
 ---
 
@@ -182,6 +314,8 @@ Relates to legacy programme **[#48](https://github.com/moldovancsaba/impact/issu
 1. **Close [#34](https://github.com/moldovancsaba/impact/issues/34)** — publish `@impact/cli`, `npm view @impact/cli`, published-package smoke, evidence, board **Done**.
 
 ### Phase 2 — Dashboard foundation (start immediately after #34)
+
+**SSOT for per-phase deliverables:** § [CTO directive — background system delivery](#cto-directive-background) (ingest → storage → aggregation → privacy → read API → web wiring).
 
 | ID | Issue | Deliverables |
 | -- | ----- | ------------ |
@@ -227,13 +361,14 @@ Relates to legacy programme **[#48](https://github.com/moldovancsaba/impact/issu
 - **No** claiming **consumer-grade** Mac delivery for Path D until **M3** (Developer ID + notarization) — engineering DMG pipeline may exist earlier (**do not** overclaim trust).  
 - **No** GUI scope creep.  
 - **No** account / public profile layer.  
-- **Privacy thresholds** must exist **before** public aggregates go live; **privacy-safe** language everywhere.
+- **Privacy thresholds** must exist **before** public aggregates go live; **privacy-safe** language everywhere.  
+- **This tranche — do not** prioritize: **doc reshaping** · **landing polish** · **DMG first** · **leaderboards** · **compare-my-machine** · **accounts** — see [What not to do (this tranche)](#what-not-to-do-dashboard-tranche).
 
 ---
 
 ## Definition of success
 
-**Dashboard:** site shows **real** aggregate historical data for hardware tested, tools/runtimes tested, LLM/model families tested — with trust copy and suppression rules.
+**Dashboard / backend tranche:** real profiles **ingested safely**; **aggregates** for hardware / tools / models **computable**; **publication safety** enforced; webapp **consumes real** stats API **not placeholders** — see § *Definition of success (this tranche)* under [CTO directive — background system delivery](#cto-directive-background).
 
 **Mac distribution:** **Path C** (npm) and **Path D** (DMG + `Impact.app`) both support **no-clone** install; **Path D** is **trust-complete** only after **M3** (signing + notarization + release validation).
 
@@ -256,18 +391,18 @@ Next handoff must include:
 
 ## Developer directive (CTO — verbatim intent)
 
-The **next-delivery tranche setup is accepted**. **This document** is the **SSOT** for the next public delivery phase.
+**This document** is the **SSOT** for the next public delivery phase. **Primary focus (2026-04-12):** § [CTO directive — background system delivery](#cto-directive-background) — **backend / data path** (**#58–#62**); dashboard = **backend-driven product**.
 
-**Immediate rule:** do **not** begin broad execution of the new tranche until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **operationally closed** (publish, verify, smoke, evidence).
+**Immediate rule:** do **not** begin broad **dashboard** execution until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **operationally closed** (publish, verify, smoke, evidence).
 
-**After #34 closes** — **#58** ingest MVP → **#59** → **#60** → **#61** → **#62** in **dependency order**, **low WIP** on the dashboard track. **macOS trust completion** (**#65** / **#66** quality bar) may proceed **in parallel if capacity** — see § *Operating model (updated)*; **do not** let packaging **distract** from dashboard.
+**After #34 closes** — **#58** first (ingest + storage write + logging + runbook) → **#59** only when D1 is **materially** underway → **#60 → #61 → #62** in order; **low WIP** — **never** all five **In Progress** at once. **macOS trust** (**#65** / **#66**) only **spare capacity**; **do not** let DMG **distract** from the data backend.
 
-**Board:** preserve **sequence** on each track; **low WIP** on **#58–#62** (see § Board movement & WIP discipline).
+**Board:** § *Board movement & WIP discipline* above.
 
 ---
 
 ## Related
 
-**Issue index (titles):** [§ Project board — linked issues](#github-issue-index) at the **top** of this file.
+**Issue index (titles):** [§ Project board — linked issues](#github-issue-index) at the **top** of this file. **Backend tranche directive:** [§ CTO directive — background system delivery](#cto-directive-background).
 
 - [mlp-status-cto.md](mlp-status-cto.md) · [mlp-execution.md](mlp-execution.md) · [mlp.md](mlp.md) · [web.md](web.md) · [submission-contract.md](submission-contract.md) · [#38](https://github.com/moldovancsaba/impact/issues/38) (historical binary spike — defer to **#63**)

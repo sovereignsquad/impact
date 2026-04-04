@@ -2,7 +2,7 @@
 
 **Purpose:** single **answerable status memo** for leadership and contributors: how far the MLP has progressed, what is in code, what blocks public adoption, and **ordered next work**. Supplements [mlp.md](mlp.md) (what the MLP **is**), [mlp-execution.md](mlp-execution.md) (how execution is **staged**), and [current-state.md](current-state.md) (broader **operational truth**). **Board workflow:** [Project #2](https://github.com/users/moldovancsaba/projects/2).
 
-**Established:** 2026-04-03 · **Updated:** 2026-04-11 — [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) **accepted** as **usable control doc**: board + issue index **at top**; **B/C/D** + **Track A/B** unchanged; **green** tranche docs · **amber** **#34** + Path D trust · **red** dashboard **#58–#62**; next steps **#34 → #58 → dependency order → Mac trust parallel if capacity → DMG non-final until M3**.
+**Established:** 2026-04-03 · **Updated:** 2026-04-12 — **Background system first** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § *CTO directive — background system delivery*): product **shell ahead** of **infra**; **#58–#62** = ingest → storage → aggregation → privacy → read API → web wiring; **low WIP**; **no** doc/DMG-first distraction. Prior: **2026-04-11** control-doc usability; **B/C/D** unchanged.
 
 **Maintain this doc when:** the public install gate (**#34**) closes, or **M1–M3** / **H\*** work materially changes state.
 
@@ -36,7 +36,7 @@
 | **Path D** (DMG) | **Amber** — **local pipeline + artifact + ad-hoc sign + checksum + local smoke**; **not** consumer-grade until **M3** (Developer ID, notarization, **released** artifact validation) |
 | **Public MLP adoption path** (npm as easiest install) | **Amber** until **#34** closed |
 
-**Overall (CTO):** **MVP** and **MLP web shell** **green** · **local DMG pipeline** **green** · **public npm** and **Path D trust** **amber** · **dashboard (#58–#62)** **not started** — **primary missing product-value**. **Immediate priority:** close **#34** → attach DMG to Release (honest trust level) → start **#58** → **signing/notarization** in **parallel if capacity** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md)).
+**Overall (CTO):** **MVP** + **web shell** **green** · **bottleneck** = **backend data path** (**#58–#62**), not front-end · **#34** + **Path D trust** **amber** · close **#34** then **#58** first, **#59** only when ingest is underway. **SSOT:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § [CTO directive — background system delivery](mlp-next-delivery-tranche.md#cto-directive-background).
 
 ### Distribution snapshot (2026-04-10)
 
@@ -48,7 +48,11 @@
 
 **macOS programme (M1–M4):** **M1** done enough · **M2** substantially done · **M3** not done · **M4** DMG exists — **public-quality** only after **M3**.
 
-**Dashboard:** ingest, validation/dedupe, aggregation, privacy thresholds, API, web wiring — **unchanged gap** (**#58–#62**).
+**Dashboard:** ingest, validation/dedupe, storage, aggregation, privacy thresholds, read API, web wiring — **unchanged gap** (**#58–#62**); **expanded** in tranche doc § *CTO directive — background system delivery*.
+
+### Delivery focus (2026-04-12)
+
+**Shell vs engine:** pages explain IMPACT; **cannot** yet truthfully show aggregate hardware/tools/models/memory/platform mix — **pipeline end-to-end missing**. **Next tranche** = **backend foundation for community visibility** (one service, one DB, rollup layer, stats API, web consumer) — **not** more landing polish.
 
 ---
 
@@ -82,9 +86,9 @@
 
 ## Next delivery tranche — dashboard + macOS (CTO)
 
-**SSOT:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) — includes **2026-04-10** assessment: **Path B / C / D** status, **M1–M4** nuance, **dual-track** after **#34**.
+**SSOT:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) — **2026-04-12** § [CTO directive — background system delivery](mlp-next-delivery-tranche.md#cto-directive-background) (**backend first**); plus **2026-04-10** paths / **M1–M4** / dual-track.
 
-**Order:** **#34** first → **#58** immediately after → **#59–#62** in **dependency order** (**low WIP**). **macOS trust completion** (**#65**, **#66** public-quality bar) may run **in parallel** with dashboard **if capacity** — **do not** treat Path D as **finished** until **M3**; **do not** let packaging **distract** from dashboard.
+**Order:** **#34** first → **#58** immediately after → **#59–#62** in **dependency order** (**low WIP**). **macOS trust** (**#65** / **#66**) **spare capacity** only — **do not** treat Path D as **finished** until **M3**; **do not** let packaging **distract** from **data backend**.
 
 **Board:** [`apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh) template — **#58–#62** **Todo** until **#34** **Done**; then move **only #58** **In Progress** first. See § *Board movement & WIP discipline* in the tranche doc.
 
