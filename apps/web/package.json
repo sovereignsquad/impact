@@ -1,0 +1,20 @@
+{
+  "name": "@impact/web",
+  "private": true,
+  "version": "0.3.0",
+  "description": "IMPACT public marketing shell — landing, install help, profile explorer, future stats",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@impact/schemas": "0.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2",
+    "vite": "^6.3.5"
+  }
+}

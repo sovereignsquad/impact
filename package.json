@@ -10,7 +10,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "npm run build -w @impact/schemas && npm run build -w @impact/scanner-host && npm run build -w @impact/scanner-runtimes && npm run build -w @impact/scanner-tools && npm run build -w @impact/scanner-models && npm run build -w @impact/privacy && npm run build -w @impact/reporting && npm run build -w @impact/submission && npm run build -w @impact/core && npm run build -w @impact/cli",
+    "build": "npm run build -w @impact/schemas && npm run build -w @impact/scanner-host && npm run build -w @impact/scanner-runtimes && npm run build -w @impact/scanner-tools && npm run build -w @impact/scanner-models && npm run build -w @impact/privacy && npm run build -w @impact/reporting && npm run build -w @impact/submission && npm run build -w @impact/core && npm run build -w @impact/cli && npm run build -w @impact/web",
     "clean": "rm -rf packages/*/dist apps/*/dist",
     "test": "npm run test -w @impact/schemas && npm run test -w @impact/core && npm run test -w @impact/reporting && npm run test -w @impact/submission",
     "impact": "node apps/cli/dist/cli.js",
@@ -18,6 +18,7 @@
     "validate-fixtures": "node scripts/validate-fixtures.mjs",
     "validate-invalid-fixtures": "node scripts/validate-invalid-fixtures.mjs",
     "verify:release": "npm run lint && npm run build && npm test && npm run validate-fixtures && npm run validate-invalid-fixtures",
+    "dev:web": "npm run dev -w @impact/web",
     "publish:npm:dry-run": "DRY_RUN=1 bash scripts/publish-npm-packages.sh",
     "publish:npm": "bash scripts/publish-npm-packages.sh"
   },

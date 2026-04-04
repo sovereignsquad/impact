@@ -17,6 +17,8 @@
 - **Community stats:** not shipped
 - **Next sequence:** finish **#34** → **MLP** spine ([mlp.md](mlp.md): install ease → report delight → recommendation intelligence → shareability → community stats)
 
+**Programme health (CTO snapshot):** **Green** — MVP shipped; **MLP** doctrine + board + issues **[#44](https://github.com/moldovancsaba/impact/issues/44)–[#49](https://github.com/moldovancsaba/impact/issues/49)** ready. **Amber** — public npm (**[#34](https://github.com/moldovancsaba/impact/issues/34)**) not operationally closed. **Do not** start full MLP **implementation** until **#34** closes; then **M1 → M2 → M3**.
+
 **Status:** IMPACT MVP is shipped. The repo-based macOS install path (Path B) is live and verified. The npm install path (Path C) is implementation-complete on main, but not yet publicly live until a maintainer publishes `@impact/cli`, verifies `npm view`, runs the published-package smoke test, and records evidence on issue #34. Community aggregate visibility is not shipped yet. After **#34**, programme focus shifts to **MLP** (Minimum Loveable Product) — see [mlp.md](mlp.md).
 
 ---
@@ -69,6 +71,7 @@ The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3
 | ---- | ------ |
 | Runtime | **Node.js ≥ 20**, TypeScript, **npm workspaces** |
 | CLI | `apps/cli` → `impact scan` (see README) |
+| Public web shell | `apps/web` — Vite landing, install help, in-browser `impact-profile.json` explorer ([web.md](web.md)) |
 | Schema | **`impact.v0.3`** — provenance on host fields; runtime **`status`** (operational) + **`presence`** (epistemic) + **capabilities.model_inventory**; tool **presence** + provenanced version; model **`presence`** + probe metadata ([`packages/schemas`](https://github.com/moldovancsaba/impact/tree/main/packages/schemas)); see [schema-semantics-v0.3.md](schema-semantics-v0.3.md) |
 | Host | `packages/scanner-host` — OS/memory/CPU string, `df` disk, Metal **hint**, salted fingerprint |
 | Runtimes | `packages/scanner-runtimes` — Ollama binary + API reachability; **MLX pip only**, explicit **partial** + **no model inventory** |
@@ -90,6 +93,7 @@ The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3
 | *(this file, § Versioning)* | **SSOT** — tag vs npm vs `schema_version` vs `impact --version` |
 | [install-macos.md](install-macos.md) | **macOS install** — Path C + Path B |
 | [mlp.md](mlp.md) | **Post-MVP programme** — M1–M6, loveability vs benchmarks |
+| [web.md](web.md) | **Public marketing shell** (`apps/web`) — landing, profile explorer, future stats |
 | [privacy-for-users.md](privacy-for-users.md) | Plain-language **privacy & trust** |
 | [user-expectations-mvp.md](user-expectations-mvp.md) | **MVP scope** — local vs crowd, Path B vs DMG |
 | [privacy-policy.md](privacy-policy.md) | Formal **privacy policy** |

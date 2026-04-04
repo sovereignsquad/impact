@@ -8,6 +8,7 @@ Start on the repo **[README.md](../README.md)** for value proposition, quick sta
 
 | Document | Why read it |
 | -------- | ----------- |
+| [web.md](web.md) | **Public web shell** (`apps/web`) — landing, install help, profile JSON explorer |
 | [install-macos.md](install-macos.md) | **Path C** (npm) + **Path B** (source) install and outputs |
 | [privacy-for-users.md](privacy-for-users.md) | **Plain-language** trust: what is collected, what is not, consent |
 | [privacy-policy.md](privacy-policy.md) | Formal **privacy policy** |
