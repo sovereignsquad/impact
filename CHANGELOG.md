@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **`apply-status.sh`:** **[#58](https://github.com/moldovancsaba/impact/issues/58)** → **In Progress** (activation sprint); **#59–#62** remain **Todo**.
+
 - **`apply-updates.sh`:** includes **[#34](https://github.com/moldovancsaba/impact/issues/34)** (`issue-34.md`) — npm publish gate; P1 label loop updated.
 
 - **Deploy smoke:** [web-deploy-smoke.md](docs/web-deploy-smoke.md) — § **Live stats** (`VITE_STATS_API_BASE`, ingest curl checks, `/data.html`); [ingest-server.md](docs/ingest-server.md) — § **Hosted smoke** + production **`better-sqlite3`** note. [mlp-execution.md](docs/mlp-execution.md) — recommended order + developer message aligned with **activation** vs repo-complete.

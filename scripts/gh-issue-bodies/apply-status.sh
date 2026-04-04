@@ -158,8 +158,9 @@ for n in 51 52 53; do
   set_status "$(item_for_issue "$n")" "$BACKLOG"
 done
 
-# Next delivery tranche (docs/mlp-next-delivery-tranche.md) — D1–D5 all Todo for visibility; after #34 Done move ONLY #58 to In Progress first (low WIP — see tranche doc)
-for n in 58 59 60 61 62; do
+# Next delivery tranche — code in repo; activation sprint owns board **In Progress** on #58 (mlp-status-cto § Leadership view); #59–#62 Todo until closure order / hosted proof
+set_status "$(item_for_issue 58)" "$IN_PROGRESS"
+for n in 59 60 61 62; do
   set_status "$(item_for_issue "$n")" "$TODO"
 done
 for n in 63 64 65 66; do
