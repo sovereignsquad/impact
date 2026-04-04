@@ -319,7 +319,7 @@ The **web shell** exists; the **live data engine** does **not**. **Expanded deli
 
 | ID | Issue | Deliverables |
 | -- | ----- | ------------ |
-| **D1** | [#58](https://github.com/moldovancsaba/impact/issues/58) | Ingest endpoint, validation, duplicate handling, storage schema, basic ops README |
+| **D1** | [#58](https://github.com/moldovancsaba/impact/issues/58) | **In repo:** [`apps/ingest`](../apps/ingest) — HTTP POST, Zod validation, SQLite, **409** dedupe; [ingest-server.md](ingest-server.md). **Ops/deploy** may remain before board **Done**. |
 | **D2** | [#59](https://github.com/moldovancsaba/impact/issues/59) | Normalized aggregation schema, rollup job or query layer, documented metric definitions |
 | **D3** | [#60](https://github.com/moldovancsaba/impact/issues/60) | Privacy threshold policy, enforcement in aggregation/output |
 | **D4** | [#61](https://github.com/moldovancsaba/impact/issues/61) | Stable read API contract, response shapes, sample payloads |

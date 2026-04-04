@@ -2,7 +2,7 @@
 
 **Status:** normative for client behaviour in this repository. Server implementations should match this document or explicitly version-diverge.
 
-**Related:** [privacy-policy.md](privacy-policy.md), `packages/submission`, issue [#13](https://github.com/moldovancsaba/impact/issues/13).
+**Related:** [privacy-policy.md](privacy-policy.md), `packages/submission`, [ingest-server.md](ingest-server.md) (reference **D1** server), issue [#13](https://github.com/moldovancsaba/impact/issues/13).
 
 ---
 

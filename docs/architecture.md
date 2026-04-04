@@ -6,6 +6,8 @@
 
 ```text
 apps/cli                 CLI entry (`impact` command)
+apps/web                 Public multi-page Vite site
+apps/ingest              Optional HTTP ingest server (D1 — validate, dedupe, SQLite)
 packages/core            Scan orchestration, merge, readiness hints
 packages/schemas         Zod schema + types (`impact.v0.3`, provenance, confidence rules)
 packages/scanner-host    OS / hardware coarse signals

@@ -1,0 +1,31 @@
+{
+  "name": "@impact/ingest",
+  "version": "0.3.0",
+  "private": true,
+  "description": "IMPACT submission ingest server (D1 MVP) — HTTP POST, validate, dedupe, SQLite",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moldovancsaba/impact.git",
+    "directory": "apps/ingest"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@impact/schemas": "0.3.0",
+    "better-sqlite3": "^11.10.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.14.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

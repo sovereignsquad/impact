@@ -12,14 +12,16 @@
 
 ## Deliverables
 
-- [ ] Ingest HTTP endpoint(s)
-- [ ] Validation layer (schema / contract)
-- [ ] Duplicate handling (e.g. 409 / idempotency per contract)
-- [ ] Storage schema + persistence
-- [ ] Basic ops README (run locally / deploy)
+- [x] Ingest HTTP endpoint(s) — [`apps/ingest`](../../apps/ingest) `POST /` and `POST /ingest`, `GET /health`
+- [x] Validation layer — `@impact/schemas` / `validateImpactProfile`
+- [x] Duplicate handling — **409** + `submission_id` per [submission-contract.md](../../docs/submission-contract.md) (`payload_sha256` + `run_id` UNIQUE)
+- [x] Storage schema + persistence — SQLite (`better-sqlite3`), default `./data/ingest.db`
+- [x] Basic ops README — [apps/ingest/README.md](../../apps/ingest/README.md), [ingest-server.md](../../docs/ingest-server.md)
 
 ## Acceptance
 
-- [ ] Can accept a well-formed submission from CLI path
-- [ ] Invalid payloads rejected with clear errors
-- [ ] Documented duplicate behaviour
+- [x] Can accept a well-formed submission from CLI path (`IMPACT_SUBMIT_URL` → local ingest)
+- [x] Invalid payloads rejected with clear errors (**400** + schema message)
+- [x] Documented duplicate behaviour (README + contract)
+
+**Follow-on (still D1-adjacent / ops):** production deploy wiring, auth/rate limits, backup runbooks — track separately if needed before closing board **Done**.

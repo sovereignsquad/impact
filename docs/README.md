@@ -30,6 +30,7 @@ Start on the repo **[README.md](../README.md)** for value proposition, quick sta
 | [product.md](product.md) | **Product definition**, v0.x scope, principles |
 | [project-management.md](project-management.md) | **Project #2** column semantics and contributor workflow |
 | [submission-contract.md](submission-contract.md) | Optional **HTTP submission** (normative) |
+| [ingest-server.md](ingest-server.md) | **D1 ingest** service — run, env, link to dashboard tranche |
 
 ## Builders & maintainers
 
