@@ -2,9 +2,9 @@
 
 **Purpose:** single **answerable status memo** for leadership and contributors: how far the MLP has progressed, what is in code, what blocks public adoption, and **ordered next work**. Supplements [mlp.md](mlp.md) (what the MLP **is**), [mlp-execution.md](mlp-execution.md) (how execution is **staged**), and [current-state.md](current-state.md) (broader **operational truth**). **Board workflow:** [Project #2](https://github.com/users/moldovancsaba/projects/2).
 
-**Established:** 2026-04-03 · **Updated:** 2026-04-12 — **Background system first** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § *CTO directive — background system delivery*): product **shell ahead** of **infra**; **#58–#62** = ingest → storage → aggregation → privacy → read API → web wiring; **low WIP**; **no** doc/DMG-first distraction. Prior: **2026-04-11** control-doc usability; **B/C/D** unchanged.
+**Established:** 2026-04-03 · **Updated:** 2026-04-03 — **Dashboard backend accepted in repo** — D1–D5 (**#58–#62**) implemented in code ([`apps/ingest`](../apps/ingest), [`apps/web`](../apps/web) `data.html` + **`VITE_STATS_API_BASE`**); **product-live** still requires **hosted ingest**, **web build env**, **volume**, **verification**. Prior: **2026-04-12** background-system-first framing; **2026-04-11** control-doc usability.
 
-**Maintain this doc when:** the public install gate (**#34**) closes, or **M1–M3** / **H\*** work materially changes state.
+**Maintain this doc when:** the public install gate (**#34**) closes; **hosted ingest** or **live stats** materially changes; **#58–#62** board closure; or **M1–M3** / **H\*** work materially changes state.
 
 ---
 
@@ -24,19 +24,21 @@
 | Signal | Call |
 | ------ | ---- |
 | **MVP** | **Green** — shipped |
-| **Public web shell** (multi-page, honest copy) | **Green** — **in repo**; **deploy + smoke** = top **operational** task ([web-deploy-smoke.md](web-deploy-smoke.md)) |
-| **Historical data IA** | **Green** — structure + labelled placeholders on `/data.html`; **aggregates not live** (correct) |
+| **Public web shell** (multi-page, honest copy) | **Green** — **in repo**; **deploy + smoke** remain operational ([web-deploy-smoke.md](web-deploy-smoke.md)) |
+| **Historical / community data (`/data.html`)** | **Green** in repo — **placeholders** when API unset; **live tables** when **`VITE_STATS_API_BASE`** + reachable ingest; **publicly meaningful** only with **volume** under privacy thresholds |
+| **Dashboard backend (D1–D5 / #58–#62)** | **Green** in repo — ingest, SQLite + dedupe, aggregation, privacy thresholds, **`GET /api/stats/*`**, CORS, HTTP tests, **`verify:release`** |
+| **Dashboard product-live** (hosted) | **Amber** — ingest **not** assumed deployed; web **not** assumed wired to live API; buckets **empty** until enough submissions |
 | **Install truth on site** | **Green** — **strictly gated** on **[#34](https://github.com/moldovancsaba/impact/issues/34)** (Path B primary until close) |
 | **Profile explorer** | **Green** — strong MLP asset (`/profile.html`) |
-| **In-repo MLP** (report + recommendations + web) | **Green** |
-| **Tranche SSOT** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md)) | **Green** — **Project #2** + views + spine + issue index **at top** (2026-04-11 usability acceptance) |
-| **Next-delivery tranche** (dashboard **#58–#62**, mac **#63–#66**) | **Green** definition + board mapping; **red / not started** — **dashboard execution (#58–#62)** |
+| **In-repo MLP** (report + recommendations + web + ingest/stats) | **Green** |
+| **Tranche SSOT** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md)) | **Green** — **Project #2** + views + spine + issue index **at top** |
+| **Next-delivery tranche** (mac **#63–#66**, activation) | **Green** definition + board mapping; **operational** work = **deploy ingest**, **env web build**, **seed/verify**, **#34**, Path D trust |
 | **Path B** (repo install) | **Green** — real, verified, usable |
 | **Path C** (npm) | **Amber** — implementation-ready; **not public** until **#34** (login, publish, `npm view`, clean-Mac smoke, evidence) |
 | **Path D** (DMG) | **Amber** — **local pipeline + artifact + ad-hoc sign + checksum + local smoke**; **not** consumer-grade until **M3** (Developer ID, notarization, **released** artifact validation) |
 | **Public MLP adoption path** (npm as easiest install) | **Amber** until **#34** closed |
 
-**Overall (CTO):** **MVP** + **web shell** **green** · **bottleneck** = **backend data path** (**#58–#62**), not front-end · **#34** + **Path D trust** **amber** · close **#34** then **#58** first, **#59** only when ingest is underway. **SSOT:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § [CTO directive — background system delivery](mlp-next-delivery-tranche.md#cto-directive-background).
+**Overall (CTO):** **Repo** — **MVP**, **web shell**, **dashboard engine**, and **verification** are **green**. **Bottleneck shifted** to **operations and activation**: **hosted ingest**, **`VITE_STATS_API_BASE`** on production web, **submission volume**, **hosted end-to-end proof**, **GitHub/board truth** — **not** “missing dashboard code.” **#34** and **Path D trust** remain **amber**. **Distinction:** **repo-complete** ≠ **product-live** for community stats.
 
 ### Distribution snapshot (2026-04-10)
 
@@ -48,11 +50,11 @@
 
 **macOS programme (M1–M4):** **M1** done enough · **M2** substantially done · **M3** not done · **M4** DMG exists — **public-quality** only after **M3**.
 
-**Dashboard:** ingest, validation/dedupe, storage, aggregation, privacy thresholds, read API, web wiring — **unchanged gap** (**#58–#62**); **expanded** in tranche doc § *CTO directive — background system delivery*.
+**Dashboard:** **In repo** — **#58–#62** delivered as code (ingest MVP, aggregation, privacy, read API, web consumer). **Not publicly delivered** until **hosted** service + **web env** + **verification** + (typically) **enough submissions** for thresholds. **SSOT:** [mlp-next-delivery-tranche.md — Board closure model](mlp-next-delivery-tranche.md#board-closure-dashboard).
 
-### Delivery focus (2026-04-12)
+### Product bottleneck shift (2026-04-03)
 
-**Shell vs engine:** pages explain IMPACT; **cannot** yet truthfully show aggregate hardware/tools/models/memory/platform mix — **pipeline end-to-end missing**. **Next tranche** = **backend foundation for community visibility** (one service, one DB, rollup layer, stats API, web consumer) — **not** more landing polish.
+**Was:** “We need to build the dashboard backend.” **Now:** **deployment**, **seeding / volume**, **board–issue truth**, **public activation**, **`#34`**, **Path D trust** — **operational**, not conceptual. **Do not** mark **#58–#62** **Done** on **repo code alone**; **do not** move **#62** to **Done** until the **public** webapp shows **verified** live aggregates. **Do not** relax **production** privacy thresholds to **fake** community volume.
 
 ---
 
@@ -86,35 +88,39 @@
 
 ## Next delivery tranche — dashboard + macOS (CTO)
 
-**SSOT:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) — **2026-04-12** § [CTO directive — background system delivery](mlp-next-delivery-tranche.md#cto-directive-background) (**backend first**); plus **2026-04-10** paths / **M1–M4** / dual-track.
+**SSOT:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) — [CTO directive — background system delivery](mlp-next-delivery-tranche.md#cto-directive-background); [Board closure model (#58–#62)](mlp-next-delivery-tranche.md#board-closure-dashboard) (**2026-04-03**).
 
-**Order:** **#34** first → **#58** immediately after → **#59–#62** in **dependency order** (**low WIP**). **macOS trust** (**#65** / **#66**) **spare capacity** only — **do not** treat Path D as **finished** until **M3**; **do not** let packaging **distract** from **data backend**.
+**Order today:** **Dashboard code** is **in repo**. **Operational priority:** **deploy ingest** → **production `VITE_STATS_API_BASE`** → **redeploy web** → **seed / verify** → sync **GitHub** issue **truth** → close **#58–#62** per **hosted** evidence. **In parallel:** **#34** (npm) and **macOS trust** (**#65** / **#66**) — **do not** treat Path D as **finished** until **M3**.
 
-**Board:** [`apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh) template — **#58–#62** **Todo** until **#34** **Done**; then move **only #58** **In Progress** first. See § *Board movement & WIP discipline* in the tranche doc.
+**Board:** align **Project #2** with [closure model](mlp-next-delivery-tranche.md#board-closure-dashboard); [`apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh) templates may lag — **maintainers override** with **hosted** truth.
 
 ---
 
 ## Immediate operational sequence (post-acceptance)
 
-1. **Deploy and smoke** the public web shell — checklist: [web-deploy-smoke.md](web-deploy-smoke.md) (`/`, `/install.html`, `/use.html`, `/submit.html`, `/data.html`, `/profile.html`).  
-2. **Close #34** — publish `@impact/cli`, `npm view @impact/cli`, published-package smoke, evidence on issue, board **Done**.  
-3. **Under [#44](https://github.com/moldovancsaba/impact/issues/44)** — after **#34**: make **Path C primary** on **home + install**, **Path B fallback**, update truth banners and steps.  
-4. **Formalise completion evidence** for **[#44](https://github.com/moldovancsaba/impact/issues/44)–[#46](https://github.com/moldovancsaba/impact/issues/46)** (M1 / M2 / M3) once deploy and **#34** are done and acceptance criteria are met.
+1. **Sync GitHub** — issue bodies / Status for **#58–#62** vs repo ([`scripts/gh-issue-bodies/`](../scripts/gh-issue-bodies/)); move columns only when **deploy readiness** matches.  
+2. **Deploy ingest** — TLS, persistent **`IMPACT_INGEST_DB_PATH`**, backup plan, **`better-sqlite3`** runtime; smoke **POST** + **`GET /api/stats/overview`**, **`/full`**, **`/hardware`**, **`/tools`**, **`/models`**.  
+3. **Web** — production build with **`VITE_STATS_API_BASE=<live-ingest-origin>`**; redeploy; extend [web-deploy-smoke.md](web-deploy-smoke.md) mentally with **stats** checks.  
+4. **Volume** — enough real submissions **or** **non-public** env with **controlled** threshold tests — **not** production threshold gaming.  
+5. **Deploy and smoke** the public web shell — [web-deploy-smoke.md](web-deploy-smoke.md) (six URLs + **`/data.html`** placeholder vs live).  
+6. **Close #34** — publish `@impact/cli`, `npm view`, smoke, evidence — **Path C** primary on site after.  
+7. **Under [#44](https://github.com/moldovancsaba/impact/issues/44)–[#46](https://github.com/moldovancsaba/impact/issues/46)** — evidence once live paths exist.
 
-**Backlog discipline:** keep **[#51](https://github.com/moldovancsaba/impact/issues/51)–[#53](https://github.com/moldovancsaba/impact/issues/53)** in **Backlog** until ingest and privacy thresholds can populate real aggregates safely.
+**Backlog discipline:** **[#51](https://github.com/moldovancsaba/impact/issues/51)–[#53](https://github.com/moldovancsaba/impact/issues/53)** remain **legacy IA**; **#58–#62** are the **execution spine** for real aggregates — see closure model.
 
 ---
 
 ## What is materially delivered (in repo)
 
+- **Dashboard D1–D5 (#58–#62)** — [`apps/ingest`](../apps/ingest): POST ingest, validation, SQLite + dedupe ([submission-contract.md](submission-contract.md)), aggregation + privacy thresholds, **`GET /api/stats/*`**, CORS, Vitest including HTTP tests; [`apps/web`](../apps/web): **`data.html`** live/fallback via **`VITE_STATS_API_BASE`**.  
 - **M3** — Deterministic `buildRecommendations` (`@impact/reporting`); shared with web.  
 - **M2** — Richer `impact-report.html` (at a glance, meaning, suggested steps, limitations).  
 - **M1** — Install troubleshooting ([install-macos.md](install-macos.md)).  
 - **W2** — Web profile explorer (runtimes + same recommendations).  
-- **Public web IA (initial)** — Multi-page site: **home** (#57), **install** (#54), **run & results** (#55), **submit** (#56), **community data** placeholders (#50), **profile preview** on `/profile.html` ([web.md](web.md)).  
-- **Tests / build** — green at repo root.
+- **Public web IA** — Multi-page site: **home**, **install**, **run & results**, **submit**, **community data**, **profile preview** ([web.md](web.md)); footer **version** line aligned with [current-state.md](current-state.md) § Versioning.  
+- **Tests / build** — **`npm run verify:release`** green at repo root.
 
-Product shape: **scanner + interpretation + guidance + public explainer** — not scanner-only.
+Product shape: **scanner + interpretation + guidance + public explainer + in-repo dashboard engine** — **public community stats** still **activation**, not code gap.
 
 ---
 
@@ -181,31 +187,33 @@ Executable issues on [Project #2](https://github.com/users/moldovancsaba/project
 
 ## Constraints (non-negotiable)
 
-- **Do not** imply **live community data** before ingest exists.  
+- **Do not** imply **live community data** on the **public** site before **hosted** ingest + **wired** web + **verified** behaviour.  
 - **Do not** imply **npm install is live** before **#34** closes.  
 - **Do not** add **benchmark** claims beyond discovery / honest scope.  
 - **Privacy** wording explicit ([privacy-for-users.md](privacy-for-users.md), [submission-contract.md](submission-contract.md)).  
-- **Placeholders** only when **clearly labelled**; explain ingest + privacy thresholds.  
+- **Placeholders** when API unset; **live** only from **real** API — **no** fabricated aggregate counts.  
+- **Do not** relax **production** privacy thresholds to **inflate** public buckets.  
 - **No** DMG/GUI from this track unless explicitly rescoped.
 
 ---
 
 ## CTO directive to developers (current)
 
-The **public web / data P0 slice is accepted**. The site is now a **real product surface** and the correct **MLP-facing** layer for IMPACT.
+The **dashboard backend tranche is accepted as substantially implemented in the repo** — **#58–#62** in code, tests, **`verify:release`**. This is a **major milestone**.
+
+**What is not complete:** **public** delivery of community stats — **hosted ingest**, **live stats API**, **production `VITE_STATS_API_BASE`**, **submission volume**, **hosted verification**. **Repo-complete ≠ product-live** for this tranche.
 
 **Immediate next steps**
 
-1. **Deploy and smoke** — [web-deploy-smoke.md](web-deploy-smoke.md) (six URLs + nav + copy + profile parse).  
-2. **Keep install truth strict** until **#34** closes.  
-3. **After #34** — update **home + install** CTA copy under **[#44](https://github.com/moldovancsaba/impact/issues/44)** so **Path C** is **primary** and **Path B** is **fallback only**.
+1. **Push / sync** GitHub issue **truth** for **#59–#62** (bodies + Status when deploy-ready).  
+2. **Deploy ingest** — TLS, persistent DB, ops; verify **`better-sqlite3`** in target environment.  
+3. **Set `VITE_STATS_API_BASE`** for production web build; **redeploy** web.  
+4. **Seed** enough submissions **or** use **non-public** threshold tests — **never** fake production volume or relax production suppression for optics.  
+5. **Smoke hosted** — **`/api/stats/*`**, **`/data.html`** (placeholder vs live vs low-sample behaviour).  
+6. **Board:** **#62** stays open until **public** web shows **verified** live aggregates; close **#58–#61** per [closure model](mlp-next-delivery-tranche.md#board-closure-dashboard).  
+7. **Keep install truth strict** until **#34** closes; then **[#44](https://github.com/moldovancsaba/impact/issues/44)** Path C primary on site.
 
-**After deployment**
-
-- Prepare **completion evidence** for **#44** (install/adoption), **#45** (report delight), **#46** (recommendation engine).  
-- Leave **#51–#53** in **Backlog** until real aggregate data can ship safely.
-
-**Bottom line:** deploy + smoke the site → close **#34** → switch install story to npm on the site → formalise **M1/M2/M3** evidence.
+**Bottom line:** **activation and ops** are the bottleneck — then **#34** and **Path D trust** remain on the **adoption / packaging** track.
 
 ---
 

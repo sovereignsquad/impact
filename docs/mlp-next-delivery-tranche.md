@@ -97,6 +97,30 @@ Tables below list **related GitHub issues** that correspond to cards on **Projec
 
 **Confirmed (unchanged):** **This file** as SSOT · [mlp-status-cto.md](mlp-status-cto.md) aligned · [CHANGELOG.md](../CHANGELOG.md) records the trail · [§ Project board — linked issues](#github-issue-index) (top of file) lists **#34–#66** + programme **#35–#43** with titles for readers without GitHub access.
 
+<a id="board-closure-dashboard"></a>
+
+## CTO acceptance — dashboard backend in repo (2026-04-03)
+
+**Accepted in code:** D1–D5 (**#58–#62**) — ingest MVP, aggregation, privacy thresholds, stats read API, web wiring (**`VITE_STATS_API_BASE`** + `/data.html`); HTTP integration tests; CORS; SQLite persistence; duplicate handling per [submission-contract.md](submission-contract.md); **`npm run verify:release`** green.
+
+**Not accepted as publicly delivered:** hosted ingest (TLS, persistent DB, backup/`better-sqlite3` ops); production web build pointing at live stats; enough submissions for meaningful buckets; hosted smoke of **`/api/stats/*`** and **`/data.html`** (placeholder vs live vs low-sample suppression).
+
+**Immediate operations:** sync GitHub issue bodies/status for **#59–#62** to repo truth → **deploy ingest** → set **`VITE_STATS_API_BASE`** → redeploy web → **seed** volume (or **non-public** test env with controlled threshold tuning only) → **verify** endpoints and UX.
+
+### Board closure model (#58–#62)
+
+**Substance:** **#58–#62** are **largely implemented in repo** — do **not** treat them as untouched backlog — but **do not** mass-close on code alone.
+
+| Issue | Toward Review / Done when |
+| ----- | ------------------------- |
+| **[#58](https://github.com/moldovancsaba/impact/issues/58)** | **Hosted** ingest accepts real submissions (contract-aligned). |
+| **[#59](https://github.com/moldovancsaba/impact/issues/59)**, **[#60](https://github.com/moldovancsaba/impact/issues/60)**, **[#61](https://github.com/moldovancsaba/impact/issues/61)** | **Hosted** API returns correct aggregates with **privacy suppression** verified. |
+| **[#62](https://github.com/moldovancsaba/impact/issues/62)** | **Public** webapp wired to **live** API and **verified** (real tables when thresholds allow; placeholders when not). |
+
+**#62 last:** keep **#62** open until **public** verification — see [mlp-status-cto.md](mlp-status-cto.md) (full CTO assessment).
+
+**Constraint:** keep privacy thresholds **real** in production — **no** fabricated volume; **no** weakening suppression for optics.
+
 ---
 
 ## CTO assessment — three distribution paths (2026-04-10)
@@ -390,18 +414,16 @@ Next handoff must include:
 
 ## Developer directive (CTO — verbatim intent)
 
-**This document** is the **SSOT** for the next public delivery phase. **Primary focus (2026-04-12):** § [CTO directive — background system delivery](#cto-directive-background) — **backend / data path** (**#58–#62**); dashboard = **backend-driven product**.
+**This document** is the **SSOT** for the next public delivery phase. **Primary focus (2026-04-12):** § [CTO directive — background system delivery](#cto-directive-background) — dashboard = **backend-driven product**. **Update (2026-04-03):** **#58–#62** are **implemented in repo** — priority shifts to **hosted verification** and **activation**; see § [CTO acceptance — dashboard backend in repo](#board-closure-dashboard) and [mlp-status-cto.md](mlp-status-cto.md).
 
-**Immediate rule:** do **not** begin broad **dashboard** execution until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **operationally closed** (publish, verify, smoke, evidence).
+**#34** remains the **public npm** gate — do **not** claim Path C live until closed.
 
-**After #34 closes** — **#58** first (ingest + storage write + logging + runbook) → **#59** only when D1 is **materially** underway → **#60 → #61 → #62** in order; **low WIP** — **never** all five **In Progress** at once. **macOS trust** (**#65** / **#66**) only **spare capacity**; **do not** let DMG **distract** from the data backend.
-
-**Board:** § *Board movement & WIP discipline* above.
+**Board / ops:** align Status with **deployed** truth — [Board closure model (#58–#62)](#board-closure-dashboard); § *Board movement & WIP discipline* above. **macOS trust** (**#65** / **#66**) **spare capacity**; **do not** let DMG **distract** from **stats activation** or **#34**.
 
 ---
 
 ## Related
 
-**Issue index (titles):** [§ Project board — linked issues](#github-issue-index) at the **top** of this file. **Backend tranche directive:** [§ CTO directive — background system delivery](#cto-directive-background).
+**Issue index (titles):** [§ Project board — linked issues](#github-issue-index) at the **top** of this file. **Backend tranche directive:** [§ CTO directive — background system delivery](#cto-directive-background). **Closure model:** [§ Board closure model](#board-closure-dashboard).
 
 - [mlp-status-cto.md](mlp-status-cto.md) · [mlp-execution.md](mlp-execution.md) · [mlp.md](mlp.md) · [web.md](web.md) · [submission-contract.md](submission-contract.md) · [#38](https://github.com/moldovancsaba/impact/issues/38) (historical binary spike — defer to **#63**)

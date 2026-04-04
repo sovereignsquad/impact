@@ -19,8 +19,8 @@
 | **Product** definition and principles | [product.md](product.md) + [**#1** doctrine](https://github.com/moldovancsaba/impact/issues/1) | — |
 | **Phase ladder** 0–4 | [**#16**](https://github.com/moldovancsaba/impact/issues/16) | [product.md](product.md) |
 | **MLP programme** (M1–M6, phases, constraints, board hints) | [mlp.md](mlp.md) | [Project #2](https://github.com/users/moldovancsaba/projects/2) for execution **Status** |
-| **MLP CTO assessment** (delivered vs blocked, next tasks) | [mlp-status-cto.md](mlp-status-cto.md) | Supplements [mlp.md](mlp.md); date-stamped snapshot |
-| **Next delivery tranche** (dashboard D1–D5, macOS M1–M4) | [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | GitHub **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#66](https://github.com/moldovancsaba/impact/issues/66)**; start Phase 2 after **#34** |
+| **MLP CTO assessment** (delivered vs blocked, next tasks) | [mlp-status-cto.md](mlp-status-cto.md) | Supplements [mlp.md](mlp.md); **2026-04-03** — dashboard **in repo**; activation = **ops** |
+| **Next delivery tranche** (dashboard D1–D5, macOS M1–M4) | [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** code in repo; [board closure](mlp-next-delivery-tranche.md#board-closure-dashboard); **#63–#66** macOS |
 | **Field `confidence`** | [confidence-rules.md](confidence-rules.md) + `packages/schemas` | — |
 | **`status` / `presence` / provenance** (profile JSON) | [schema-semantics-v0.3.md](schema-semantics-v0.3.md) | — |
 | **Submission HTTP** to a server | [submission-contract.md](submission-contract.md) | — |

@@ -41,9 +41,9 @@
 | -------- | ---------- |
 | [ssot-map.md](ssot-map.md) | Authority routing |
 | [mlp.md](mlp.md) | MLP phases M1–M6 |
-| [mlp-status-cto.md](mlp-status-cto.md) | CTO assessment, gates |
+| [mlp-status-cto.md](mlp-status-cto.md) | CTO assessment — **dashboard in repo** (2026-04-03); ops / activation next |
 | [mlp-execution.md](mlp-execution.md) | Execution order |
-| [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | Dashboard **#58–#62**, macOS **#63–#66** |
+| [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | Dashboard **#58–#62** (code + [board closure](mlp-next-delivery-tranche.md#board-closure-dashboard)), macOS **#63–#66** |
 | [product.md](product.md) | Product definition |
 | [project-management.md](project-management.md) | Board workflow |
 | [submission-contract.md](submission-contract.md) | Submission HTTP contract |
