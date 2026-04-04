@@ -6,7 +6,7 @@
 
 **Project board (workflow SSOT):** [Project #2](https://github.com/users/moldovancsaba/projects/2) — [Programme (Not Done)](https://github.com/users/moldovancsaba/projects/2/views/3) · [Execution](https://github.com/users/moldovancsaba/projects/2/views/5) · [Full board](https://github.com/users/moldovancsaba/projects/2/views/1). **Status** on each card = column; issue **body** = scope/acceptance ([project-management.md](project-management.md), [ssot-map.md](ssot-map.md)).
 
-**Established:** CTO directive · **Accepted:** 2026-04-07 (initial) · **Confirmed SSOT:** 2026-04-08 · **Operating model:** 2026-04-09 · **Distribution reality + dual-track sequencing:** 2026-04-10.
+**Established:** CTO directive · **Accepted:** 2026-04-07 (initial) · **Confirmed SSOT:** 2026-04-08 · **Operating model:** 2026-04-09 · **Distribution reality + dual-track sequencing:** 2026-04-10 · **SSOT usability (board + index at top):** 2026-04-11.
 
 <a id="github-issue-index"></a>
 
@@ -76,7 +76,25 @@ Tables below list **related GitHub issues** that correspond to cards on **Projec
 
 ## CTO acceptance — next delivery tranche
 
-**Decision:** **This file** is the **confirmed SSOT** for the **next public delivery phase**.
+**2026-04-11 — Control document usability accepted.** The tranche SSOT is **much easier to use**. The material fix was **not** only adding links: it was **moving** the **board mapping and issue index to the top**, where architects and operators see **Project #2**, **key views**, **execution spine**, and **linked issues** **without** scrolling through full doctrine first. **Duplicate** tables at the bottom are **removed** — less noise and **drift** risk.
+
+**Encoded state (unchanged from 2026-04-10):** **Path B** real · **Path C** blocked by publish (**#34**) · **Path D** technically real, **not** consumer-grade. **Operating model:** **Track A** — distribution **trust** completion · **Track B** — **dashboard** foundation — **dashboard** remains the **main missing product-value layer**.
+
+**Current operating state**
+
+- **Green:** MVP · **in-repo MLP shell** and **tranche documentation**  
+- **Amber:** **[#34](https://github.com/moldovancsaba/impact/issues/34)** · **Path D** trust/compliance  
+- **Red / not started:** **dashboard implementation [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**
+
+**Immediate next steps**
+
+1. **Close [#34](https://github.com/moldovancsaba/impact/issues/34)**  
+2. **Start [#58](https://github.com/moldovancsaba/impact/issues/58)**  
+3. **Advance dashboard** in **dependency order**  
+4. **Mac trust** work **in parallel only if capacity** allows  
+5. **Keep DMG non-final** until **M3** ([#65](https://github.com/moldovancsaba/impact/issues/65)) is done  
+
+**Decision:** **This file** is the **confirmed SSOT** for the **next public delivery phase** — a **clean, usable control document**.
 
 **Confirmed (unchanged):** **This file** as SSOT · [mlp-status-cto.md](mlp-status-cto.md) aligned · [CHANGELOG.md](../CHANGELOG.md) records the trail · [§ Project board — linked issues](#github-issue-index) (top of file) lists **#34–#66** + programme **#35–#43** with titles for readers without GitHub access.
 

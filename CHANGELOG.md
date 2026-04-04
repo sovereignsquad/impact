@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **CTO acceptance — tranche SSOT usability (2026-04-11):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) § *CTO acceptance* records **control-document** acceptance (index-at-top rationale, operating state, five **immediate next steps**); [mlp-status-cto.md](docs/mlp-status-cto.md) header + **Tranche SSOT** summary row.
+
 - **Tranche doc issue visibility:** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — **Project #2** board links + full **# / title** tables moved **above** CTO sections; anchor `#github-issue-index`; bottom § Related links back to top.
 
 - **CTO assessment (2026-04-10):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — **Path B / C / D** distribution states, **strategic correction** (packaging advanced early as infrastructure), **M1–M4** nuance, **dual-track** after **#34** (dashboard primary; signing/notarization parallel if capacity); **do not** market Path D as finished until **M3**. [mlp-status-cto.md](docs/mlp-status-cto.md) summary table + distribution snapshot; [macos-distribution.md](docs/macos-distribution.md) CTO status table + positioning; [mlp-execution.md](docs/mlp-execution.md) recommended order + developer message aligned.

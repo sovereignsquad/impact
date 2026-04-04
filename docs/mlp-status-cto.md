@@ -2,7 +2,7 @@
 
 **Purpose:** single **answerable status memo** for leadership and contributors: how far the MLP has progressed, what is in code, what blocks public adoption, and **ordered next work**. Supplements [mlp.md](mlp.md) (what the MLP **is**), [mlp-execution.md](mlp-execution.md) (how execution is **staged**), and [current-state.md](current-state.md) (broader **operational truth**). **Board workflow:** [Project #2](https://github.com/users/moldovancsaba/projects/2).
 
-**Established:** 2026-04-03 · **Updated:** 2026-04-10 — **Three distribution paths** (B/C/D) + **M1–M4 nuance** + **dual-track sequencing** after **#34** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § *CTO assessment — three distribution paths*): Path D pipeline **real** but **trust-incomplete**; **dashboard #58–#62** still **not started**; **#34** still blocks public npm.
+**Established:** 2026-04-03 · **Updated:** 2026-04-11 — [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) **accepted** as **usable control doc**: board + issue index **at top**; **B/C/D** + **Track A/B** unchanged; **green** tranche docs · **amber** **#34** + Path D trust · **red** dashboard **#58–#62**; next steps **#34 → #58 → dependency order → Mac trust parallel if capacity → DMG non-final until M3**.
 
 **Maintain this doc when:** the public install gate (**#34**) closes, or **M1–M3** / **H\*** work materially changes state.
 
@@ -29,7 +29,8 @@
 | **Install truth on site** | **Green** — **strictly gated** on **[#34](https://github.com/moldovancsaba/impact/issues/34)** (Path B primary until close) |
 | **Profile explorer** | **Green** — strong MLP asset (`/profile.html`) |
 | **In-repo MLP** (report + recommendations + web) | **Green** |
-| **Next-delivery tranche** (dashboard **#58–#62**, mac **#63–#66**) | **Green** definition + board + issue index; **red / not started** — **dashboard execution (#58–#62)** |
+| **Tranche SSOT** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md)) | **Green** — **Project #2** + views + spine + issue index **at top** (2026-04-11 usability acceptance) |
+| **Next-delivery tranche** (dashboard **#58–#62**, mac **#63–#66**) | **Green** definition + board mapping; **red / not started** — **dashboard execution (#58–#62)** |
 | **Path B** (repo install) | **Green** — real, verified, usable |
 | **Path C** (npm) | **Amber** — implementation-ready; **not public** until **#34** (login, publish, `npm view`, clean-Mac smoke, evidence) |
 | **Path D** (DMG) | **Amber** — **local pipeline + artifact + ad-hoc sign + checksum + local smoke**; **not** consumer-grade until **M3** (Developer ID, notarization, **released** artifact validation) |
