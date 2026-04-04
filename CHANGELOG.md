@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **macOS DMG (Path D):** `npm run build:dmg` — [`packaging/macos/build-dmg.sh`](packaging/macos/build-dmg.sh) produces `packaging/macos/out/Impact-{version}-macos.dmg` + `.sha256` (`Impact.app` with CLI `dist/` + pruned `node_modules`; **Node 20+** still required on the Mac). Docs: [macos-distribution.md](docs/macos-distribution.md), [install-macos.md](docs/install-macos.md) Path D, [release-checklist.md](docs/release-checklist.md). Script ends with **`npm ci`** to restore dev dependencies after `npm prune`.
+
 - **Operating model alignment (CTO, 2026-04-09):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — § *CTO acceptance* records **confirmed** SSOT, [mlp-status-cto.md](docs/mlp-status-cto.md) + CHANGELOG alignment, **six-step** operating model (#34 → #58 → #59 when D1 underway → #60–#62 in dependency order → #63–#66 **Backlog** → DMG last), and CTO note: repo / board / execution discipline aligned (**low WIP**, dashboard first, packaging second, no parallel busywork, no premature DMG). [mlp-status-cto.md](docs/mlp-status-cto.md) header + overall line updated.
 
 - **Next-tranche SSOT final confirmation (CTO, 2026-04-08):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — expanded § *CTO acceptance* (status greens/ambers, **six-step** execution order, parallel-busywork warning, operational next step); [mlp-status-cto.md](docs/mlp-status-cto.md) summary row + header.

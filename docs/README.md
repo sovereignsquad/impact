@@ -10,7 +10,8 @@ Start on the repo **[README.md](../README.md)** for value proposition, quick sta
 | -------- | ----------- |
 | [web.md](web.md) | **Public web shell** (`apps/web`) — multi-page site, install/run/submit/data IA, profile preview |
 | [web-deploy-smoke.md](web-deploy-smoke.md) | **Post-deploy checklist** — six URLs, nav, copy truth, profile parse |
-| [install-macos.md](install-macos.md) | **Path C** (npm) + **Path B** (source) install and outputs |
+| [install-macos.md](install-macos.md) | **Path C** (npm) + **Path B** (source) + **Path D** (DMG) install and outputs |
+| [macos-distribution.md](macos-distribution.md) | **macOS packaging decision** — npm vs `.app` / DMG, signing follow-ups |
 | [privacy-for-users.md](privacy-for-users.md) | **Plain-language** trust: what is collected, what is not, consent |
 | [privacy-policy.md](privacy-policy.md) | Formal **privacy policy** |
 | [support-matrix.md](support-matrix.md) | **macOS / Linux / Windows** behaviour and expectations |

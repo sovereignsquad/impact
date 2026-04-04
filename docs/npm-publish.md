@@ -10,6 +10,8 @@
 2. **Login:** `npm login`
 3. **Verify:** `npm whoami`
 
+If `npm publish` fails with **`ENEEDAUTH` / need auth**, this machine is not logged in — run **`npm login`** (or `npm adduser`) and retry `npm run publish:npm`.
+
 ## What gets published
 
 Ten workspace packages (same **0.3.0** semver), in order:

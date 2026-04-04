@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleExecutable</key>
+  <string>impact</string>
+  <key>CFBundleIdentifier</key>
+  <string>ai.impact.cli</string>
+  <key>CFBundleName</key>
+  <string>Impact</string>
+  <key>CFBundlePackageType</key>
+  <string>APPL</string>
+  <key>CFBundleShortVersionString</key>
+  <string>VERSION_PLACEHOLDER</string>
+  <key>CFBundleVersion</key>
+  <string>VERSION_PLACEHOLDER</string>
+</dict>
+</plist>

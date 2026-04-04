@@ -8,10 +8,10 @@
 
 ## Constraints
 
-**Do not** start until [#63](https://github.com/moldovancsaba/impact/issues/63)–[#65](https://github.com/moldovancsaba/impact/issues/65) are satisfied.
+[#63](https://github.com/moldovancsaba/impact/issues/63)–[#65](https://github.com/moldovancsaba/impact/issues/65) satisfied in repo (signing **ad-hoc** per #65; production notarization still open).
 
 ## Deliverables
 
-- [ ] `.dmg` (or agreed installer) + checksums
-- [ ] Applications-folder flow documented
-- [ ] Uninstall / update notes
+- [x] `.dmg` + checksums — `npm run build:dmg` → `packaging/macos/out/Impact-*-macos.dmg` + `.sha256`
+- [x] Applications-folder flow documented — [install-macos.md](../../docs/install-macos.md) Path D + `README-VOLUME.txt` on disk image
+- [x] Uninstall / update notes — [macos-distribution.md](../../docs/macos-distribution.md) + [`packaging/macos/README.md`](../../packaging/macos/README.md)

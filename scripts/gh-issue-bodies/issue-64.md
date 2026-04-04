@@ -8,10 +8,10 @@
 
 ## Deliverables
 
-- [ ] Reproducible build (CI or scripted)
-- [ ] Versioned release artifact
-- [ ] Install / run instructions (not clone)
-- [ ] Smoke test on clean Mac + evidence notes
+- [x] Reproducible build (scripted) — [`packaging/macos/build-dmg.sh`](../../packaging/macos/build-dmg.sh); `npm run build:dmg` (macOS)
+- [x] Versioned release artifact — `packaging/macos/out/Impact-{semver}-macos.dmg` + `.sha256`
+- [x] Install / run instructions (not clone) — [install-macos.md](../../docs/install-macos.md) **Path D**
+- [ ] Smoke test on clean Mac + evidence notes — checklist in [release-checklist.md](../../docs/release-checklist.md); maintainer to attach evidence on Release / comment
 
 ## Related
 

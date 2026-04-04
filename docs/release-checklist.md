@@ -40,6 +40,12 @@ Use this for **tagged releases** and **release candidates**. Execute in order; d
 
 *(Path A — standalone binary: [#38](https://github.com/moldovancsaba/impact/issues/38).)*
 
+**Path D (DMG):** optional artifact for users who cannot use the registry — see [macos-distribution.md](macos-distribution.md).
+
+- [ ] On **macOS:** `npm run build:dmg` (see [`packaging/macos/README.md`](../packaging/macos/README.md))
+- [ ] Verify checksum `packaging/macos/out/*.sha256`; attach **`.dmg`** to the **GitHub Release** (not committed to git)
+- [ ] **Path D** smoke: mount DMG → run `Impact.app/Contents/MacOS/impact scan --no-submit` → artefacts
+
 ## Git tag and GitHub
 
 - [ ] `git tag -a vX.Y.Z -m "vX.Y.Z"`

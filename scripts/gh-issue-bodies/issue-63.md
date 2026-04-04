@@ -14,9 +14,9 @@
 
 ## Deliverables
 
-- [ ] Decision record in repo (`docs/` or ADR)
-- [ ] Build approach outline
-- [ ] Release implications (versioning, support)
+- [x] Decision record in repo — [macos-distribution.md](../../docs/macos-distribution.md)
+- [x] Build approach outline — [`packaging/macos/README.md`](../../packaging/macos/README.md), `npm run build:dmg`
+- [x] Release implications (versioning, support) — documented in macos-distribution + [release-checklist.md](../../docs/release-checklist.md) Path D
 
 ## Board
 

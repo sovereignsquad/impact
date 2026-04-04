@@ -14,7 +14,8 @@ Publish **`@impact/cli`** to the **npm registry** so users can `npm install -g @
 - [x] Repo: all `@impact/*` at **0.3.0**, `files: ["dist"]`, `publishConfig.access: public`, pinned internal deps, `prepublishOnly`
 - [x] `npm run publish:npm:dry-run` passes locally (CI optional — no token)
 - [x] Public install documented as **Path C** (registry-first); Path B co-documented
-- [ ] **Maintainer:** `npm login` → `npm run publish:npm` (requires `@impact` scope on npm)
+- [x] **Path D (DMG)** in repo: `npm run build:dmg` — [`packaging/macos/`](../../packaging/macos/), [install-macos.md](../../docs/install-macos.md), [macos-distribution.md](../../docs/macos-distribution.md)
+- [ ] **Maintainer:** `npm login` → `npm run publish:npm` (requires `@impact` scope on npm). Without login, publish fails with `ENEEDAUTH` — see [npm-publish.md](../../docs/npm-publish.md).
 - [ ] **Path C** smoke on clean macOS; paste evidence in comment below
 
 ## Based on

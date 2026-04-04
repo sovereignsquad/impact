@@ -1,13 +1,14 @@
 # Install and run on macOS
 
-**MVP v0.3.0** supports two **supported** paths:
+**MVP v0.3.0** supports these paths:
 
 | Path | When |
 | ---- | ---- |
 | **Path C — npm registry** | **Preferred** once `@impact/cli` is published (lowest friction). |
 | **Path B — source** | Always works: clone, build, `npm install -g ./apps/cli`. |
+| **Path D — DMG** | **`.dmg`** with `Impact.app` (maintainer-built). Offline-friendly; still needs **Node.js 20+** on the Mac. See [macos-distribution.md](macos-distribution.md) and `npm run build:dmg`. |
 
-Maintainer publish flow: [npm-publish.md](npm-publish.md). Binary spike: [#38](https://github.com/moldovancsaba/impact/issues/38).
+Maintainer publish flow: [npm-publish.md](npm-publish.md). DMG build: [`packaging/macos/README.md`](../packaging/macos/README.md). Binary spike: [#38](https://github.com/moldovancsaba/impact/issues/38).
 
 ## Requirements
 
@@ -72,6 +73,23 @@ npm install -g ./apps/cli
 ```
 
 Release notes: [**v0.3.0**](https://github.com/moldovancsaba/impact/releases/tag/v0.3.0).
+
+---
+
+## Path D — DMG (`Impact.app`)
+
+Use when you have a release **`Impact-{version}-macos.dmg`** (e.g. from a maintainer or GitHub Release attachment). Mount the image, read **README.txt**, drag **Impact.app** to **Applications**, then run from **Terminal** (the tool is CLI-first):
+
+```bash
+/Applications/Impact.app/Contents/MacOS/impact --version
+mkdir -p ~/impact-reports
+/Applications/Impact.app/Contents/MacOS/impact scan --no-submit -o ~/impact-reports
+open ~/impact-reports/impact-report.html
+```
+
+**Requirements:** **Node.js 20+** must be installed separately ([nodejs.org](https://nodejs.org/) or Homebrew). The DMG bundles npm dependencies, not the Node runtime.
+
+**Build (maintainers):** from repo root, on macOS: `npm run build:dmg` → `packaging/macos/out/Impact-0.3.0-macos.dmg` + `.sha256`. **Signing / notarization** are not automated here; Gatekeeper may require **Right-click → Open** the first time.
 
 ---
 

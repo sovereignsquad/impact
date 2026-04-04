@@ -90,7 +90,7 @@ impact scan --no-submit -o ./reports
 open ./reports/impact-report.html
 ```
 
-If that fails with **404**, use **Path B** (build from source) — same outputs. Full detail: [docs/install-macos.md](docs/install-macos.md). Maintainer publish: [docs/npm-publish.md](docs/npm-publish.md). **Smoke:** [docs/smoke-test-macos.md](docs/smoke-test-macos.md).
+If that fails with **404**, use **Path B** (build from source) — same outputs. **Path D:** DMG with `Impact.app` — [docs/install-macos.md](docs/install-macos.md), [docs/macos-distribution.md](docs/macos-distribution.md); maintainers: `npm run build:dmg`. Maintainer publish: [docs/npm-publish.md](docs/npm-publish.md). **Smoke:** [docs/smoke-test-macos.md](docs/smoke-test-macos.md).
 
 **Platform:** **macOS** is the supported primary path. **Linux** is partial; **Windows** is experimental — [support matrix](docs/support-matrix.md).
 
@@ -108,7 +108,7 @@ impact scan --no-submit -o ./reports
 open ./reports/impact-report.html
 ```
 
-Packaging track [#27](https://github.com/moldovancsaba/impact/issues/27) is **closed**. **Primary delivery:** [#34](https://github.com/moldovancsaba/impact/issues/34) (npm path). [#38](https://github.com/moldovancsaba/impact/issues/38) binary spike is **exploratory** only.
+Packaging track [#27](https://github.com/moldovancsaba/impact/issues/27) is **closed**. **Primary delivery:** [#34](https://github.com/moldovancsaba/impact/issues/34) (npm path) + **DMG** (`npm run build:dmg`). [#38](https://github.com/moldovancsaba/impact/issues/38) binary spike is **exploratory** only.
 
 **Without global install** (repo developers): `npm run impact -- scan --no-submit -o ./reports` after `npm ci` && `npm run build`.
 

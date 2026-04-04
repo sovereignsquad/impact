@@ -8,9 +8,11 @@
 
 ## Deliverables
 
-- [ ] Documented signing strategy (Apple Developer)
-- [ ] Notarization checklist
-- [ ] What is manual vs automated in CI
+- [x] Documented signing strategy — [macos-distribution.md](../../docs/macos-distribution.md) (**ad-hoc** now; **Developer ID + notarization** = production path)
+- [ ] Notarization checklist — expand when Apple ID signing is scheduled
+- [x] What is manual vs automated — DMG: local/macOS script today; CI runner TBD; notarization manual until automated
+
+**Current state:** `build-dmg.sh` runs `codesign --force --deep -s -` (ad-hoc). Wide distribution still needs Developer ID + notarization.
 
 ## Depends on
 
