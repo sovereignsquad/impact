@@ -20,7 +20,9 @@ Open http://localhost:5173
 npm run build -w @impact/web
 ```
 
-Output: `apps/web/dist/` — deploy to any static host (GitHub Pages, Vercel, Netlify, S3, …).
+Output: `apps/web/dist/` — deploy to any static host.
+
+**Vercel:** repo-root project; see root [`vercel.json`](../../vercel.json) (`outputDirectory`: `apps/web/dist`).
 
 ## Roadmap
 

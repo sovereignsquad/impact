@@ -27,6 +27,12 @@ npm run build -w @impact/web
 
 Root **`npm run verify:release`** includes the web build.
 
+### Deploy (Vercel)
+
+Use the **repository root** as the Vercel project root (monorepo). Root [`vercel.json`](../vercel.json) sets **`outputDirectory`** to **`apps/web/dist`** so the deploy does not look for a top-level `public/` folder. **Install** and **build** run at root: `npm ci`, `npm run build` (builds all workspaces including `@impact/web`).
+
+If the Vercel dashboard had **Output Directory** set to `public`, remove it or set it to **`apps/web/dist`** so it matches `vercel.json`.
+
 ---
 
 ## Roadmap (aligned with MLP)
