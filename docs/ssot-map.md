@@ -1,5 +1,7 @@
 # SSOT map — what is authoritative where
 
+**SSOT** = **Single Source of Truth** (one authoritative place per topic; other docs defer or link here).
+
 **Use this page** when two documents disagree. It does **not** replace the sources below; it **routes** you to the right one.
 
 **Programme hub:** [GitHub Project #2 — Impact roadmap & backlog](https://github.com/users/moldovancsaba/projects/2) · [Programme (Not Done) view](https://github.com/users/moldovancsaba/projects/2/views/3) · [full board](https://github.com/users/moldovancsaba/projects/2/views/1)
