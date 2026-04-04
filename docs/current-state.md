@@ -1,6 +1,6 @@
 # IMPACT — current state (living snapshot)
 
-**Purpose:** single in-repo summary of **what exists today** on `main`, aligned with [Project #2](https://github.com/users/moldovancsaba/projects/2) ([Programme — not Done](https://github.com/users/moldovancsaba/projects/2/views/3); [full board](https://github.com/users/moldovancsaba/projects/2/views/1)). **Issues** remain SSOT for **acceptance criteria and intent**; **Project Status** is SSOT for **workflow column** (see § GitHub board below). This page reduces onboarding friction.
+**Purpose:** single in-repo summary of **what exists today** on `main`, aligned with [Project #2](https://github.com/users/moldovancsaba/projects/2) ([Programme — not Done](https://github.com/users/moldovancsaba/projects/2/views/3); [full board](https://github.com/users/moldovancsaba/projects/2/views/1)). **Authority routing:** [ssot-map.md](ssot-map.md). **Issues** = SSOT for **acceptance criteria and intent**; **Project Status** = SSOT for **workflow column** (see § GitHub board). This page reduces onboarding friction.
 
 **Last aligned with repo:** see git history for this file’s commit date.
 
@@ -100,7 +100,8 @@ The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3
 | [architecture.md](architecture.md) | Module layout, data flow |
 | [architect-handoff.md](architect-handoff.md) | Architect onboarding |
 | [submission-contract.md](submission-contract.md) | HTTP ingest (normative) |
-| [project-management.md](project-management.md) | Board = kanban; issues = SSOT |
+| [project-management.md](project-management.md) | **Project #2** column semantics; contributor workflow |
+| [ssot-map.md](ssot-map.md) | **Which doc/issue wins** when content conflicts |
 | [CHANGELOG.md](../CHANGELOG.md) | Release-oriented history |
 | [fixtures/baseline-profile.sample.json](../fixtures/baseline-profile.sample.json) | Valid **v0.3** example |
 | [fixtures/scenarios/](../fixtures/scenarios/) | Scenario JSON for validation |

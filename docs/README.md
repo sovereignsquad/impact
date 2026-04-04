@@ -2,6 +2,8 @@
 
 Start on the repo **[README.md](../README.md)** for value proposition, quick start, trust, and scope.
 
+**When docs disagree:** [ssot-map.md](ssot-map.md) — which source wins (Project #2, issues, `current-state`, code).
+
 ## For users
 
 | Document | Why read it |
@@ -17,8 +19,9 @@ Start on the repo **[README.md](../README.md)** for value proposition, quick sta
 
 | Document | Why read it |
 | -------- | ----------- |
+| [ssot-map.md](ssot-map.md) | **Authority routing** — Project Status vs issues vs `current-state` vs code |
 | [product.md](product.md) | **Product definition**, v0.x scope, principles |
-| [project-management.md](project-management.md) | **GitHub Project** board semantics and contributor workflow |
+| [project-management.md](project-management.md) | **Project #2** column semantics and contributor workflow |
 | [submission-contract.md](submission-contract.md) | Optional **HTTP submission** (normative) |
 
 ## Builders & maintainers

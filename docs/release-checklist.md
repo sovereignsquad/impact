@@ -49,7 +49,7 @@ Use this for **tagged releases** and **release candidates**. Execute in order; d
 ## Post-release smoke
 
 - [ ] On a **fresh macOS** environment (VM or clean user): run [smoke-test-macos.md](smoke-test-macos.md) against the **tag** or release archive
-- [ ] Attach or paste evidence (commands + output paths) in release discussion or issue **#27**
+- [ ] Attach or paste evidence (commands + output paths) on the **GitHub Release** discussion and/or the **active distribution issue** ([#34](https://github.com/moldovancsaba/impact/issues/34) for Path C; Path B evidence historically on **#27** — use whichever issue tracks the release you are proving)
 
 ## Optional submission sanity (non-default)
 
@@ -57,4 +57,4 @@ Use this for **tagged releases** and **release candidates**. Execute in order; d
 
 ---
 
-**Evidence:** paste smoke output on the active distribution issue (e.g. [#34](https://github.com/moldovancsaba/impact/issues/34)) or the GitHub Release discussion.
+**Evidence routing:** [ssot-map.md](ssot-map.md). Default today: **Path C** proof belongs on **#34** until closed; **Release** notes still link [smoke-test-macos.md](smoke-test-macos.md).

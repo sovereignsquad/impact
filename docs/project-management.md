@@ -2,9 +2,11 @@
 
 This document defines how **roadmap**, **backlog**, **todo**, and **board navigation** work for the IMPACT programme.
 
+**Full authority map:** [ssot-map.md](ssot-map.md) (Project #2 vs issues vs `current-state` vs code).
+
 ## Single board
 
-**Workflow SSOT:** [Project #2](https://github.com/users/moldovancsaba/projects/2) — the **Status** field on each card is the authoritative column (Todo / In Progress / Done / …). Issue **bodies** are SSOT for scope and acceptance; **do not** encode workflow state in titles.
+**Workflow SSOT:** [Project #2](https://github.com/users/moldovancsaba/projects/2) — the **Status** field on each card is the authoritative column (Todo / In Progress / Done / …). Issue **bodies** are SSOT for **scope and acceptance**; **do not** encode workflow state in titles.
 
 **Stakeholder default (Programme — not Done):** [Project #2 · Programme (Not Done)](https://github.com/users/moldovancsaba/projects/2/views/3)
 
@@ -17,6 +19,8 @@ GitHub Project URL: `https://github.com/users/moldovancsaba/projects/2`
 ---
 
 ## 1. North star / vision — SSOT (no duplicates)
+
+This section is **doctrine and product direction**, not kanban. **Workflow columns** = [Project #2](https://github.com/users/moldovancsaba/projects/2) Status — [ssot-map.md](ssot-map.md).
 
 The **only** authoritative sources for programme direction are:
 
@@ -175,6 +179,7 @@ The project is intended to be **public**. If you change visibility, document the
 ## Relation to this repository
 
 - **Code and deep technical docs** — this repo.
-- **Plan and order** — GitHub Issues + Project #2 **Status** + saved views.
+- **Plan and order** — GitHub Issues + [Project #2](https://github.com/users/moldovancsaba/projects/2) **Status** + saved views.
+- **When two markdown files disagree** — [ssot-map.md](ssot-map.md).
 
 That split keeps the repo clean while planning stays discoverable.

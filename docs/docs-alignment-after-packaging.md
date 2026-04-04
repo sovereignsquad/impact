@@ -1,8 +1,10 @@
 # Documentation alignment after packaging (D6)
 
-**Purpose:** when the canonical **packaging / install path** is finished (tracked on the [programme board](https://github.com/users/moldovancsaba/projects/2/views/3), e.g. [#27](https://github.com/moldovancsaba/impact/issues/27)), run a single **docs pass** so public copy matches what we ship.
+**Purpose:** after a **distribution milestone**, run a **docs pass** so public copy matches what users run. Track milestones on [Project #2](https://github.com/users/moldovancsaba/projects/2) (not in prose here — see [ssot-map.md](ssot-map.md)).
 
-**2026-04-03 — Path B (source) done:** README, [install-macos.md](install-macos.md), and [smoke-test-macos.md](smoke-test-macos.md) match the verified commands; [smoke-test-macos.md](smoke-test-macos.md) verification log records the run. **Re-run this checklist** when adding a **registry package** or **standalone binary** as canonical.
+- **Path B (source)** — **[#27](https://github.com/moldovancsaba/impact/issues/27)** **Done** on the board; README / [install-macos.md](install-macos.md) / [smoke-test-macos.md](smoke-test-macos.md) match verified commands.
+- **Path C (npm)** — **[#34](https://github.com/moldovancsaba/impact/issues/34)**; **re-run this checklist** when `@impact/cli` is **publicly live** on the registry (or after any install UX change).
+- **Standalone binary** — [#38](https://github.com/moldovancsaba/impact/issues/38) when applicable.
 
 ## Checklist
 

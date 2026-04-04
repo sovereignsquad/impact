@@ -2,7 +2,7 @@
 
 **Audience:** system / software architects onboarding to **IMPACT**  
 **Date context:** 2026-04-03  
-**SSOT:** GitHub Issues in [moldovancsaba/impact](https://github.com/moldovancsaba/impact) + [Project board Status](https://github.com/users/moldovancsaba/projects/2/views/3) ([full board](https://github.com/users/moldovancsaba/projects/2/views/1))  
+**Where truth lives:** [ssot-map.md](ssot-map.md) — **issues** (scope/acceptance), **Project #2 Status** (workflow), **current-state** (operational snapshot), **code** (behaviour).  
 **Style reference for issue quality:** [mvp-factory-control#495](https://github.com/moldovancsaba/mvp-factory-control/issues/495)
 
 **Living snapshot of the repo + board mapping:** [current-state.md](current-state.md). For **operational truth now** (Path B vs Path C, the [#34](https://github.com/moldovancsaba/impact/issues/34) publish gate, and post-gate sequencing), use the opening **Operational status** section there — not this handoff doc. For **version alignment** (Git tag `v0.3.0`, npm `0.3.0`, JSON `impact.v0.3`, `impact --version`), use **§ Versioning (SSOT)** in that same file.
@@ -69,22 +69,22 @@ Indexed in issue **#16**; doctrine in issue **#1**.
 
 ---
 
-## 5. GitHub as SSOT — how to work it
+## 5. GitHub — how to work it
 
 - **Issues** hold **Objective, Context, Problem, Goal, Scope, Execution Prompt, Acceptance Checks, Dependencies, Risks, Delivery Artifacts** (aligned with [#495](https://github.com/moldovancsaba/mvp-factory-control/issues/495)).
-- **Kanban state** uses **only** the Project field **Status** (`IDEABANK (SOMEDAY)` → … → `Done`). **Titles do not** carry `Roadmap:`, `Backlog:`, `Todo:`, or open/closed state.
+- **Kanban state** uses **only** [Project #2](https://github.com/users/moldovancsaba/projects/2) **Status** (`IDEABANK (SOMEDAY)` → … → `Done`). **Titles do not** carry `Roadmap:`, `Backlog:`, `Todo:`, or open/closed state.
 - **Priority** may appear as **P0 / P1** labels and/or in titles as programme priority (not board column).
-- Bodies under `scripts/gh-issue-bodies/` are a **reproducible mirror** for bulk edits via `apply-updates.sh`; **GitHub remains authoritative** after push.
+- Bodies under `scripts/gh-issue-bodies/` are a **reproducible mirror** for bulk edits; **GitHub remains authoritative** after push.
 
 ---
 
-## 6. Delivered vs in-flight (high level)
+## 6. Delivered vs in-flight
 
-**Substantially delivered on `main` (see issues #6–#12, #7–#11 for detail):** monorepo, schema, CLI `impact scan`, host/runtime/tool/model paths (with MLX model paths stub), privacy + consent flow, HTML+JSON reports, coarse readiness, minimal tests.
+**Do not use this handout for a per-issue delivery list** — it goes stale within days.
 
-**In progress / backlog:** CI (#2), architecture/runbook depth (#3), CoC (#4), Discussions + private reporting (#5), submission API spec + hardening (#13), test matrix expansion (#15), programme index maintenance (#16), doctrine maintenance (#1).
-
-**Board Status** on [the project](https://github.com/users/moldovancsaba/projects/2/views/3) reflects the live stance (Done / Review / In Progress / Backlog / Todo / Roadmap).
+- **What is true on `main` now** (MVP, Path B/C, **#34** gate): [current-state.md](current-state.md) — **§ Operational status**.
+- **Which column each card is in:** [Project #2](https://github.com/users/moldovancsaba/projects/2) — prefer [Programme (Not Done)](https://github.com/users/moldovancsaba/projects/2/views/3).
+- **Authority when sources conflict:** [ssot-map.md](ssot-map.md).
 
 ---
 
@@ -101,7 +101,7 @@ Indexed in issue **#16**; doctrine in issue **#1**.
 ```bash
 git clone https://github.com/moldovancsaba/impact.git
 cd impact
-npm install
+npm ci
 npm run build
 npm test
 npm run impact -- scan --no-submit -o ./reports
@@ -111,6 +111,7 @@ npm run impact -- scan --no-submit -o ./reports
 
 ## 9. Primary references
 
-- Issues: [#1](https://github.com/moldovancsaba/impact/issues/1) (doctrine), [#16](https://github.com/moldovancsaba/impact/issues/16) (phases), [#6–#15](https://github.com/moldovancsaba/impact/issues) (workstreams)
-- `docs/product.md`, `docs/architecture.md`, `docs/privacy-policy.md`
+- [ssot-map.md](ssot-map.md), [current-state.md](current-state.md), [Project #2](https://github.com/users/moldovancsaba/projects/2)
+- [#1](https://github.com/moldovancsaba/impact/issues/1) (doctrine), [#16](https://github.com/moldovancsaba/impact/issues/16) (phases)
+- [product.md](product.md), [architecture.md](architecture.md), [privacy-policy.md](privacy-policy.md)
 - Issue template quality bar: [mvp-factory-control#495](https://github.com/moldovancsaba/mvp-factory-control/issues/495)

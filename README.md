@@ -166,7 +166,7 @@ Curated index: **[docs/README.md](docs/README.md)**
 | Architecture | [docs/architecture.md](docs/architecture.md) |
 | Release QA | [docs/release-checklist.md](docs/release-checklist.md) · [docs/smoke-test-macos.md](docs/smoke-test-macos.md) |
 
-**Doctrine & planning (SSOT):** [GitHub Issues](https://github.com/moldovancsaba/impact/issues) · [Programme board — not Done](https://github.com/users/moldovancsaba/projects/2/views/3) · [full board](https://github.com/users/moldovancsaba/projects/2/views/1)
+**Planning & workflow:** [GitHub Issues](https://github.com/moldovancsaba/impact/issues) (scope/acceptance) · [Project #2](https://github.com/users/moldovancsaba/projects/2) (Status) · [Programme — not Done](https://github.com/users/moldovancsaba/projects/2/views/3) · [full board](https://github.com/users/moldovancsaba/projects/2/views/1) · **who wins when docs disagree:** [docs/ssot-map.md](docs/ssot-map.md)
 
 ---
 
@@ -178,4 +178,4 @@ Bug reports, ideas, and code: [CONTRIBUTING.md](CONTRIBUTING.md). MIT License �
 
 ## Programme note
 
-IMPACT is **open source**. The **scanner** and **reports** are the current product slice; **benchmarks** in the programme sense are **roadmap**, not current claims. If anything here disagrees with the code, **the repo implementation wins** — file an issue.
+IMPACT is **open source**. The **scanner** and **reports** are the current product slice; **benchmarks** in the programme sense are **roadmap**, not current claims. If copy disagrees with **runnable code** on `main`, **code wins**. If copy disagrees with **Project #2 Status** or **issue acceptance**, **GitHub wins** — then refresh docs. See [docs/ssot-map.md](docs/ssot-map.md).

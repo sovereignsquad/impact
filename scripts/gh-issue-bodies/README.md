@@ -1,6 +1,6 @@
 # GitHub issue bodies (refresh kit)
 
-Markdown here mirrors the **structure and intent** of issues on [moldovancsaba/impact](https://github.com/moldovancsaba/impact). **GitHub Issues remain the SSOT** after any refresh.
+Markdown here mirrors the **structure and intent** of issues on [moldovancsaba/impact](https://github.com/moldovancsaba/impact). After `apply-updates.sh`, **GitHub issue bodies** are authoritative for scope/acceptance; **Project #2 Status** is authoritative for workflow ([`apply-status.sh`](apply-status.sh)). Full map: [docs/ssot-map.md](../../docs/ssot-map.md).
 
 **Quality bar:** programme cards follow the same sections as [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498) — Objective, Unified Context, Based On, Problem, Goal, Scope, Execution Prompt, Scope / Non-Goals, Constraints, Acceptance Checks, Dependencies, Out of Scope, Risks, Delivery Artifact, Developer Notes.
 
