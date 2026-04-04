@@ -6,6 +6,39 @@
 
 **Maintain this doc when:** the public install gate (**#34**) closes; **hosted ingest** or **live stats** materially changes; **#58–#62** board closure; or **M1–M3** / **H\*** work materially changes state.
 
+<a id="cto-acceptance-leadership-dashboard"></a>
+
+## CTO acceptance — leadership view (dashboard tranche, 2026-04-03)
+
+**Accepted.** This is the **correct leadership view** of the dashboard tranche.
+
+**What is true**
+
+- **Dashboard backend** is **accepted in repo** (**#58–#62**).
+- **Dashboard** is **not yet product-live**.
+- The **bottleneck** has correctly shifted to **hosted ingest** · **live stats API** · **web deployment with `VITE_STATS_API_BASE`** · **enough safe submission volume** · **hosted verification** — **not** more repo design for the engine.
+
+**Discipline (non-negotiable):** **repo-complete ≠ product-live** for community stats.
+
+**Current status call (leadership)**
+
+- **Green:** MVP · **in-repo dashboard backend** (and engine-aligned web wiring + **`verify:release`**).
+- **Amber:** dashboard **product-live** · **Path C** publish gate (**#34**) · **macOS** trust / signing / notarization (**Path D** until **M3**).
+- **Bottleneck:** **deployment and activation**, not more repo design.
+
+### Immediate operational sequence (dashboard activation)
+
+1. Sync **GitHub** issue truth for **#59–#62** when ready (bodies + Project #2 Status).  
+2. **Deploy ingest** (TLS, ops).  
+3. Configure **persistent DB path** and **runtime environment** (e.g. **`better-sqlite3`**).  
+4. Set **`VITE_STATS_API_BASE`** for the **production** web build.  
+5. **Redeploy web**.  
+6. **Seed** enough **safe** submissions (privacy thresholds real — **no** production gaming).  
+7. **Smoke** **`/api/stats/*`** and **`/data.html`** (placeholder vs live vs suppression).  
+8. **Then** close **#58–#62** in **[closure model](mlp-next-delivery-tranche.md#board-closure-dashboard)** order, on **hosted** evidence only.
+
+**Then (parallel / after):** full public web smoke ([web-deploy-smoke.md](web-deploy-smoke.md)) · **#34** · **[#44](https://github.com/moldovancsaba/impact/issues/44)–[#46](https://github.com/moldovancsaba/impact/issues/46)** evidence.
+
 ---
 
 ## Doc layering (SSOT)
@@ -14,8 +47,11 @@
 | -------- | ---- |
 | [mlp.md](mlp.md) | What the **MLP is** — doctrine, phases, constraints |
 | [mlp-execution.md](mlp-execution.md) | How execution is **staged** — gates, task IDs, order |
-| **This file** | **Current CTO assessment** — delivery status, priorities, board mapping |
-| [current-state.md](current-state.md) | **Operational truth** — MVP, Path B/C, versioning SSOT |
+| **This file** ([mlp-status-cto.md](mlp-status-cto.md)) | **Main CTO memo** — **current** assessment, leadership acceptance, priorities |
+| [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | **Tranche SSOT** + **[board closure model](mlp-next-delivery-tranche.md#board-closure-dashboard)** (**#58–#62**) |
+| [ssot-map.md](ssot-map.md) · [docs/README.md](README.md) | **Authority routing** · doc **navigation** |
+| [CHANGELOG.md](../CHANGELOG.md) | **Audit trail** (releases + notable doc/product shifts) |
+| [current-state.md](current-state.md) | **Operational truth** — MVP, Path B/C, **versioning SSOT** |
 
 ---
 
@@ -96,17 +132,16 @@
 
 ---
 
-## Immediate operational sequence (post-acceptance)
+## Immediate operational sequence (detail)
 
-1. **Sync GitHub** — issue bodies / Status for **#58–#62** vs repo ([`scripts/gh-issue-bodies/`](../scripts/gh-issue-bodies/)); move columns only when **deploy readiness** matches.  
-2. **Deploy ingest** — TLS, persistent **`IMPACT_INGEST_DB_PATH`**, backup plan, **`better-sqlite3`** runtime; smoke **POST** + **`GET /api/stats/overview`**, **`/full`**, **`/hardware`**, **`/tools`**, **`/models`**.  
-3. **Web** — production build with **`VITE_STATS_API_BASE=<live-ingest-origin>`**; redeploy; extend [web-deploy-smoke.md](web-deploy-smoke.md) mentally with **stats** checks.  
-4. **Volume** — enough real submissions **or** **non-public** env with **controlled** threshold tests — **not** production threshold gaming.  
-5. **Deploy and smoke** the public web shell — [web-deploy-smoke.md](web-deploy-smoke.md) (six URLs + **`/data.html`** placeholder vs live).  
-6. **Close #34** — publish `@impact/cli`, `npm view`, smoke, evidence — **Path C** primary on site after.  
-7. **Under [#44](https://github.com/moldovancsaba/impact/issues/44)–[#46](https://github.com/moldovancsaba/impact/issues/46)** — evidence once live paths exist.
+Same **eight-step** dashboard activation as § *CTO acceptance — leadership view* above; extra detail here:
 
-**Backlog discipline:** **[#51](https://github.com/moldovancsaba/impact/issues/51)–[#53](https://github.com/moldovancsaba/impact/issues/53)** remain **legacy IA**; **#58–#62** are the **execution spine** for real aggregates — see closure model.
+- **Ingest deploy:** **`IMPACT_INGEST_DB_PATH`**, backup posture, **`better-sqlite3`** on target OS/arch; smoke **POST** + all **`GET /api/stats/*`** routes.  
+- **Volume:** enough real profiles **or** **non-public** threshold tests — **never** weaken production suppression for optics.  
+- **Web:** [web-deploy-smoke.md](web-deploy-smoke.md) for six URLs + **`/data.html`** states.  
+- **#34 / #44–#46:** publish Path C, then install CTA and MLP evidence.
+
+**Backlog discipline:** **[#51](https://github.com/moldovancsaba/impact/issues/51)–[#53](https://github.com/moldovancsaba/impact/issues/53)** remain **legacy IA**; **#58–#62** are the **execution spine** for real aggregates — see [closure model](mlp-next-delivery-tranche.md#board-closure-dashboard).
 
 ---
 

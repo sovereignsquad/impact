@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **CTO assessment:** [mlp-status-cto.md](docs/mlp-status-cto.md) and [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) § *Board closure model* — dashboard **#58–#62** accepted **in repo**; bottleneck = **deployment / activation**; **repo-complete ≠ product-live**; closure rules for **#62** last.
+- **CTO assessment:** [mlp-status-cto.md](docs/mlp-status-cto.md) § *CTO acceptance — leadership view* — dashboard tranche **accepted** as leadership SSOT; **doc layering** (this memo · tranche · ssot-map / docs README · CHANGELOG); **eight-step** ops sequence; **repo-complete ≠ product-live**. [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) cross-links formal acceptance.
 
 - **Web shell UX & versioning:** footer shows **Web shell** semver + **profile schema** on all pages (Vite `define` from `apps/web/package.json`); **`<main class="site-main">`** wraps primary content on every HTML entry; [docs/README.md](docs/README.md) reorganised with pick-a-path tables; root [README.md](README.md) adds **Versions** section and doc links for web + ingest; [docs/web.md](docs/web.md) and [docs/current-state.md](docs/current-state.md) § Versioning include `@impact/web`.
 

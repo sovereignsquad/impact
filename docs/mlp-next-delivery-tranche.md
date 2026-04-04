@@ -101,6 +101,8 @@ Tables below list **related GitHub issues** that correspond to cards on **Projec
 
 ## CTO acceptance — dashboard backend in repo (2026-04-03)
 
+**Formal leadership acceptance:** [mlp-status-cto.md § CTO acceptance — leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard) — **repo-complete ≠ product-live**; doc **control structure** and **eight-step** ops sequence.
+
 **Accepted in code:** D1–D5 (**#58–#62**) — ingest MVP, aggregation, privacy thresholds, stats read API, web wiring (**`VITE_STATS_API_BASE`** + `/data.html`); HTTP integration tests; CORS; SQLite persistence; duplicate handling per [submission-contract.md](submission-contract.md); **`npm run verify:release`** green.
 
 **Not accepted as publicly delivered:** hosted ingest (TLS, persistent DB, backup/`better-sqlite3` ops); production web build pointing at live stats; enough submissions for meaningful buckets; hosted smoke of **`/api/stats/*`** and **`/data.html`** (placeholder vs live vs low-sample suppression).
