@@ -82,14 +82,14 @@ Tables below list **related GitHub issues** that correspond to cards on **Projec
 
 **Current operating state**
 
-- **Green:** MVP · **in-repo MLP shell** · **in-repo dashboard D1–D5** — [`apps/ingest`](../apps/ingest) (POST ingest + SQLite + **`GET /api/stats/*`**, privacy thresholds, CORS) and [`apps/web`](../apps/web) **`data.html`** when built with **`VITE_STATS_API_BASE`** ([ingest-server.md](ingest-server.md), [apps/web/README.md](../apps/web/README.md)) · **tranche documentation**  
-- **Amber:** **[#34](https://github.com/moldovancsaba/impact/issues/34)** · **Path D** trust/compliance · **production** ingest URL + enough submissions for **meaningful** public aggregates; GitHub **Done** / evidence on **#58–#62** may trail code  
-- **Red:** _none for dashboard code path_ — **do not** claim a **live** community dashboard until a **deployed** ingest and thresholds allow publication
+- **Green:** MVP · **in-repo MLP shell** · **in-repo dashboard D1–D5** — [`apps/ingest`](../apps/ingest) (POST ingest + SQLite + **`GET /api/stats/*`**, privacy thresholds, CORS) and [`apps/web`](../apps/web) **`data.html`** with **`VITE_STATS_API_BASE`** ([ingest-server.md](ingest-server.md), [apps/web/README.md](../apps/web/README.md)) · **production same-origin `GET /api/stats/*` + `/api/health` on Vercel** ([`api/`](../api/), [web.md](web.md) § Deploy) · **`VITE_STATS_API_BASE`** in Vercel **Production, Preview, Development** · **tranche documentation**  
+- **Amber:** **Real** public aggregates — need **hosted durable ingest**, **`IMPACT_INGEST_UPSTREAM`**, **`IMPACT_SUBMIT_URL`**, and enough submissions (**fallback** is honest, not crowd data) · **[#34](https://github.com/moldovancsaba/impact/issues/34)** · **Path D** trust/compliance · GitHub **Done** / evidence on **#58–#62** may trail code  
+- **Red:** _none for dashboard code path_ — **do not** claim **meaningful** community **dashboard data** until **upstream** + **volume** + thresholds allow publication
 
 **Immediate next steps**
 
-1. **Close [#34](https://github.com/moldovancsaba/impact/issues/34)**  
-2. **Deploy / operate ingest** and **close [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** on the board with evidence when production matches repo capability  
+1. **Deploy / operate hosted ingest** → set **`IMPACT_INGEST_UPSTREAM`** on Vercel → **`IMPACT_SUBMIT_URL`** on clients → seed → verify **`/data.html`** shows **non-fallback** aggregates when thresholds allow → **close [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** with proof ([board closure model](#board-closure-dashboard))  
+2. **Close [#34](https://github.com/moldovancsaba/impact/issues/34)** (publish **`@impact/cli`**, `npm view`, clean-machine smoke) — **parallel** where capacity  
 3. **Mac trust** work **in parallel only if capacity** allows  
 4. **Keep DMG non-final** until **M3** ([#65](https://github.com/moldovancsaba/impact/issues/65)) is done  
 
@@ -105,9 +105,9 @@ Tables below list **related GitHub issues** that correspond to cards on **Projec
 
 **Accepted in code:** D1–D5 (**#58–#62**) — ingest MVP, aggregation, privacy thresholds, stats read API, web wiring (**`VITE_STATS_API_BASE`** + `/data.html`); HTTP integration tests; CORS; SQLite persistence; duplicate handling per [submission-contract.md](submission-contract.md); **`npm run verify:release`** green.
 
-**Not accepted as publicly delivered:** hosted ingest (TLS, persistent DB, backup/`better-sqlite3` ops); production web build pointing at live stats; enough submissions for meaningful buckets; hosted smoke of **`/api/stats/*`** and **`/data.html`** (placeholder vs live vs low-sample suppression).
+**Not accepted as publicly delivered (real aggregates):** hosted SQLite ingest (TLS, persistent DB, backup/`better-sqlite3` ops); **`IMPACT_INGEST_UPSTREAM`** on Vercel so **`/api/stats/*`** is **not** only **fallback**; **`IMPACT_SUBMIT_URL`** pointed at that host; enough submissions for meaningful buckets; hosted smoke proving **non-fallback** JSON and **`/data.html`** behaviour (vs low-sample suppression).
 
-**Immediate operations:** sync GitHub issue bodies/status for **#59–#62** to repo truth → **deploy ingest** → set **`VITE_STATS_API_BASE`** → redeploy web → **seed** volume (or **non-public** test env with controlled threshold tuning only) → **verify** endpoints and UX.
+**Immediate operations:** sync GitHub issue bodies/status for **#59–#62** to repo truth → **deploy ingest** → set **`IMPACT_INGEST_UPSTREAM`** (+ confirm **`VITE_STATS_API_BASE`** / redeploy web if needed) → **seed** volume (or **non-public** test env with controlled threshold tuning only) → **verify** **`/api/health`** **`stats_mode: upstream`**, endpoints, and **`/data.html`** UX.
 
 ### Board closure model (#58–#62)
 

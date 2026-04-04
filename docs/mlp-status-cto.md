@@ -2,7 +2,7 @@
 
 **Purpose:** single **answerable status memo** for leadership and contributors: how far the MLP has progressed, what is in code, what blocks public adoption, and **ordered next work**. Supplements [mlp.md](mlp.md) (what the MLP **is**), [mlp-execution.md](mlp-execution.md) (how execution is **staged**), and [current-state.md](current-state.md) (broader **operational truth**). **Board workflow:** [Project #2](https://github.com/users/moldovancsaba/projects/2).
 
-**Established:** 2026-04-03 · **Updated:** 2026-04-03 — **Activation directive** — **#58** = dashboard **product-live** sprint (execute deploy → stats → web → proof); **#34** = **npm** maintainer six-step path; leadership **canonical sentence** + **steps 1–11** in § *CTO acceptance — leadership view*. **Prior:** dashboard backend **accepted in repo**; **2026-04-12** background-system-first framing.
+**Established:** 2026-04-03 · **Updated:** 2026-04-04 — **Vercel stats layer live** — same-origin **`/api/stats/*`** + **`/api/health`** (fallback or **`IMPACT_INGEST_UPSTREAM`** proxy); **`VITE_STATS_API_BASE`** on Production/Preview/Development; **main bottleneck** = **hosted SQLite ingest** + upstream wiring + volume (**#58** activation continues). **#34** = **npm** path unchanged. **Prior:** **2026-04-03** activation directive; **2026-04-12** background-system-first framing in [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md).
 
 **Maintain this doc when:** the public install gate (**#34**) closes; **hosted ingest** or **live stats** materially changes; **#58–#62** board closure; or **M1–M3** / **H\*** work materially changes state.
 
@@ -21,7 +21,7 @@
 
 ### Sentence for leadership (canonical)
 
-> The **dashboard backend is accepted in code**, but the **product is not yet live** until **hosted deployment**, **real aggregate activation**, and **closure-order verification** are complete.
+> The **dashboard backend is accepted in code**, and the **public web now has a working same-origin stats path** (Vercel **`/api/stats/*`** — honest fallback until **`IMPACT_INGEST_UPSTREAM`**). **Real community aggregates** are **not** product-live until **hosted SQLite ingest**, **upstream wiring**, **submissions**, and **closure-order verification** are complete.
 
 **Discipline (non-negotiable):** **repo-complete ≠ product-live** for community stats (same intent as the sentence above).
 
@@ -36,26 +36,26 @@
 **Also true**
 
 - **Dashboard backend** is **implemented and accepted in repo** (**#58–#62**).  
-- **Dashboard** is **not yet product-live**.  
-- The **bottleneck** is **hosted ingest** · **live stats API** · **web deployment with `VITE_STATS_API_BASE`** · **enough safe submission volume** · **hosted verification** — **not** more repo planning for the engine.
+- **Public stats HTTP path** is **live** on **impact.messmass.com** — **`GET /api/stats/*`** returns **200** (schema-correct **fallback** without **`IMPACT_INGEST_UPSTREAM`**).  
+- **Real crowd aggregates** on **`/data.html`** are **not** product-live until **hosted ingest** + **`IMPACT_INGEST_UPSTREAM`** + **`IMPACT_SUBMIT_URL`** + **enough safe submission volume** + **hosted verification** — **not** more repo planning for the engine.
 
 **Current status call (leadership)**
 
-- **Green:** MVP · **dashboard backend implemented in repo**.  
-- **Amber:** dashboard **not yet product-live** · **npm / public install gate** (**#34**) still matters · **macOS** trust / signing / notarization still incomplete (**Path D** until **M3**).  
-- **Primary bottleneck:** **deployment and activation**, not more repo planning.
+- **Green:** MVP · **dashboard backend in repo** · **web shell** · **stats API layer on Vercel** (same-origin route + env aligned).  
+- **Amber:** **real** dashboard data (fallback still active without upstream) · **npm / public install gate** (**#34**) · **macOS** trust / signing / notarization (**Path D** until **M3**).  
+- **Primary bottleneck:** **hosted durable ingest** + **`IMPACT_INGEST_UPSTREAM`** + **submission volume**, then **board closure with proof**.
 
 ### Immediate operational sequence
 
 **Dashboard activation (coordinate on [#58](https://github.com/moldovancsaba/impact/issues/58)) — not a documentation problem; execute:**
 
 1. Sync **GitHub** issue truth when ready (bodies + Project #2 for **#59–#62**).  
-2. **Deploy ingest** (TLS, ops).  
-3. Configure **DB / runtime** — persistent path, **`better-sqlite3`**, **health**, **logging**.  
-4. **Expose live `GET /api/stats/*`** (reachable from intended clients).  
-5. Set **`VITE_STATS_API_BASE`**; **redeploy web**.  
+2. **Deploy ingest** (TLS, durable volume, ops) — Node **`apps/ingest`** + SQLite.  
+3. Configure **DB / runtime** — **`IMPACT_INGEST_DB_PATH`**, **`better-sqlite3`** on target arch, **`/health`**, **logging**.  
+4. On **Vercel**, set **`IMPACT_INGEST_UPSTREAM`** to that ingest **origin** (no trailing slash) so **`/api/stats/*`** **proxies** instead of **fallback**; set **`IMPACT_SUBMIT_URL`** on clients to the same **hosted** base for **POST**.  
+5. **Reconfirm** **`VITE_STATS_API_BASE`** / **redeploy web** if the public URL ever changes (already aligned for **impact.messmass.com**).  
 6. **Seed** enough **safe** submissions (privacy thresholds real — **no** production gaming).  
-7. **Smoke** **`/api/stats/*`** and **`/data.html`**.  
+7. **Smoke** **`/api/stats/*`**, **`/api/health`**, and **`/data.html`** — **non-fallback** JSON when volume allows.  
 8. **Close [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** in **[closure model](mlp-next-delivery-tranche.md#board-closure-dashboard)** order, with **proof**.
 
 **Report-back (required before mass board Done):** ingest **host URL** · **health** result · **stats endpoint** sample results · **web URL** using live stats · **volume / threshold** status · which issues are **Review** / **Done**-ready.
@@ -91,9 +91,10 @@ The process is **not** waiting on more **planning**. **Active push:** **make the
 | ------ | ---- |
 | **MVP** | **Green** — shipped |
 | **Public web shell** (multi-page, honest copy) | **Green** — **in repo**; **deploy + smoke** remain operational ([web-deploy-smoke.md](web-deploy-smoke.md)) |
-| **Historical / community data (`/data.html`)** | **Green** in repo — **placeholders** when API unset; **live tables** when **`VITE_STATS_API_BASE`** + reachable ingest; **publicly meaningful** only with **volume** under privacy thresholds |
+| **Same-origin stats API (production)** | **Green** — **`GET /api/stats/*`** and **`/api/health`** on **impact.messmass.com** via Vercel Functions ([web.md](web.md) § Deploy, [ingest-server.md](ingest-server.md) § *Vercel stats routes*) |
+| **Historical / community data (`/data.html`)** | **Amber for “real” data** — **UI + fetch path work** with **`VITE_STATS_API_BASE`**; **honest fallback** until **`IMPACT_INGEST_UPSTREAM`**; **live crowd tables** only with **hosted ingest** + **volume** under privacy thresholds |
 | **Dashboard backend (D1–D5 / #58–#62)** | **Green** in repo — ingest, SQLite + dedupe, aggregation, privacy thresholds, **`GET /api/stats/*`**, CORS, HTTP tests, **`verify:release`** |
-| **Dashboard product-live** (hosted) | **Amber** — ingest **not** assumed deployed; web **not** assumed wired to live API; buckets **empty** until enough submissions |
+| **Dashboard product-live** (hosted) | **Amber** — **public `/api` responds** but **real aggregates** need **`IMPACT_INGEST_UPSTREAM`** + **POST ingest** + enough submissions |
 | **Install truth on site** | **Green** — **strictly gated** on **[#34](https://github.com/moldovancsaba/impact/issues/34)** (Path B primary until close) |
 | **Profile explorer** | **Green** — strong MLP asset (`/profile.html`) |
 | **In-repo MLP** (report + recommendations + web + ingest/stats) | **Green** |
@@ -104,7 +105,7 @@ The process is **not** waiting on more **planning**. **Active push:** **make the
 | **Path D** (DMG) | **Amber** — **local pipeline + artifact + ad-hoc sign + checksum + local smoke**; **not** consumer-grade until **M3** (Developer ID, notarization, **released** artifact validation) |
 | **Public MLP adoption path** (npm as easiest install) | **Amber** until **#34** closed |
 
-**Overall (CTO):** **Repo** — **MVP**, **web shell**, **dashboard engine**, and **verification** are **green**. **Bottleneck shifted** to **operations and activation**: **hosted ingest**, **`VITE_STATS_API_BASE`** on production web, **submission volume**, **hosted end-to-end proof**, **GitHub/board truth** — **not** “missing dashboard code.” **#34** and **Path D trust** remain **amber**. **Distinction:** **repo-complete** ≠ **product-live** for community stats.
+**Overall (CTO):** **Repo** — **MVP**, **web shell**, **dashboard engine**, **verification**, and **production stats HTTP path** are **green**. **Bottleneck** — **hosted SQLite ingest**, **`IMPACT_INGEST_UPSTREAM`**, **`IMPACT_SUBMIT_URL`**, **submission volume**, **hosted proof**, **GitHub/board truth** — **not** “missing `/api`” or **`VITE_STATS_API_BASE`**. **#34** and **Path D trust** remain **amber**. **Distinction:** **repo-complete** ≠ **product-live** for **real** community aggregates (fallback ≠ crowd data).
 
 ### Distribution snapshot (2026-04-10)
 
@@ -116,11 +117,11 @@ The process is **not** waiting on more **planning**. **Active push:** **make the
 
 **macOS programme (M1–M4):** **M1** done enough · **M2** substantially done · **M3** not done · **M4** DMG exists — **public-quality** only after **M3**.
 
-**Dashboard:** **In repo** — **#58–#62** delivered as code (ingest MVP, aggregation, privacy, read API, web consumer). **Not publicly delivered** until **hosted** service + **web env** + **verification** + (typically) **enough submissions** for thresholds. **SSOT:** [mlp-next-delivery-tranche.md — Board closure model](mlp-next-delivery-tranche.md#board-closure-dashboard).
+**Dashboard:** **In repo** — **#58–#62** delivered as code (ingest MVP, aggregation, privacy, read API, web consumer). **Public `/api/stats/*` on the web host** is **live** (Vercel proxy/fallback). **Real aggregates publicly meaningful** still need **hosted** SQLite ingest + **`IMPACT_INGEST_UPSTREAM`** + **verification** + (typically) **enough submissions** for thresholds. **SSOT:** [mlp-next-delivery-tranche.md — Board closure model](mlp-next-delivery-tranche.md#board-closure-dashboard).
 
-### Product bottleneck shift (2026-04-03)
+### Product bottleneck shift (2026-04-03; refined 2026-04-04)
 
-**Was:** “We need to build the dashboard backend.” **Now:** **deployment**, **seeding / volume**, **board–issue truth**, **public activation**, **`#34`**, **Path D trust** — **operational**, not conceptual. **Do not** mark **#58–#62** **Done** on **repo code alone**; **do not** move **#62** to **Done** until the **public** webapp shows **verified** live aggregates. **Do not** relax **production** privacy thresholds to **fake** community volume.
+**Was:** “We need to build the dashboard backend.” **Then:** **same-origin `/api/stats/*` on Vercel** removed the “missing `/api` path” blocker. **Now:** **durable hosted ingest**, **`IMPACT_INGEST_UPSTREAM`**, **submissions / volume**, **board–issue truth**, **`#34`**, **Path D trust** — **operational**, not conceptual. **Do not** mark **#58–#62** **Done** on **repo code alone** or on **fallback-only** public JSON; **do not** move **#62** to **Done** until the **public** webapp shows **verified** **non-fallback** aggregates when thresholds allow. **Do not** relax **production** privacy thresholds to **fake** community volume.
 
 ---
 

@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **Deploy:** root [`vercel.json`](vercel.json) sets **`VITE_STATS_API_BASE`** to `https://impact.messmass.com/api` for production builds; same-origin **`/api/stats/*`** is served by Vercel Functions in this repo (see **Added** above).
+- **Docs (SSOT):** [current-state.md](docs/current-state.md), [mlp-status-cto.md](docs/mlp-status-cto.md), [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — **partially live** public dashboard: Vercel **`/api/stats/*`** + **`VITE_STATS_API_BASE`** **green**; **real** aggregates **amber** until **`IMPACT_INGEST_UPSTREAM`** + hosted ingest + volume; activation sequence updated.
+
+- **Deploy:** root [`vercel.json`](vercel.json) sets **`VITE_STATS_API_BASE`** to `https://impact.messmass.com/api` for production builds; same-origin **`/api/stats/*`** is served by Vercel Functions in this repo (see **Added** below).
 
 - **Web (`@impact/web`):** `VITE_STATS_API_BASE` accepts either the ingest **site origin** (`…` + `/api/stats/…`) or a base ending in **`/api`** for same-origin proxy setups (`stats-api-url.ts`, used from `data-entry.ts`). Docs: [web.md](docs/web.md) § `VITE_STATS_API_BASE`, [web-deploy-smoke.md](docs/web-deploy-smoke.md) § Live stats, [apps/web/README.md](apps/web/README.md).
 
