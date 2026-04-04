@@ -1,6 +1,6 @@
 # IMPACT — current state (living snapshot)
 
-**Purpose:** single in-repo summary of **what exists today** on `main`, aligned with the [GitHub Project board](https://github.com/users/moldovancsaba/projects/2/views/3) (Programme — not Done; [full board](https://github.com/users/moldovancsaba/projects/2/views/1)). **Issues remain SSOT** for acceptance and decisions; this page reduces onboarding friction.
+**Purpose:** single in-repo summary of **what exists today** on `main`, aligned with [Project #2](https://github.com/users/moldovancsaba/projects/2) ([Programme — not Done](https://github.com/users/moldovancsaba/projects/2/views/3); [full board](https://github.com/users/moldovancsaba/projects/2/views/1)). **Issues** remain SSOT for **acceptance criteria and intent**; **Project Status** is SSOT for **workflow column** (see § GitHub board below). This page reduces onboarding friction.
 
 **Last aligned with repo:** see git history for this file’s commit date.
 
@@ -124,9 +124,11 @@ The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3
 
 ## GitHub board ↔ this snapshot
 
-**Status** is authoritative on the [project board](https://github.com/users/moldovancsaba/projects/2/views/3) (not in issue titles). **MVP and Path B packaging (#27)** are **Done**; **Path C npm publish (#34)** is the usual **immediate** distribution gate until closed. **#4** / **#5**, **#38** (binary), and theme cards vary by programme priority — see the board, not this file.
+**Programme workflow SSOT:** [Project #2](https://github.com/users/moldovancsaba/projects/2) **Status** field (not issue titles). This file and [`apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh) are **convenience mirrors**; if anything disagrees, **the Project wins** — then update docs/script.
 
-Exact **Status** values live **only** on the board; this paragraph is illustrative and may lag. Column semantics: [project-management.md](project-management.md).
+**MVP and Path B packaging (#27)** are **Done**; **Path C npm publish (#34)** is the usual **immediate** gate (**In Progress**) until closed. **#10** / **#14** are **Done** for shipped MVP scope. **#4** / **#5**, **#38** (binary), and theme cards vary by priority — see the [Programme (Not Done) view](https://github.com/users/moldovancsaba/projects/2/views/3).
+
+Maintainer rules: [project-management.md](project-management.md) §6 (snapshot) and §3 (column semantics).
 
 ---
 

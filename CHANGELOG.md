@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Programme board alignment:** [project-management.md](docs/project-management.md) opens with **workflow SSOT = Project #2 Status**; §6 snapshot matches board truth — **#27** Done (Path B), **#34** In Progress (Path C npm). [`apply-status.sh`](scripts/gh-issue-bodies/apply-status.sh) sets **#10** / **#14** to **Done** (MVP shipped) instead of **Review**; script reapplied to GitHub. [current-state.md](docs/current-state.md) purpose + board section distinguish issue bodies vs **Status** column.
 - **Docs / versioning audit:** [current-state.md](docs/current-state.md) adds **§ Versioning (SSOT)** (tag `v0.3.0`, npm `0.3.0`, `impact.v0.3`, CLI version source); programme sections refreshed (#34 gate, post-MVP slices). Stale **v0.1** product/doc titles and comments updated to **`impact.v0.3`** / MVP wording ([user-expectations-mvp.md](docs/user-expectations-mvp.md), [product.md](docs/product.md), [privacy-policy.md](docs/privacy-policy.md), [architecture.md](docs/architecture.md), [scripts/README.md](scripts/README.md), privacy package comment). [architect-handoff.md](docs/architect-handoff.md) points at versioning SSOT.
 - **Docs:** README + [install-macos.md](docs/install-macos.md) — optional `git checkout v0.3.0` for pinned installs; install page references MVP and follow-on issues **#34** / **#38**.
 

@@ -90,11 +90,12 @@ set_status "$(item_for_issue 6)" "$DONE"
 set_status "$(item_for_issue 7)" "$DONE"
 set_status "$(item_for_issue 8)" "$DONE"
 set_status "$(item_for_issue 9)" "$DONE"
-set_status "$(item_for_issue 10)" "$REVIEW"
+# #10 / #14: MVP discovery + readiness shipped; MLX depth / rule tuning = platform backlog, not "in review" on board
+set_status "$(item_for_issue 10)" "$DONE"
 set_status "$(item_for_issue 11)" "$DONE"
 set_status "$(item_for_issue 12)" "$DONE"
 set_status "$(item_for_issue 13)" "$BACKLOG"
-set_status "$(item_for_issue 14)" "$REVIEW"
+set_status "$(item_for_issue 14)" "$DONE"
 set_status "$(item_for_issue 15)" "$DONE"
 
 # Sprint B — delivered on board (repo complete except packaging track)

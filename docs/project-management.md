@@ -4,6 +4,8 @@ This document defines how **roadmap**, **backlog**, **todo**, and **board naviga
 
 ## Single board
 
+**Workflow SSOT:** [Project #2](https://github.com/users/moldovancsaba/projects/2) — the **Status** field on each card is the authoritative column (Todo / In Progress / Done / …). Issue **bodies** are SSOT for scope and acceptance; **do not** encode workflow state in titles.
+
 **Stakeholder default (Programme — not Done):** [Project #2 · Programme (Not Done)](https://github.com/users/moldovancsaba/projects/2/views/3)
 
 **Full board (all columns / legacy default):** [views/1](https://github.com/users/moldovancsaba/projects/2/views/1)
@@ -97,9 +99,17 @@ These are **not** executable sprint tickets; they orient stakeholders.
 
 ## 6. Current board rules (CTO)
 
-- **Backlog:** **#4** (CoC), **#5** (Discussions / security reporting); **#13** when ingest is **not** the immediate sprint; other platform-parity planning **not** selected for next execution.
-- **Todo:** **#27** (packaging completion) and any item that is the **actual** next implementation move.
-- **#10 / #13 / #14:** **Do not split** merely to populate Backlog. Split only if acceptance criteria are incoherent or shipped vs future work is mixed unhelpfully. Otherwise **comment** (done vs pending) and move **Status** to reflect **truth**.
+**Authoritative workflow state** is the **Status** field on [Project #2](https://github.com/users/moldovancsaba/projects/2). The repo carries a **reapply template**: [`scripts/gh-issue-bodies/apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh) (run after bulk realignments). If the UI and this section disagree, **trust the Project** and then update this doc + the script.
+
+**Snapshot (post-MVP distribution — aligns with `main` + board template):**
+
+- **In Progress (NOW):** **#34** — publish `@impact/cli` to npm (Path C); stays here until maintainer publish + smoke evidence + issue closed.
+- **Done:** **#27** — Path B packaging / macOS smoke **complete**; do **not** keep **#27** in Todo/Backlog for “packaging completion”.
+- **Backlog (SOONER):** **#4**, **#5**; **#13** when ingest is not the active slice; **#35–#38** and similar post-#34 programme items per planning.
+- **Roadmap (LATER):** **#16**, theme cards **#29–#32**, and long-horizon programme issues **#39–#41**.
+- **#1** may stay **In Progress** as a **living doctrine** anchor (curated, not a one-shot ticket); **#3** similarly for architecture SSOT — or move to **Roadmap** if you prefer “stable reference, not active sprint”.
+
+**Split rule:** **#10 / #13 / #14** — **do not split** merely to populate Backlog. Split only if acceptance criteria are incoherent or shipped vs future work is mixed unhelpfully. Otherwise **comment** on the issue and set **Status** to **truth** (MVP model inventory + readiness are **Done** on the board; deeper MLX / rule work tracks under platform themes).
 
 ---
 
