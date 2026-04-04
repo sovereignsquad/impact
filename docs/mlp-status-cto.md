@@ -2,7 +2,7 @@
 
 **Purpose:** single **answerable status memo** for leadership and contributors: how far the MLP has progressed, what is in code, what blocks public adoption, and **ordered next work**. Supplements [mlp.md](mlp.md) (what the MLP **is**), [mlp-execution.md](mlp-execution.md) (how execution is **staged**), and [current-state.md](current-state.md) (broader **operational truth**). **Board workflow:** [Project #2](https://github.com/users/moldovancsaba/projects/2).
 
-**Established:** 2026-04-03 · **Updated:** 2026-04-09 — [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) **operating model aligned**: SSOT + CHANGELOG trail, six-step sequence, repo / board / discipline (**low WIP**, dashboard first, packaging second, **no** parallel busywork, **no** premature DMG); **#34** gate, **#58** first after close
+**Established:** 2026-04-03 · **Updated:** 2026-04-10 — **Three distribution paths** (B/C/D) + **M1–M4 nuance** + **dual-track sequencing** after **#34** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § *CTO assessment — three distribution paths*): Path D pipeline **real** but **trust-incomplete**; **dashboard #58–#62** still **not started**; **#34** still blocks public npm.
 
 **Maintain this doc when:** the public install gate (**#34**) closes, or **M1–M3** / **H\*** work materially changes state.
 
@@ -29,10 +29,25 @@
 | **Install truth on site** | **Green** — **strictly gated** on **[#34](https://github.com/moldovancsaba/impact/issues/34)** (Path B primary until close) |
 | **Profile explorer** | **Green** — strong MLP asset (`/profile.html`) |
 | **In-repo MLP** (report + recommendations + web) | **Green** |
-| **Next-delivery tranche** (dashboard **#58–#62**, mac **#63–#66**) | **Green** — definition + board + issue index in [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md); **amber** execution until **#34** **Done** |
-| **Public MLP adoption path** (npm as easiest install) | **Amber** until **#34** closed with publish + `npm view` + published-package smoke + evidence |
+| **Next-delivery tranche** (dashboard **#58–#62**, mac **#63–#66**) | **Green** definition + board + issue index; **red / not started** — **dashboard execution (#58–#62)** |
+| **Path B** (repo install) | **Green** — real, verified, usable |
+| **Path C** (npm) | **Amber** — implementation-ready; **not public** until **#34** (login, publish, `npm view`, clean-Mac smoke, evidence) |
+| **Path D** (DMG) | **Amber** — **local pipeline + artifact + ad-hoc sign + checksum + local smoke**; **not** consumer-grade until **M3** (Developer ID, notarization, **released** artifact validation) |
+| **Public MLP adoption path** (npm as easiest install) | **Amber** until **#34** closed |
 
-**Overall (CTO):** **Green** MVP · **green** in-repo MLP + next-tranche definition · **amber** **#34** (public npm) · **ready** — **#58** **immediately** after **#34** closes. **Discipline:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) — low WIP, dependency order, packaging **Backlog** until dashboard advances, DMG last.
+**Overall (CTO):** **MVP** and **MLP web shell** **green** · **local DMG pipeline** **green** · **public npm** and **Path D trust** **amber** · **dashboard (#58–#62)** **not started** — **primary missing product-value**. **Immediate priority:** close **#34** → attach DMG to Release (honest trust level) → start **#58** → **signing/notarization** in **parallel if capacity** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md)).
+
+### Distribution snapshot (2026-04-10)
+
+| Path | Call |
+| ---- | ---- |
+| **B** | **Green** — clone/build install; verified. |
+| **C** | **Amber** — ready to publish; blocked on maintainer auth + smoke + evidence (**#34**). |
+| **D** | **Amber** — pipeline + `.dmg` + checksum + **ad-hoc** sign + local smoke; **not** notarized / Developer ID / release-validated → **not** “Mac app done.” |
+
+**macOS programme (M1–M4):** **M1** done enough · **M2** substantially done · **M3** not done · **M4** DMG exists — **public-quality** only after **M3**.
+
+**Dashboard:** ingest, validation/dedupe, aggregation, privacy thresholds, API, web wiring — **unchanged gap** (**#58–#62**).
 
 ---
 
@@ -66,11 +81,11 @@
 
 ## Next delivery tranche — dashboard + macOS (CTO)
 
-**SSOT:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) — **accepted** 2026-04-07 (sequencing, WIP discipline, packaging secondary, DMG last).
+**SSOT:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) — includes **2026-04-10** assessment: **Path B / C / D** status, **M1–M4** nuance, **dual-track** after **#34**.
 
-**Order:** **#34** → dashboard **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** → macOS **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**.
+**Order:** **#34** first → **#58** immediately after → **#59–#62** in **dependency order** (**low WIP**). **macOS trust completion** (**#65**, **#66** public-quality bar) may run **in parallel** with dashboard **if capacity** — **do not** treat Path D as **finished** until **M3**; **do not** let packaging **distract** from dashboard.
 
-**Board:** [`apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh) template — **#58–#62** **Todo**, **#63–#66** **Backlog**. **After #34 Done:** move **only #58** to **In Progress** first; advance **#59–#62** in **dependency order** with **low WIP** (not all five In Progress at once). See § *Board movement & WIP discipline* in the tranche doc.
+**Board:** [`apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh) template — **#58–#62** **Todo** until **#34** **Done**; then move **only #58** **In Progress** first. See § *Board movement & WIP discipline* in the tranche doc.
 
 ---
 

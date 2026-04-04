@@ -23,6 +23,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Vercel:** root [`vercel.json`](vercel.json) sets `outputDirectory` to `apps/web/dist` (fixes “No Output Directory named public” when deploying the monorepo build).
 
+### Changed
+
+- **CTO assessment (2026-04-10):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — **Path B / C / D** distribution states, **strategic correction** (packaging advanced early as infrastructure), **M1–M4** nuance, **dual-track** after **#34** (dashboard primary; signing/notarization parallel if capacity); **do not** market Path D as finished until **M3**. [mlp-status-cto.md](docs/mlp-status-cto.md) summary table + distribution snapshot; [macos-distribution.md](docs/macos-distribution.md) CTO status table + positioning; [mlp-execution.md](docs/mlp-execution.md) recommended order + developer message aligned.
+
 ### Added
 
 - **macOS DMG (Path D):** `npm run build:dmg` — [`packaging/macos/build-dmg.sh`](packaging/macos/build-dmg.sh) produces `packaging/macos/out/Impact-{version}-macos.dmg` + `.sha256` (`Impact.app` with CLI `dist/` + pruned `node_modules`; **Node 20+** still required on the Mac). Docs: [macos-distribution.md](docs/macos-distribution.md), [install-macos.md](docs/install-macos.md) Path D, [release-checklist.md](docs/release-checklist.md). Script ends with **`npm ci`** to restore dev dependencies after `npm prune`.

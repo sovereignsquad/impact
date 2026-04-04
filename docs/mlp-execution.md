@@ -129,7 +129,7 @@
 2. **Close #34** — npm publish + smoke + evidence.  
 3. **#44** (M1) — Path C **primary** on site; **#45–#46** evidence as appropriate.  
 4. **Dashboard foundation** — **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** per [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) (supersedes detail on **#51–#53** for execution).  
-5. **macOS distribution** — **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)** after dashboard trajectory is clear; **no DMG before M1–M3**.  
+5. **macOS distribution / trust** — **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**; **local DMG pipeline** exists (**Path D**); **M3** (signing + notarization) still gates **public-quality** Mac delivery. May **overlap** dashboard **after #34** if capacity — **dashboard remains primary product-value** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § *Operating model (updated)*).  
 6. **#47**, **#49**, **[#48](https://github.com/moldovancsaba/impact/issues/48)** (umbrella; align with **#58–#62**).  
 7. **#51–#53** — legacy board rows; keep **Backlog** or close when **#58–#62** absorb scope.  
 
@@ -139,7 +139,7 @@
 
 - No benchmark **scoring**  
 - No CRUD / shell benchmark scope  
-- No GUI / DMG  
+- **No GUI** — Path D DMG is **CLI-in-.app** only; **not** “finished Mac product” until **M3**  
 - No **leaderboards**  
 - No hype-driven claims  
 
@@ -147,10 +147,10 @@
 
 ## Developer message (CTO)
 
-**Public web / data P0** is **accepted** in-repo ([mlp-status-cto.md](mlp-status-cto.md)). **Next delivery tranche:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) — after **#34**, build **dashboard** (**[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**) before pushing **macOS packaging** (**[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**); **no DMG before M1–M3**.
+**Public web / data P0** is **accepted** in-repo ([mlp-status-cto.md](mlp-status-cto.md)). **Next delivery tranche:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) — after **#34**, **dashboard** (**[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**) is **primary**; **macOS trust completion** (**#65** / **#66** bar) may run **in parallel** with dashboard **if capacity** (Path D pipeline already exists — **do not overclaim** until **M3**).
 
 **Top operational task:** **deploy and smoke** — [web-deploy-smoke.md](web-deploy-smoke.md).
 
-**Then:** close **#34** → **#44** Path C primary on site → **#44–#46** evidence → **#58–#62**.
+**Then:** close **#34** → attach DMG to Release (honest trust) → **#44** Path C primary on site → **#44–#46** evidence → **#58–#62**.
 
-**Rules:** no fake aggregates; no benchmark overclaim; privacy explicit; **#63–#66** stay Backlog until dashboard foundation is **meaningfully** advanced (packaging = **secondary**). **Low WIP** on **#58–#62**: **#58** In Progress first after **#34**, then **#59**… per [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md).
+**Rules:** no fake aggregates; no benchmark overclaim; privacy explicit; **low WIP** on **#58–#62** (**#58** first after **#34**); **do not** let DMG/signing work **distract** from dashboard — per [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md).

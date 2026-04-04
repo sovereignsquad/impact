@@ -1,10 +1,10 @@
 # MLP — next delivery tranche (CTO directive)
 
-**Purpose:** SSOT for the **next** delivery work after the **frozen** public-web/doc tranche ([mlp-status-cto.md](mlp-status-cto.md)). **Product:** (1) **real community dashboard data** on the webapp, (2) **downloadable macOS distribution** — **not equal in readiness**; the **dashboard is closer** than a polished Mac app. **Execute in phase order.**
+**Purpose:** SSOT for the **next** delivery work after the **frozen** public-web/doc tranche ([mlp-status-cto.md](mlp-status-cto.md)). **Product:** (1) **real community dashboard data** on the webapp, (2) **downloadable macOS distribution** — **not equal in readiness**; **dashboard** remains the **primary missing product-value layer**; **Path D** (DMG) is **real engineering progress** but **not** consumer-grade Mac delivery until **signing + notarization** ([#65](https://github.com/moldovancsaba/impact/issues/65)).
 
 **Board issues:** dashboard **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**; macOS packaging **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**. **Do not start** dashboard execution until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **Done** (npm publish + smoke + evidence).
 
-**Established:** CTO directive · **Accepted:** 2026-04-07 (initial) · **Confirmed SSOT:** 2026-04-08 · **Operating model aligned (repo + board discipline):** 2026-04-09.
+**Established:** CTO directive · **Accepted:** 2026-04-07 (initial) · **Confirmed SSOT:** 2026-04-08 · **Operating model:** 2026-04-09 · **Distribution reality + dual-track sequencing:** 2026-04-10.
 
 ---
 
@@ -12,40 +12,58 @@
 
 **Decision:** **This file** is the **confirmed SSOT** for the **next public delivery phase**.
 
-**Accepted.** The **repo** now reflects the **correct operating model**.
+**Confirmed (unchanged):** **This file** as SSOT · [mlp-status-cto.md](mlp-status-cto.md) aligned · [CHANGELOG.md](../CHANGELOG.md) records the trail · issue map supports readers without repo access.
 
-**Confirmed:**
+---
 
-- **This file** — **confirmed SSOT** for the next tranche.  
-- [mlp-status-cto.md](mlp-status-cto.md) — **aligned** to it.  
-- [CHANGELOG.md](../CHANGELOG.md) — **records** the confirmation trail.  
-- **Execution order** — preserved **exactly** as intended (see **Operating model** below).
+## CTO assessment — three distribution paths (2026-04-10)
 
-**Operating model** — **nothing changes** in sequence:
+**What is newly true — three distribution states**
 
-1. **Close [#34](https://github.com/moldovancsaba/impact/issues/34)**.  
-2. **Move [#58](https://github.com/moldovancsaba/impact/issues/58)** to **In Progress**.  
-3. **Start [#59](https://github.com/moldovancsaba/impact/issues/59)** only when **D1** is **materially** underway.  
-4. **Advance [#60](https://github.com/moldovancsaba/impact/issues/60)–[#62](https://github.com/moldovancsaba/impact/issues/62)** in **dependency order**.  
-5. Keep **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)** in **Backlog**.  
-6. **Keep DMG last** ([#66](https://github.com/moldovancsaba/impact/issues/66)) — **no** premature DMG work.
+1. **Path B — repo-based install** — **real**, **verified**, **already usable**.  
+2. **Path C — `npm install`** — **implementation-ready** in repo; **not publicly live** until publish; **blocked** by **npm login / publish / `npm view` / clean-Mac smoke** — **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **still not Done**.  
+3. **Path D — DMG** — **working local packaging pipeline** ([`packaging/macos/`](../packaging/macos/)); **`.dmg`**, **checksum**, **`Impact.app`**, **ad-hoc** signing, **local smoke** passed — **not** a **fully trusted, consumer-grade** Mac release until **Developer ID**, **notarization**, **release hosting**, and **clean end-user validation** from the **published** artifact. **Do not market** Path D as “the Mac app is done.”
 
-**CTO note:** The important part is **not** the wording update itself. It is that **repo**, **board logic**, and **execution discipline** are now **aligned**: **low WIP** · **dashboard first** · **packaging second** · **no parallel busywork** · **no premature DMG work**.
+**Strategic correction**
 
-**Current status call:**
+Earlier sequencing assumed **#34 → dashboard → packaging → DMG last**. **What happened:** packaging **advanced early** as **infrastructure** — **partway** only — **acceptable** if we **do not pretend** it is **complete** public Mac delivery.
 
-- **Green:** MVP  
-- **Green:** in-repo **MLP** work and **next-tranche** definition  
-- **Amber:** **[#34](https://github.com/moldovancsaba/impact/issues/34)**  
-- **Ready:** start **[#58](https://github.com/moldovancsaba/impact/issues/58)** **immediately** after **#34** closes  
+| Lens | Position |
+| ---- | -------- |
+| **Distribution** | **Further along** than before. |
+| **Trust / compliance** | **Still incomplete** for polished macOS distribution. |
+| **Dashboard** | **Still not started** (**#58–#62**). |
 
-That is the **correct state**.
+**macOS tranche nuance (M1–M4)**
 
-**Doc quality (preserved):** sequencing and WIP discipline are **clear** · **Dashboard** first · macOS packaging **staged** · **Issue map** at the end supports readers **without** repo/GitHub access.
+| Stage | Issue | Status call |
+| ----- | ----- | ----------- |
+| **M1** | [#63](https://github.com/moldovancsaba/impact/issues/63) | **Done enough** ([macos-distribution.md](macos-distribution.md)). |
+| **M2** | [#64](https://github.com/moldovancsaba/impact/issues/64) | **Partially to substantially done** (scripted DMG + artifact + docs; evidence on **released** artifact TBD). |
+| **M3** | [#65](https://github.com/moldovancsaba/impact/issues/65) | **Not done** (ad-hoc only). |
+| **M4** | [#66](https://github.com/moldovancsaba/impact/issues/66) | **Technically produced** — **not** public-quality Mac release until **M3** is done. |
 
-**Immediate next step (operational):** publish and close **#34** → begin **#58** → advance the **dashboard** tranche **in sequence**.
+**Current status call**
 
-**Strong product choices (preserved):** dashboard = **next product-value layer**; Mac download = **packaging / release engineering**, staged. **Out of scope:** native GUI, accounts/profile layer, leaderboards, benchmark overlays.
+- **Green:** MVP · **public web shell** · **in-repo MLP** · **local DMG build pipeline**.  
+- **Amber:** **#34** open · Path D **trust-incomplete** · Mac artifact **technical** but **below** polished product bar.  
+- **Red / not started:** **dashboard [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**.
+
+**Operating model (updated)**
+
+1. **Close [#34](https://github.com/moldovancsaba/impact/issues/34)** — `npm login` → `npm run publish:npm` → `npm view` → **Path C** smoke → evidence — **still the most important short-term adoption step.**  
+2. **Attach DMG + checksum** to a **GitHub Release**; **do not overclaim** trust.  
+3. **Do not** call the DMG **finished** until **M3** is done.  
+4. **Start [#58](https://github.com/moldovancsaba/impact/issues/58)** **immediately after #34**; **#59** when D1 is materially underway; **#60→#61→#62** in **dependency order**, **low WIP** on the dashboard track.  
+5. **Two tracks after #34** (if capacity): **Track A** — signing, notarization, release flow, clean-Mac validation of **published** DMG. **Track B** — **dashboard (#58–#62)**. **Primary product-value: Track B.** **Parallel allowed** — strict “packaging only in Backlog until dashboard advances” **softens**; **constraint: do not let DMG work distract from the dashboard tranche.**
+
+**Bottom line:** **Downloadable Mac app** — much closer; remainder mostly **signing, notarization, release-quality validation**. **Dashboard** — **not yet**; **#58–#62** still required.
+
+**Message to the developer**
+
+Packaging progress is **accepted** (pipeline, app bundle, DMG, checksum, local smoke, docs). **Not accepted** as **finished Mac delivery** until Developer ID, notarization, release validation, and end-user proof on the **released** artifact. **Immediate:** finish **#34**; attach DMG to Release; begin **#58** after **#34**; signing/notarization **in parallel only if capacity**; **do not lose** the dashboard tranche — historical hardware / tools / LLMs / web visibility remain the **missing product-value layer**.
+
+**Strong product choices (preserved):** **Out of scope:** native GUI, accounts/profile layer, leaderboards, benchmark overlays.
 
 ---
 
@@ -53,16 +71,9 @@ That is the **correct state**.
 
 ### 1. Downloadable macOS app
 
-Today IMPACT is a **scanner + web shell + CLI install** — **not** a native Mac product download.
+**Path B** and **Path C** (after **#34**) cover CLI install from repo and npm. **Path D** — a **local DMG pipeline** exists ([`packaging/macos/`](../packaging/macos/)); **`.dmg` + `Impact.app` + checksum** are produced; **local smoke** passed. **Still missing** for **consumer-grade** Mac delivery: **Developer ID** signing, **notarization**, **release/distribution** for the artifact, **clean end-user validation** from the **published** DMG, and **honest** public positioning (engineering milestone — not “Mac app done”). See § *CTO assessment — three distribution paths* and [macos-distribution.md](macos-distribution.md).
 
-Still required:
-
-- **Packaging strategy** — standalone **CLI binary** and/or **.app** wrapper; **DMG is last**, not the product ([#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)).
-- **Pipeline** — reproducible build, versioning, artifact, clean-Mac smoke ([#64](https://github.com/moldovancsaba/impact/issues/64)).
-- **Trust** — signing, notarization, release process ([#65](https://github.com/moldovancsaba/impact/issues/65)).
-- **DMG** — only after M1–M3 ([#66](https://github.com/moldovancsaba/impact/issues/66)).
-
-**Product choice:** document **CLI-in-binary** vs **.app**; default recommendation: **binary first**, app/DMG later. **No GUI scope** in this tranche.
+**Product choice:** **.app + DMG** as engineering path; **npm** preferred when live. **No GUI scope** in this tranche.
 
 ### 2. Web dashboard (real data)
 
@@ -98,14 +109,14 @@ Relates to legacy programme **[#48](https://github.com/moldovancsaba/impact/issu
 
 **Dimensions to support (D2):** machine classes, chip families, memory bands, platform counts, runtime/tool families, model families, locality split.
 
-### Phase 3 — macOS distribution (after dashboard trajectory is clear; do not skip to DMG)
+### Phase 3 — macOS distribution (may overlap dashboard after #34; M3 gates “finished” Path D)
 
-| ID | Issue | Deliverables |
-| -- | ----- | ------------ |
-| **M1** | [#63](https://github.com/moldovancsaba/impact/issues/63) | Decision record: standalone binary vs .app wrapper; build approach; release implications |
-| **M2** | [#64](https://github.com/moldovancsaba/impact/issues/64) | Reproducible build, versioned artifact, install/run docs, clean-Mac smoke evidence |
-| **M3** | [#65](https://github.com/moldovancsaba/impact/issues/65) | Signing + notarization strategy, checklist, manual vs automated |
-| **M4** | [#66](https://github.com/moldovancsaba/impact/issues/66) | DMG / drag-to-Applications, uninstall/update notes — **only after M1–M3** |
+| ID | Issue | Deliverables / status (2026-04-10) |
+| -- | ----- | ------------------------------------ |
+| **M1** | [#63](https://github.com/moldovancsaba/impact/issues/63) | **Done enough** — [macos-distribution.md](macos-distribution.md) |
+| **M2** | [#64](https://github.com/moldovancsaba/impact/issues/64) | **Substantial** — scripted DMG, versioned artifact, Path D docs; **released-artifact** smoke evidence still open |
+| **M3** | [#65](https://github.com/moldovancsaba/impact/issues/65) | **Open** — Developer ID + notarization (ad-hoc only today) |
+| **M4** | [#66](https://github.com/moldovancsaba/impact/issues/66) | **DMG produced** — **not** “final public-quality Mac release” until **M3** |
 
 ---
 
@@ -118,7 +129,7 @@ Relates to legacy programme **[#48](https://github.com/moldovancsaba/impact/issu
 | **Now** | **[#34](https://github.com/moldovancsaba/impact/issues/34)** **In Progress** until closed. **#58–#62** **Todo** (queued — see [`apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh)); **none** In Progress until **#34** **Done**. |
 | **Immediately after #34 Done** | Move **only [#58](https://github.com/moldovancsaba/impact/issues/58)** to **In Progress** (D1 ingest). Keep **#59–#62** in **Todo** until unblocked. |
 | **When #58 is materially underway** | Move **[#59](https://github.com/moldovancsaba/impact/issues/59)** to **In Progress** (D2 aggregation). Advance **#60→#61→#62** the same way — **dependency order**, low WIP. |
-| **macOS tranche** | Keep **#63–#66** in **Backlog** until the **dashboard foundation has meaningfully advanced**. **Primary:** dashboard · **Secondary:** packaging (parallel **investigation** only if spare capacity). **DMG last.** |
+| **macOS tranche** | **After #34:** **signing / notarization / release attachment** (**#65**, **#66** trust completion) may run **in parallel** with dashboard **if capacity** — see § *Operating model (updated)*. **Do not** market Path D as finished until **M3**. **Primary product-value remains dashboard (#58–#62).** |
 | **Ideabank** | GUI, accounts, leaderboards — no new issues required here. |
 
 [`apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh) sets a **template** (e.g. **#58–#62** Todo); **after #34**, maintainers should **manually** set **In Progress** per the table above to reduce board noise and fragmentation.
@@ -129,7 +140,7 @@ Relates to legacy programme **[#48](https://github.com/moldovancsaba/impact/issu
 
 - **No** fake dashboard / community data.  
 - **No** benchmark overlays.  
-- **No** DMG before macOS packaging strategy + pipeline + signing plan exist (**do not** jump straight to DMG work).  
+- **No** claiming **consumer-grade** Mac delivery for Path D until **M3** (Developer ID + notarization) — engineering DMG pipeline may exist earlier (**do not** overclaim trust).  
 - **No** GUI scope creep.  
 - **No** account / public profile layer.  
 - **Privacy thresholds** must exist **before** public aggregates go live; **privacy-safe** language everywhere.
@@ -140,7 +151,7 @@ Relates to legacy programme **[#48](https://github.com/moldovancsaba/impact/issu
 
 **Dashboard:** site shows **real** aggregate historical data for hardware tested, tools/runtimes tested, LLM/model families tested — with trust copy and suppression rules.
 
-**Mac distribution:** user can **download a real macOS artifact** and run IMPACT **without cloning the repo** (binary or app — per M1 decision).
+**Mac distribution:** **Path C** (npm) and **Path D** (DMG + `Impact.app`) both support **no-clone** install; **Path D** is **trust-complete** only after **M3** (signing + notarization + release validation).
 
 **Trust:** public claims match shipped reality; privacy thresholds enforced.
 
@@ -154,8 +165,8 @@ Next handoff must include:
 - Which **dashboard endpoints** exist  
 - Which **aggregate sections** are live on the webapp  
 - **Chosen macOS distribution path** (M1)  
-- Whether **binary/app packaging** is ready (M2)  
-- Whether **DMG** is blocked and **why** (M4)
+- **M2 / M4** pipeline status (DMG produced locally vs **released** + trust-complete per **M3**)  
+- **Dashboard (#58–#62)** — what is live vs placeholder
 
 ---
 
@@ -165,9 +176,9 @@ The **next-delivery tranche setup is accepted**. **This document** is the **SSOT
 
 **Immediate rule:** do **not** begin broad execution of the new tranche until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **operationally closed** (publish, verify, smoke, evidence).
 
-**After #34 closes** — execute in order: **#58** ingest MVP → **#59** aggregation → **#60** privacy thresholds → **#61** dashboard API → **#62** wire webapp. **Packaging:** keep **#63–#66** staged (decision → pipeline → signing → **DMG last**).
+**After #34 closes** — **#58** ingest MVP → **#59** → **#60** → **#61** → **#62** in **dependency order**, **low WIP** on the dashboard track. **macOS trust completion** (**#65** / **#66** quality bar) may proceed **in parallel if capacity** — see § *Operating model (updated)*; **do not** let packaging **distract** from dashboard.
 
-**Board:** preserve **sequence**; **low WIP** on **#58–#62** (see § Board movement & WIP discipline).
+**Board:** preserve **sequence** on each track; **low WIP** on **#58–#62** (see § Board movement & WIP discipline).
 
 ---
 
