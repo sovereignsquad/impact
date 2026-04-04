@@ -29,7 +29,7 @@ export async function loadOrCreateSalt(): Promise<string> {
   return salt;
 }
 
-/** Fields never collected or transmitted in v0.1 (documentation + guard rails). */
+/** Fields never collected or transmitted for the profile contract (documentation + guard rails). */
 export const SENSITIVE_FIELD_DENYLIST = [
   "serial_number",
   "hardware_uuid",

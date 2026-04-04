@@ -79,7 +79,7 @@ A non-technical early adopter can:
 5. Export a readable report.
 6. Optionally submit an anonymous profile with informed consent.
 
-## Command surface (v0.1)
+## Command surface (MVP / `impact.v0.3`)
 
 ```bash
 impact scan

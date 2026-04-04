@@ -1,9 +1,9 @@
 # Scripts
 
-Project automation will live here (release helpers, fixture regeneration, etc.). For v0.1 the primary entry point is the CLI after a local build:
+Project automation lives here (e.g. [`publish-npm-packages.sh`](publish-npm-packages.sh), GitHub issue body helpers under [`gh-issue-bodies/`](gh-issue-bodies/)). **Versioning SSOT:** [docs/current-state.md](../docs/current-state.md) (§ Versioning). Quick local CLI run after build:
 
 ```bash
-npm install
+npm ci
 npm run build
 npm run impact -- scan --no-submit -o ./reports
 ```

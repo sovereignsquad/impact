@@ -9,6 +9,7 @@ Use this for **tagged releases** and **release candidates**. Execute in order; d
 
 ## Version and changelog
 
+- [ ] Align **all** version layers per [current-state.md](current-state.md) **§ Versioning (SSOT)** — Git tag `vX.Y.Z`, npm `X.Y.Z` on every `@impact/*` workspace + pinned internal deps, profile `schema_version` if schema bumped, `impact --version` via `apps/cli/package.json`
 - [ ] Bump **all** `@impact/*` workspace versions and **pinned** internal `dependencies` to the same semver (see `packages/*/package.json`, `apps/cli/package.json`)
 - [ ] `npm install` at repo root (refresh lockfile)
 - [ ] Update [CHANGELOG.md](../CHANGELOG.md) `[Unreleased]` → dated section with summary

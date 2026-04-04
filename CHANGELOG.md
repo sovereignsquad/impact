@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Docs / versioning audit:** [current-state.md](docs/current-state.md) adds **§ Versioning (SSOT)** (tag `v0.3.0`, npm `0.3.0`, `impact.v0.3`, CLI version source); programme sections refreshed (#34 gate, post-MVP slices). Stale **v0.1** product/doc titles and comments updated to **`impact.v0.3`** / MVP wording ([user-expectations-mvp.md](docs/user-expectations-mvp.md), [product.md](docs/product.md), [privacy-policy.md](docs/privacy-policy.md), [architecture.md](docs/architecture.md), [scripts/README.md](scripts/README.md), privacy package comment). [architect-handoff.md](docs/architect-handoff.md) points at versioning SSOT.
 - **Docs:** README + [install-macos.md](docs/install-macos.md) — optional `git checkout v0.3.0` for pinned installs; install page references MVP and follow-on issues **#34** / **#38**.
 
 ### Added

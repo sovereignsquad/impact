@@ -6,7 +6,7 @@ This page aligns **public messaging** with **shipped** behaviour. It complements
 
 **Delivered:** a **privacy-first local CLI** that inventories AI-relevant signals, writes **`impact-profile.json`** and **`impact-report.html`**, and supports **optional**, consent-based submission when an endpoint is configured.
 
-**Not delivered:** a **benchmark system**, **community dashboard**, **npm registry one-liner** (Path B is clone + build + global install from repo), **DMG / .app**, or **aggregate crowd statistics**.
+**Not delivered:** a **benchmark system**, **community dashboard**, **aggregate crowd statistics**, or **DMG / .app**. **Path C** (`npm install -g @impact/cli`) is **implemented in-repo** but **not publicly live** until [#34](https://github.com/moldovancsaba/impact/issues/34) (publish + smoke evidence). **Path B** (clone → build → global install from repo) remains **verified** today.
 
 ## Can users see community / crowd stats?
 
@@ -22,4 +22,4 @@ This page aligns **public messaging** with **shipped** behaviour. It complements
 
 ## One-line answer for support
 
-> IMPACT is a **macOS-first CLI** with a **verified repo-based install**. It produces a **local report** and **anonymised profile**; **submission is optional**. **Crowd analytics** and **consumer installers (DMG)** are **not** shipped in the MVP.
+> IMPACT is a **macOS-first CLI** with a **verified repo-based install**; **npm install** from the registry is **prepared** but **not user-visible** until maintainers finish **#34**. It produces a **local report** and **anonymised profile**; **submission is optional**. **Crowd analytics** and **consumer installers (DMG)** are **not** shipped in the MVP.

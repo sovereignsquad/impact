@@ -2,6 +2,8 @@
 
 **Audience:** maintainers executing [#34](https://github.com/moldovancsaba/impact/issues/34).
 
+**Version SSOT:** before publishing, confirm tag, npm semver, `schema_version`, and CLI version match [current-state.md](current-state.md) — **§ Versioning (SSOT)**.
+
 ## Prerequisites
 
 1. **npm account** with permission to publish the **`@impact`** scope. If the org does not exist, create it at [npmjs.com](https://www.npmjs.com/) and add your user.

@@ -5,7 +5,7 @@
 **SSOT:** GitHub Issues in [moldovancsaba/impact](https://github.com/moldovancsaba/impact) + [Project board Status](https://github.com/users/moldovancsaba/projects/2/views/3) ([full board](https://github.com/users/moldovancsaba/projects/2/views/1))  
 **Style reference for issue quality:** [mvp-factory-control#495](https://github.com/moldovancsaba/mvp-factory-control/issues/495)
 
-**Living snapshot of the repo + board mapping:** [current-state.md](current-state.md). For **operational truth now** (Path B vs Path C, the [#34](https://github.com/moldovancsaba/impact/issues/34) publish gate, and post-gate sequencing), use the opening **Operational status** section there — not this handoff doc.
+**Living snapshot of the repo + board mapping:** [current-state.md](current-state.md). For **operational truth now** (Path B vs Path C, the [#34](https://github.com/moldovancsaba/impact/issues/34) publish gate, and post-gate sequencing), use the opening **Operational status** section there — not this handoff doc. For **version alignment** (Git tag `v0.3.0`, npm `0.3.0`, JSON `impact.v0.3`, `impact --version`), use **§ Versioning (SSOT)** in that same file.
 
 ---
 

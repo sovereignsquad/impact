@@ -21,13 +21,29 @@
 
 ---
 
+## Versioning (SSOT)
+
+Use this table so **Git tag**, **npm semver**, **profile JSON**, and **CLI `--version`** stay aligned. When any layer bumps, bump the others in the **same release** (see [release-checklist.md](release-checklist.md), [npm-publish.md](npm-publish.md)).
+
+| Layer | Canonical value (today) | Where it lives |
+| ----- | ------------------------ | -------------- |
+| **Git / GitHub Release tag** | `v0.3.0` | Annotated tag on `main`; release notes |
+| **`@impact/*` npm semver** | `0.3.0` | Every `packages/*/package.json` and `apps/cli/package.json`; pinned internal `dependencies` |
+| **Profile JSON `schema_version`** | `impact.v0.3` | Zod + emitters: `packages/schemas` (`ImpactProfileSchema`); `run-scan` default; all valid fixtures |
+| **`impact --version` (CLI)** | Same as `@impact/cli` **0.3.0** | Read at runtime from `apps/cli/package.json` (not hardcoded) |
+| **Changelog** | `[0.3.0]` + `[Unreleased]` | [CHANGELOG.md](../CHANGELOG.md) |
+
+**Terminology for profile fields** (operational `status` vs epistemic `presence`, provenance): [schema-semantics-v0.3.md](schema-semantics-v0.3.md). **Historical** schema generations (`impact.v0.1`, `impact.v0.2`) appear only in [CHANGELOG.md](../CHANGELOG.md) and old programme issues — **do not** use them in new code, fixtures, or user-facing docs.
+
+---
+
 ## MVP status — **delivered**
 
 The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3.0`** ([GitHub Release](https://github.com/moldovancsaba/impact/releases/tag/v0.3.0); `impact.v0.3` profile schema). Exit criteria met: canonical **Path B** install/run on fresh macOS, **`impact-profile.json`** + **`impact-report.html`**, optional submission suppressed with **`--no-submit`**, docs match the working path, packaging track closed ([#27](https://github.com/moldovancsaba/impact/issues/27)).
 
 **This is not** a shipped **benchmark system** or **“v1” product** in a consumer sense — it is the **first complete product milestone** for **local discovery + trust + export**.
 
-**Honest user-facing scope:** [user-expectations-mvp.md](user-expectations-mvp.md) (local visibility only; no crowd dashboard; no DMG; install = repo-based CLI).
+**Honest user-facing scope:** [user-expectations-mvp.md](user-expectations-mvp.md) (local visibility only; no crowd dashboard; no DMG; **Path B** install verified; **Path C** npm install prepared on `main`, publicly live after [#34](https://github.com/moldovancsaba/impact/issues/34)).
 
 ---
 
@@ -71,6 +87,7 @@ The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3
 | -------- | ---- |
 | [README.md](../README.md) | **Public front door** — value, quick start, trust, scope |
 | [docs/README.md](README.md) | **Curated doc index** |
+| *(this file, § Versioning)* | **SSOT** — tag vs npm vs `schema_version` vs `impact --version` |
 | [install-macos.md](install-macos.md) | **Canonical macOS install** — Path B for releases |
 | [privacy-for-users.md](privacy-for-users.md) | Plain-language **privacy & trust** |
 | [user-expectations-mvp.md](user-expectations-mvp.md) | **MVP scope** — local vs crowd, Path B vs DMG |
@@ -107,9 +124,9 @@ The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3
 
 ## GitHub board ↔ this snapshot
 
-**Status** is authoritative on the [project board](https://github.com/users/moldovancsaba/projects/2/views/3) (not in issue titles). Typical stance after Sprint B: **#27** packaging **In Progress**; **#4** / **#5** **Backlog**; **#13** **Backlog** when not the next execution slice; **#16** plus theme cards **Roadmap**; many Sprint B issues **Done**. See [project-management.md](project-management.md) for column meanings.
+**Status** is authoritative on the [project board](https://github.com/users/moldovancsaba/projects/2/views/3) (not in issue titles). **MVP and Path B packaging (#27)** are **Done**; **Path C npm publish (#34)** is the usual **immediate** distribution gate until closed. **#4** / **#5**, **#38** (binary), and theme cards vary by programme priority — see the board, not this file.
 
-Exact **Status** values live **only** on the board; this table is illustrative and may lag.
+Exact **Status** values live **only** on the board; this paragraph is illustrative and may lag. Column semantics: [project-management.md](project-management.md).
 
 ---
 
@@ -119,11 +136,14 @@ No capability benchmarks, agent CRUD tests, shell execution benchmarks, crowd sc
 
 ---
 
-## Next leverage (Sprint B)
+## Programme next slices (post-MVP)
 
-1. **Packaging (macOS-first)** — lower-friction install/run path (tracked as Sprint B ticket B7 once filed).  
-2. **Merge-path depth** — more orchestration tests beyond current fixture coverage (B10).  
-3. **#4 / #5** — community and security channels.  
-4. Keep **#1** doctrine in sync when scope shifts.
+Sequencing is **not** authoritative here — use **Operational status** for the immediate gate. Typical forward work:
 
-Sprint B: **[#17](https://github.com/moldovancsaba/impact/issues/17)–[#26](https://github.com/moldovancsaba/impact/issues/26)**. Sprint B.1: **[#27](https://github.com/moldovancsaba/impact/issues/27)** (packaging completion), **[#28](https://github.com/moldovancsaba/impact/issues/28)** (409 duplicate handling — close after merge). Issue bodies: [`scripts/gh-issue-bodies/`](../scripts/gh-issue-bodies/); board: [`apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh). Install: [install-macos.md](install-macos.md).
+1. **[#34](https://github.com/moldovancsaba/impact/issues/34)** — publish `@impact/*` to npm; published-package smoke; evidence on the issue.  
+2. **Adoption / distribution** — Path C as default user story when live; optional **[#38](https://github.com/moldovancsaba/impact/issues/38)** (standalone binary).  
+3. **#4 / #5** — community and security channels when scheduled.  
+4. **Merge-path depth** — more orchestration tests beyond current fixture coverage.  
+5. **#1** — doctrine in sync when scope shifts.
+
+**Delivered slices (reference):** Sprint B **[#17](https://github.com/moldovancsaba/impact/issues/17)–[#26](https://github.com/moldovancsaba/impact/issues/26)** (including **`impact.v0.3`** semantics); **[#27](https://github.com/moldovancsaba/impact/issues/27)** Path B smoke; **[#28](https://github.com/moldovancsaba/impact/issues/28)** submission 409 duplicate path. Issue bodies: [`scripts/gh-issue-bodies/`](../scripts/gh-issue-bodies/). Install: [install-macos.md](install-macos.md).

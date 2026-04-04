@@ -10,7 +10,7 @@
 
 | Quick start | Privacy & trust | Programme board | Current state |
 | ----------- | --------------- | --------------- | ------------- |
-| [Jump](#quick-start-recommended) | [Jump](#privacy-and-trust) | [Open board](https://github.com/users/moldovancsaba/projects/2/views/3) | [Read snapshot](docs/current-state.md) |
+| [Jump](#quick-start-recommended) | [Jump](#privacy-and-trust) | [Open board](https://github.com/users/moldovancsaba/projects/2/views/3) | [Read snapshot](docs/current-state.md) (operational truth + **version SSOT**) |
 
 ---
 

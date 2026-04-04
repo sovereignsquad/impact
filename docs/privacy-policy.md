@@ -1,8 +1,8 @@
-# Privacy policy — I.M.P.A.C.T. v0.1
+# Privacy policy — I.M.P.A.C.T.
 
 **Last updated:** 2026-04-03
 
-This policy describes what the **I.M.P.A.C.T.** open source scanner collects **on your machine**, what is written to **local files**, and what may be sent if you **explicitly opt in** to submission.
+This policy describes what the **I.M.P.A.C.T.** open source scanner collects **on your machine**, what is written to **local files**, and what may be sent if you **explicitly opt in** to submission. The shipping profile contract is **`impact.v0.3`** (`schema_version` in exported JSON); privacy boundaries apply regardless of CLI install path (Path B or Path C).
 
 ## Local-first
 

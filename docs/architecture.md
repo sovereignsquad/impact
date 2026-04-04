@@ -68,12 +68,12 @@ Scanners are plain modules exporting async functions that return structured slic
 
 - **New runtime:** add `scanner-runtimes` detector + `scanner-models` enumerator.  
 - **New tool:** extend `TOOL_ALLOWLIST` in `scanner-tools` (curated only).  
-- **Schema bump:** new `schema_version` and Zod module alongside v0.1.
+- **Schema bump:** new `schema_version` literal (e.g. `impact.v0.4`), new Zod types in `packages/schemas`, migrate emitters + fixtures + docs; keep [schema-semantics-v0.3.md](schema-semantics-v0.3.md) pattern for the active generation.
 
 ## Build & run
 
 ```bash
-npm install
+npm ci
 npm run build
 npm run impact -- scan --no-submit -o ./reports
 ```

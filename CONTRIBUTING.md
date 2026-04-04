@@ -34,7 +34,7 @@ npm run validate-invalid-fixtures
 npm run impact -- scan --no-submit -o ./reports
 ```
 
-Releases: follow [docs/release-checklist.md](docs/release-checklist.md) and [docs/smoke-test-macos.md](docs/smoke-test-macos.md).
+Releases: follow [docs/release-checklist.md](docs/release-checklist.md) and [docs/smoke-test-macos.md](docs/smoke-test-macos.md). **Version alignment** (Git tag, `@impact/*` semver, `schema_version`, `impact --version`): [docs/current-state.md](docs/current-state.md) — § **Versioning (SSOT)**.
 
 ## How to contribute
 
