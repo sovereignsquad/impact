@@ -40,8 +40,23 @@ npm run dev:ingest
 
 **CORS:** `OPTIONS` is answered with **204**; JSON responses include `Access-Control-Allow-*` headers.
 
+## Hosted smoke (activation)
+
+After deploy, verify (replace `INGEST_ORIGIN`):
+
+```bash
+curl -sS "$INGEST_ORIGIN/health"
+curl -sS "$INGEST_ORIGIN/api/stats/overview" | head -c 400
+curl -sS "$INGEST_ORIGIN/api/stats/full" | head -c 400
+```
+
+Expect **200** and JSON. Low submission count → `below_global_threshold: true` and empty dimension buckets is **correct**, not a failure.
+
+Full checklist: [web-deploy-smoke.md](web-deploy-smoke.md) § *Live stats*; report-back list: [mlp-status-cto.md § Leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard).
+
 ## Production notes
 
 - Deploy behind **HTTPS**; set `IMPACT_SUBMIT_URL` on clients to the deployed base URL.
+- Set **`IMPACT_INGEST_DB_PATH`** to a **persistent** volume; confirm **`better-sqlite3`** native binary for host **OS/arch** in the runtime image.
 - Back up **`IMPACT_INGEST_DB_PATH`**; plan migrations as the storage model grows.
 - **Signing / notarization** apply to **Mac CLI/DMG**, not this Node service.

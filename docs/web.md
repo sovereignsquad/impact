@@ -39,7 +39,7 @@ Vite **MPA** — each route is its own HTML entry (see `vite.config.ts` `rollupO
 
 ## Deploy and smoke (operations)
 
-After each production deploy, run the checklist: **[web-deploy-smoke.md](web-deploy-smoke.md)** (`/`, `/install.html`, `/use.html`, `/submit.html`, `/data.html`, `/profile.html`).
+After each production deploy, run the checklist: **[web-deploy-smoke.md](web-deploy-smoke.md)** (`/`, `/install.html`, `/use.html`, `/submit.html`, `/data.html`, `/profile.html`). When the build uses **`VITE_STATS_API_BASE`**, also run § **Live stats** (ingest health + **`/api/stats/*`** + `/data.html` behaviour).
 
 ---
 

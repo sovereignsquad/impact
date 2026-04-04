@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Deploy smoke:** [web-deploy-smoke.md](docs/web-deploy-smoke.md) — § **Live stats** (`VITE_STATS_API_BASE`, ingest curl checks, `/data.html`); [ingest-server.md](docs/ingest-server.md) — § **Hosted smoke** + production **`better-sqlite3`** note. [mlp-execution.md](docs/mlp-execution.md) — recommended order + developer message aligned with **activation** vs repo-complete.
+
 - **CTO assessment:** [mlp-status-cto.md](docs/mlp-status-cto.md) § *Leadership view* — **canonical entry points** table; **leadership sentence** (accepted in code vs product-live); **control stack** split; **steps 1–11** + **report-back**; **#58** / **#34** GitHub directive bodies ([`issue-58.md`](scripts/gh-issue-bodies/issue-58.md), [`issue-34.md`](scripts/gh-issue-bodies/issue-34.md)). [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) cross-link updated.
 
 - **Web shell UX & versioning:** footer shows **Web shell** semver + **profile schema** on all pages (Vite `define` from `apps/web/package.json`); **`<main class="site-main">`** wraps primary content on every HTML entry; [docs/README.md](docs/README.md) reorganised with pick-a-path tables; root [README.md](README.md) adds **Versions** section and doc links for web + ingest; [docs/web.md](docs/web.md) and [docs/current-state.md](docs/current-state.md) § Versioning include `@impact/web`.

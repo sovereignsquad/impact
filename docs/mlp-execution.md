@@ -125,11 +125,11 @@
 
 ## Recommended order
 
-1. **Deploy + smoke** public web shell — [web-deploy-smoke.md](web-deploy-smoke.md).  
-2. **Close #34** — npm publish + smoke + evidence.  
-3. **#44** (M1) — Path C **primary** on site; **#45–#46** evidence as appropriate.  
-4. **Dashboard / backend foundation** — **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** per [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § [CTO directive — background system delivery](mlp-next-delivery-tranche.md#cto-directive-background) (ingest → storage → aggregation → privacy → read API → web wiring; **low WIP**). Supersedes **#51–#53** for execution detail.  
-5. **macOS distribution / trust** — **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**; **local DMG pipeline** exists (**Path D**); **M3** (signing + notarization) still gates **public-quality** Mac delivery. May **overlap** dashboard **after #34** if capacity — **dashboard remains primary product-value** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § *Operating model (updated)*).  
+1. **Dashboard activation (ops)** — **[#58](https://github.com/moldovancsaba/impact/issues/58)** sprint: hosted ingest → live **`/api/stats/*`** → **`VITE_STATS_API_BASE`** web build → seed/smoke → close **#58–#62** with proof ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md#board-closure-dashboard), [web-deploy-smoke.md](web-deploy-smoke.md) § *Live stats*). **Code is already in repo** — execute, don’t replan.  
+2. **Parallel where capacity:** **[#34](https://github.com/moldovancsaba/impact/issues/34)** — npm publish six-step maintainer path (issue body).  
+3. **Deploy + smoke** public web shell — [web-deploy-smoke.md](web-deploy-smoke.md) (always; includes **live stats** checks when wired).  
+4. **After #34:** **#44** (M1) — Path C **primary** on site; **#45–#46** evidence as appropriate.  
+5. **macOS distribution / trust** — **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**; **M3** gates **public-quality** Mac delivery. Does **not** block ingest/stats activation.  
 6. **#47**, **#49**, **[#48](https://github.com/moldovancsaba/impact/issues/48)** (umbrella; align with **#58–#62**).  
 7. **#51–#53** — legacy board rows; keep **Backlog** or close when **#58–#62** absorb scope.  
 
@@ -147,10 +147,10 @@
 
 ## Developer message (CTO)
 
-**Public web / data P0** is **accepted** in-repo ([mlp-status-cto.md](mlp-status-cto.md)). **Next focus (2026-04-12):** **background system** — [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § [CTO directive — background system delivery](mlp-next-delivery-tranche.md#cto-directive-background). **Shell is ahead of infra:** bottleneck = **data backend** (**#58–#62**), not more pages. After **#34**, **#58** only first; **#59** when ingest materially underway.
+**Public web / data P0** is **accepted** in-repo. **Dashboard backend (#58–#62)** is **implemented in repo** — bottleneck = **activation** (hosted ingest, live API, **`VITE_STATS_API_BASE`**, volume, verification), **not** more engine design. **Leadership SSOT:** [mlp-status-cto.md § Leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard) — **repo-complete ≠ product-live**.
 
-**Top operational task:** **deploy and smoke** — [web-deploy-smoke.md](web-deploy-smoke.md).
+**Top operational tasks:** **[#58](https://github.com/moldovancsaba/impact/issues/58)** activation sprint · **[#34](https://github.com/moldovancsaba/impact/issues/34)** npm path · [web-deploy-smoke.md](web-deploy-smoke.md) (add **§ Live stats** when wired).
 
-**Then:** close **#34** → **#44** Path C primary + **#44–#46** evidence → **#58–#62** in order · DMG/trust **spare capacity only**.
+**Then:** **#44** Path C primary + **#44–#46** evidence after **#34** · DMG/trust **#63–#66** without blocking stats activation.
 
-**Rules:** no fake aggregates; no doc/DMG-first tranche spend; privacy before public stats; **low WIP** on dashboard tickets — per tranche SSOT.
+**Rules:** no fake aggregates; privacy before public stats; close **#58–#62** on **hosted** proof — [closure model](mlp-next-delivery-tranche.md#board-closure-dashboard).
