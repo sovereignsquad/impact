@@ -4,11 +4,37 @@
 
 ## SSOT
 
-[mlp-next-delivery-tranche.md](../../docs/mlp-next-delivery-tranche.md) Phase 2 · relates **[#48](https://github.com/moldovancsaba/impact/issues/48)** · [submission-contract.md](../../docs/submission-contract.md)
+[mlp-next-delivery-tranche.md](../../docs/mlp-next-delivery-tranche.md) Phase 2 · [mlp-status-cto.md § Leadership view](../../docs/mlp-status-cto.md#cto-acceptance-leadership-dashboard) · relates **[#48](https://github.com/moldovancsaba/impact/issues/48)** · [submission-contract.md](../../docs/submission-contract.md)
 
-## Start when
+## Activation sprint — dashboard **product-live** (CTO directive)
 
-**[#34](https://github.com/moldovancsaba/impact/issues/34)** **Done** (npm publish + smoke + evidence). **Board:** this card should be the **first** dashboard item moved to **In Progress** — see [mlp-next-delivery-tranche.md](../../docs/mlp-next-delivery-tranche.md) § *Board movement & WIP discipline*.
+**Ingest is implemented in repo — this is not a documentation problem.** Execute until **hosted** proof exists.
+
+**Do:**
+
+1. **Deploy ingest** (TLS, production-appropriate host).  
+2. Configure **DB / runtime** — persistent **`IMPACT_INGEST_DB_PATH`**, **`better-sqlite3`** on target platform, **health** (`/health`), **logging**.  
+3. **Expose live `GET /api/stats/*`** — reachable from the web deployment (CORS as needed).  
+4. Set **`VITE_STATS_API_BASE=<live-ingest-origin>`** on the **production** web build.  
+5. **Redeploy web**.  
+6. **Seed** enough **real** submissions for meaningful buckets **or** document **threshold / volume** status honestly (no production privacy gaming).  
+7. **Smoke** **`/api/stats/overview`**, **`/full`**, **`/hardware`**, **`/tools`**, **`/models`**, and **`/data.html`** (placeholder vs live vs suppression).  
+8. Move **[#59](https://github.com/moldovancsaba/impact/issues/59)–[#62](https://github.com/moldovancsaba/impact/issues/62)** toward **Review / Done** per [closure model](../../docs/mlp-next-delivery-tranche.md#board-closure-dashboard) — **#62** last for public verification.
+
+**Report-back (comment on this issue or linked doc):**
+
+- Ingest **base URL**  
+- **Health** check result  
+- **Stats endpoints** — sample responses or status codes  
+- **Web URL** showing **live** stats (or explicit “below threshold”)  
+- **Volume** vs **`IMPACT_STATS_MIN_BUCKET_COUNT`**  
+- Which issues are **Review** / **Done**-ready  
+
+**Parallel:** **[#34](https://github.com/moldovancsaba/impact/issues/34)** (npm) can advance on maintainer capacity — see that issue for the **six-step** publish path.
+
+## Start when (board)
+
+**D1 code** is **Done** in repo. **Activation** may run **without** waiting on **#34**; coordinate with maintainers if shared infra.
 
 ## Deliverables
 
@@ -24,4 +50,4 @@
 - [x] Invalid payloads rejected with clear errors (**400** + schema message)
 - [x] Documented duplicate behaviour (README + contract)
 
-**Follow-on (still D1-adjacent / ops):** production deploy wiring, auth/rate limits, backup runbooks — track separately if needed before closing board **Done**.
+**Board Done (hosted):** ingest **deployed**, stats API **live**, evidence attached — per **Activation sprint** above and [closure model](../../docs/mlp-next-delivery-tranche.md#board-closure-dashboard).

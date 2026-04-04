@@ -101,7 +101,7 @@ Tables below list **related GitHub issues** that correspond to cards on **Projec
 
 ## CTO acceptance — dashboard backend in repo (2026-04-03)
 
-**Formal leadership acceptance:** [mlp-status-cto.md § CTO acceptance — leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard) — **repo-complete ≠ product-live**; doc **control structure** and **eight-step** ops sequence.
+**Formal leadership acceptance:** [mlp-status-cto.md § CTO acceptance — leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard) — canonical **one-page verdict**; **repo-complete ≠ product-live**; canonical **leadership sentence**; **control stack** split; **steps 1–11** + **report-back**; GitHub **activation** tracked on **[#58](https://github.com/moldovancsaba/impact/issues/58)**, **npm** on **[#34](https://github.com/moldovancsaba/impact/issues/34)**.
 
 **Accepted in code:** D1–D5 (**#58–#62**) — ingest MVP, aggregation, privacy thresholds, stats read API, web wiring (**`VITE_STATS_API_BASE`** + `/data.html`); HTTP integration tests; CORS; SQLite persistence; duplicate handling per [submission-contract.md](submission-contract.md); **`npm run verify:release`** green.
 

@@ -9,14 +9,24 @@ Publish **`@impact/cli`** to the **npm registry** so users can `npm install -g @
 - [release-checklist.md](https://github.com/moldovancsaba/impact/blob/main/docs/release-checklist.md) for publish flow
 - [npm-publish.md](https://github.com/moldovancsaba/impact/blob/main/docs/npm-publish.md) + `scripts/publish-npm-packages.sh`
 
+## Maintainer actions — unblock public npm (CTO directive)
+
+Execute in order; **stop treating this as planning** — **Path C** goes live only after proof.
+
+1. **`npm login`** (account with **`@impact`** scope — see [npm-publish.md](../../docs/npm-publish.md)).  
+2. **`npm run publish:npm`** from repo root (or `publish:npm:dry-run` first if preferred).  
+3. **`npm view @impact/cli`** — confirm **version** on registry.  
+4. **Clean-machine smoke** — fresh macOS (or agreed QA host): `npm install -g @impact/cli`, `impact --version`, minimal `impact scan` — [smoke-test-macos.md](../../docs/smoke-test-macos.md) Path C.  
+5. **Attach evidence** — paste command output / screenshots in a comment on this issue (or link to run log).  
+6. **Close #34** — board **Done** when above are satisfied.
+
 ## Acceptance
 
 - [x] Repo: all `@impact/*` at **0.3.0**, `files: ["dist"]`, `publishConfig.access: public`, pinned internal deps, `prepublishOnly`
 - [x] `npm run publish:npm:dry-run` passes locally (CI optional — no token)
 - [x] Public install documented as **Path C** (registry-first); Path B co-documented
 - [x] **Path D (DMG)** in repo: `npm run build:dmg` — [`packaging/macos/`](../../packaging/macos/), [install-macos.md](../../docs/install-macos.md), [macos-distribution.md](../../docs/macos-distribution.md)
-- [ ] **Maintainer:** `npm login` → `npm run publish:npm` (requires `@impact` scope on npm). Without login, publish fails with `ENEEDAUTH` — see [npm-publish.md](../../docs/npm-publish.md).
-- [ ] **Path C** smoke on clean macOS; paste evidence in comment below
+- [ ] **Maintainer:** complete **Maintainer actions** above (login → publish → `npm view` → clean-machine smoke → evidence → close).
 
 ## Based on
 
