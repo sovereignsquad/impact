@@ -1,0 +1,29 @@
+# Example Fly.io config for Dockerfile.ingest
+# 1. flyctl volumes create ingest_data --region iad --size 1
+# 2. Copy to fly.toml, set app name, then: flyctl deploy --dockerfile Dockerfile.ingest
+#
+# After deploy: set Vercel IMPACT_INGEST_UPSTREAM=https://<your-app>.fly.dev
+# CLI: IMPACT_SUBMIT_URL=https://<your-app>.fly.dev/
+
+app = "impact-ingest-replace-me"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile.ingest"
+
+[http_service]
+  internal_port = 8787
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[mounts]
+  source = "ingest_data"
+  destination = "/data"
+
+[env]
+  HOST = "0.0.0.0"
+  PORT = "8787"
+  IMPACT_INGEST_DB_PATH = "/data/ingest.db"

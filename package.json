@@ -22,7 +22,8 @@
     "dev:ingest": "npm run build -w @impact/schemas && npm run build -w @impact/ingest && npm run start -w @impact/ingest",
     "publish:npm:dry-run": "DRY_RUN=1 bash scripts/publish-npm-packages.sh",
     "publish:npm": "bash scripts/publish-npm-packages.sh",
-    "build:dmg": "bash packaging/macos/build-dmg.sh"
+    "build:dmg": "bash packaging/macos/build-dmg.sh",
+    "docker:ingest:build": "docker build -f Dockerfile.ingest -t impact-ingest ."
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",

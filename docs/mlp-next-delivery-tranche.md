@@ -107,7 +107,7 @@ Tables below list **related GitHub issues** that correspond to cards on **Projec
 
 **Not accepted as publicly delivered (real aggregates):** hosted SQLite ingest (TLS, persistent DB, backup/`better-sqlite3` ops); **`IMPACT_INGEST_UPSTREAM`** on Vercel so **`/api/stats/*`** is **not** only **fallback**; **`IMPACT_SUBMIT_URL`** pointed at that host; enough submissions for meaningful buckets; hosted smoke proving **non-fallback** JSON and **`/data.html`** behaviour (vs low-sample suppression).
 
-**Immediate operations:** sync GitHub issue bodies/status for **#59–#62** to repo truth → **deploy ingest** → set **`IMPACT_INGEST_UPSTREAM`** (+ confirm **`VITE_STATS_API_BASE`** / redeploy web if needed) → **seed** volume (or **non-public** test env with controlled threshold tuning only) → **verify** **`/api/health`** **`stats_mode: upstream`**, endpoints, and **`/data.html`** UX.
+**Immediate operations:** sync GitHub issue bodies/status for **#59–#62** to repo truth → **deploy ingest** (repo ships **[`Dockerfile.ingest`](../Dockerfile.ingest)** + **`npm run docker:ingest:build`** — see [ingest-server.md](ingest-server.md) § *Container image*, [`deploy/ingest-fly.example.toml`](../deploy/ingest-fly.example.toml)) → set **`IMPACT_INGEST_UPSTREAM`** (+ confirm **`VITE_STATS_API_BASE`** / redeploy web if needed) → **seed** volume (or **non-public** test env with controlled threshold tuning only) → **verify** **`/api/health`** **`stats_mode: upstream`**, endpoints, and **`/data.html`** UX.
 
 ### Board closure model (#58–#62)
 

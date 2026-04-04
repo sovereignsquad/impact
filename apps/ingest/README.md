@@ -47,6 +47,16 @@ impact scan --yes-submit -o ./reports
 
 (Requires consent flow / `SUBMIT` unless `--yes-submit` for automation.)
 
+## Docker (production-shaped)
+
+```bash
+# repo root
+docker build -f Dockerfile.ingest -t impact-ingest .
+docker run --rm -e HOST=0.0.0.0 -p 8787:8787 impact-ingest
+```
+
+See [ingest-server.md](../../docs/ingest-server.md) § *Container image* and [`deploy/ingest-fly.example.toml`](../../deploy/ingest-fly.example.toml).
+
 ## Docs
 
 [ingest-server.md](../../docs/ingest-server.md)

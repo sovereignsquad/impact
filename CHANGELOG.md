@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **Docs (SSOT):** [current-state.md](docs/current-state.md), [mlp-status-cto.md](docs/mlp-status-cto.md), [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — **partially live** public dashboard: Vercel **`/api/stats/*`** + **`VITE_STATS_API_BASE`** **green**; **real** aggregates **amber** until **`IMPACT_INGEST_UPSTREAM`** + hosted ingest + volume; activation sequence updated.
+- **`@impact/ingest` `tsconfig.json`:** exclude **`src/**/*.test.ts`** from `tsc` production emit (tests still run under Vitest).
+
+- **Docs (SSOT):** [current-state.md](docs/current-state.md), [mlp-status-cto.md](docs/mlp-status-cto.md), [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — **partially live** public dashboard: Vercel **`/api/stats/*`** + **`VITE_STATS_API_BASE`** **green**; **real** aggregates **amber** until **`IMPACT_INGEST_UPSTREAM`** + hosted ingest + volume; activation sequence updated; **immediate operations** link **`Dockerfile.ingest`** / **`docker:ingest:build`**.
 
 - **Deploy:** root [`vercel.json`](vercel.json) sets **`VITE_STATS_API_BASE`** to `https://impact.messmass.com/api` for production builds; same-origin **`/api/stats/*`** is served by Vercel Functions in this repo (see **Added** below).
 
@@ -28,6 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Web shell UX & versioning:** footer shows **Web shell** semver + **profile schema** on all pages (Vite `define` from `apps/web/package.json`); **`<main class="site-main">`** wraps primary content on every HTML entry; [docs/README.md](docs/README.md) reorganised with pick-a-path tables; root [README.md](README.md) adds **Versions** section and doc links for web + ingest; [docs/web.md](docs/web.md) and [docs/current-state.md](docs/current-state.md) § Versioning include `@impact/web`.
 
 ### Added
+
+- **Hosted ingest path:** [`Dockerfile.ingest`](Dockerfile.ingest) ( **`@impact/schemas`** + **`@impact/ingest`** ), [`.dockerignore`](.dockerignore) (excludes **`*.tsbuildinfo`** for clean image emits), [`deploy/ingest-fly.example.toml`](deploy/ingest-fly.example.toml); [ingest-server.md](docs/ingest-server.md) § *Container image*; root script **`npm run docker:ingest:build`**.
 
 - **Vercel `/api` stats edge:** root [`api/`](api/) serverless routes — **`GET /api/stats/overview|full|hardware|tools|models`** (honest **fallback** JSON when **`IMPACT_INGEST_UPSTREAM`** is unset; **proxy** to real ingest when set), **`GET /api/health`**. DevDependency **`@vercel/node`**. Docs: [web.md](docs/web.md) § Deploy (Vercel), [ingest-server.md](docs/ingest-server.md) § *Vercel stats routes*.
 

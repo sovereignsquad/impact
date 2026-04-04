@@ -72,3 +72,20 @@ The public site deploy includes root **[`api/`](../api/)** on Vercel: **`GET /ap
 - Set **`IMPACT_INGEST_DB_PATH`** to a **persistent** volume; confirm **`better-sqlite3`** native binary for host **OS/arch** in the runtime image.
 - Back up **`IMPACT_INGEST_DB_PATH`**; plan migrations as the storage model grows.
 - **Signing / notarization** apply to **Mac CLI/DMG**, not this Node service.
+
+### Container image (hosted ingest)
+
+From repo root:
+
+```bash
+docker build -f Dockerfile.ingest -t impact-ingest .
+docker run --rm -e HOST=0.0.0.0 -e PORT=8787 -p 8787:8787 impact-ingest
+```
+
+- **`Dockerfile.ingest`** — multi-stage build: **`@impact/schemas`** + **`@impact/ingest`**, **`node:20-bookworm`** (reliable **`better-sqlite3`** compile).
+- **`HOST=0.0.0.0`** in production containers (default in the image); override **`PORT`** as needed.
+- **`.dockerignore`** excludes **`**/*.tsbuildinfo`** so TypeScript **composite** incremental state from the host cannot skip emitting **`dist/`** in a clean image.
+
+**Fly.io (example):** copy [`deploy/ingest-fly.example.toml`](../deploy/ingest-fly.example.toml) → `fly.toml`, create a **volume** for `/data`, set **`IMPACT_INGEST_DB_PATH=/data/ingest.db`**, deploy. Then set Vercel **`IMPACT_INGEST_UPSTREAM=https://<app>.fly.dev`** (no trailing slash).
+
+**Railway / Render / other:** run the same image; mount persistent disk for the SQLite file; expose **8787** (or set **`PORT`** to the platform’s assigned port).
