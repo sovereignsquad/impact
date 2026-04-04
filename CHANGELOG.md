@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Deploy:** root [`vercel.json`](vercel.json) sets **`VITE_STATS_API_BASE`** to `https://impact.messmass.com/api` for production builds; same-origin **`/api/stats/*`** is served by Vercel Functions in this repo (see **Added** above).
+
+- **Web (`@impact/web`):** `VITE_STATS_API_BASE` accepts either the ingest **site origin** (`…` + `/api/stats/…`) or a base ending in **`/api`** for same-origin proxy setups (`stats-api-url.ts`, used from `data-entry.ts`). Docs: [web.md](docs/web.md) § `VITE_STATS_API_BASE`, [web-deploy-smoke.md](docs/web-deploy-smoke.md) § Live stats, [apps/web/README.md](apps/web/README.md).
+
 - **Docs:** [current-state.md](docs/current-state.md) + [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) § board movement — **#58**/**#34** parallel **In Progress**, activation vs npm; `apply-status` template documented.
 
 - **`apply-status.sh`:** **[#58](https://github.com/moldovancsaba/impact/issues/58)** → **In Progress** (activation sprint); **#59–#62** remain **Todo**.
@@ -22,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Web shell UX & versioning:** footer shows **Web shell** semver + **profile schema** on all pages (Vite `define` from `apps/web/package.json`); **`<main class="site-main">`** wraps primary content on every HTML entry; [docs/README.md](docs/README.md) reorganised with pick-a-path tables; root [README.md](README.md) adds **Versions** section and doc links for web + ingest; [docs/web.md](docs/web.md) and [docs/current-state.md](docs/current-state.md) § Versioning include `@impact/web`.
 
 ### Added
+
+- **Vercel `/api` stats edge:** root [`api/`](api/) serverless routes — **`GET /api/stats/overview|full|hardware|tools|models`** (honest **fallback** JSON when **`IMPACT_INGEST_UPSTREAM`** is unset; **proxy** to real ingest when set), **`GET /api/health`**. DevDependency **`@vercel/node`**. Docs: [web.md](docs/web.md) § Deploy (Vercel), [ingest-server.md](docs/ingest-server.md) § *Vercel stats routes*.
 
 - **Dashboard D2–D5 (in repo, #59–#62):** [`apps/ingest`](apps/ingest) — aggregation (`aggregate.ts`, `stats-from-db.ts`), privacy thresholds (`IMPACT_STATS_MIN_BUCKET_COUNT`), **`GET /api/stats/overview|full|hardware|tools|models`**, CORS (`IMPACT_STATS_CORS_ORIGIN`, `OPTIONS`). Vitest: `aggregate.test.ts`, `stats-from-db.test.ts`, **`http-server.test.ts`**. [`apps/web`](apps/web) — [`data.html`](apps/web/data.html) + [`data-entry.ts`](apps/web/src/data-entry.ts) with **`VITE_STATS_API_BASE`** (build-time) for live tables. Docs: [ingest-server.md](docs/ingest-server.md), issue bodies `issue-59.md`–`issue-62.md`, [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) operating state updated.
 

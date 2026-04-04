@@ -1,4 +1,5 @@
 import "./boot";
+import { statsJsonUrl } from "./stats-api-url";
 
 type Bucket = { key: string; count: number };
 
@@ -106,7 +107,7 @@ async function main(): Promise<void> {
   const modelsFb = document.getElementById("models-fallback");
 
   try {
-    const res = await fetch(`${apiBase}/api/stats/full`, {
+    const res = await fetch(statsJsonUrl(apiBase, "full"), {
       headers: { Accept: "application/json" },
     });
     if (!res.ok) {

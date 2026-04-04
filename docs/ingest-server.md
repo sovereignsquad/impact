@@ -54,6 +54,18 @@ Expect **200** and JSON. Low submission count → `below_global_threshold: true`
 
 Full checklist: [web-deploy-smoke.md](web-deploy-smoke.md) § *Live stats*; report-back list: [mlp-status-cto.md § Leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard).
 
+### Vercel stats routes (production web)
+
+The public site deploy includes root **[`api/`](../api/)** on Vercel: **`GET /api/stats/*`** and **`GET /api/health`**.
+
+| Variable | Role |
+| -------- | ---- |
+| **`IMPACT_INGEST_UPSTREAM`** | Optional. Base URL of the **Node + SQLite** ingest app (e.g. `https://ingest.example.com`). When set, Vercel functions **proxy** `GET /api/stats/…` to `${IMPACT_INGEST_UPSTREAM}/api/stats/…`. When unset, responses are **schema-correct fallbacks** (zero submissions, below threshold) so the web shell and **`/data.html`** succeed without a hosted DB. |
+| **`IMPACT_STATS_MIN_BUCKET_COUNT`** | Optional; passed through semantics in fallback payloads (default **5**). |
+| **`IMPACT_STATS_CORS_ORIGIN`** | Optional; `Access-Control-Allow-Origin` for these routes (default **`*`**). |
+
+**Note:** **`POST /`** submission to the real ingest is **not** proxied here; point **`IMPACT_SUBMIT_URL`** at a deployed ingest when you enable submissions. **`/api/health`** on the web host describes **`stats_mode`** (`fallback` vs `upstream`), not the SQLite ingest process itself.
+
 ## Production notes
 
 - Deploy behind **HTTPS**; set `IMPACT_SUBMIT_URL` on clients to the deployed base URL.

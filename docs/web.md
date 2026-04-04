@@ -58,7 +58,26 @@ Use the **repository root** as the Vercel project root (monorepo). Root [`vercel
 
 If the Vercel dashboard had **Output Directory** set to `public`, remove it or set it to **`apps/web/dist`** so it matches `vercel.json`.
 
-**Production (configured):** [https://impact.messmass.com](https://impact.messmass.com) — project **`narimato/impact`**, linked locally via `vercel link --project impact --scope narimato`. Deploy: `vercel --prod --yes --scope narimato` from repo root (requires Vercel CLI + team access). GitHub integration will pick up **`vercel.json`** on push.
+**Production (configured):** [https://impact.messmass.com](https://impact.messmass.com) — project **`narimato/impact`**, linked locally via `vercel link --project impact --scope narimato`. Deploy: `vercel --prod --yes --scope narimato` from repo root (requires Vercel CLI + team access). GitHub integration will pick up **`vercel.json`** on push. Root **`vercel.json`** supplies **`VITE_STATS_API_BASE`** (`https://impact.messmass.com/api`) for the Vite build (overridable in the project dashboard).
+
+**`/api` on Vercel:** the repo includes root **[`api/`](../api/)** serverless routes alongside the static **`apps/web/dist`** output. **`GET /api/stats/overview|full|hardware|tools|models`** return **200** with valid JSON. Without **`IMPACT_INGEST_UPSTREAM`**, responses use an **honest fallback** (zero submissions, below threshold — same shape as real ingest). Set **`IMPACT_INGEST_UPSTREAM`** to a hosted SQLite ingest origin (no trailing slash) to **proxy** those paths to the real service. **`GET /api/health`** reports **`stats_mode`**: `fallback` vs `upstream`. See [ingest-server.md](ingest-server.md) § *Vercel stats routes*.
+
+### `VITE_STATS_API_BASE` (community stats on `/data.html`)
+
+Set at **build** time. The web app calls **`stats/overview`**, **`stats/full`**, etc. relative to that base. Two supported shapes:
+
+| Pattern | Example `VITE_STATS_API_BASE` | Resulting fetch for full stats |
+| ------- | ----------------------------- | -------------------------------- |
+| **Site origin** (ingest mounted at `/api/stats/…` on that host) | `https://impact.messmass.com` | `https://impact.messmass.com/api/stats/full` |
+| **API mount** (same origin, path prefix `/api` already in the base) | `https://impact.messmass.com/api` | `https://impact.messmass.com/api/stats/full` |
+
+Local dev ingest (default port): `http://127.0.0.1:8787` → `http://127.0.0.1:8787/api/stats/full`.
+
+**Same-origin (recommended on Vercel):** static site at `https://impact.messmass.com` with **`VITE_STATS_API_BASE=https://impact.messmass.com/api`** — **`/api/stats/*`** is implemented by this repo’s **Vercel Functions** (fallback or **`IMPACT_INGEST_UPSTREAM`** proxy). Other static hosts still need their own **`/api`** routing or a separate API origin.
+
+**Separate API origin:** e.g. web `https://impact.messmass.com`, API `https://api.impact.messmass.com`. Set **`VITE_STATS_API_BASE`** to the ingest **origin** (first table row), e.g. `https://api.impact.messmass.com`, so fetches go to `…/api/stats/full`. Configure CORS on ingest if the browser calls cross-origin.
+
+**External ingest only (no repo `api/`):** you can instead use **`vercel.json` `rewrites`** so **`/api/:path*`** is forwarded to a remote ingest host — only if you are **not** relying on the bundled **`api/`** handlers (avoid double-handling).
 
 ---
 

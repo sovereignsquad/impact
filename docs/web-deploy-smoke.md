@@ -42,11 +42,11 @@ Replace `ORIGIN` with production base (e.g. `https://impact.messmass.com`).
 
 Use only when production is wired to a **hosted** ingest (see [mlp-status-cto.md § Leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard) steps 1–8).
 
-Replace **`INGEST_ORIGIN`** with the ingest base URL (no trailing slash). **`WEB_ORIGIN`** = static site base (same as `ORIGIN` above).
+Replace **`WEB_ORIGIN`** with the static site base (same as `ORIGIN` above). **`INGEST_ORIGIN`** is the host (no trailing slash) that serves ingest **health** and **`/api/stats/*`** — either the **same** host as the web app when `/api` is proxied to ingest, or a **dedicated** API host. Example same-origin: `INGEST_ORIGIN=https://impact.messmass.com` and stats at `WEB_ORIGIN/api/stats/full` (build with `VITE_STATS_API_BASE=https://impact.messmass.com` or `https://impact.messmass.com/api` — see [web.md](web.md) § **`VITE_STATS_API_BASE`**).
 
 ### Ingest API (direct)
 
-- [ ] `INGEST_ORIGIN/health` or `INGEST_ORIGIN/healthz` → **200** JSON ok  
+- [ ] `INGEST_ORIGIN/health` or `INGEST_ORIGIN/healthz` → **200** JSON ok (on **Vercel same-origin**, you may use **`WEB_ORIGIN/api/health`** for the bundled stats edge — see [ingest-server.md](ingest-server.md) § *Vercel stats routes*)  
 - [ ] `INGEST_ORIGIN/api/stats/overview` → **200**; `schema_version` **`impact.stats.overview.v0.1`**  
 - [ ] `INGEST_ORIGIN/api/stats/full` → **200**; `schema_version` **`impact.stats.v0.1`**; if `below_global_threshold`, dimension arrays empty (expected when volume low)  
 - [ ] `GET` responses include CORS headers if the browser calls cross-origin (or same-origin if proxied)
