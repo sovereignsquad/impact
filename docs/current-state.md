@@ -94,6 +94,7 @@ The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3
 | [install-macos.md](install-macos.md) | **macOS install** — Path C + Path B |
 | [mlp.md](mlp.md) | **Post-MVP programme** — M1–M6, loveability vs benchmarks |
 | [web.md](web.md) | **Public marketing shell** (`apps/web`) — landing, profile explorer, future stats |
+| [mlp-execution.md](mlp-execution.md) | **MLP CTO task list** — execution order after #34 |
 | [privacy-for-users.md](privacy-for-users.md) | Plain-language **privacy & trust** |
 | [user-expectations-mvp.md](user-expectations-mvp.md) | **MVP scope** — local vs crowd, Path B vs DMG |
 | [privacy-policy.md](privacy-policy.md) | Formal **privacy policy** |

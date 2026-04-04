@@ -4,6 +4,8 @@
 
 **Authority:** This file is the in-repo **programme definition** for the MLP track. **Execution state** (Todo / In Progress / Done) lives on [Project #2](https://github.com/users/moldovancsaba/projects/2). **Operational snapshot** of MVP vs install gates: [current-state.md](current-state.md). **Routing when sources conflict:** [ssot-map.md](ssot-map.md).
 
+**CTO execution checklist (tasks T0–T6, W1–W4, order):** [mlp-execution.md](mlp-execution.md).
+
 ---
 
 ## Status in MLP terms (today)

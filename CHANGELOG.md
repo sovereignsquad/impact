@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **MLP execution plan:** [docs/mlp-execution.md](docs/mlp-execution.md) — CTO task breakdown (Gate #34, M1–M6, web W1–W4), linked from [mlp.md](docs/mlp.md).
 - **`apps/web` (`@impact/web`):** Vite public shell — hero, install (Path B/C honest), after-scan explainer, **in-browser** `impact-profile.json` via `ImpactProfileSchema.safeParse`, FAQ, community-stats placeholder; [docs/web.md](docs/web.md). Root `npm run build` + `dev:web`; [current-state.md](docs/current-state.md) CTO snapshot + shipped stack row.
 - **MLP execution:** GitHub **[#44](https://github.com/moldovancsaba/impact/issues/44)–[#49](https://github.com/moldovancsaba/impact/issues/49)** on [Project #2](https://github.com/users/moldovancsaba/projects/2) (M1–M3 **Todo**, M4–M6 **Backlog**); bodies `scripts/gh-issue-bodies/issue-44.md` … `issue-49.md`; [`apply-status.sh`](scripts/gh-issue-bodies/apply-status.sh) + [`apply-updates.sh`](scripts/gh-issue-bodies/apply-updates.sh) updated. [mlp.md](docs/mlp.md) — CTO acceptance + board table with issue links.
 - **npm publish (#34):** all `@impact/*` workspaces at **0.3.0** with `files: ["dist"]`, `publishConfig.access: public`, pinned internal deps, `prepublishOnly` build; [docs/npm-publish.md](docs/npm-publish.md); `scripts/publish-npm-packages.sh`; root `npm run publish:npm` / `publish:npm:dry-run`; [smoke-test-macos.md](docs/smoke-test-macos.md) **Path C**; README / install-macos **registry-first** when live; `apps/cli/README.md`.
