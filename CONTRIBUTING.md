@@ -18,7 +18,7 @@ Thank you for your interest in **Impact**. This project is open source under the
 
 **Rule of thumb:** If it belongs on a roadmap, backlog, or todo list for Impact, it should exist as a **GitHub Issue** (or linked PR) and be **on the project board** with the right Status and fields. Avoid parallel trackers that drift out of sync.
 
-See [docs/README.md](docs/README.md) for the documentation map, [docs/ssot-map.md](docs/ssot-map.md) for authority routing (Project vs issues vs `current-state`), and [docs/project-management.md](docs/project-management.md) for board workflow.
+See [docs/README.md](docs/README.md) for the documentation map, [docs/ssot-map.md](docs/ssot-map.md) for authority routing (Project vs issues vs `current-state`), [docs/mlp.md](docs/mlp.md) for the post-MVP **Minimum Loveable Product** track, and [docs/project-management.md](docs/project-management.md) for board workflow.
 
 ## Build from source
 

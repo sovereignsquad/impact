@@ -18,6 +18,7 @@
 | **Version alignment** (tag, npm, `schema_version`, `impact --version`) | [current-state.md](current-state.md) — **§ Versioning (SSOT)** | [release-checklist.md](release-checklist.md), [npm-publish.md](npm-publish.md) |
 | **Product** definition and principles | [product.md](product.md) + [**#1** doctrine](https://github.com/moldovancsaba/impact/issues/1) | — |
 | **Phase ladder** 0–4 | [**#16**](https://github.com/moldovancsaba/impact/issues/16) | [product.md](product.md) |
+| **MLP programme** (M1–M6, phases, constraints, board hints) | [mlp.md](mlp.md) | [Project #2](https://github.com/users/moldovancsaba/projects/2) for execution **Status** |
 | **Field `confidence`** | [confidence-rules.md](confidence-rules.md) + `packages/schemas` | — |
 | **`status` / `presence` / provenance** (profile JSON) | [schema-semantics-v0.3.md](schema-semantics-v0.3.md) | — |
 | **Submission HTTP** to a server | [submission-contract.md](submission-contract.md) | — |

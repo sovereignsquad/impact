@@ -18,6 +18,10 @@ Architect-oriented summary: [architect-handoff.md](architect-handoff.md).
 
 This document is the canonical **product** spec for **v0.x / discovery MVP**. Issue **#1** is the living **doctrine anchor** on GitHub.
 
+## Minimum Loveable Product (MLP) — after MVP
+
+MVP proves **correctness** and **trust**. **MLP** targets **loveability**: easy install, rewarding first scan, clear next steps, shareable results, then early community value — **without** benchmark scores or hype. Full programme: **[mlp.md](mlp.md)**.
+
 ## MVP objective
 
 Answer only:

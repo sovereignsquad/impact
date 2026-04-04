@@ -7,6 +7,8 @@
 
 **Living snapshot of the repo + board mapping:** [current-state.md](current-state.md). For **operational truth now** (Path B vs Path C, the [#34](https://github.com/moldovancsaba/impact/issues/34) publish gate, and post-gate sequencing), use the opening **Operational status** section there — not this handoff doc. For **version alignment** (Git tag `v0.3.0`, npm `0.3.0`, JSON `impact.v0.3`, `impact --version`), use **§ Versioning (SSOT)** in that same file.
 
+**Post-MVP product track (loveability, not benchmarks):** [mlp.md](mlp.md) — M1–M6, constraints, board placement hints.
+
 ---
 
 ## 1. What IMPACT is (north star)

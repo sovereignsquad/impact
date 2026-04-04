@@ -165,6 +165,7 @@ Curated index: **[docs/README.md](docs/README.md)**
 | Submission HTTP contract | [docs/submission-contract.md](docs/submission-contract.md) |
 | Architecture | [docs/architecture.md](docs/architecture.md) |
 | Release QA | [docs/release-checklist.md](docs/release-checklist.md) · [docs/smoke-test-macos.md](docs/smoke-test-macos.md) |
+| Post-MVP / MLP track | [docs/mlp.md](docs/mlp.md) |
 
 **Planning & workflow:** [GitHub Issues](https://github.com/moldovancsaba/impact/issues) (scope/acceptance) · [Project #2](https://github.com/users/moldovancsaba/projects/2) (Status) · [Programme — not Done](https://github.com/users/moldovancsaba/projects/2/views/3) · [full board](https://github.com/users/moldovancsaba/projects/2/views/1) · **who wins when docs disagree:** [docs/ssot-map.md](docs/ssot-map.md)
 

@@ -15,9 +15,9 @@
 - **Path C (npm install):** implementation-complete on `main`, not yet publicly live
 - **Immediate gate:** [#34](https://github.com/moldovancsaba/impact/issues/34) requires maintainer publish + npm smoke evidence before closure
 - **Community stats:** not shipped
-- **Next sequence:** finish #34 → adoption/distribution → ingest/community visibility → benchmark foundation
+- **Next sequence:** finish **#34** → **MLP** spine ([mlp.md](mlp.md): install ease → report delight → recommendation intelligence → shareability → community stats)
 
-**Status:** IMPACT MVP is shipped. The repo-based macOS install path (Path B) is live and verified. The npm install path (Path C) is implementation-complete on main, but not yet publicly live until a maintainer publishes `@impact/cli`, verifies `npm view`, runs the published-package smoke test, and records evidence on issue #34. Community aggregate visibility is not shipped yet. The next sequence is: finish #34, improve adoption/distribution, then build ingest and community visibility, then benchmark foundations.
+**Status:** IMPACT MVP is shipped. The repo-based macOS install path (Path B) is live and verified. The npm install path (Path C) is implementation-complete on main, but not yet publicly live until a maintainer publishes `@impact/cli`, verifies `npm view`, runs the published-package smoke test, and records evidence on issue #34. Community aggregate visibility is not shipped yet. After **#34**, programme focus shifts to **MLP** (Minimum Loveable Product) — see [mlp.md](mlp.md).
 
 ---
 
@@ -88,7 +88,8 @@ The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3
 | [README.md](../README.md) | **Public front door** — value, quick start, trust, scope |
 | [docs/README.md](README.md) | **Curated doc index** |
 | *(this file, § Versioning)* | **SSOT** — tag vs npm vs `schema_version` vs `impact --version` |
-| [install-macos.md](install-macos.md) | **Canonical macOS install** — Path B for releases |
+| [install-macos.md](install-macos.md) | **macOS install** — Path C + Path B |
+| [mlp.md](mlp.md) | **Post-MVP programme** — M1–M6, loveability vs benchmarks |
 | [privacy-for-users.md](privacy-for-users.md) | Plain-language **privacy & trust** |
 | [user-expectations-mvp.md](user-expectations-mvp.md) | **MVP scope** — local vs crowd, Path B vs DMG |
 | [privacy-policy.md](privacy-policy.md) | Formal **privacy policy** |
@@ -141,12 +142,14 @@ No capability benchmarks, agent CRUD tests, shell execution benchmarks, crowd sc
 
 ## Programme next slices (post-MVP)
 
-Sequencing is **not** authoritative here — use **Operational status** for the immediate gate. Typical forward work:
+Sequencing is **not** authoritative here — use **Operational status** for the **#34** gate. **MLP epics and phases:** [mlp.md](mlp.md) (M1–M6, priorities, what not to ship).
+
+Typical forward work:
 
 1. **[#34](https://github.com/moldovancsaba/impact/issues/34)** — publish `@impact/*` to npm; published-package smoke; evidence on the issue.  
-2. **Adoption / distribution** — Path C as default user story when live; optional **[#38](https://github.com/moldovancsaba/impact/issues/38)** (standalone binary).  
-3. **#4 / #5** — community and security channels when scheduled.  
-4. **Merge-path depth** — more orchestration tests beyond current fixture coverage.  
-5. **#1** — doctrine in sync when scope shifts.
+2. **MLP spine (P0)** — **M1** public install default · **M2** report delight · **M3** conservative recommendations ([mlp.md](mlp.md)).  
+3. **MLP follow-ons (P1)** — **M4** share layer · **M5** community stats MVP · **M6** install polish ([mlp.md](mlp.md)).  
+4. **#4 / #5** — community and security channels when scheduled.  
+5. **Long horizon** — benchmark portal, binary packaging, platform parity; **not** the MLP spine ([mlp.md](mlp.md) § Board placement).
 
 **Delivered slices (reference):** Sprint B **[#17](https://github.com/moldovancsaba/impact/issues/17)–[#26](https://github.com/moldovancsaba/impact/issues/26)** (including **`impact.v0.3`** semantics); **[#27](https://github.com/moldovancsaba/impact/issues/27)** Path B smoke; **[#28](https://github.com/moldovancsaba/impact/issues/28)** submission 409 duplicate path. Issue bodies: [`scripts/gh-issue-bodies/`](../scripts/gh-issue-bodies/). Install: [install-macos.md](install-macos.md).

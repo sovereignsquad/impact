@@ -20,6 +20,7 @@ Start on the repo **[README.md](../README.md)** for value proposition, quick sta
 | Document | Why read it |
 | -------- | ----------- |
 | [ssot-map.md](ssot-map.md) | **Authority routing** — Project Status vs issues vs `current-state` vs code |
+| [mlp.md](mlp.md) | **Minimum Loveable Product** — post-MVP phases M1–M6, priorities, constraints |
 | [product.md](product.md) | **Product definition**, v0.x scope, principles |
 | [project-management.md](project-management.md) | **Project #2** column semantics and contributor workflow |
 | [submission-contract.md](submission-contract.md) | Optional **HTTP submission** (normative) |
