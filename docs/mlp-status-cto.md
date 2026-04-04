@@ -2,7 +2,7 @@
 
 **Purpose:** single **answerable status memo** for leadership and contributors: how far the MLP has progressed, what is in code, what blocks public adoption, and **ordered next work**. Supplements [mlp.md](mlp.md) (what the MLP **is**), [mlp-execution.md](mlp-execution.md) (how execution is **staged**), and [current-state.md](current-state.md) (broader **operational truth**). **Board workflow:** [Project #2](https://github.com/users/moldovancsaba/projects/2).
 
-**Established:** 2026-04-03 · **Updated:** 2026-04-08 — [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) **confirmed** as final SSOT for next phase (issue map, low-WIP / dependency order, **#34** gate)
+**Established:** 2026-04-03 · **Updated:** 2026-04-09 — [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) **operating model aligned**: SSOT + CHANGELOG trail, six-step sequence, repo / board / discipline (**low WIP**, dashboard first, packaging second, **no** parallel busywork, **no** premature DMG); **#34** gate, **#58** first after close
 
 **Maintain this doc when:** the public install gate (**#34**) closes, or **M1–M3** / **H\*** work materially changes state.
 
@@ -32,7 +32,7 @@
 | **Next-delivery tranche** (dashboard **#58–#62**, mac **#63–#66**) | **Green** — definition + board + issue index in [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md); **amber** execution until **#34** **Done** |
 | **Public MLP adoption path** (npm as easiest install) | **Amber** until **#34** closed with publish + `npm view` + published-package smoke + evidence |
 
-**Overall (CTO):** **Green** MVP · **green** web shell + report/recommendations · **green** next-tranche SSOT · **amber** **#34** / public npm · **ready** — **#58** first when **#34** closes ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) execution order).
+**Overall (CTO):** **Green** MVP · **green** in-repo MLP + next-tranche definition · **amber** **#34** (public npm) · **ready** — **#58** **immediately** after **#34** closes. **Discipline:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) — low WIP, dependency order, packaging **Backlog** until dashboard advances, DMG last.
 
 ---
 

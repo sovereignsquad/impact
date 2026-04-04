@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Operating model alignment (CTO, 2026-04-09):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — § *CTO acceptance* records **confirmed** SSOT, [mlp-status-cto.md](docs/mlp-status-cto.md) + CHANGELOG alignment, **six-step** operating model (#34 → #58 → #59 when D1 underway → #60–#62 in dependency order → #63–#66 **Backlog** → DMG last), and CTO note: repo / board / execution discipline aligned (**low WIP**, dashboard first, packaging second, no parallel busywork, no premature DMG). [mlp-status-cto.md](docs/mlp-status-cto.md) header + overall line updated.
+
 - **Next-tranche SSOT final confirmation (CTO, 2026-04-08):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — expanded § *CTO acceptance* (status greens/ambers, **six-step** execution order, parallel-busywork warning, operational next step); [mlp-status-cto.md](docs/mlp-status-cto.md) summary row + header.
 
 - **Architect issue index:** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — § *GitHub issues — index with titles* (linked **#34–#66** + programme **#35–#43**) for readers without GitHub issue access.

@@ -4,38 +4,46 @@
 
 **Board issues:** dashboard **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**; macOS packaging **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**. **Do not start** dashboard execution until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **Done** (npm publish + smoke + evidence).
 
-**Established:** CTO directive · **Accepted:** 2026-04-07 (initial) · **Confirmed SSOT:** 2026-04-08 — tranche doc + issue map + low-WIP discipline **final** for this phase.
+**Established:** CTO directive · **Accepted:** 2026-04-07 (initial) · **Confirmed SSOT:** 2026-04-08 · **Operating model aligned (repo + board discipline):** 2026-04-09.
 
 ---
 
 ## CTO acceptance — next delivery tranche
 
-**Decision:** **This file** is the **correct SSOT** for the **next public delivery phase**.
+**Decision:** **This file** is the **confirmed SSOT** for the **next public delivery phase**.
 
-**What this document is doing right:**
+**Accepted.** The **repo** now reflects the **correct operating model**.
 
-- Sequencing is **clear** · WIP discipline is **clear** · **Dashboard** comes **first** · **macOS packaging** is **staged** correctly · **DMG stays last** · **Issue map** at the end is **complete** for people **without** GitHub/repo access.
+**Confirmed:**
 
-**Current status (CTO):**
+- **This file** — **confirmed SSOT** for the next tranche.  
+- [mlp-status-cto.md](mlp-status-cto.md) — **aligned** to it.  
+- [CHANGELOG.md](../CHANGELOG.md) — **records** the confirmation trail.  
+- **Execution order** — preserved **exactly** as intended (see **Operating model** below).
 
-- **Green:** MVP  
-- **Green:** in-repo **MLP web shell** and **recommendation / report** work  
-- **Green:** **next-delivery tranche** definition and board setup  
-- **Amber:** **[#34](https://github.com/moldovancsaba/impact/issues/34)** still blocks **broad** execution of the dashboard tranche  
-- **Ready:** as soon as **#34** is **Done**, start **[#58](https://github.com/moldovancsaba/impact/issues/58)** **first** — **not** everything at once.
+**Operating model** — **nothing changes** in sequence:
 
-**Correct execution order (preserve dependency — do not parallelise into busywork):**
-
-1. **Close [#34](https://github.com/moldovancsaba/impact/issues/34)** (publish, verify, smoke, evidence, board **Done**).  
+1. **Close [#34](https://github.com/moldovancsaba/impact/issues/34)**.  
 2. **Move [#58](https://github.com/moldovancsaba/impact/issues/58)** to **In Progress**.  
 3. **Start [#59](https://github.com/moldovancsaba/impact/issues/59)** only when **D1** is **materially** underway.  
-4. Keep **[#60](https://github.com/moldovancsaba/impact/issues/60)–[#62](https://github.com/moldovancsaba/impact/issues/62)** in **Todo** until **unblocked** by prior steps.  
-5. Keep **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)** in **Backlog** until **dashboard** work has **advanced**.  
-6. Treat **DMG** ([#66](https://github.com/moldovancsaba/impact/issues/66)) as the **final** packaging layer — **not** an early deliverable.
+4. **Advance [#60](https://github.com/moldovancsaba/impact/issues/60)–[#62](https://github.com/moldovancsaba/impact/issues/62)** in **dependency order**.  
+5. Keep **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)** in **Backlog**.  
+6. **Keep DMG last** ([#66](https://github.com/moldovancsaba/impact/issues/66)) — **no** premature DMG work.
 
-**CTO note:** The **low-WIP** correction matters. **Do not** let the board turn into **parallel busywork** — this tranche **only works** if the team preserves **dependency order**.
+**CTO note:** The important part is **not** the wording update itself. It is that **repo**, **board logic**, and **execution discipline** are now **aligned**: **low WIP** · **dashboard first** · **packaging second** · **no parallel busywork** · **no premature DMG work**.
 
-**Immediate next step (operational — unchanged):** publish and close **#34** → begin **#58** → advance the **dashboard** tranche **in sequence**.
+**Current status call:**
+
+- **Green:** MVP  
+- **Green:** in-repo **MLP** work and **next-tranche** definition  
+- **Amber:** **[#34](https://github.com/moldovancsaba/impact/issues/34)**  
+- **Ready:** start **[#58](https://github.com/moldovancsaba/impact/issues/58)** **immediately** after **#34** closes  
+
+That is the **correct state**.
+
+**Doc quality (preserved):** sequencing and WIP discipline are **clear** · **Dashboard** first · macOS packaging **staged** · **Issue map** at the end supports readers **without** repo/GitHub access.
+
+**Immediate next step (operational):** publish and close **#34** → begin **#58** → advance the **dashboard** tranche **in sequence**.
 
 **Strong product choices (preserved):** dashboard = **next product-value layer**; Mac download = **packaging / release engineering**, staged. **Out of scope:** native GUI, accounts/profile layer, leaderboards, benchmark overlays.
 
