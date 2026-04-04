@@ -41,6 +41,9 @@ edit 26 "IMPACT P1: Add merge-path tests for multi-entity scan orchestration" "$
 edit 27 "IMPACT P1: Complete macOS-first packaging and release path" "$BD/issue-27.md"
 edit 28 "IMPACT P1: Implement explicit duplicate-submission handling for 409 responses" "$BD/issue-28.md"
 
+# npm publish / Path C gate (docs/npm-publish.md, mlp-status-cto.md)
+edit 34 "IMPACT P1: Publish @impact/cli to npm registry" "$BD/issue-34.md"
+
 # MLP track (see docs/mlp.md)
 edit 44 "IMPACT P0: MLP M1 — Public install and adoption" "$BD/issue-44.md"
 edit 45 "IMPACT P0: MLP M2 — Report delight and first-run payoff" "$BD/issue-45.md"
@@ -75,7 +78,7 @@ for n in 1 2 6 7 8 10 11 12 15 16; do
   gh issue edit "$n" --repo "$REPO" --add-label "P0" 2>/dev/null || true
   gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
 done
-for n in 3 4 5 9 13 14 22 23 24 25 26 27 28; do
+for n in 3 4 5 9 13 14 22 23 24 25 26 27 28 34; do
   gh issue edit "$n" --repo "$REPO" --add-label "P1" 2>/dev/null || true
   gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
 done

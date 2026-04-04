@@ -5,6 +5,7 @@ Markdown here mirrors the **structure and intent** of issues on [moldovancsaba/i
 **Quality bar:** programme cards follow the same sections as [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498) — Objective, Unified Context, Based On, Problem, Goal, Scope, Execution Prompt, Scope / Non-Goals, Constraints, Acceptance Checks, Dependencies, Out of Scope, Risks, Delivery Artifact, Developer Notes.
 
 - `issue-NN.md` — body for GitHub issue `#NN`
+- **npm / Path C gate:** `issue-34.md` — [#34](https://github.com/moldovancsaba/impact/issues/34) (included in `apply-updates.sh`)
 - **MLP:** `issue-44.md` … `issue-49.md` — [#44](https://github.com/moldovancsaba/impact/issues/44)–[#49](https://github.com/moldovancsaba/impact/issues/49) ([mlp.md](../../docs/mlp.md))
 - **MLP public web / historical data:** `issue-50.md` … `issue-57.md` — [#50](https://github.com/moldovancsaba/impact/issues/50)–[#57](https://github.com/moldovancsaba/impact/issues/57) ([mlp-status-cto.md](../../docs/mlp-status-cto.md))
 - **Dashboard + macOS packaging tranche:** `issue-58.md` … `issue-66.md` — [#58](https://github.com/moldovancsaba/impact/issues/58)–[#66](https://github.com/moldovancsaba/impact/issues/66) ([mlp-next-delivery-tranche.md](../../docs/mlp-next-delivery-tranche.md)). **#58** = **activation sprint** (product-live); **#34** = **npm maintainer** path — refresh bodies with `apply-updates.sh` after CTO directive changes.
