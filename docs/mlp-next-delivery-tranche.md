@@ -365,17 +365,17 @@ The **web shell** exists; **in-repo** **read API + aggregation** exist under [`a
 
 ## Board movement & WIP discipline
 
-**Use the board to preserve sequence, not only visibility.** Having **#58–#62** all in **Todo** is fine for **queue visibility**; **operationally** limit **In Progress** work to **one or two** dashboard tickets at a time.
+**Use the board to preserve sequence, not only visibility.** **`apply-status.sh`** template: **[#58](https://github.com/moldovancsaba/impact/issues/58)** **In Progress** (activation sprint owner); **#59–#62** **Todo** until closure order; **[#34](https://github.com/moldovancsaba/impact/issues/34)** **In Progress** (npm) — **parallel** allowed.
 
 | When | Action |
 | ---- | ------ |
-| **Now** | **[#34](https://github.com/moldovancsaba/impact/issues/34)** **In Progress** until closed. **#58–#62:** **code in repo** — align **Project #2** **Status** / **Done** with **deployed ingest** + acceptance evidence (see [`apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh) templates). |
-| **After production ingest** | Close **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** when URL, volume, and web build match issue bodies. |
-| **Low WIP** | Prefer **one** dashboard card **In Progress** at a time for **ops** work even when code exists. |
-| **macOS tranche** | **After #34:** **signing / notarization / release attachment** (**#65**, **#66** trust completion) may run **in parallel** with dashboard **if capacity** — see § *Operating model (updated)*. **Do not** market Path D as finished until **M3**. **Primary product-value remains dashboard (#58–#62).** |
+| **Now** | **[#34](https://github.com/moldovancsaba/impact/issues/34)** + **[#58](https://github.com/moldovancsaba/impact/issues/58)** **In Progress** — execute **maintainer** path and **dashboard activation** (see issue bodies + [mlp-status-cto.md](mlp-status-cto.md#cto-acceptance-leadership-dashboard)). **#59–#62** **Todo** until hosted proof advances them. |
+| **After production ingest + web wired** | Close **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** per [closure model](#board-closure-dashboard) with evidence. |
+| **Low WIP** | Prefer **one** **dashboard** card **In Progress** (**#58** today); advance **#59–#62** only as closure model allows. |
+| **macOS tranche** | **Signing / notarization** (**#65**, **#66**) may run **in parallel** if capacity — **do not** market Path D finished until **M3**. |
 | **Ideabank** | GUI, accounts, leaderboards — no new issues required here. |
 
-[`apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh) sets a **template** (e.g. **#58–#62** Todo); **after #34**, maintainers should **manually** set **In Progress** per the table above to reduce board noise and fragmentation.
+Re-run [`apply-status.sh`](../scripts/gh-issue-bodies/apply-status.sh) to reset the **Status** template after board drift; override in the UI when **hosted** truth differs.
 
 ---
 

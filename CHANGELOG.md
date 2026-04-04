@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Docs:** [current-state.md](docs/current-state.md) + [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) § board movement — **#58**/**#34** parallel **In Progress**, activation vs npm; `apply-status` template documented.
+
 - **`apply-status.sh`:** **[#58](https://github.com/moldovancsaba/impact/issues/58)** → **In Progress** (activation sprint); **#59–#62** remain **Todo**.
 
 - **`apply-updates.sh`:** includes **[#34](https://github.com/moldovancsaba/impact/issues/34)** (`issue-34.md`) — npm publish gate; P1 label loop updated.
