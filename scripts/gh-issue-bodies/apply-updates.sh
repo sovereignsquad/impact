@@ -49,6 +49,27 @@ edit 47 "IMPACT P1: MLP M4 — Shareable result layer" "$BD/issue-47.md"
 edit 48 "IMPACT P1: MLP M5 — Community visibility MVP" "$BD/issue-48.md"
 edit 49 "IMPACT P1: MLP M6 — Install polish after npm" "$BD/issue-49.md"
 
+# MLP public web / historical data (see docs/mlp-status-cto.md)
+edit 50 "IMPACT P0: MLP Web H1 — Historical data information architecture" "$BD/issue-50.md"
+edit 51 "IMPACT P0: MLP Web H2 — Historical hardware dataset MVP" "$BD/issue-51.md"
+edit 52 "IMPACT P0: MLP Web H3 — Historical tools/runtimes dataset MVP" "$BD/issue-52.md"
+edit 53 "IMPACT P0: MLP Web H4 — Historical LLM/model dataset MVP" "$BD/issue-53.md"
+edit 54 "IMPACT P0: MLP Web H5 — Install / download page" "$BD/issue-54.md"
+edit 55 "IMPACT P0: MLP Web H6 — Launch / use page" "$BD/issue-55.md"
+edit 56 "IMPACT P0: MLP Web H7 — Submit result page" "$BD/issue-56.md"
+edit 57 "IMPACT P0: MLP Web H8 — Homepage rework (four pillars)" "$BD/issue-57.md"
+
+# Dashboard + macOS packaging tranche (docs/mlp-next-delivery-tranche.md)
+edit 58 "IMPACT P0: Dashboard D1 — Ingest MVP" "$BD/issue-58.md"
+edit 59 "IMPACT P0: Dashboard D2 — Aggregation model" "$BD/issue-59.md"
+edit 60 "IMPACT P0: Dashboard D3 — Privacy thresholds" "$BD/issue-60.md"
+edit 61 "IMPACT P0: Dashboard D4 — Dashboard read API" "$BD/issue-61.md"
+edit 62 "IMPACT P0: Dashboard D5 — Wire webapp to real aggregates" "$BD/issue-62.md"
+edit 63 "IMPACT P1: macOS M1 — Distribution decision (binary vs app)" "$BD/issue-63.md"
+edit 64 "IMPACT P1: macOS M2 — Packaging pipeline & clean-Mac smoke" "$BD/issue-64.md"
+edit 65 "IMPACT P1: macOS M3 — Signing & notarization plan" "$BD/issue-65.md"
+edit 66 "IMPACT P1: macOS M4 — DMG packaging (after M1–M3)" "$BD/issue-66.md"
+
 # Labels: P0/P1 + area; drop legacy "epic" from implementation workstreams
 for n in 1 2 6 7 8 10 11 12 15 16; do
   gh issue edit "$n" --repo "$REPO" --add-label "P0" 2>/dev/null || true
@@ -67,6 +88,18 @@ for n in 44 45 46; do
   gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
 done
 for n in 47 48 49; do
+  gh issue edit "$n" --repo "$REPO" --add-label "P1" 2>/dev/null || true
+  gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
+done
+for n in 50 51 52 53 54 55 56 57; do
+  gh issue edit "$n" --repo "$REPO" --add-label "P0" 2>/dev/null || true
+  gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
+done
+for n in 58 59 60 61 62; do
+  gh issue edit "$n" --repo "$REPO" --add-label "P0" 2>/dev/null || true
+  gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
+done
+for n in 63 64 65 66; do
   gh issue edit "$n" --repo "$REPO" --add-label "P1" 2>/dev/null || true
   gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
 done

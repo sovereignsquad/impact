@@ -62,4 +62,17 @@ describe("renderHtmlReport", () => {
     expect(html).toContain("Presence (epistemic basis)");
     expect(html).toContain("inferred");
   });
+
+  it("includes MLP-style overview sections", () => {
+    const html = renderHtmlReport(loadFixture("baseline-profile.sample.json"));
+    expect(html).toContain("At a glance");
+    expect(html).toContain("What this scan means");
+    expect(html).toContain("Suggested next steps");
+    expect(html).toContain("Known limitations (this product version)");
+  });
+
+  it("suggested steps mention unreachable runtime when applicable", () => {
+    const html = renderHtmlReport(loadFixture("scenarios/ollama-unreachable.json"));
+    expect(html).toContain("Bring “ollama” online");
+  });
 });

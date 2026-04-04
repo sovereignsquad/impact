@@ -14,12 +14,16 @@
 - **Path B (repo-based install):** live and verified
 - **Path C (npm install):** implementation-complete on `main`, not yet publicly live
 - **Immediate gate:** [#34](https://github.com/moldovancsaba/impact/issues/34) requires maintainer publish + npm smoke evidence before closure
+- **Top operational task:** **deploy + smoke** production — [web-deploy-smoke.md](web-deploy-smoke.md). **Repo/docs** for this tranche are **closed** (CTO); next moves are **operational** (**#34**, then **#44–#46**) — [mlp-status-cto.md](mlp-status-cto.md).
+- **MLP in-repo:** partially implemented (deterministic recommendations, richer HTML report, multi-page web shell + profile explorer); P0 web/data slice **accepted** per [mlp-status-cto.md](mlp-status-cto.md)
+- **MLP public web / stats track:** **[#50](https://github.com/moldovancsaba/impact/issues/50)–[#57](https://github.com/moldovancsaba/impact/issues/57)** (H1–H8) — multi-page shell shipped; aggregate **UI** still placeholder until ingest  
+- **Next delivery tranche:** **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** (Todo queue; **#58** → In Progress first when **#34** Done — low WIP); **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)** Backlog — [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) **accepted** 2026-04-07
 - **Community stats:** not shipped
-- **Next sequence:** finish **#34** → **MLP** spine ([mlp.md](mlp.md): install ease → report delight → recommendation intelligence → shareability → community stats)
+- **Next sequence:** finish **#34** → prove **MLP** board items **[#44](https://github.com/moldovancsaba/impact/issues/44)–[#46](https://github.com/moldovancsaba/impact/issues/46)** with evidence → continue spine per [mlp.md](mlp.md)
 
-**Programme health (CTO snapshot):** **Green** — MVP shipped; **MLP** doctrine + board + issues **[#44](https://github.com/moldovancsaba/impact/issues/44)–[#49](https://github.com/moldovancsaba/impact/issues/49)** ready. **Amber** — public npm (**[#34](https://github.com/moldovancsaba/impact/issues/34)**) not operationally closed. **Do not** start full MLP **implementation** until **#34** closes; then **M1 → M2 → M3**.
+**Programme health (CTO snapshot):** **Green** — MVP shipped; **green** — in-repo MLP web shell (+ prior report/recommendations work); **amber** — public npm until **[#34](https://github.com/moldovancsaba/impact/issues/34)**. Programme board **[#44](https://github.com/moldovancsaba/impact/issues/44)–[#49](https://github.com/moldovancsaba/impact/issues/49)**. **Repo/doc tranche frozen (CTO)** — next moves **operational**: deploy, [web-deploy-smoke.md](web-deploy-smoke.md), **#34**, then **#44** CTAs and **#44–#46** evidence. Full memo: [mlp-status-cto.md](mlp-status-cto.md).
 
-**Status:** IMPACT MVP is shipped. The repo-based macOS install path (Path B) is live and verified. The npm install path (Path C) is implementation-complete on main, but not yet publicly live until a maintainer publishes `@impact/cli`, verifies `npm view`, runs the published-package smoke test, and records evidence on issue #34. Community aggregate visibility is not shipped yet. After **#34**, programme focus shifts to **MLP** (Minimum Loveable Product) — see [mlp.md](mlp.md).
+**Status:** IMPACT MVP is shipped. The repo-based macOS install path (Path B) is live and verified. The npm install path (Path C) is implementation-complete on main, but not yet publicly live until a maintainer publishes `@impact/cli`, verifies `npm view`, runs the published-package smoke test, and records evidence on issue #34. **MLP** slices (report interpretation, deterministic recommendations, web profile explorer) are **partially delivered in-repo** — [mlp-status-cto.md](mlp-status-cto.md). Community aggregate visibility is not shipped yet. Programme definition and remaining work: [mlp.md](mlp.md).
 
 ---
 
@@ -71,14 +75,14 @@ The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3
 | ---- | ------ |
 | Runtime | **Node.js ≥ 20**, TypeScript, **npm workspaces** |
 | CLI | `apps/cli` → `impact scan` (see README) |
-| Public web shell | `apps/web` — Vite landing, install help, in-browser `impact-profile.json` explorer ([web.md](web.md)) |
+| Public web shell | `apps/web` — Vite **multi-page** site: home, install, run/submit explainers, community-data IA (placeholders), profile explorer ([web.md](web.md)) |
 | Schema | **`impact.v0.3`** — provenance on host fields; runtime **`status`** (operational) + **`presence`** (epistemic) + **capabilities.model_inventory**; tool **presence** + provenanced version; model **`presence`** + probe metadata ([`packages/schemas`](https://github.com/moldovancsaba/impact/tree/main/packages/schemas)); see [schema-semantics-v0.3.md](schema-semantics-v0.3.md) |
 | Host | `packages/scanner-host` — OS/memory/CPU string, `df` disk, Metal **hint**, salted fingerprint |
 | Runtimes | `packages/scanner-runtimes` — Ollama binary + API reachability; **MLX pip only**, explicit **partial** + **no model inventory** |
 | Tools | `packages/scanner-tools` — **allowlist** only, PATH + version probes |
 | Models | `packages/scanner-models` — Ollama `/api/tags` when reachable; MLX list **empty** until path policy |
 | Privacy | `packages/privacy` — `~/.impact/salt`, denylist constants, privacy block |
-| Reporting | `packages/reporting` — `impact-profile.json`, `impact-report.html` (provenance, confidence legend, diagnostics, MLX warning, not-collected, platform footer + support-matrix link) |
+| Reporting | `packages/reporting` — `impact-profile.json`, `impact-report.html` (provenance, confidence legend, at-a-glance / interpretation / suggested steps / limitations, diagnostics, MLX warning, not-collected, platform footer + support-matrix link); deterministic `buildRecommendations` (shared with web explorer) |
 | Submission | `packages/submission` — opt-in POST; **`IMPACT_SUBMIT_URL`** required; 15s timeout + bounded retries; `impact-submission-preview.json` / `impact-submission-receipt.json` + `~/.impact/submission-receipts.log` |
 | Orchestration | `packages/core` — `runScan`, merge, coarse **readiness** (not benchmarks) |
 
@@ -93,8 +97,10 @@ The **I.M.P.A.C.T. discovery scanner MVP** is **complete** as of release **`v0.3
 | *(this file, § Versioning)* | **SSOT** — tag vs npm vs `schema_version` vs `impact --version` |
 | [install-macos.md](install-macos.md) | **macOS install** — Path C + Path B |
 | [mlp.md](mlp.md) | **Post-MVP programme** — M1–M6, loveability vs benchmarks |
-| [web.md](web.md) | **Public marketing shell** (`apps/web`) — landing, profile explorer, future stats |
-| [mlp-execution.md](mlp-execution.md) | **MLP CTO task list** — execution order after #34 |
+| [mlp-status-cto.md](mlp-status-cto.md) | **MLP CTO assessment** — delivered vs blocked, next developer tasks |
+| [web.md](web.md) | **Public marketing shell** (`apps/web`) — multi-page site, deploy smoke: [web-deploy-smoke.md](web-deploy-smoke.md) |
+| [mlp-execution.md](mlp-execution.md) | **MLP CTO task list** — execution order and formal completion |
+| [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | **Next tranche** — dashboard **#58–#62**, macOS **#63–#66** |
 | [privacy-for-users.md](privacy-for-users.md) | Plain-language **privacy & trust** |
 | [user-expectations-mvp.md](user-expectations-mvp.md) | **MVP scope** — local vs crowd, Path B vs DMG |
 | [privacy-policy.md](privacy-policy.md) | Formal **privacy policy** |

@@ -6,6 +6,8 @@ Markdown here mirrors the **structure and intent** of issues on [moldovancsaba/i
 
 - `issue-NN.md` — body for GitHub issue `#NN`
 - **MLP:** `issue-44.md` … `issue-49.md` — [#44](https://github.com/moldovancsaba/impact/issues/44)–[#49](https://github.com/moldovancsaba/impact/issues/49) ([mlp.md](../../docs/mlp.md))
+- **MLP public web / historical data:** `issue-50.md` … `issue-57.md` — [#50](https://github.com/moldovancsaba/impact/issues/50)–[#57](https://github.com/moldovancsaba/impact/issues/57) ([mlp-status-cto.md](../../docs/mlp-status-cto.md))
+- **Dashboard + macOS packaging tranche:** `issue-58.md` … `issue-66.md` — [#58](https://github.com/moldovancsaba/impact/issues/58)–[#66](https://github.com/moldovancsaba/impact/issues/66) ([mlp-next-delivery-tranche.md](../../docs/mlp-next-delivery-tranche.md))
 - `apply-updates.sh` — `gh issue edit … --body-file` + labels (bash)
 - `apply-status.sh` — sets **Project #2 → Status** only (kanban truth)
 - `gh-ensure-issues-on-project.sh` — add any repo issues missing from Project #2 (safe to re-run)

@@ -7,7 +7,12 @@
     "noEmit": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@impact/schemas": ["../../packages/schemas/src/index.ts"],
+      "@impact/reporting/recommendations": ["../../packages/reporting/src/recommendations.ts"]
+    }
   },
   "include": ["src/**/*.ts", "vite.config.ts"]
 }

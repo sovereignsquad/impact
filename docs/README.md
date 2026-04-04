@@ -8,7 +8,8 @@ Start on the repo **[README.md](../README.md)** for value proposition, quick sta
 
 | Document | Why read it |
 | -------- | ----------- |
-| [web.md](web.md) | **Public web shell** (`apps/web`) — landing, install help, profile JSON explorer |
+| [web.md](web.md) | **Public web shell** (`apps/web`) — multi-page site, install/run/submit/data IA, profile preview |
+| [web-deploy-smoke.md](web-deploy-smoke.md) | **Post-deploy checklist** — six URLs, nav, copy truth, profile parse |
 | [install-macos.md](install-macos.md) | **Path C** (npm) + **Path B** (source) install and outputs |
 | [privacy-for-users.md](privacy-for-users.md) | **Plain-language** trust: what is collected, what is not, consent |
 | [privacy-policy.md](privacy-policy.md) | Formal **privacy policy** |
@@ -22,7 +23,9 @@ Start on the repo **[README.md](../README.md)** for value proposition, quick sta
 | -------- | ----------- |
 | [ssot-map.md](ssot-map.md) | **Authority routing** — Project Status vs issues vs `current-state` vs code |
 | [mlp.md](mlp.md) | **Minimum Loveable Product** — post-MVP phases M1–M6, priorities, constraints |
+| [mlp-status-cto.md](mlp-status-cto.md) | **MLP CTO assessment** — what shipped, #34 gate, next developer tasks |
 | [mlp-execution.md](mlp-execution.md) | **MLP execution plan** — Gate #34, tasks, web spine, order |
+| [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | **Next tranche** — dashboard ingest→API→web (**#58–#62**); macOS packaging **#63–#66** |
 | [product.md](product.md) | **Product definition**, v0.x scope, principles |
 | [project-management.md](project-management.md) | **Project #2** column semantics and contributor workflow |
 | [submission-contract.md](submission-contract.md) | Optional **HTTP submission** (normative) |

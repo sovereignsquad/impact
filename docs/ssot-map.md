@@ -19,10 +19,13 @@
 | **Product** definition and principles | [product.md](product.md) + [**#1** doctrine](https://github.com/moldovancsaba/impact/issues/1) | — |
 | **Phase ladder** 0–4 | [**#16**](https://github.com/moldovancsaba/impact/issues/16) | [product.md](product.md) |
 | **MLP programme** (M1–M6, phases, constraints, board hints) | [mlp.md](mlp.md) | [Project #2](https://github.com/users/moldovancsaba/projects/2) for execution **Status** |
+| **MLP CTO assessment** (delivered vs blocked, next tasks) | [mlp-status-cto.md](mlp-status-cto.md) | Supplements [mlp.md](mlp.md); date-stamped snapshot |
+| **Next delivery tranche** (dashboard D1–D5, macOS M1–M4) | [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | GitHub **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#66](https://github.com/moldovancsaba/impact/issues/66)**; start Phase 2 after **#34** |
 | **Field `confidence`** | [confidence-rules.md](confidence-rules.md) + `packages/schemas` | — |
 | **`status` / `presence` / provenance** (profile JSON) | [schema-semantics-v0.3.md](schema-semantics-v0.3.md) | — |
 | **Submission HTTP** to a server | [submission-contract.md](submission-contract.md) | — |
 | **Runnable behaviour** (CLI, scanners) | **Code** under `apps/` and `packages/` | User-facing copy in README / install docs **describes** code; **code wins** if they differ |
+| **Public web post-deploy QA** | [web-deploy-smoke.md](web-deploy-smoke.md) | [web.md](web.md) for build/deploy; [mlp-status-cto.md](mlp-status-cto.md) for gating (#34, aggregates) |
 
 ---
 

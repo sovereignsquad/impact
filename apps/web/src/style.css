@@ -75,6 +75,11 @@ a:hover {
   color: var(--text);
 }
 
+.nav a.nav-link--active {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .hero {
   padding: 4rem 1.5rem 3.5rem;
   max-width: 52rem;
@@ -233,6 +238,65 @@ pre {
   margin-top: 1rem;
 }
 
+.profile-subhead {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--text);
+}
+
+.profile-muted {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0.35rem 0 0.75rem;
+}
+
+.profile-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  background: var(--bg-elevated);
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.profile-table th,
+.profile-table td {
+  text-align: left;
+  padding: 0.45rem 0.65rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-table th {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.profile-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.profile-steps {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--text);
+}
+
+.profile-steps li {
+  margin: 0.45rem 0;
+}
+
+.profile-evidence {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
 #profile-error:not([hidden]) {
   color: var(--danger);
   margin-top: 1rem;
@@ -257,4 +321,193 @@ pre {
   font-size: 0.88rem;
   color: var(--text-muted);
   border-top: 1px solid var(--border);
+}
+
+/* Multi-page shell (#57, #54–#56, #50) */
+.hero--home {
+  text-align: left;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+
+.hero--home h1 {
+  text-align: left;
+  font-size: clamp(1.65rem, 3.5vw, 2.15rem);
+}
+
+.hero--home .hero-lead {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+}
+
+.truth-banner {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(61, 154, 139, 0.08);
+  border-radius: 0 0.4rem 0.4rem 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: left;
+}
+
+.truth-banner strong {
+  color: var(--text);
+}
+
+.truth-banner--hero {
+  max-width: 40rem;
+}
+
+.cta-grid {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 28rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .cta-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 44rem;
+  }
+
+  .cta-grid .cta-stack {
+    grid-column: 1 / -1;
+  }
+}
+
+.btn--block {
+  text-align: center;
+}
+
+.btn--sm {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.88rem;
+}
+
+.cta-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.section-tight {
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.checklist {
+  color: var(--text-muted);
+  padding-left: 1.2rem;
+}
+
+.checklist li {
+  margin: 0.4rem 0;
+}
+
+.checklist strong {
+  color: var(--text);
+}
+
+.muted-inline {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.page-main {
+  padding: 2rem 1.5rem 3rem;
+  min-height: 50vh;
+}
+
+.page-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.lead {
+  margin: 0 0 1.5rem;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 40rem;
+}
+
+.crumb {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+}
+
+.page-next {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.flow-steps {
+  margin: 0 0 1.5rem;
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+}
+
+.flow-steps li {
+  margin: 0.75rem 0;
+}
+
+.flow-steps pre {
+  margin: 0.5rem 0 0;
+}
+
+.data-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .data-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.placeholder-card {
+  padding: 1.25rem 1.35rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+
+.placeholder-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.placeholder-card p {
+  margin: 0.4rem 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.placeholder-label {
+  display: inline-block;
+  margin: 0 0 0.5rem !important;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.25rem;
+  font-size: 0.78rem !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(224, 120, 108, 0.12);
+  color: var(--danger) !important;
+  border: 1px solid rgba(224, 120, 108, 0.35);
+}
+
+.muted-small {
+  font-size: 0.82rem !important;
+  color: var(--text-muted) !important;
 }

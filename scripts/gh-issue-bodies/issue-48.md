@@ -4,7 +4,7 @@
 
 ## Unified Context
 
-Programme: [docs/mlp.md](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md). Relates to **[#35](https://github.com/moldovancsaba/impact/issues/35)** / **[#13](https://github.com/moldovancsaba/impact/issues/13)** / submission contract — align scope to avoid duplicate epics; this issue is the **MLP-shaped** umbrella for **first public aggregates**.
+Programme: [docs/mlp.md](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md). **Execution spine (detailed):** [mlp-next-delivery-tranche.md](https://github.com/moldovancsaba/impact/blob/main/docs/mlp-next-delivery-tranche.md) — **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**. Relates to **[#35](https://github.com/moldovancsaba/impact/issues/35)** / **[#13](https://github.com/moldovancsaba/impact/issues/13)** / submission contract — this issue is the **MLP M5 umbrella** for **first public aggregates**.
 
 ## Based On
 

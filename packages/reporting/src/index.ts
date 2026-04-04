@@ -2,9 +2,11 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { ImpactProfile } from "@impact/schemas";
 import { renderHtmlReport } from "./html.js";
-import { buildDiagnostics } from "./diagnostics.js";
 
-export { renderHtmlReport, buildDiagnostics };
+export { renderHtmlReport };
+export { buildDiagnostics } from "./diagnostics.js";
+export { buildRecommendations } from "./recommendations.js";
+export type { Recommendation } from "./recommendations.js";
 
 async function ensureDir(dir: string): Promise<void> {
   await mkdir(dir, { recursive: true });

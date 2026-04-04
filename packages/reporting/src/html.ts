@@ -1,5 +1,6 @@
 import type { ImpactProfile, ProvenancedString, ProvenancedNumber, ProvenancedBoolean } from "@impact/schemas";
 import { buildDiagnostics } from "./diagnostics.js";
+import { buildRecommendations, type Recommendation } from "./recommendations.js";
 
 function esc(s: string): string {
   return s
@@ -28,6 +29,60 @@ function cellBool(f: ProvenancedBoolean): string {
   return `${esc(v)}${meta(f.source, f.probe, f.confidence)}`;
 }
 
+function glanceCard(profile: ImpactProfile): string {
+  const r = profile.readiness;
+  const mem =
+    profile.host.memory_gb?.value != null ? `${String(profile.host.memory_gb.value)} GB RAM (coarse)` : null;
+  const os = [profile.host.os_name.value, profile.host.architecture.value].filter(Boolean).join(" · ");
+  const lead = r
+    ? `<p><strong>${esc(r.summary)}</strong></p>`
+    : `<p><strong>Local inventory snapshot</strong> — this report reflects one scan on this machine at <code>${esc(profile.created_at)}</code>.</p>`;
+  const tail = `<p class="muted">${esc(os)}${mem ? ` · ${esc(mem)}` : ""}. This is <strong>discovery and provenance</strong>, not a benchmark score or cloud evaluation.</p>`;
+  return `<div class="card glance"><h2>At a glance</h2>${lead}${tail}</div>`;
+}
+
+function meaningCard(profile: ImpactProfile): string {
+  const bullets: string[] = [
+    "Values are conservative: <strong>status</strong> is operational (installed / reachable), <strong>presence</strong> is what we know about the row, and <strong>confidence</strong> labels field-level certainty.",
+    "The models table only lists what supported local APIs or commands returned during this run — absence is not proof a model does not exist elsewhere.",
+  ];
+  if (profile.readiness?.presence) {
+    bullets.push(
+      `Readiness text (if shown) has epistemic basis <code>${esc(profile.readiness.presence)}</code> — interpret it as a coarse hint, not a grade.`
+    );
+  }
+  return `<div class="card"><h2>What this scan means</h2><ul class="tight">${bullets
+    .map((b) => `<li>${b}</li>`)
+    .join("")}</ul></div>`;
+}
+
+function recommendationItem(rec: Recommendation): string {
+  const ev =
+    rec.evidence.length > 0
+      ? `<p class="muted">Grounded in: ${rec.evidence.map((e) => `<code>${esc(e)}</code>`).join(", ")}</p>`
+      : "";
+  return `<li><strong>${esc(rec.title)}</strong> — ${esc(rec.body)}${ev}</li>`;
+}
+
+function stepsCard(recs: Recommendation[]): string {
+  const body =
+    recs.length === 0
+      ? `<p class="muted">No extra automated suggestions for this profile — review runtimes, tools, and models below.</p>`
+      : `<ol class="tight steps">${recs.map((r) => recommendationItem(r)).join("")}</ol>`;
+  return `<div class="card"><h2>Suggested next steps</h2><p class="muted">Deterministic hints from this scan only — not remote advice.</p>${body}</div>`;
+}
+
+function limitationsCard(): string {
+  return `<div class="card subtle"><h2>Known limitations (this product version)</h2>
+    <ul class="tight">
+      <li>Allowlisted tools only — other binaries are intentionally ignored.</li>
+      <li>Runtime and model coverage depends on what this build probes; partial runtimes are labeled honestly.</li>
+      <li>Disk and memory figures are coarse OS-level hints where available.</li>
+      <li>No continuous monitoring — re-run after you change your environment.</li>
+    </ul>
+  </div>`;
+}
+
 function confidenceLegendCard(): string {
   return `<div class="card">
     <h2>Field confidence (legend)</h2>
@@ -46,6 +101,7 @@ export function renderHtmlReport(profile: ImpactProfile): string {
   const toolsInstalled = tools.filter((t) => t.installed);
   const mlx = runtimes.find((r) => r.id === "mlx_python");
   const diagnostics = buildDiagnostics(profile);
+  const recommendations = buildRecommendations(profile);
 
   const mlxNotice =
     mlx && mlx.installed
@@ -85,6 +141,10 @@ export function renderHtmlReport(profile: ImpactProfile): string {
     .pill { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; background: #eef; font-size: 0.8rem; }
     footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.85rem; color: #555; }
     ul.tight { margin: 0.35rem 0 0 1.1rem; padding: 0; }
+    ol.steps { margin: 0.5rem 0 0 1.2rem; padding: 0; }
+    ol.steps li { margin: 0.5rem 0; }
+    .card.subtle { background: #f7f7f7; border-style: dashed; }
+    .card.glance { border-color: #c5d4f0; background: #f8faff; }
   </style>
 </head>
 <body>
@@ -92,6 +152,9 @@ export function renderHtmlReport(profile: ImpactProfile): string {
   <p class="muted">Local, privacy-first scan. Run ID: <code>${esc(profile.run_id)}</code> · ${esc(profile.created_at)}</p>
   <p class="muted">Values show <strong>source · probe · field confidence</strong> where applicable (provenance). Runtime rows separate <strong>status</strong> (availability) from <strong>presence</strong> (how we know the row applies).</p>
 
+  ${glanceCard(profile)}
+  ${meaningCard(profile)}
+  ${stepsCard(recommendations)}
   ${confidenceLegendCard()}
 
   <div class="card">
@@ -184,6 +247,8 @@ export function renderHtmlReport(profile: ImpactProfile): string {
     <p>Submission requires explicit consent: <strong>${String(privacy.consent_required_for_submission)}</strong></p>
     <p class="muted">See <code>docs/privacy-policy.md</code> and <code>docs/submission-contract.md</code> in the repository.</p>
   </div>
+
+  ${limitationsCard()}
 
   <footer>
     <p><strong>Platform support (this build)</strong></p>

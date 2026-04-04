@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Set Project #2 Status from board columns (single source of truth for workflow).
 # Compatible with bash 3.2 (macOS).
-# Sprint B closeout + board standardisation + post-MVP + MLP (2026-04): issues 17–49 item IDs from `gh project item-add` / item-list.
+# Sprint B + post-MVP + MLP + public web/data + dashboard/mac tranche (2026-04): issues 17–66 item IDs from `gh project item-add` / item-list.
 set -euo pipefail
 PROJECT_ID="PVT_kwHOACGtF84BTnzN"
 STATUS_FIELD="PVTSSF_lAHOACGtF84BTnzNzhA1jZc"
@@ -74,6 +74,23 @@ item_for_issue() {
     47) echo PVTI_lAHOACGtF84BTnzNzgpGXSM ;;
     48) echo PVTI_lAHOACGtF84BTnzNzgpGXSc ;;
     49) echo PVTI_lAHOACGtF84BTnzNzgpGXSg ;;
+    50) echo PVTI_lAHOACGtF84BTnzNzgpGxvI ;;
+    51) echo PVTI_lAHOACGtF84BTnzNzgpGxvY ;;
+    52) echo PVTI_lAHOACGtF84BTnzNzgpGxvo ;;
+    53) echo PVTI_lAHOACGtF84BTnzNzgpGxv0 ;;
+    54) echo PVTI_lAHOACGtF84BTnzNzgpGxv8 ;;
+    55) echo PVTI_lAHOACGtF84BTnzNzgpGxwI ;;
+    56) echo PVTI_lAHOACGtF84BTnzNzgpGxwQ ;;
+    57) echo PVTI_lAHOACGtF84BTnzNzgpGxwo ;;
+    58) echo PVTI_lAHOACGtF84BTnzNzgpG2J8 ;;
+    59) echo PVTI_lAHOACGtF84BTnzNzgpG2KM ;;
+    60) echo PVTI_lAHOACGtF84BTnzNzgpG2KY ;;
+    61) echo PVTI_lAHOACGtF84BTnzNzgpG2Ks ;;
+    62) echo PVTI_lAHOACGtF84BTnzNzgpG2K4 ;;
+    63) echo PVTI_lAHOACGtF84BTnzNzgpG2Kw ;;
+    64) echo PVTI_lAHOACGtF84BTnzNzgpG2LQ ;;
+    65) echo PVTI_lAHOACGtF84BTnzNzgpG2LY ;;
+    66) echo PVTI_lAHOACGtF84BTnzNzgpG2Lg ;;
     *) echo ""; return 1 ;;
   esac
 }
@@ -133,4 +150,20 @@ for n in 47 48 49; do
   set_status "$(item_for_issue "$n")" "$BACKLOG"
 done
 
-echo "Project Status field updated for issues 1–49 (MVP + post-MVP + MLP template)."
+# MLP public web / historical data (CTO 2026-04) — H1,H5–H8 Todo; H2–H4 Backlog
+for n in 50 54 55 56 57; do
+  set_status "$(item_for_issue "$n")" "$TODO"
+done
+for n in 51 52 53; do
+  set_status "$(item_for_issue "$n")" "$BACKLOG"
+done
+
+# Next delivery tranche (docs/mlp-next-delivery-tranche.md) — D1–D5 all Todo for visibility; after #34 Done move ONLY #58 to In Progress first (low WIP — see tranche doc)
+for n in 58 59 60 61 62; do
+  set_status "$(item_for_issue "$n")" "$TODO"
+done
+for n in 63 64 65 66; do
+  set_status "$(item_for_issue "$n")" "$BACKLOG"
+done
+
+echo "Project Status field updated for issues 1–66 (MVP + MLP + web/data + dashboard + macOS packaging)."

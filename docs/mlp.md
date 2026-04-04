@@ -2,9 +2,11 @@
 
 **MLP** = **Minimum Loveable Product**: the smallest slice where the product feels **worth installing, finishing, understanding, and sharing** — not only correct.
 
-**Authority:** This file is the in-repo **programme definition** for the MLP track. **Execution state** (Todo / In Progress / Done) lives on [Project #2](https://github.com/users/moldovancsaba/projects/2). **Operational snapshot** of MVP vs install gates: [current-state.md](current-state.md). **Routing when sources conflict:** [ssot-map.md](ssot-map.md).
+**Authority:** This file is the in-repo **programme definition** for the MLP track. **Execution state** (Todo / In Progress / Done) lives on [Project #2](https://github.com/users/moldovancsaba/projects/2). **Operational snapshot** of MVP vs install gates: [current-state.md](current-state.md). **Routing when sources conflict:** [ssot-map.md](ssot-map.md). **Next delivery tranche** (dashboard + macOS packaging): [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md).
 
 **CTO execution checklist (tasks T0–T6, W1–W4, order):** [mlp-execution.md](mlp-execution.md).
+
+**CTO delivery assessment (material progress, blockers, next tasks):** [mlp-status-cto.md](mlp-status-cto.md) — includes **public web / historical data** priorities (**#50–#57**, H1–H8).
 
 ---
 
@@ -13,11 +15,12 @@
 You have:
 
 - a **working MVP**
-- a **credible README / docs** layer
+- a **credible README / docs** layer (including install **troubleshooting**)
 - a **verified Path B** install
+- **partial in-repo MLP delivery** — deterministic **recommendations**, richer **HTML report**, richer **web** profile explorer; tests/build green (detail: [mlp-status-cto.md](mlp-status-cto.md))
 - a **prepared Path C** npm path, waiting on the **final operational gate** ([#34](https://github.com/moldovancsaba/impact/issues/34))
 
-So the product is **no longer blocked by architecture**. It is blocked by **adoption quality** and **emotional payoff**.
+So the product is **no longer blocked by architecture**. **Public adoption** on the easiest path still depends on **#34**; loveability work is **already shipping in-repo** ahead of that gate.
 
 ---
 

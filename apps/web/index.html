@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-page="home">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="IMPACT — privacy-first local AI environment scanner. Install, scan, understand your machine."
+      content="IMPACT — privacy-first local AI environment scanner. Install, scan offline, optionally contribute to community stats."
     />
     <title>IMPACT — local AI environment scanner</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,123 +17,75 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#">I.M.P.A.C.T.</a>
+      <a class="brand" href="/">I.M.P.A.C.T.</a>
       <nav class="nav" aria-label="Primary">
-        <a href="#install">Install</a>
-        <a href="#after-scan">After a scan</a>
-        <a href="#profile">Your profile file</a>
-        <a href="#community">Community stats</a>
-        <a href="#truth">Product status</a>
-        <a href="#faq">FAQ</a>
+        <a href="/" data-nav="home">Home</a>
+        <a href="/install.html" data-nav="install">Install</a>
+        <a href="/use.html" data-nav="use">Run &amp; results</a>
+        <a href="/submit.html" data-nav="submit">Submit</a>
+        <a href="/data.html" data-nav="data">Community data</a>
+        <a href="/profile.html" data-nav="profile">Profile preview</a>
         <a href="https://github.com/moldovancsaba/impact" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </header>
 
-    <section class="hero" id="top">
-      <p class="status-pill">Public shell · MVP scanner</p>
-      <h1>Understand what your machine can run for local AI</h1>
+    <section class="hero hero--home" id="top">
+      <p class="status-pill">Privacy-first · Local scan · No benchmark hype</p>
+      <h1>See what your machine can run for local AI — without uploading your environment</h1>
       <p class="hero-lead">
-        IMPACT is a <strong>privacy-first</strong> CLI that inventories your OS, runtimes, tools, and models — then writes an
-        <strong>offline HTML report</strong> and <strong>JSON profile</strong> on your disk. Optional anonymous submission only
-        with your consent.
+        IMPACT inventories your OS, runtimes, tools, and models, then writes an <strong>offline HTML report</strong> and
+        <strong>JSON profile</strong>. Submission is <strong>optional</strong> and only after you configure an endpoint and
+        confirm. This is <strong>discovery and provenance</strong>, not a performance score.
       </p>
-      <div class="cta-row">
-        <a class="btn btn--primary" href="#install">Install &amp; run</a>
-        <a class="btn btn--ghost" href="https://github.com/moldovancsaba/impact" target="_blank" rel="noopener">Source &amp; docs</a>
-      </div>
-    </section>
 
-    <section id="install">
-      <div class="section-inner">
-        <h2>Install</h2>
-        <p>
-          <strong>Path C (npm)</strong> — when published: <code>npm install -g @impact/cli</code> then <code>impact scan</code>.
-          Track: <a href="https://github.com/moldovancsaba/impact/issues/34">issue #34</a>.
-        </p>
-        <p><strong>Path B (from source)</strong> — always available:</p>
-        <pre><code>git clone https://github.com/moldovancsaba/impact.git
-cd impact
-npm ci &amp;&amp; npm run build
-npm install -g ./apps/cli
-impact scan --no-submit -o ./reports</code></pre>
-        <p>Full detail: <a href="https://github.com/moldovancsaba/impact/blob/main/docs/install-macos.md">install-macos.md</a> (macOS-first; Linux/Windows partial).</p>
+      <div class="truth-banner truth-banner--hero" role="status">
+        <strong>Install reality today:</strong> the verified path is <strong>install from source (Path B)</strong>.
+        <code>npm install -g @impact/cli</code> becomes the primary public path only after
+        <a href="https://github.com/moldovancsaba/impact/issues/34">#34</a> is closed (publish + smoke + evidence). We do not
+        pretend npm is live until then.
       </div>
-    </section>
 
-    <section id="after-scan">
-      <div class="section-inner">
-        <h2>What you see after a scan</h2>
-        <ul>
-          <li><code>impact-report.html</code> — readable report in your output folder (open in a browser).</li>
-          <li><code>impact-profile.json</code> — machine-readable <code>impact.v0.3</code> profile (provenance + confidence on fields).</li>
-          <li>Optional submission preview/receipt files if you opt in and configure an endpoint.</li>
-        </ul>
-        <p>Nothing is sent off your machine by default.</p>
-      </div>
-    </section>
-
-    <section id="profile">
-      <div class="section-inner">
-        <h2>Explore a profile file</h2>
-        <p>
-          Drop <code>impact-profile.json</code> here or choose a file. Parsing happens <strong>in your browser</strong> — no upload.
-          Validation uses the same <code>@impact/schemas</code> rules as the CLI.
-        </p>
-        <input type="file" id="profile-file" accept=".json,application/json" aria-label="Choose impact-profile.json" />
-        <div class="drop-zone" id="profile-drop" role="button" tabindex="0" aria-label="Drop JSON file here">
-          Or drop <code>impact-profile.json</code> here
-        </div>
-        <div id="profile-error" hidden></div>
-        <div id="profile-result" hidden></div>
-      </div>
-    </section>
-
-    <section id="community">
-      <div class="section-inner">
-        <h2>Community stats</h2>
-        <div class="stats-placeholder">
-          <p><strong>Coming later.</strong></p>
-          <p>
-            Aggregate stats (memory, chip, runtimes, tools, models, platforms) will live here after the ingest MVP — see
-            <a href="https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md">docs/mlp.md</a> (M5) and programme issues
-            <a href="https://github.com/moldovancsaba/impact/issues/48">#48</a>.
-          </p>
+      <div class="cta-grid">
+        <a class="btn btn--primary btn--block" href="/install.html">Install IMPACT</a>
+        <a class="btn btn--ghost btn--block" href="/data.html">Explore community data</a>
+        <div class="cta-stack">
+          <a class="btn btn--ghost btn--sm" href="/use.html">Run a scan &amp; open your report</a>
+          <a class="btn btn--ghost btn--sm" href="/submit.html">How optional submission works</a>
         </div>
       </div>
     </section>
 
-    <section id="truth">
+    <section class="section-tight">
       <div class="section-inner">
-        <h2>Product status (truth, not hype)</h2>
-        <ul>
-          <li><strong>MVP shipped</strong> — discovery scanner, local reports, optional consent-gated submission.</li>
-          <li><strong>Not shipped</strong> — benchmark scores, crowd dashboard, DMG/app installer, “AI readiness” hype.</li>
-          <li><strong>MLP</strong> — next loveability track (install, report delight, recommendations) is defined in <a href="https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md">docs/mlp.md</a>.</li>
-          <li><strong>Operational snapshot:</strong> <a href="https://github.com/moldovancsaba/impact/blob/main/docs/current-state.md">docs/current-state.md</a>.</li>
+        <h2>What you get in under a minute</h2>
+        <ul class="checklist">
+          <li><strong>Local inventory</strong> — what is installed, reachable, and how confidently we know it.</li>
+          <li><strong>Readable report</strong> — open <code>impact-report.html</code> in a browser after one command.</li>
+          <li><strong>Optional community loop</strong> — submit an anonymous payload if you choose; aggregates on this site will
+            appear only when ingest and privacy thresholds are met (<a href="/data.html">Community data</a>).</li>
         </ul>
+        <p class="muted-inline">
+          Not shipped: benchmark leaderboards, DMG/app installer, or “AI readiness” scores — see
+          <a href="https://github.com/moldovancsaba/impact/blob/main/docs/current-state.md">current-state.md</a>.
+        </p>
       </div>
     </section>
 
-    <section id="faq" class="faq">
+    <section class="section-tight faq">
       <div class="section-inner">
         <h2>FAQ</h2>
         <details>
           <summary>Does IMPACT upload my data?</summary>
           <p>
-            No by default. Scans are local. Submission only happens if you configure an endpoint and explicitly confirm. See the
-            <a href="https://github.com/moldovancsaba/impact/blob/main/docs/privacy-for-users.md">privacy for users</a> page.
+            No by default. Scans stay on your machine unless you opt into submission. See
+            <a href="https://github.com/moldovancsaba/impact/blob/main/docs/privacy-for-users.md">privacy for users</a>.
           </p>
         </details>
         <details>
-          <summary>Is this a benchmark product?</summary>
+          <summary>Is this a benchmark?</summary>
           <p>
-            Not yet. v0.x is <strong>discovery and export</strong>. Benchmarks are programme roadmap, not current product claims.
-          </p>
-        </details>
-        <details>
-          <summary>Why does npm install say “coming”?</summary>
-          <p>
-            Publishing <code>@impact/cli</code> to the registry is tracked in <a href="https://github.com/moldovancsaba/impact/issues/34">#34</a>. Until then, use Path B (clone + build) above.
+            No. v0.x is honest <strong>discovery</strong> and export. Benchmarks are programme roadmap, not current product
+            claims.
           </p>
         </details>
       </div>
@@ -146,6 +98,6 @@ impact scan --no-submit -o ./reports</code></pre>
       </p>
     </footer>
 
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/home.ts"></script>
   </body>
 </html>

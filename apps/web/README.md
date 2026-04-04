@@ -1,18 +1,17 @@
 # `@impact/web` — public marketing shell
 
-Static **Vite** site: landing, install help, post-scan explainer, **in-browser** `impact-profile.json` validation via `@impact/schemas`, FAQ, and a **placeholder** for future community stats (M5).
+**Vite** multi-page site (`index.html`, `install.html`, `use.html`, `submit.html`, `data.html`, `profile.html`): install truth, run/submit explainers, community-data **IA** (labelled placeholders until ingest), and **in-browser** `impact-profile.json` validation via `@impact/schemas` + `buildRecommendations` (no upload).
 
 ## Develop
 
-From repo root (schemas source is aliased for `ImpactProfileSchema`):
+From repo root:
 
 ```bash
 npm ci
-npm run build -w @impact/schemas   # optional if using dist-only later
 npm run dev -w @impact/web
 ```
 
-Open http://localhost:5173
+Open http://localhost:5173 — try `/`, `/install.html`, `/data.html`, `/profile.html`.
 
 ## Build
 
@@ -20,16 +19,18 @@ Open http://localhost:5173
 npm run build -w @impact/web
 ```
 
-Output: `apps/web/dist/` — deploy to any static host.
+Output: `apps/web/dist/` with all HTML entry points.
 
 **Vercel:** repo-root project; see root [`vercel.json`](../../vercel.json) (`outputDirectory`: `apps/web/dist`).
 
-## Roadmap
+## Layout
 
-| Phase | Goal |
-| ----- | ---- |
-| **Now** | Branded shell + real profile upload (local-only parse) |
-| **Next** | Deeper report-style preview, share-safe redaction (M4) |
-| **Later** | Live aggregates when ingest exists (M5 / #48) |
+| `src/` | Purpose |
+| ------ | ------- |
+| `boot.ts` | Shared CSS + nav active state |
+| `site-nav.ts` | `data-page` / `data-nav` wiring |
+| `profile-explorer.ts` | Profile drop zone + parse |
+| `profile-app.ts` | `boot` + `profile-explorer` for `profile.html` |
+| `*-entry.ts` | Page stubs that only import `boot` |
 
 See [docs/web.md](../../docs/web.md).

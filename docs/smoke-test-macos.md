@@ -90,6 +90,7 @@ Record:
 3. `impact --version`
 4. `ls -la ~/impact-smoke-out/impact-profile.json ~/impact-smoke-out/impact-report.html`
 5. Optional: `jq .schema_version ~/impact-smoke-out/impact-profile.json` (expect `impact.v0.3`)
+6. Open `impact-report.html` and confirm sections **At a glance**, **Suggested next steps**, and **Known limitations** are present (MLP report layout).
 
 ## Teardown
 

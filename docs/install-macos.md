@@ -30,6 +30,15 @@ open ./reports/impact-report.html
 
 If `npm install` returns **404**, the package is not published yet — use **Path B** below.
 
+### Troubleshooting
+
+| Symptom | Likely cause | What to try |
+| ------- | ------------ | ----------- |
+| `npm ERR! 404 Not Found` for `@impact/cli` | Package not on the registry yet | Use **Path B**; track [#34](https://github.com/moldovancsaba/impact/issues/34). |
+| `EACCES` / permission errors on `npm install -g` | Global prefix not writable | Use a [Node version manager](https://github.com/nvm-sh/nvm) or configure `npm prefix` to a user-owned directory (see [npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)). |
+| `command not found: impact` after global install | `PATH` missing npm’s global bin | Re-open the shell, or add the directory printed by `npm bin -g` to `PATH`. |
+| Scan writes files but HTML looks sparse | Runtimes offline / no models | Start local runtimes (e.g. Ollama) and re-run; see **Suggested next steps** in `impact-report.html`. |
+
 **Outputs:** `./reports/impact-profile.json`, `./reports/impact-report.html`
 
 **Submission:** default scan does not upload. Optional: [submission-contract.md](submission-contract.md).

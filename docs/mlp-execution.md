@@ -2,7 +2,14 @@
 
 **Purpose:** actionable checklist for the **first MLP execution cycle**, after programme definition in [mlp.md](mlp.md). **Board / issues:** [Project #2](https://github.com/users/moldovancsaba/projects/2); spine **[#44](https://github.com/moldovancsaba/impact/issues/44)–[#49](https://github.com/moldovancsaba/impact/issues/49)**.
 
-**Rule:** Do **not** treat MLP implementation as fully underway until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **operationally closed** (publish, `npm view`, published-package smoke, evidence on the issue, **Done** on the board).
+**Next delivery tranche (dashboard + macOS packaging):** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) — issues **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#66](https://github.com/moldovancsaba/impact/issues/66)**.
+
+**CTO snapshot (delivered vs blocked):** [mlp-status-cto.md](mlp-status-cto.md).
+
+**Rules:**
+
+- Do **not** treat **MLP as fully live for the public** until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **operationally closed** (publish, `npm view`, published-package smoke, evidence on the issue, **Done** on the board). **Path C** must be real before “default npm install” is honest for strangers.
+- **In-repo MLP work** may proceed in parallel; several slices (**M2/M3/W2**-class) are already merged — see [mlp-status-cto.md](mlp-status-cto.md). This checklist still defines **formal completion** and **order** for board evidence.
 
 ---
 
@@ -13,8 +20,9 @@
 - MLP issues on the board (**#44–#49**)  
 - Public web shell live ([docs/web.md](web.md))  
 - Vercel deployment working ([vercel.json](../vercel.json))  
+- Partial MLP implementation in code (recommendations, report UX, web profile explorer) — [mlp-status-cto.md](mlp-status-cto.md)  
 
-**What is not done:** Gate **#34** and the execution items below.
+**What is not done:** Gate **#34** (public npm) and full **evidence-backed closure** of the execution items below.
 
 ---
 
@@ -98,15 +106,32 @@
 
 ---
 
+## Public web & historical data — **[#50](https://github.com/moldovancsaba/impact/issues/50)–[#57](https://github.com/moldovancsaba/impact/issues/57)** (H1–H8)
+
+**SSOT for intent and board mapping:** [mlp-status-cto.md](mlp-status-cto.md). **Do not** fake community aggregates; placeholders must be **labelled**.
+
+| Task | Issue | Board (template) | Deliverable |
+| ---- | ----- | ---------------- | ----------- |
+| **H1** | [#50](https://github.com/moldovancsaba/impact/issues/50) | Todo | IA: **hardware / tools / LLMs** sections (structure + honest empty states) |
+| **H5** | [#54](https://github.com/moldovancsaba/impact/issues/54) | Todo | **Install / download** page — primary CTA; Path B truth until **#34**; npm after publish |
+| **H6** | [#55](https://github.com/moldovancsaba/impact/issues/55) | Todo | **Launch / use** — install → scan → report → outputs |
+| **H7** | [#56](https://github.com/moldovancsaba/impact/issues/56) | Todo | **Submit** — optional, privacy, preview/receipt, how stats update later |
+| **H8** | [#57](https://github.com/moldovancsaba/impact/issues/57) | Todo | **Homepage** — download, how it works, historical data, submit |
+| **H2** | [#51](https://github.com/moldovancsaba/impact/issues/51) | Backlog | Historical **hardware** aggregates MVP (when ingest feeds data) |
+| **H3** | [#52](https://github.com/moldovancsaba/impact/issues/52) | Backlog | Historical **tools/runtimes** aggregates MVP |
+| **H4** | [#53](https://github.com/moldovancsaba/impact/issues/53) | Backlog | Historical **LLM/model** aggregates MVP |
+
+---
+
 ## Recommended order
 
-1. **Close #34**  
-2. **#44** (M1) — Path C default + troubleshooting + smoke notes  
-3. **#45** (M2) — report summary / meaning / next / limitations  
-4. **#46** (M3) — rules + evidence + tests  
-5. Surface outcomes in **apps/web** (W1–W2 early)  
-6. **#47**, **#49**  
-7. **#48** — design ingest before shipping public stats  
+1. **Deploy + smoke** public web shell — [web-deploy-smoke.md](web-deploy-smoke.md).  
+2. **Close #34** — npm publish + smoke + evidence.  
+3. **#44** (M1) — Path C **primary** on site; **#45–#46** evidence as appropriate.  
+4. **Dashboard foundation** — **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** per [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) (supersedes detail on **#51–#53** for execution).  
+5. **macOS distribution** — **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)** after dashboard trajectory is clear; **no DMG before M1–M3**.  
+6. **#47**, **#49**, **[#48](https://github.com/moldovancsaba/impact/issues/48)** (umbrella; align with **#58–#62**).  
+7. **#51–#53** — legacy board rows; keep **Backlog** or close when **#58–#62** absorb scope.  
 
 ---
 
@@ -122,14 +147,10 @@
 
 ## Developer message (CTO)
 
-The project is now ready for the **first real MLP execution cycle**.
+**Public web / data P0** is **accepted** in-repo ([mlp-status-cto.md](mlp-status-cto.md)). **Next delivery tranche:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) — after **#34**, build **dashboard** (**[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**) before pushing **macOS packaging** (**[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**); **no DMG before M1–M3**.
 
-**Current state:** MVP shipped; web shell live and deployable; MLP doctrine and issue set exist; **active gate is still #34**.
+**Top operational task:** **deploy and smoke** — [web-deploy-smoke.md](web-deploy-smoke.md).
 
-**Immediate rule:** Do not treat MLP as fully underway until **#34** is closed with publish, verify, smoke, and issue evidence.
+**Then:** close **#34** → **#44** Path C primary on site → **#44–#46** evidence → **#58–#62**.
 
-**Next execution order:** (1) Close **#34**. (2) **#44** — npm as default story, Path B fallback. (3) **#45** — strong top summary, “what this means”, “next best action”, “known limitations”; value before tables. (4) **#46** — deterministic, explainable, tested recommendations; no scores or fake precision.
-
-**Web shell:** Use `apps/web` as public explainer — precise install truth; rich local profile preview (no upload); results explainer; community stats placeholder until M5 is real.
-
-**Success:** Lower install friction; more rewarding first-run report; useful explainable recommendations; web shell makes IMPACT understandable for non-developers.
+**Rules:** no fake aggregates; no benchmark overclaim; privacy explicit; **#63–#66** stay Backlog until dashboard foundation is **meaningfully** advanced (packaging = **secondary**). **Low WIP** on **#58–#62**: **#58** In Progress first after **#34**, then **#59**… per [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md).

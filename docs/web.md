@@ -1,20 +1,43 @@
 # IMPACT public web shell (`apps/web`)
 
-**Purpose:** first **public-facing** web surface for IMPACT — not a replacement for the offline **`impact-report.html`** from the CLI, but a place **normal users** discover install steps, understand outputs, and (later) see **aggregate** community stats.
+**Purpose:** first **public-facing** web surface for IMPACT — not a replacement for the offline **`impact-report.html`** from the CLI, but where users **discover install**, **learn the run/submit flow**, **browse community data (structure first)**, and preview a local profile **without upload**.
 
 **Code:** [`apps/web`](../apps/web/)
+
+**Board:** shell pages **[#50](https://github.com/moldovancsaba/impact/issues/50)**, **[#54](https://github.com/moldovancsaba/impact/issues/54)–[#57](https://github.com/moldovancsaba/impact/issues/57)**. **Real dashboard data** — **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md)); legacy **[#51](https://github.com/moldovancsaba/impact/issues/51)–[#53](https://github.com/moldovancsaba/impact/issues/53)** superseded in execution detail by **#58–#62**.
+
+---
+
+## Site map (multi-page)
+
+Vite **MPA** — each route is its own HTML entry (see `vite.config.ts` `rollupOptions.input`).
+
+| Path | Role |
+| ---- | ---- |
+| **`/`** (`index.html`) | **Home** — hero, install truth (**Path B** until **#34** closes), primary/secondary/tertiary CTAs, short FAQ ([**#57**](https://github.com/moldovancsaba/impact/issues/57)). |
+| **`/install.html`** | **Install / download** — Path B commands, Path C gated on **#34**, prerequisites, outputs, troubleshooting ([**#54**](https://github.com/moldovancsaba/impact/issues/54)). |
+| **`/use.html`** | **Run & results** — scan command, HTML/JSON outputs, `reachable` / `partial` / `unknown`, link to profile preview ([**#55**](https://github.com/moldovancsaba/impact/issues/55)). |
+| **`/submit.html`** | **Submit** — optional submission, preview/receipt, privacy, how aggregates appear later ([**#56**](https://github.com/moldovancsaba/impact/issues/56)). |
+| **`/data.html`** | **Community data** — IA for hardware / tools / LLMs with **labelled placeholders**; no fake live numbers ([**#50**](https://github.com/moldovancsaba/impact/issues/50)). |
+| **`/profile.html`** | **Profile preview** — drop `impact-profile.json`; `ImpactProfileSchema.safeParse` + `buildRecommendations` in-browser only. |
+
+**Rule:** Do **not** present **npm Path C** as the live primary install until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is closed (publish, verify, smoke, evidence). Copy on **home** and **install** reflects that.
 
 ---
 
 ## What ships today
 
-- **Landing / hero** — value proposition, links to GitHub and install.
-- **Install** — Path C (npm) honest state + Path B commands; links to `install-macos.md` and **#34**.
-- **After a scan** — what `impact-report.html` and `impact-profile.json` are.
-- **Profile explorer** — user picks or drops `impact-profile.json`; **`ImpactProfileSchema.safeParse`** runs **entirely in the browser** (no upload).
-- **Product truth** — MVP vs not shipped; pointers to `current-state.md` and `mlp.md`.
-- **Community stats** — static placeholder until ingest + M5 ([#48](https://github.com/moldovancsaba/impact/issues/48)).
-- **FAQ** — privacy, benchmarks, npm gate.
+- Multi-page **nav** with active state (`data-page` + `data-nav`).
+- **Honest install** story (Path B verified; Path C explicit gate).
+- **Historical data** section structure with “coming soon” / ingest + privacy threshold wording.
+- **Profile explorer** on dedicated page (same schema + recommendations as CLI HTML report).
+- No benchmark **scores**, no silent upload, no fabricated aggregate counts.
+
+---
+
+## Deploy and smoke (operations)
+
+After each production deploy, run the checklist: **[web-deploy-smoke.md](web-deploy-smoke.md)** (`/`, `/install.html`, `/use.html`, `/submit.html`, `/data.html`, `/profile.html`).
 
 ---
 
@@ -39,9 +62,9 @@ If the Vercel dashboard had **Output Directory** set to `public`, remove it or s
 
 ## Roadmap (aligned with MLP)
 
-1. **Branding polish** — visuals, a11y, copy sync with README as Path C goes live (**M1**).
-2. **Richer “results” view** — optional table summaries / redacted share block (**M2** / **M4**).
-3. **Live stats API + page** — after ingest MVP (**M5**).
+1. **#34 close** — flip primary CTA copy to npm where appropriate (**M1** / **#44**).
+2. **Live aggregates** — **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** per [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md); replace `data.html` placeholders when API + privacy thresholds are live.
+3. **Polish** — badges, sample profile mode, deeper results explainer (**W3–W4**).
 
 Constraints: no benchmark **scores**, no hype “readiness index,” no silent data collection from the profile explorer.
 
@@ -50,5 +73,5 @@ Constraints: no benchmark **scores**, no hype “readiness index,” no silent d
 ## SSOT
 
 - **Product facts:** [current-state.md](current-state.md), [user-expectations-mvp.md](user-expectations-mvp.md).
-- **MLP sequencing:** [mlp.md](mlp.md).
+- **MLP sequencing & CTO slice:** [mlp.md](mlp.md), [mlp-status-cto.md](mlp-status-cto.md).
 - **Authority map:** [ssot-map.md](ssot-map.md).
