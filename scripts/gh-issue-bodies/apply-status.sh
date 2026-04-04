@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Set Project #2 Status from board columns (single source of truth for workflow).
 # Compatible with bash 3.2 (macOS).
-# Sprint B closeout + board standardisation + post-MVP (2026-04): issues 17–43 item IDs from `gh project item-add` / item-list.
+# Sprint B closeout + board standardisation + post-MVP + MLP (2026-04): issues 17–49 item IDs from `gh project item-add` / item-list.
 set -euo pipefail
 PROJECT_ID="PVT_kwHOACGtF84BTnzN"
 STATUS_FIELD="PVTSSF_lAHOACGtF84BTnzNzhA1jZc"
@@ -68,6 +68,12 @@ item_for_issue() {
     41) echo PVTI_lAHOACGtF84BTnzNzgpFNj8 ;;
     42) echo PVTI_lAHOACGtF84BTnzNzgpFNk8 ;;
     43) echo PVTI_lAHOACGtF84BTnzNzgpFNm0 ;;
+    44) echo PVTI_lAHOACGtF84BTnzNzgpGXRk ;;
+    45) echo PVTI_lAHOACGtF84BTnzNzgpGXSA ;;
+    46) echo PVTI_lAHOACGtF84BTnzNzgpGXSE ;;
+    47) echo PVTI_lAHOACGtF84BTnzNzgpGXSM ;;
+    48) echo PVTI_lAHOACGtF84BTnzNzgpGXSc ;;
+    49) echo PVTI_lAHOACGtF84BTnzNzgpGXSg ;;
     *) echo ""; return 1 ;;
   esac
 }
@@ -119,4 +125,12 @@ for n in 42 43; do
   set_status "$(item_for_issue "$n")" "$IDEABANK"
 done
 
-echo "Project Status field updated for issues 1–43 (MVP delivered + post-MVP template)."
+# MLP execution (docs/mlp.md) — CTO: Todo M1–M3; Backlog M4–M6; do not implement spine before #34 closed
+for n in 44 45 46; do
+  set_status "$(item_for_issue "$n")" "$TODO"
+done
+for n in 47 48 49; do
+  set_status "$(item_for_issue "$n")" "$BACKLOG"
+done
+
+echo "Project Status field updated for issues 1–49 (MVP + post-MVP + MLP template)."

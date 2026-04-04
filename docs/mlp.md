@@ -209,8 +209,8 @@ Those are **not** the shortest path to loveability.
 
 **Immediate**
 
-1. **Close #34**
-2. Treat **M1 / M2 / M3** as the **active MLP spine** on the board (file issues or theme cards on [Project #2](https://github.com/users/moldovancsaba/projects/2) as needed).
+1. **Close [#34](https://github.com/moldovancsaba/impact/issues/34)** (publish + smoke).
+2. Execute **M1 / M2 / M3** — [#44](https://github.com/moldovancsaba/impact/issues/44), [#45](https://github.com/moldovancsaba/impact/issues/45), [#46](https://github.com/moldovancsaba/impact/issues/46) (**Todo** on [Project #2](https://github.com/users/moldovancsaba/projects/2)).
 
 **After that**
 
@@ -222,14 +222,34 @@ Those are **not** the shortest path to loveability.
 
 ## Board placement recommendation
 
-Apply on [Project #2](https://github.com/users/moldovancsaba/projects/2) when MLP issues exist; **Status** is SSOT ([ssot-map.md](ssot-map.md)).
+**Status** on [Project #2](https://github.com/users/moldovancsaba/projects/2) is SSOT ([ssot-map.md](ssot-map.md)). **`apply-status.sh`** reapplies the template below.
 
-| Column | Items |
-| ------ | ----- |
-| **Todo (NEXT)** | **M1** — Public install and adoption · **M2** — Report delight · **M3** — Conservative recommendation engine |
-| **Backlog (SOONER)** | **M4** — Shareable result layer · **M5** — Community visibility MVP · **M6** — Install polish after npm |
-| **Roadmap (LATER)** | compare-my-machine vs crowd · benchmark portal · binary / desktop packaging · platform parity expansion |
-| **IDEABANK (SOMEDAY)** | DMG · desktop GUI · leaderboards · account/profile layer |
+| Column | Epic | GitHub issue |
+| ------ | ---- | ------------ |
+| **Todo (NEXT)** | **M1** — Public install and adoption | [#44](https://github.com/moldovancsaba/impact/issues/44) |
+| **Todo (NEXT)** | **M2** — Report delight and first-run payoff | [#45](https://github.com/moldovancsaba/impact/issues/45) |
+| **Todo (NEXT)** | **M3** — Conservative recommendation engine | [#46](https://github.com/moldovancsaba/impact/issues/46) |
+| **Backlog (SOONER)** | **M4** — Shareable result layer | [#47](https://github.com/moldovancsaba/impact/issues/47) |
+| **Backlog (SOONER)** | **M5** — Community visibility MVP | [#48](https://github.com/moldovancsaba/impact/issues/48) |
+| **Backlog (SOONER)** | **M6** — Install polish after npm | [#49](https://github.com/moldovancsaba/impact/issues/49) |
+| **Roadmap (LATER)** | compare-my-machine vs crowd · benchmark portal · binary / desktop packaging · platform parity | e.g. [#39](https://github.com/moldovancsaba/impact/issues/39)–[#41](https://github.com/moldovancsaba/impact/issues/41), [#32](https://github.com/moldovancsaba/impact/issues/32) |
+| **IDEABANK (SOMEDAY)** | DMG · native desktop GUI · leaderboards · account/profile | e.g. [#42](https://github.com/moldovancsaba/impact/issues/42), [#43](https://github.com/moldovancsaba/impact/issues/43) |
+
+---
+
+## CTO acceptance & developer directive
+
+**CTO (2026-04):** The MLP documentation pass is **accepted**. **`docs/mlp.md`** is the **canonical programme document** for the post-MVP loveability track. Repo layering (README → `current-state` → `product` → **`mlp`** → `architect-handoff`) is **correct**; the MLP sequence is **encoded in source control**.
+
+**What this means:** Clear post-MVP direction — finish the **public install** gate (**[#34](https://github.com/moldovancsaba/impact/issues/34)**), improve **first-run payoff**, add **conservative recommendation intelligence**, then **shareability** and **community visibility**.
+
+**Immediate constraint:** Do **not** start full MLP **implementation** before **#34** is **operationally closed**. The public npm path remains the **active gate**.
+
+**Next required work (after #34):** begin execution with **M1 → M2 → M3** ([#44](https://github.com/moldovancsaba/impact/issues/44)–[#46](https://github.com/moldovancsaba/impact/issues/46)); then **M4–M6** ([#47](https://github.com/moldovancsaba/impact/issues/47)–[#49](https://github.com/moldovancsaba/impact/issues/49)).
+
+**Discipline:** No benchmark scoring; no CRUD/shell benchmark scope; no GUI or DMG in the MLP spine; no hype-driven features. The product is **ready for execution** once **#34** clears.
+
+**Issue bodies (refresh):** [`scripts/gh-issue-bodies/issue-44.md`](https://github.com/moldovancsaba/impact/blob/main/scripts/gh-issue-bodies/issue-44.md) … [`issue-49.md`](https://github.com/moldovancsaba/impact/blob/main/scripts/gh-issue-bodies/issue-49.md).
 
 ---
 

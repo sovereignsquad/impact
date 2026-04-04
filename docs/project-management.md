@@ -108,8 +108,9 @@ These are **not** executable sprint tickets; they orient stakeholders.
 **Snapshot (post-MVP distribution — aligns with `main` + board template):**
 
 - **In Progress (NOW):** **#34** — publish `@impact/cli` to npm (Path C); stays here until maintainer publish + smoke evidence + issue closed.
+- **Todo (NEXT):** **MLP spine** — [#44](https://github.com/moldovancsaba/impact/issues/44) M1, [#45](https://github.com/moldovancsaba/impact/issues/45) M2, [#46](https://github.com/moldovancsaba/impact/issues/46) M3 ([mlp.md](mlp.md)). Cards are **visible** in Todo; **full MLP implementation** still **waits for [#34](https://github.com/moldovancsaba/impact/issues/34)** to close (CTO directive).
+- **Backlog (SOONER):** **#4**, **#5**; **#13** when ingest is not the active slice; **#35–#38**; **MLP** [#47](https://github.com/moldovancsaba/impact/issues/47)–[#49](https://github.com/moldovancsaba/impact/issues/49) (M4–M6).
 - **Done:** **#27** — Path B packaging / macOS smoke **complete**; do **not** keep **#27** in Todo/Backlog for “packaging completion”.
-- **Backlog (SOONER):** **#4**, **#5**; **#13** when ingest is not the active slice; **#35–#38** and similar post-#34 programme items per planning.
 - **Roadmap (LATER):** **#16**, theme cards **#29–#32**, and long-horizon programme issues **#39–#41**.
 - **#1** may stay **In Progress** as a **living doctrine** anchor (curated, not a one-shot ticket); **#3** similarly for architecture SSOT — or move to **Roadmap** if you prefer “stable reference, not active sprint”.
 

@@ -41,6 +41,14 @@ edit 26 "IMPACT P1: Add merge-path tests for multi-entity scan orchestration" "$
 edit 27 "IMPACT P1: Complete macOS-first packaging and release path" "$BD/issue-27.md"
 edit 28 "IMPACT P1: Implement explicit duplicate-submission handling for 409 responses" "$BD/issue-28.md"
 
+# MLP track (see docs/mlp.md)
+edit 44 "IMPACT P0: MLP M1 — Public install and adoption" "$BD/issue-44.md"
+edit 45 "IMPACT P0: MLP M2 — Report delight and first-run payoff" "$BD/issue-45.md"
+edit 46 "IMPACT P0: MLP M3 — Conservative recommendation engine" "$BD/issue-46.md"
+edit 47 "IMPACT P1: MLP M4 — Shareable result layer" "$BD/issue-47.md"
+edit 48 "IMPACT P1: MLP M5 — Community visibility MVP" "$BD/issue-48.md"
+edit 49 "IMPACT P1: MLP M6 — Install polish after npm" "$BD/issue-49.md"
+
 # Labels: P0/P1 + area; drop legacy "epic" from implementation workstreams
 for n in 1 2 6 7 8 10 11 12 15 16; do
   gh issue edit "$n" --repo "$REPO" --add-label "P0" 2>/dev/null || true
@@ -52,6 +60,14 @@ for n in 3 4 5 9 13 14 22 23 24 25 26 27 28; do
 done
 for n in 17 18 19 20 21; do
   gh issue edit "$n" --repo "$REPO" --add-label "P0" 2>/dev/null || true
+  gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
+done
+for n in 44 45 46; do
+  gh issue edit "$n" --repo "$REPO" --add-label "P0" 2>/dev/null || true
+  gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
+done
+for n in 47 48 49; do
+  gh issue edit "$n" --repo "$REPO" --add-label "P1" 2>/dev/null || true
   gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
 done
 for n in 6 7 8 9 10 11 12 13 14 15; do

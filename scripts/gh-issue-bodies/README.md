@@ -5,6 +5,7 @@ Markdown here mirrors the **structure and intent** of issues on [moldovancsaba/i
 **Quality bar:** programme cards follow the same sections as [mvp-factory-control#498](https://github.com/moldovancsaba/mvp-factory-control/issues/498) — Objective, Unified Context, Based On, Problem, Goal, Scope, Execution Prompt, Scope / Non-Goals, Constraints, Acceptance Checks, Dependencies, Out of Scope, Risks, Delivery Artifact, Developer Notes.
 
 - `issue-NN.md` — body for GitHub issue `#NN`
+- **MLP:** `issue-44.md` … `issue-49.md` — [#44](https://github.com/moldovancsaba/impact/issues/44)–[#49](https://github.com/moldovancsaba/impact/issues/49) ([mlp.md](../../docs/mlp.md))
 - `apply-updates.sh` — `gh issue edit … --body-file` + labels (bash)
 - `apply-status.sh` — sets **Project #2 → Status** only (kanban truth)
 - `gh-ensure-issues-on-project.sh` — add any repo issues missing from Project #2 (safe to re-run)

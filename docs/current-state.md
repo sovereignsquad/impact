@@ -147,8 +147,8 @@ Sequencing is **not** authoritative here — use **Operational status** for the 
 Typical forward work:
 
 1. **[#34](https://github.com/moldovancsaba/impact/issues/34)** — publish `@impact/*` to npm; published-package smoke; evidence on the issue.  
-2. **MLP spine (P0)** — **M1** public install default · **M2** report delight · **M3** conservative recommendations ([mlp.md](mlp.md)).  
-3. **MLP follow-ons (P1)** — **M4** share layer · **M5** community stats MVP · **M6** install polish ([mlp.md](mlp.md)).  
+2. **MLP spine (P0)** — [#44](https://github.com/moldovancsaba/impact/issues/44) M1 · [#45](https://github.com/moldovancsaba/impact/issues/45) M2 · [#46](https://github.com/moldovancsaba/impact/issues/46) M3 ([mlp.md](mlp.md); **Todo** on Project #2).  
+3. **MLP follow-ons (P1)** — [#47](https://github.com/moldovancsaba/impact/issues/47)–[#49](https://github.com/moldovancsaba/impact/issues/49) M4–M6 ([mlp.md](mlp.md); **Backlog**).  
 4. **#4 / #5** — community and security channels when scheduled.  
 5. **Long horizon** — benchmark portal, binary packaging, platform parity; **not** the MLP spine ([mlp.md](mlp.md) § Board placement).
 
