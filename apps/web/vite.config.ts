@@ -1,10 +1,19 @@
-import { defineConfig } from "vite";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { defineConfig } from "vite";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const webPkg = JSON.parse(readFileSync(path.resolve(__dirname, "package.json"), "utf8")) as { version: string };
+
+/** Must match `ImpactProfileSchema` literal in @impact/schemas (release with CLI + npm). */
+const PROFILE_SCHEMA_VERSION = "impact.v0.3";
 
 export default defineConfig({
+  define: {
+    __IMPACT_WEB_VERSION__: JSON.stringify(webPkg.version),
+    __IMPACT_PROFILE_SCHEMA_VERSION__: JSON.stringify(PROFILE_SCHEMA_VERSION),
+  },
   root: ".",
   publicDir: "public",
   build: {

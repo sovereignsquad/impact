@@ -37,6 +37,7 @@ Use this table so **Git tag**, **npm semver**, **profile JSON**, and **CLI `--ve
 | **`@impact/*` npm semver** | `0.3.0` | Every `packages/*/package.json` and `apps/cli/package.json`; pinned internal `dependencies` |
 | **Profile JSON `schema_version`** | `impact.v0.3` | Zod + emitters: `packages/schemas` (`ImpactProfileSchema`); `run-scan` default; all valid fixtures |
 | **`impact --version` (CLI)** | Same as `@impact/cli` **0.3.0** | Read at runtime from `apps/cli/package.json` (not hardcoded) |
+| **Public web `@impact/web`** | **0.3.0** (semver with CLI/npm for each release) | `apps/web/package.json`; footer on every static page shows **Web shell** version + profile schema (Vite `define` in `vite.config.ts`) |
 | **Changelog** | `[0.3.0]` + `[Unreleased]` | [CHANGELOG.md](../CHANGELOG.md) |
 
 **Terminology for profile fields** (operational `status` vs epistemic `presence`, provenance): [schema-semantics-v0.3.md](schema-semantics-v0.3.md). **Historical** schema generations (`impact.v0.1`, `impact.v0.2`) appear only in [CHANGELOG.md](../CHANGELOG.md) and old programme issues — **do not** use them in new code, fixtures, or user-facing docs.

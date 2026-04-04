@@ -24,6 +24,8 @@ Default: `http://127.0.0.1:8787/`, DB at `./data/ingest.db` (gitignored).
 | `PORT` | `8787` | Listen port |
 | `HOST` | `127.0.0.1` | Bind address |
 | `IMPACT_INGEST_DB_PATH` | `<cwd>/data/ingest.db` | SQLite file |
+| `IMPACT_STATS_MIN_BUCKET_COUNT` | `5` | Min submissions for publishing aggregates (global + per bucket) |
+| `IMPACT_STATS_CORS_ORIGIN` | `*` | `Access-Control-Allow-Origin` for dashboard / web |
 
 ## Endpoints
 
@@ -31,6 +33,10 @@ Default: `http://127.0.0.1:8787/`, DB at `./data/ingest.db` (gitignored).
 | ------ | ---- | ------- |
 | `GET` | `/health`, `/healthz` | Liveness |
 | `POST` | `/`, `/ingest` | Accept profile (see contract) |
+| `GET` | `/api/stats/overview` | Overview (counts + threshold metadata) |
+| `GET` | `/api/stats/full` | Full aggregate JSON |
+| `GET` | `/api/stats/hardware`, `/api/stats/tools`, `/api/stats/models` | Slices |
+| `OPTIONS` | `*` | CORS preflight |
 
 ## CLI submission
 

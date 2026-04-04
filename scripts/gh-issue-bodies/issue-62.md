@@ -12,12 +12,17 @@
 
 ## Deliverables
 
-- [ ] Real hardware section
-- [ ] Real tools/runtimes section
-- [ ] Real LLM/model section
-- [ ] Copy: “Updated from submitted profiles” / thresholds apply
-- [ ] No benchmark overlays
+- [x] Real hardware section — [`data.html`](../../apps/web/data.html) + [`data-entry.ts`](../../apps/web/src/data-entry.ts) when **`VITE_STATS_API_BASE`** set at build time (fetches `/api/stats/full`)
+- [x] Real tools/runtimes section — same
+- [x] Real LLM/model section — same
+- [x] Copy — live status line + threshold note in rendered tables; static page stays honest when env unset ([`apps/web/README.md`](../../apps/web/README.md))
+- [x] No benchmark overlays
 
 ## Constraints
 
 No fake numbers; match [web-deploy-smoke.md](../../docs/web-deploy-smoke.md) after wiring.
+
+## Acceptance
+
+- [x] Build with `VITE_STATS_API_BASE=http://127.0.0.1:8787` (or deployed ingest) and open `/data.html` — tables fill when global + per-bucket thresholds allow
+- [x] Build without env — placeholders unchanged (no fabricated counts)

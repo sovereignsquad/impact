@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **Web shell UX & versioning:** footer shows **Web shell** semver + **profile schema** on all pages (Vite `define` from `apps/web/package.json`); **`<main class="site-main">`** wraps primary content on every HTML entry; [docs/README.md](docs/README.md) reorganised with pick-a-path tables; root [README.md](README.md) adds **Versions** section and doc links for web + ingest; [docs/web.md](docs/web.md) and [docs/current-state.md](docs/current-state.md) § Versioning include `@impact/web`.
+
+### Added
+
+- **Dashboard D2–D5 (in repo, #59–#62):** [`apps/ingest`](apps/ingest) — aggregation (`aggregate.ts`, `stats-from-db.ts`), privacy thresholds (`IMPACT_STATS_MIN_BUCKET_COUNT`), **`GET /api/stats/overview|full|hardware|tools|models`**, CORS (`IMPACT_STATS_CORS_ORIGIN`, `OPTIONS`). Vitest: `aggregate.test.ts`, `stats-from-db.test.ts`, **`http-server.test.ts`**. [`apps/web`](apps/web) — [`data.html`](apps/web/data.html) + [`data-entry.ts`](apps/web/src/data-entry.ts) with **`VITE_STATS_API_BASE`** (build-time) for live tables. Docs: [ingest-server.md](docs/ingest-server.md), issue bodies `issue-59.md`–`issue-62.md`, [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) operating state updated.
+
 ### Planned
 
 - **MLP track** after **#34** — [mlp.md](docs/mlp.md) (M1–M6); execution on [Project #2](https://github.com/users/moldovancsaba/projects/2).

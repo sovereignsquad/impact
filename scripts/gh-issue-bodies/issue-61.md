@@ -18,6 +18,11 @@
 
 ## Deliverables
 
-- [ ] Stable API contract (OpenAPI or markdown normative)
-- [ ] Documented response shapes
-- [ ] Sample payloads
+- [x] Stable API contract — normative markdown: [ingest-server.md](../../docs/ingest-server.md) § stats `GET` endpoints
+- [x] Documented response shapes — `impact.stats.*.v0.1` schema versions on payloads; slice vs full documented in README
+- [x] Sample payloads — exercise via `GET /api/stats/*` against local ingest; integration tests in [`http-server.test.ts`](../../apps/ingest/src/http-server.test.ts)
+
+## Acceptance
+
+- [x] `GET /api/stats/overview`, `/full`, `/hardware`, `/tools`, `/models` return **200** + JSON
+- [x] `OPTIONS` + CORS headers for browser clients (`IMPACT_STATS_CORS_ORIGIN`, default `*`)

@@ -9,8 +9,8 @@ Use this for **tagged releases** and **release candidates**. Execute in order; d
 
 ## Version and changelog
 
-- [ ] Align **all** version layers per [current-state.md](current-state.md) **§ Versioning (SSOT)** — Git tag `vX.Y.Z`, npm `X.Y.Z` on every `@impact/*` workspace + pinned internal deps, profile `schema_version` if schema bumped, `impact --version` via `apps/cli/package.json`
-- [ ] Bump **all** `@impact/*` workspace versions and **pinned** internal `dependencies` to the same semver (see `packages/*/package.json`, `apps/cli/package.json`)
+- [ ] Align **all** version layers per [current-state.md](current-state.md) **§ Versioning (SSOT)** — Git tag `vX.Y.Z`, npm `X.Y.Z` on every `@impact/*` workspace + pinned internal deps, profile `schema_version` if schema bumped, `impact --version` via `apps/cli/package.json`, **`apps/web/package.json`** (footer “Web shell” line) + **`vite.config.ts`** `PROFILE_SCHEMA_VERSION` if schema bumped, **`apps/ingest/package.json`** if ingest ships with the tag
+- [ ] Bump **all** `@impact/*` workspace versions and **pinned** internal `dependencies` to the same semver (see `packages/*/package.json`, `apps/cli/package.json`, `apps/web/package.json`, `apps/ingest/package.json`)
 - [ ] `npm install` at repo root (refresh lockfile)
 - [ ] Update [CHANGELOG.md](../CHANGELOG.md) `[Unreleased]` → dated section with summary
 - [ ] Commit: `chore(release): vX.Y.Z` (or merge PR)

@@ -16,6 +16,11 @@ Machine classes, chip families, memory bands, platform counts, runtime/tool fami
 
 ## Deliverables
 
-- [ ] Normalized aggregation schema
-- [ ] Rollup job or query layer
-- [ ] Documented metric definitions
+- [x] Normalized aggregation schema — `impact.stats.v0.1` + slice schemas in [`apps/ingest/src/aggregate.ts`](../../apps/ingest/src/aggregate.ts) / [`stats-from-db.ts`](../../apps/ingest/src/stats-from-db.ts)
+- [x] Rollup / query layer — in-process rollup from SQLite `profile_json` via `loadValidatedProfiles` + `buildPublicStats`
+- [x] Documented metric definitions — [ingest-server.md](../../docs/ingest-server.md) stats section, [`apps/ingest/README.md`](../../apps/ingest/README.md)
+
+## Acceptance
+
+- [x] Dimensions: machine class, chip, memory band, OS, architecture, runtime/tool IDs, model id × locality (see aggregate module)
+- [x] Unit tests: [`aggregate.test.ts`](../../apps/ingest/src/aggregate.test.ts), [`stats-from-db.test.ts`](../../apps/ingest/src/stats-from-db.test.ts)

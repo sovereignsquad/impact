@@ -14,6 +14,19 @@
 
 ---
 
+## Versions (stay aligned)
+
+The **same release** should bump **Git tag**, **`@impact/*` npm packages** (e.g. **0.3.0**), profile JSON **`schema_version`** (**`impact.v0.3`**), **`impact --version`**, and the **public web** package **[`apps/web`](apps/web)** — the site footer shows **Web shell** + schema on every page after build. Full table and bump rules: **[docs/current-state.md § Versioning](docs/current-state.md#versioning-ssot)** · release steps: [docs/release-checklist.md](docs/release-checklist.md).
+
+| Piece | Where it lives |
+| ----- | -------------- |
+| CLI / scanners / npm | `apps/cli`, `packages/*` — `package.json` **version** |
+| Profile JSON schema | `impact.v0.3` in `packages/schemas` (Zod) |
+| Static web shell | `apps/web/package.json` — shown in footer + Vite `define` |
+| Optional ingest service | `apps/ingest` — private workspace, same semver convention |
+
+---
+
 ## Why IMPACT exists
 
 Many people run or evaluate **local AI** and wonder what their machine can actually support. Most lack a single, honest picture of what is installed, reachable, and worth trying. IMPACT starts with an **inventory you can inspect**: conservative detection, provenance on fields, and clear confidence — not a hype score.
@@ -151,11 +164,13 @@ Full detail: [docs/support-matrix.md](docs/support-matrix.md).
 
 ## Documentation
 
-Curated index: **[docs/README.md](docs/README.md)**  
+**Start here:** **[docs/README.md](docs/README.md)** — pick-your-path table (install, web deploy, ingest, programme) plus full indexes for users, maintainers, and reference.
 
 | Topic | Document |
 | ----- | -------- |
 | Install & run | [docs/install-macos.md](docs/install-macos.md) |
+| Public web (`apps/web`) | [docs/web.md](docs/web.md) · [apps/web/README.md](apps/web/README.md) |
+| Ingest + stats API | [docs/ingest-server.md](docs/ingest-server.md) |
 | Privacy (plain language) | [docs/privacy-for-users.md](docs/privacy-for-users.md) |
 | Privacy (policy) | [docs/privacy-policy.md](docs/privacy-policy.md) |
 | Support by OS | [docs/support-matrix.md](docs/support-matrix.md) |
@@ -166,7 +181,6 @@ Curated index: **[docs/README.md](docs/README.md)**
 | Architecture | [docs/architecture.md](docs/architecture.md) |
 | Release QA | [docs/release-checklist.md](docs/release-checklist.md) · [docs/smoke-test-macos.md](docs/smoke-test-macos.md) |
 | Post-MVP / MLP track | [docs/mlp.md](docs/mlp.md) |
-| Public web shell (`apps/web`) | [docs/web.md](docs/web.md) |
 
 **Planning & workflow:** [GitHub Issues](https://github.com/moldovancsaba/impact/issues) (scope/acceptance) · [Project #2](https://github.com/users/moldovancsaba/projects/2) (Status) · [Programme — not Done](https://github.com/users/moldovancsaba/projects/2/views/3) · [full board](https://github.com/users/moldovancsaba/projects/2/views/1) · **who wins when docs disagree:** [docs/ssot-map.md](docs/ssot-map.md)
 

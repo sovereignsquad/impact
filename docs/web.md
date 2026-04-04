@@ -18,7 +18,7 @@ Vite **MPA** — each route is its own HTML entry (see `vite.config.ts` `rollupO
 | **`/install.html`** | **Install / download** — Path B commands, Path C gated on **#34**, prerequisites, outputs, troubleshooting ([**#54**](https://github.com/moldovancsaba/impact/issues/54)). |
 | **`/use.html`** | **Run & results** — scan command, HTML/JSON outputs, `reachable` / `partial` / `unknown`, link to profile preview ([**#55**](https://github.com/moldovancsaba/impact/issues/55)). |
 | **`/submit.html`** | **Submit** — optional submission, preview/receipt, privacy, how aggregates appear later ([**#56**](https://github.com/moldovancsaba/impact/issues/56)). |
-| **`/data.html`** | **Community data** — IA for hardware / tools / LLMs with **labelled placeholders**; no fake live numbers ([**#50**](https://github.com/moldovancsaba/impact/issues/50)). |
+| **`/data.html`** | **Community data** — placeholders by default; **live aggregate tables** when the site is built with **`VITE_STATS_API_BASE`** pointing at a running ingest (`GET /api/stats/full`). Privacy thresholds apply ([**#50**](https://github.com/moldovancsaba/impact/issues/50), [**#58–#62**](https://github.com/moldovancsaba/impact/issues/58)). |
 | **`/profile.html`** | **Profile preview** — drop `impact-profile.json`; `ImpactProfileSchema.safeParse` + `buildRecommendations` in-browser only. |
 
 **Rule:** Do **not** present **npm Path C** as the live primary install until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is closed (publish, verify, smoke, evidence). Copy on **home** and **install** reflects that.
@@ -29,9 +29,11 @@ Vite **MPA** — each route is its own HTML entry (see `vite.config.ts` `rollupO
 
 - Multi-page **nav** with active state (`data-page` + `data-nav`).
 - **Honest install** story (Path B verified; Path C explicit gate).
-- **Historical data** section structure with “coming soon” / ingest + privacy threshold wording.
+- **Community data** page — honest placeholders **or** live stats from ingest when **`VITE_STATS_API_BASE`** is set at build time (see [apps/web/README.md](../apps/web/README.md)).
 - **Profile explorer** on dedicated page (same schema + recommendations as CLI HTML report).
-- No benchmark **scores**, no silent upload, no fabricated aggregate counts.
+- **Version line** in every page footer: **Web shell** semver (from `apps/web/package.json`, injected at build) + **profile schema** (`impact.v0.3`) so the static site aligns with [current-state.md](current-state.md) § Versioning.
+- Shared layout: **`<main class="site-main">`** between header and footer on all pages.
+- No benchmark **scores**, no silent upload, no fabricated aggregate counts when the API is unset.
 
 ---
 
@@ -63,7 +65,7 @@ If the Vercel dashboard had **Output Directory** set to `public`, remove it or s
 ## Roadmap (aligned with MLP)
 
 1. **#34 close** — flip primary CTA copy to npm where appropriate (**M1** / **#44**).
-2. **Live aggregates** — **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** per [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md); replace `data.html` placeholders when API + privacy thresholds are live.
+2. **Live aggregates in production** — ingest deployed + web build with **`VITE_STATS_API_BASE`**; programme closure **#58–#62** on the board when ops match [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md).
 3. **Polish** — badges, sample profile mode, deeper results explainer (**W3–W4**).
 
 Constraints: no benchmark **scores**, no hype “readiness index,” no silent data collection from the profile explorer.

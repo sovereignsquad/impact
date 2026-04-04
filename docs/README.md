@@ -1,63 +1,86 @@
 # IMPACT documentation
 
-Start on the repo **[README.md](../README.md)** for value proposition, quick start, trust, and scope.
+**New here?** Read the repo **[README.md](../README.md)** first — what IMPACT is, quick start, privacy, and scope.
 
-**When docs disagree:** [ssot-map.md](ssot-map.md) — which source wins (Project #2, issues, `current-state`, code).
+**Versions confused?** See **[current-state.md § Versioning](current-state.md#versioning-ssot)** — Git tag, npm, profile `schema_version`, CLI, and **public web** are listed in one table. Bump them together on release.
 
-## For users
+**Docs disagree?** **[ssot-map.md](ssot-map.md)** says which source wins (Project #2 Status, issue bodies, this file, code).
 
-| Document | Why read it |
-| -------- | ----------- |
-| [web.md](web.md) | **Public web shell** (`apps/web`) — multi-page site, install/run/submit/data IA, profile preview |
-| [web-deploy-smoke.md](web-deploy-smoke.md) | **Post-deploy checklist** — six URLs, nav, copy truth, profile parse |
-| [install-macos.md](install-macos.md) | **Path C** (npm) + **Path B** (source) + **Path D** (DMG) install and outputs |
-| [macos-distribution.md](macos-distribution.md) | **macOS packaging decision** — npm vs `.app` / DMG, signing follow-ups |
-| [privacy-for-users.md](privacy-for-users.md) | **Plain-language** trust: what is collected, what is not, consent |
-| [privacy-policy.md](privacy-policy.md) | Formal **privacy policy** |
-| [support-matrix.md](support-matrix.md) | **macOS / Linux / Windows** behaviour and expectations |
-| [current-state.md](current-state.md) | **Operational truth** + **versioning SSOT** (tag, npm, `schema_version`, CLI) |
-| [user-expectations-mvp.md](user-expectations-mvp.md) | **Honest MVP scope** — local vs crowd stats, install vs DMG |
+---
 
-## Programme & product
+## Choose a path
 
-| Document | Why read it |
-| -------- | ----------- |
-| [ssot-map.md](ssot-map.md) | **Authority routing** — Project Status vs issues vs `current-state` vs code |
-| [mlp.md](mlp.md) | **Minimum Loveable Product** — post-MVP phases M1–M6, priorities, constraints |
-| [mlp-status-cto.md](mlp-status-cto.md) | **MLP CTO assessment** — what shipped, #34 gate, next developer tasks |
-| [mlp-execution.md](mlp-execution.md) | **MLP execution plan** — Gate #34, tasks, web spine, order |
-| [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | **Next tranche** — dashboard ingest→API→web (**#58–#62**); macOS packaging **#63–#66** |
-| [product.md](product.md) | **Product definition**, v0.x scope, principles |
-| [project-management.md](project-management.md) | **Project #2** column semantics and contributor workflow |
-| [submission-contract.md](submission-contract.md) | Optional **HTTP submission** (normative) |
-| [ingest-server.md](ingest-server.md) | **D1 ingest** service — run, env, link to dashboard tranche |
+| I want to… | Start here |
+| ---------- | ---------- |
+| **Install and run the scanner** | [install-macos.md](install-macos.md) — Path B (source), Path C (npm when live), Path D (DMG) |
+| **Understand privacy and consent** | [privacy-for-users.md](privacy-for-users.md) (plain language) → [privacy-policy.md](privacy-policy.md) (formal) |
+| **Use or deploy the public website** | [web.md](web.md) — pages, build, **`VITE_STATS_API_BASE`**, Vercel · [web-deploy-smoke.md](web-deploy-smoke.md) after deploy |
+| **Run optional HTTP submission / ingest** | [submission-contract.md](submission-contract.md) · [ingest-server.md](ingest-server.md) — POST ingest + **`GET /api/stats/*`** |
+| **See what is actually shipped** | [current-state.md](current-state.md) · [user-expectations-mvp.md](user-expectations-mvp.md) |
+| **Contribute or follow the programme** | [project-management.md](project-management.md) · [product.md](product.md) · [mlp.md](mlp.md) |
+
+---
+
+## For users (product & trust)
+
+| Document | What it is |
+| -------- | ---------- |
+| [install-macos.md](install-macos.md) | Install paths, outputs, troubleshooting |
+| [macos-distribution.md](macos-distribution.md) | macOS packaging (npm vs app/DMG), signing context |
+| [privacy-for-users.md](privacy-for-users.md) | What is collected, what is not, consent |
+| [privacy-policy.md](privacy-policy.md) | Privacy policy |
+| [support-matrix.md](support-matrix.md) | macOS / Linux / Windows expectations |
+| [current-state.md](current-state.md) | Operational snapshot + **version SSOT** |
+| [user-expectations-mvp.md](user-expectations-mvp.md) | Honest MVP scope |
+
+---
+
+## Programme & delivery
+
+| Document | What it is |
+| -------- | ---------- |
+| [ssot-map.md](ssot-map.md) | Authority routing |
+| [mlp.md](mlp.md) | MLP phases M1–M6 |
+| [mlp-status-cto.md](mlp-status-cto.md) | CTO assessment, gates |
+| [mlp-execution.md](mlp-execution.md) | Execution order |
+| [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | Dashboard **#58–#62**, macOS **#63–#66** |
+| [product.md](product.md) | Product definition |
+| [project-management.md](project-management.md) | Board workflow |
+| [submission-contract.md](submission-contract.md) | Submission HTTP contract |
+| [ingest-server.md](ingest-server.md) | Ingest + stats API |
+
+---
 
 ## Builders & maintainers
 
-| Document | Why read it |
-| -------- | ----------- |
-| [architecture.md](architecture.md) | Code layout and data flow |
-| [architect-handoff.md](architect-handoff.md) | Architect onboarding summary |
-| [release-checklist.md](release-checklist.md) | Maintainer **release** steps |
-| [npm-publish.md](npm-publish.md) | Publish `@impact/*` to npm (order, login, dry-run) |
-| [smoke-test-macos.md](smoke-test-macos.md) | Fresh-mac **QA** |
-| [docs-alignment-after-packaging.md](docs-alignment-after-packaging.md) | **D6** — reconcile README/install after packaging |
+| Document | What it is |
+| -------- | ---------- |
+| [architecture.md](architecture.md) | Layout and data flow |
+| [architect-handoff.md](architect-handoff.md) | Architect onboarding |
+| [release-checklist.md](release-checklist.md) | Release steps |
+| [npm-publish.md](npm-publish.md) | Publish `@impact/*` |
+| [smoke-test-macos.md](smoke-test-macos.md) | Fresh-mac QA |
+| [docs-alignment-after-packaging.md](docs-alignment-after-packaging.md) | Post-packaging doc reconciliation |
+
+---
 
 ## Reference
 
-| Document | Why read it |
-| -------- | ----------- |
-| [schema-semantics-v0.3.md](schema-semantics-v0.3.md) | **`status`** vs **`presence`** vs provenance |
-| [confidence-rules.md](confidence-rules.md) | Deterministic **confidence** rules |
+| Document | What it is |
+| -------- | ---------- |
+| [schema-semantics-v0.3.md](schema-semantics-v0.3.md) | `status` vs `presence` vs provenance |
+| [confidence-rules.md](confidence-rules.md) | Confidence rules |
+
+---
 
 ## Assets
 
 | Path | Purpose |
 | ---- | ------- |
-| [assets/impact-report-sample.png](assets/impact-report-sample.png) | README sample **screenshot** (regenerate when UI changes) |
-| [assets/impact-profile-redacted.excerpt.json](assets/impact-profile-redacted.excerpt.json) | **Redacted** JSON excerpt for docs |
+| [assets/impact-report-sample.png](assets/impact-report-sample.png) | README sample screenshot |
+| [assets/impact-profile-redacted.excerpt.json](assets/impact-profile-redacted.excerpt.json) | Redacted JSON excerpt |
 
-Regenerate the screenshot (from repo root, after `npm run build`):
+Regenerate the screenshot (repo root, after `npm run build`):
 
 ```bash
 npm run impact -- scan --no-submit -o /tmp/impact-shot

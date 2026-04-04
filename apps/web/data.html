@@ -26,13 +26,15 @@
       </nav>
     </header>
 
-    <main class="page-main">
+    <main class="site-main page-main" id="main-content">
       <div class="section-inner">
         <p class="crumb"><a href="/">Home</a> / Community data</p>
         <h1 class="page-title">Community data</h1>
         <p class="lead">
-          This area will show <strong>aggregate</strong> views of what the community runs — hardware, tools/runtimes, and models
-          — without exposing individual submissions. <strong>We do not show fake live numbers.</strong>
+          This area shows <strong>aggregate</strong> views of what the community runs — hardware, tools/runtimes, and models
+          — without exposing individual submissions. When the site is built with a stats API base URL, tables are
+          <strong>updated from submitted profiles</strong> subject to server privacy thresholds. Otherwise you see honest
+          placeholders only — <strong>no fake live numbers.</strong>
         </p>
 
         <div class="truth-banner" role="status">
@@ -42,26 +44,37 @@
           <a href="https://github.com/moldovancsaba/impact/issues/51">#51</a>–<a href="https://github.com/moldovancsaba/impact/issues/53">#53</a>.
         </div>
 
+        <p id="stats-fetch-status" class="muted-small stats-fetch-status" hidden></p>
+
         <div class="data-grid">
           <section class="placeholder-card" aria-labelledby="hw-heading">
             <h2 id="hw-heading">Hardware tested</h2>
-            <p class="placeholder-label">Coming soon — live when sufficient data exists</p>
-            <p>Planned aggregates: machine classes, chip families, memory bands, OS/platform distribution.</p>
-            <p class="muted-small">Issue: <a href="https://github.com/moldovancsaba/impact/issues/51">#51</a></p>
+            <div id="hw-fallback">
+              <p class="placeholder-label">Coming soon — live when sufficient data exists</p>
+              <p>Planned aggregates: machine classes, chip families, memory bands, OS/platform distribution.</p>
+              <p class="muted-small">Issue: <a href="https://github.com/moldovancsaba/impact/issues/51">#51</a></p>
+            </div>
+            <div id="hw-live" class="stats-live" hidden></div>
           </section>
 
           <section class="placeholder-card" aria-labelledby="tools-heading">
             <h2 id="tools-heading">Tools &amp; runtimes tested</h2>
-            <p class="placeholder-label">Coming soon — live when sufficient data exists</p>
-            <p>Planned aggregates: detected runtime/tool families (e.g. Ollama, MLX) and counts by family as profiles report them.</p>
-            <p class="muted-small">Issue: <a href="https://github.com/moldovancsaba/impact/issues/52">#52</a></p>
+            <div id="tools-fallback">
+              <p class="placeholder-label">Coming soon — live when sufficient data exists</p>
+              <p>Planned aggregates: detected runtime/tool families (e.g. Ollama, MLX) and counts by family as profiles report them.</p>
+              <p class="muted-small">Issue: <a href="https://github.com/moldovancsaba/impact/issues/52">#52</a></p>
+            </div>
+            <div id="tools-live" class="stats-live" hidden></div>
           </section>
 
           <section class="placeholder-card" aria-labelledby="llm-heading">
             <h2 id="llm-heading">LLMs / models tested</h2>
-            <p class="placeholder-label">Coming soon — live when sufficient data exists</p>
-            <p>Planned aggregates: normalised model families, local vs cloud split where schema allows, runtime associations.</p>
-            <p class="muted-small">Issue: <a href="https://github.com/moldovancsaba/impact/issues/53">#53</a></p>
+            <div id="models-fallback">
+              <p class="placeholder-label">Coming soon — live when sufficient data exists</p>
+              <p>Planned aggregates: normalised model families, local vs cloud split where schema allows, runtime associations.</p>
+              <p class="muted-small">Issue: <a href="https://github.com/moldovancsaba/impact/issues/53">#53</a></p>
+            </div>
+            <div id="models-live" class="stats-live" hidden></div>
           </section>
         </div>
 

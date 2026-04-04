@@ -22,7 +22,23 @@ npm run dev:ingest
 
 ## Relation to the dashboard tranche
 
-This is the **D1 / [#58](https://github.com/moldovancsaba/impact/issues/58)** baseline: **ingest + storage + dedupe + validation**. **D2–D5** (aggregation, privacy, read API, web wiring) are **not** in this package yet — see [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § *CTO directive — background system delivery*.
+**D1 / [#58](https://github.com/moldovancsaba/impact/issues/58)** — ingest, storage, dedupe, validation — is in this service.
+
+**Read API & aggregates** — `GET` JSON under `/api/stats/*` reads validated profiles from SQLite, applies **privacy thresholds** (minimum bucket counts), and returns slice or full payloads. The static site can opt in via **`VITE_STATS_API_BASE`** when building [apps/web](../apps/web/). See [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md).
+
+### Stats `GET` endpoints
+
+| Path | Purpose |
+| ---- | ------- |
+| `/api/stats/overview` | Submission count, global threshold flag, `min_bucket_count` |
+| `/api/stats/full` | Full `impact.stats.v0.1` aggregate payload |
+| `/api/stats/hardware` | Hardware slice (`impact.stats.hardware.v0.1`) |
+| `/api/stats/tools` | Tools/runtimes slice |
+| `/api/stats/models` | Models slice |
+
+**Environment:** `IMPACT_STATS_MIN_BUCKET_COUNT` (default **5**) — minimum submissions globally and per published bucket; `IMPACT_STATS_CORS_ORIGIN` (default `*`) for browser access from another origin.
+
+**CORS:** `OPTIONS` is answered with **204**; JSON responses include `Access-Control-Allow-*` headers.
 
 ## Production notes
 
