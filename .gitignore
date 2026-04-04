@@ -30,5 +30,5 @@ venv/
 .vscode/*
 !.vscode/extensions.json
 
-# Vercel (local link metadata; not part of the repo)
+# Vercel — local link (projectId/orgId); do not commit secrets
 .vercel/

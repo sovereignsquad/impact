@@ -33,6 +33,8 @@ Use the **repository root** as the Vercel project root (monorepo). Root [`vercel
 
 If the Vercel dashboard had **Output Directory** set to `public`, remove it or set it to **`apps/web/dist`** so it matches `vercel.json`.
 
+**Production (configured):** [https://impact.messmass.com](https://impact.messmass.com) — project **`narimato/impact`**, linked locally via `vercel link --project impact --scope narimato`. Deploy: `vercel --prod --yes --scope narimato` from repo root (requires Vercel CLI + team access). GitHub integration will pick up **`vercel.json`** on push.
+
 ---
 
 ## Roadmap (aligned with MLP)
