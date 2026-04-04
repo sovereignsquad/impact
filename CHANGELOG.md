@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Tranche doc issue visibility:** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — **Project #2** board links + full **# / title** tables moved **above** CTO sections; anchor `#github-issue-index`; bottom § Related links back to top.
+
 - **CTO assessment (2026-04-10):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — **Path B / C / D** distribution states, **strategic correction** (packaging advanced early as infrastructure), **M1–M4** nuance, **dual-track** after **#34** (dashboard primary; signing/notarization parallel if capacity); **do not** market Path D as finished until **M3**. [mlp-status-cto.md](docs/mlp-status-cto.md) summary table + distribution snapshot; [macos-distribution.md](docs/macos-distribution.md) CTO status table + positioning; [mlp-execution.md](docs/mlp-execution.md) recommended order + developer message aligned.
 
 ### Added
@@ -35,7 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Next-tranche SSOT final confirmation (CTO, 2026-04-08):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — expanded § *CTO acceptance* (status greens/ambers, **six-step** execution order, parallel-busywork warning, operational next step); [mlp-status-cto.md](docs/mlp-status-cto.md) summary row + header.
 
-- **Architect issue index:** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — § *GitHub issues — index with titles* (linked **#34–#66** + programme **#35–#43**) for readers without GitHub issue access.
+- **Architect issue index:** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — § *Project board — linked issues* at **top** of file (`#github-issue-index`; **#34–#66** + programme **#35–#43**) + **Project #2** links in header.
 
 - **Next-delivery tranche accepted (CTO, 2026-04-07):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — CTO acceptance block, **verbatim developer directive**, **board/WIP discipline** (#58 In Progress first after #34; then #59…; **#63–#66** secondary + Backlog; **DMG last**), expanded constraints (no accounts layer). [mlp-status-cto.md](docs/mlp-status-cto.md), [project-management.md](docs/project-management.md) §6, `issue-58.md`, `apply-status.sh` comment aligned.
 

@@ -2,9 +2,75 @@
 
 **Purpose:** SSOT for the **next** delivery work after the **frozen** public-web/doc tranche ([mlp-status-cto.md](mlp-status-cto.md)). **Product:** (1) **real community dashboard data** on the webapp, (2) **downloadable macOS distribution** — **not equal in readiness**; **dashboard** remains the **primary missing product-value layer**; **Path D** (DMG) is **real engineering progress** but **not** consumer-grade Mac delivery until **signing + notarization** ([#65](https://github.com/moldovancsaba/impact/issues/65)).
 
-**Board issues:** dashboard **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**; macOS packaging **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**. **Do not start** dashboard execution until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **Done** (npm publish + smoke + evidence).
+**Execution spine (this doc):** **[#34](https://github.com/moldovancsaba/impact/issues/34)** install gate → dashboard **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** → macOS packaging **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**. **Do not start** dashboard work until **#34** is **Done** (npm publish + smoke + evidence).
+
+**Project board (workflow SSOT):** [Project #2](https://github.com/users/moldovancsaba/projects/2) — [Programme (Not Done)](https://github.com/users/moldovancsaba/projects/2/views/3) · [Execution](https://github.com/users/moldovancsaba/projects/2/views/5) · [Full board](https://github.com/users/moldovancsaba/projects/2/views/1). **Status** on each card = column; issue **body** = scope/acceptance ([project-management.md](project-management.md), [ssot-map.md](ssot-map.md)).
 
 **Established:** CTO directive · **Accepted:** 2026-04-07 (initial) · **Confirmed SSOT:** 2026-04-08 · **Operating model:** 2026-04-09 · **Distribution reality + dual-track sequencing:** 2026-04-10.
+
+<a id="github-issue-index"></a>
+
+## Project board — linked issues (titles)
+
+Tables below list **related GitHub issues** that correspond to cards on **Project #2**, with **titles** for readers without issue access. Repo: **moldovancsaba/impact**. Base URL: `https://github.com/moldovancsaba/impact/issues/`
+
+### Install gate & MLP spine
+
+| # | Title |
+| - | ----- |
+| [34](https://github.com/moldovancsaba/impact/issues/34) | IMPACT P1: Publish @impact/cli to npm registry |
+| [44](https://github.com/moldovancsaba/impact/issues/44) | IMPACT P0: MLP M1 — Public install and adoption |
+| [45](https://github.com/moldovancsaba/impact/issues/45) | IMPACT P0: MLP M2 — Report delight and first-run payoff |
+| [46](https://github.com/moldovancsaba/impact/issues/46) | IMPACT P0: MLP M3 — Conservative recommendation engine |
+| [47](https://github.com/moldovancsaba/impact/issues/47) | IMPACT P1: MLP M4 — Shareable result layer |
+| [48](https://github.com/moldovancsaba/impact/issues/48) | IMPACT P1: MLP M5 — Community visibility MVP |
+| [49](https://github.com/moldovancsaba/impact/issues/49) | IMPACT P1: MLP M6 — Install polish after npm |
+
+### Public web shell (H1–H8)
+
+| # | Title |
+| - | ----- |
+| [50](https://github.com/moldovancsaba/impact/issues/50) | IMPACT P0: MLP Web H1 — Historical data information architecture |
+| [51](https://github.com/moldovancsaba/impact/issues/51) | IMPACT P0: MLP Web H2 — Historical hardware dataset MVP |
+| [52](https://github.com/moldovancsaba/impact/issues/52) | IMPACT P0: MLP Web H3 — Historical tools/runtimes dataset MVP |
+| [53](https://github.com/moldovancsaba/impact/issues/53) | IMPACT P0: MLP Web H4 — Historical LLM/model dataset MVP |
+| [54](https://github.com/moldovancsaba/impact/issues/54) | IMPACT P0: MLP Web H5 — Install / download page |
+| [55](https://github.com/moldovancsaba/impact/issues/55) | IMPACT P0: MLP Web H6 — Launch / use page |
+| [56](https://github.com/moldovancsaba/impact/issues/56) | IMPACT P0: MLP Web H7 — Submit result page |
+| [57](https://github.com/moldovancsaba/impact/issues/57) | IMPACT P0: MLP Web H8 — Homepage rework (four pillars) |
+
+### Dashboard tranche (D1–D5) — Phase 2 of this doc
+
+| # | Title |
+| - | ----- |
+| [58](https://github.com/moldovancsaba/impact/issues/58) | IMPACT P0: Dashboard D1 — Ingest MVP |
+| [59](https://github.com/moldovancsaba/impact/issues/59) | IMPACT P0: Dashboard D2 — Aggregation model |
+| [60](https://github.com/moldovancsaba/impact/issues/60) | IMPACT P0: Dashboard D3 — Privacy thresholds |
+| [61](https://github.com/moldovancsaba/impact/issues/61) | IMPACT P0: Dashboard D4 — Dashboard read API |
+| [62](https://github.com/moldovancsaba/impact/issues/62) | IMPACT P0: Dashboard D5 — Wire webapp to real aggregates |
+
+### macOS packaging (M1–M4) — Phase 3 of this doc
+
+| # | Title |
+| - | ----- |
+| [63](https://github.com/moldovancsaba/impact/issues/63) | IMPACT P1: macOS M1 — Distribution decision (binary vs app) |
+| [64](https://github.com/moldovancsaba/impact/issues/64) | IMPACT P1: macOS M2 — Packaging pipeline & clean-Mac smoke |
+| [65](https://github.com/moldovancsaba/impact/issues/65) | IMPACT P1: macOS M3 — Signing & notarization plan |
+| [66](https://github.com/moldovancsaba/impact/issues/66) | IMPACT P1: macOS M4 — DMG packaging (after M1–M3) |
+
+### Related programme issues (context — may also appear on the board)
+
+| # | Title |
+| - | ----- |
+| [35](https://github.com/moldovancsaba/impact/issues/35) | IMPACT P1: Anonymous ingest service MVP |
+| [36](https://github.com/moldovancsaba/impact/issues/36) | IMPACT P1: Community aggregates — governance, pipeline, metric definitions |
+| [37](https://github.com/moldovancsaba/impact/issues/37) | IMPACT P1: Public stats surface (dashboard or API) |
+| [38](https://github.com/moldovancsaba/impact/issues/38) | IMPACT P1: Standalone binary packaging — investigation |
+| [39](https://github.com/moldovancsaba/impact/issues/39) | IMPACT P1: Programme — signed releases and desktop-style macOS distribution |
+| [40](https://github.com/moldovancsaba/impact/issues/40) | IMPACT P1: Programme — public benchmark portal and compare vs crowd |
+| [41](https://github.com/moldovancsaba/impact/issues/41) | IMPACT P1: Programme — cross-platform parity for install and analytics |
+| [42](https://github.com/moldovancsaba/impact/issues/42) | IMPACT P2: Ideabank — DMG drag-drop installer |
+| [43](https://github.com/moldovancsaba/impact/issues/43) | IMPACT P2: Ideabank — native GUI, accounts, leaderboards, auto-update |
 
 ---
 
@@ -12,7 +78,7 @@
 
 **Decision:** **This file** is the **confirmed SSOT** for the **next public delivery phase**.
 
-**Confirmed (unchanged):** **This file** as SSOT · [mlp-status-cto.md](mlp-status-cto.md) aligned · [CHANGELOG.md](../CHANGELOG.md) records the trail · issue map supports readers without repo access.
+**Confirmed (unchanged):** **This file** as SSOT · [mlp-status-cto.md](mlp-status-cto.md) aligned · [CHANGELOG.md](../CHANGELOG.md) records the trail · [§ Project board — linked issues](#github-issue-index) (top of file) lists **#34–#66** + programme **#35–#43** with titles for readers without GitHub access.
 
 ---
 
@@ -182,70 +248,8 @@ The **next-delivery tranche setup is accepted**. **This document** is the **SSOT
 
 ---
 
-## GitHub issues — index with titles (architects without repo access)
-
-Repo: **moldovancsaba/impact**. Base: `https://github.com/moldovancsaba/impact/issues/`
-
-### Install gate & MLP spine
-
-| # | Title |
-| - | ----- |
-| [34](https://github.com/moldovancsaba/impact/issues/34) | IMPACT P1: Publish @impact/cli to npm registry |
-| [44](https://github.com/moldovancsaba/impact/issues/44) | IMPACT P0: MLP M1 — Public install and adoption |
-| [45](https://github.com/moldovancsaba/impact/issues/45) | IMPACT P0: MLP M2 — Report delight and first-run payoff |
-| [46](https://github.com/moldovancsaba/impact/issues/46) | IMPACT P0: MLP M3 — Conservative recommendation engine |
-| [47](https://github.com/moldovancsaba/impact/issues/47) | IMPACT P1: MLP M4 — Shareable result layer |
-| [48](https://github.com/moldovancsaba/impact/issues/48) | IMPACT P1: MLP M5 — Community visibility MVP |
-| [49](https://github.com/moldovancsaba/impact/issues/49) | IMPACT P1: MLP M6 — Install polish after npm |
-
-### Public web shell (H1–H8)
-
-| # | Title |
-| - | ----- |
-| [50](https://github.com/moldovancsaba/impact/issues/50) | IMPACT P0: MLP Web H1 — Historical data information architecture |
-| [51](https://github.com/moldovancsaba/impact/issues/51) | IMPACT P0: MLP Web H2 — Historical hardware dataset MVP |
-| [52](https://github.com/moldovancsaba/impact/issues/52) | IMPACT P0: MLP Web H3 — Historical tools/runtimes dataset MVP |
-| [53](https://github.com/moldovancsaba/impact/issues/53) | IMPACT P0: MLP Web H4 — Historical LLM/model dataset MVP |
-| [54](https://github.com/moldovancsaba/impact/issues/54) | IMPACT P0: MLP Web H5 — Install / download page |
-| [55](https://github.com/moldovancsaba/impact/issues/55) | IMPACT P0: MLP Web H6 — Launch / use page |
-| [56](https://github.com/moldovancsaba/impact/issues/56) | IMPACT P0: MLP Web H7 — Submit result page |
-| [57](https://github.com/moldovancsaba/impact/issues/57) | IMPACT P0: MLP Web H8 — Homepage rework (four pillars) |
-
-### Dashboard tranche (D1–D5) — this document’s Phase 2
-
-| # | Title |
-| - | ----- |
-| [58](https://github.com/moldovancsaba/impact/issues/58) | IMPACT P0: Dashboard D1 — Ingest MVP |
-| [59](https://github.com/moldovancsaba/impact/issues/59) | IMPACT P0: Dashboard D2 — Aggregation model |
-| [60](https://github.com/moldovancsaba/impact/issues/60) | IMPACT P0: Dashboard D3 — Privacy thresholds |
-| [61](https://github.com/moldovancsaba/impact/issues/61) | IMPACT P0: Dashboard D4 — Dashboard read API |
-| [62](https://github.com/moldovancsaba/impact/issues/62) | IMPACT P0: Dashboard D5 — Wire webapp to real aggregates |
-
-### macOS packaging tranche (M1–M4) — Phase 3
-
-| # | Title |
-| - | ----- |
-| [63](https://github.com/moldovancsaba/impact/issues/63) | IMPACT P1: macOS M1 — Distribution decision (binary vs app) |
-| [64](https://github.com/moldovancsaba/impact/issues/64) | IMPACT P1: macOS M2 — Packaging pipeline & clean-Mac smoke |
-| [65](https://github.com/moldovancsaba/impact/issues/65) | IMPACT P1: macOS M3 — Signing & notarization plan |
-| [66](https://github.com/moldovancsaba/impact/issues/66) | IMPACT P1: macOS M4 — DMG packaging (after M1–M3) |
-
-### Related programme issues (ingest / stats / binary — context)
-
-| # | Title |
-| - | ----- |
-| [35](https://github.com/moldovancsaba/impact/issues/35) | IMPACT P1: Anonymous ingest service MVP |
-| [36](https://github.com/moldovancsaba/impact/issues/36) | IMPACT P1: Community aggregates — governance, pipeline, metric definitions |
-| [37](https://github.com/moldovancsaba/impact/issues/37) | IMPACT P1: Public stats surface (dashboard or API) |
-| [38](https://github.com/moldovancsaba/impact/issues/38) | IMPACT P1: Standalone binary packaging — investigation |
-| [39](https://github.com/moldovancsaba/impact/issues/39) | IMPACT P1: Programme — signed releases and desktop-style macOS distribution |
-| [40](https://github.com/moldovancsaba/impact/issues/40) | IMPACT P1: Programme — public benchmark portal and compare vs crowd |
-| [41](https://github.com/moldovancsaba/impact/issues/41) | IMPACT P1: Programme — cross-platform parity for install and analytics |
-| [42](https://github.com/moldovancsaba/impact/issues/42) | IMPACT P2: Ideabank — DMG drag-drop installer |
-| [43](https://github.com/moldovancsaba/impact/issues/43) | IMPACT P2: Ideabank — native GUI, accounts, leaderboards, auto-update |
-
----
-
 ## Related
+
+**Issue index (titles):** [§ Project board — linked issues](#github-issue-index) at the **top** of this file.
 
 - [mlp-status-cto.md](mlp-status-cto.md) · [mlp-execution.md](mlp-execution.md) · [mlp.md](mlp.md) · [web.md](web.md) · [submission-contract.md](submission-contract.md) · [#38](https://github.com/moldovancsaba/impact/issues/38) (historical binary spike — defer to **#63**)
