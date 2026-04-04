@@ -21,9 +21,9 @@
 - **Community stats (public):** **not live** until hosted ingest + web env + volume — **repo-complete ≠ product-live** ([mlp-status-cto.md](mlp-status-cto.md#cto-acceptance-leadership-dashboard))
 - **Next sequence:** **activation** (**#58** + **#34** in parallel) → close **#58–#62** with hosted proof → **#44** Path C primary after **#34** → **#44–#46** evidence → spine per [mlp.md](mlp.md)
 
-**Programme health (CTO snapshot):** **Green** — MVP shipped; **green** — in-repo MLP web shell (+ prior report/recommendations work); **amber** — public npm until **[#34](https://github.com/moldovancsaba/impact/issues/34)**. Programme board **[#44](https://github.com/moldovancsaba/impact/issues/44)–[#49](https://github.com/moldovancsaba/impact/issues/49)**. **Repo/doc tranche frozen (CTO)** — next moves **operational**: deploy, [web-deploy-smoke.md](web-deploy-smoke.md), **#34**, then **#44** CTAs and **#44–#46** evidence. Full memo: [mlp-status-cto.md](mlp-status-cto.md).
+**Programme health (CTO snapshot):** **Green** — MVP; **green** — web shell + **dashboard engine in repo**; **amber** — **product-live** stats + **public npm** (**#58** activation + **#34**). Board **[#44](https://github.com/moldovancsaba/impact/issues/44)–[#49](https://github.com/moldovancsaba/impact/issues/49)**. Next moves **operational**: [mlp-status-cto.md § Leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard).
 
-**Status:** IMPACT MVP is shipped. The repo-based macOS install path (Path B) is live and verified. The npm install path (Path C) is implementation-complete on main, but not yet publicly live until a maintainer publishes `@impact/cli`, verifies `npm view`, runs the published-package smoke test, and records evidence on issue #34. **MLP** slices (report interpretation, deterministic recommendations, web profile explorer) are **partially delivered in-repo** — [mlp-status-cto.md](mlp-status-cto.md). Community aggregate visibility is not shipped yet. Programme definition and remaining work: [mlp.md](mlp.md).
+**Status:** Path **B** verified. Path **C** awaits **#34**. **Dashboard backend** is **in repo**; **public** community stats await **#58** activation (**hosted** ingest + web). **MLP** report/web slices in-repo — [mlp-status-cto.md](mlp-status-cto.md). Programme: [mlp.md](mlp.md).
 
 ---
 
