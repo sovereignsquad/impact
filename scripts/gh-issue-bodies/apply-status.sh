@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
-# Set Project #2 Status from board columns (single source of truth for workflow).
+# Set org Project "impact" (sovereignsquad/4) Status from workflow SSOT.
 # Compatible with bash 3.2 (macOS).
-# Sprint B + post-MVP + MLP + public web/data + dashboard/mac tranche + ideabank P2 (2026-04): issues 17–74 item IDs from `gh project item-add` / item-list.
+# https://github.com/orgs/sovereignsquad/projects/4 — item IDs from `gh project item-add` / item-list.
 set -euo pipefail
-PROJECT_ID="PVT_kwHOACGtF84BTnzN"
-STATUS_FIELD="PVTSSF_lAHOACGtF84BTnzNzhA1jZc"
+PROJECT_ID="PVT_kwDOEEuBB84BTwCK"
+STATUS_FIELD="PVTSSF_lADOEEuBB84BTwCKzhA81Ew"
 
-IDEABANK=97b637fb
-ROADMAP=6311d6f7
-BACKLOG=f44409d8
+IDEABANK=4c7bc4d5
+ROADMAP=93da8466
+BACKLOG=53cb63a1
 TODO=f75ad846
 IN_PROGRESS=47fc9ee4
-REVIEW=c92ddcf4
+REVIEW=a278dab5
 DONE=98236657
 
 set_status() {
@@ -25,80 +25,80 @@ set_status() {
 
 item_for_issue() {
   case "$1" in
-    1) echo PVTI_lAHOACGtF84BTnzNzgpD2r4 ;;
-    2) echo PVTI_lAHOACGtF84BTnzNzgpD2sI ;;
-    3) echo PVTI_lAHOACGtF84BTnzNzgpD2tM ;;
-    4) echo PVTI_lAHOACGtF84BTnzNzgpD2uI ;;
-    5) echo PVTI_lAHOACGtF84BTnzNzgpD2uo ;;
-    6) echo PVTI_lAHOACGtF84BTnzNzgpD6iM ;;
-    7) echo PVTI_lAHOACGtF84BTnzNzgpD6i0 ;;
-    8) echo PVTI_lAHOACGtF84BTnzNzgpD6j8 ;;
-    9) echo PVTI_lAHOACGtF84BTnzNzgpD6kw ;;
-    10) echo PVTI_lAHOACGtF84BTnzNzgpD6l8 ;;
-    11) echo PVTI_lAHOACGtF84BTnzNzgpD6ng ;;
-    12) echo PVTI_lAHOACGtF84BTnzNzgpD6pc ;;
-    13) echo PVTI_lAHOACGtF84BTnzNzgpD6qs ;;
-    14) echo PVTI_lAHOACGtF84BTnzNzgpD6sA ;;
-    15) echo PVTI_lAHOACGtF84BTnzNzgpD6sw ;;
-    16) echo PVTI_lAHOACGtF84BTnzNzgpD6uE ;;
-    17) echo PVTI_lAHOACGtF84BTnzNzgpEX6I ;;
-    18) echo PVTI_lAHOACGtF84BTnzNzgpEX6w ;;
-    19) echo PVTI_lAHOACGtF84BTnzNzgpEX7M ;;
-    20) echo PVTI_lAHOACGtF84BTnzNzgpEX78 ;;
-    21) echo PVTI_lAHOACGtF84BTnzNzgpEX8k ;;
-    22) echo PVTI_lAHOACGtF84BTnzNzgpEX-M ;;
-    23) echo PVTI_lAHOACGtF84BTnzNzgpEX_Y ;;
-    24) echo PVTI_lAHOACGtF84BTnzNzgpEYAE ;;
-    25) echo PVTI_lAHOACGtF84BTnzNzgpEYAs ;;
-    26) echo PVTI_lAHOACGtF84BTnzNzgpEYBQ ;;
-    27) echo PVTI_lAHOACGtF84BTnzNzgpEYBs ;;
-    28) echo PVTI_lAHOACGtF84BTnzNzgpEYCo ;;
-    29) echo PVTI_lAHOACGtF84BTnzNzgpFC7Y ;;
-    30) echo PVTI_lAHOACGtF84BTnzNzgpFC7M ;;
-    31) echo PVTI_lAHOACGtF84BTnzNzgpFC8k ;;
-    32) echo PVTI_lAHOACGtF84BTnzNzgpFC8o ;;
-    33) echo PVTI_lAHOACGtF84BTnzNzgpFNWE ;;
-    34) echo PVTI_lAHOACGtF84BTnzNzgpFNWc ;;
-    35) echo PVTI_lAHOACGtF84BTnzNzgpFNZA ;;
-    36) echo PVTI_lAHOACGtF84BTnzNzgpFNZg ;;
-    37) echo PVTI_lAHOACGtF84BTnzNzgpFNbw ;;
-    38) echo PVTI_lAHOACGtF84BTnzNzgpFNdk ;;
-    39) echo PVTI_lAHOACGtF84BTnzNzgpFNe4 ;;
-    40) echo PVTI_lAHOACGtF84BTnzNzgpFNic ;;
-    41) echo PVTI_lAHOACGtF84BTnzNzgpFNj8 ;;
-    42) echo PVTI_lAHOACGtF84BTnzNzgpFNk8 ;;
-    43) echo PVTI_lAHOACGtF84BTnzNzgpFNm0 ;;
-    44) echo PVTI_lAHOACGtF84BTnzNzgpGXRk ;;
-    45) echo PVTI_lAHOACGtF84BTnzNzgpGXSA ;;
-    46) echo PVTI_lAHOACGtF84BTnzNzgpGXSE ;;
-    47) echo PVTI_lAHOACGtF84BTnzNzgpGXSM ;;
-    48) echo PVTI_lAHOACGtF84BTnzNzgpGXSc ;;
-    49) echo PVTI_lAHOACGtF84BTnzNzgpGXSg ;;
-    50) echo PVTI_lAHOACGtF84BTnzNzgpGxvI ;;
-    51) echo PVTI_lAHOACGtF84BTnzNzgpGxvY ;;
-    52) echo PVTI_lAHOACGtF84BTnzNzgpGxvo ;;
-    53) echo PVTI_lAHOACGtF84BTnzNzgpGxv0 ;;
-    54) echo PVTI_lAHOACGtF84BTnzNzgpGxv8 ;;
-    55) echo PVTI_lAHOACGtF84BTnzNzgpGxwI ;;
-    56) echo PVTI_lAHOACGtF84BTnzNzgpGxwQ ;;
-    57) echo PVTI_lAHOACGtF84BTnzNzgpGxwo ;;
-    58) echo PVTI_lAHOACGtF84BTnzNzgpG2J8 ;;
-    59) echo PVTI_lAHOACGtF84BTnzNzgpG2KM ;;
-    60) echo PVTI_lAHOACGtF84BTnzNzgpG2KY ;;
-    61) echo PVTI_lAHOACGtF84BTnzNzgpG2Ks ;;
-    62) echo PVTI_lAHOACGtF84BTnzNzgpG2K4 ;;
-    63) echo PVTI_lAHOACGtF84BTnzNzgpG2Kw ;;
-    64) echo PVTI_lAHOACGtF84BTnzNzgpG2LQ ;;
-    65) echo PVTI_lAHOACGtF84BTnzNzgpG2LY ;;
-    66) echo PVTI_lAHOACGtF84BTnzNzgpG2Lg ;;
-    67) echo PVTI_lAHOACGtF84BTnzNzgpI6N0 ;;
-    68) echo PVTI_lAHOACGtF84BTnzNzgpI6OA ;;
-    69) echo PVTI_lAHOACGtF84BTnzNzgpI6OQ ;;
-    70) echo PVTI_lAHOACGtF84BTnzNzgpI6Oc ;;
-    71) echo PVTI_lAHOACGtF84BTnzNzgpI6Ow ;;
-    72) echo PVTI_lAHOACGtF84BTnzNzgpI6O4 ;;
-    73) echo PVTI_lAHOACGtF84BTnzNzgpI6O8 ;;
-    74) echo PVTI_lAHOACGtF84BTnzNzgpI6PQ ;;
+    1) echo PVTI_lADOEEuBB84BTwCKzgpI_Do ;;
+    2) echo PVTI_lADOEEuBB84BTwCKzgpI_G4 ;;
+    3) echo PVTI_lADOEEuBB84BTwCKzgpI_HM ;;
+    4) echo PVTI_lADOEEuBB84BTwCKzgpI_Hc ;;
+    5) echo PVTI_lADOEEuBB84BTwCKzgpI_Ho ;;
+    6) echo PVTI_lADOEEuBB84BTwCKzgpI_H4 ;;
+    7) echo PVTI_lADOEEuBB84BTwCKzgpI_II ;;
+    8) echo PVTI_lADOEEuBB84BTwCKzgpI_IU ;;
+    9) echo PVTI_lADOEEuBB84BTwCKzgpI_Ig ;;
+    10) echo PVTI_lADOEEuBB84BTwCKzgpI_Io ;;
+    11) echo PVTI_lADOEEuBB84BTwCKzgpI_I4 ;;
+    12) echo PVTI_lADOEEuBB84BTwCKzgpI_JI ;;
+    13) echo PVTI_lADOEEuBB84BTwCKzgpI_JQ ;;
+    14) echo PVTI_lADOEEuBB84BTwCKzgpI_Js ;;
+    15) echo PVTI_lADOEEuBB84BTwCKzgpI_KA ;;
+    16) echo PVTI_lADOEEuBB84BTwCKzgpI_KQ ;;
+    17) echo PVTI_lADOEEuBB84BTwCKzgpI_Kk ;;
+    18) echo PVTI_lADOEEuBB84BTwCKzgpI_K0 ;;
+    19) echo PVTI_lADOEEuBB84BTwCKzgpI_LU ;;
+    20) echo PVTI_lADOEEuBB84BTwCKzgpI_Ls ;;
+    21) echo PVTI_lADOEEuBB84BTwCKzgpI_Lw ;;
+    22) echo PVTI_lADOEEuBB84BTwCKzgpI_MA ;;
+    23) echo PVTI_lADOEEuBB84BTwCKzgpI_Mg ;;
+    24) echo PVTI_lADOEEuBB84BTwCKzgpI_Mw ;;
+    25) echo PVTI_lADOEEuBB84BTwCKzgpI_NI ;;
+    26) echo PVTI_lADOEEuBB84BTwCKzgpI_NY ;;
+    27) echo PVTI_lADOEEuBB84BTwCKzgpI_No ;;
+    28) echo PVTI_lADOEEuBB84BTwCKzgpI_N4 ;;
+    29) echo PVTI_lADOEEuBB84BTwCKzgpI_OM ;;
+    30) echo PVTI_lADOEEuBB84BTwCKzgpI_Oc ;;
+    31) echo PVTI_lADOEEuBB84BTwCKzgpI_Os ;;
+    32) echo PVTI_lADOEEuBB84BTwCKzgpI_O4 ;;
+    33) echo PVTI_lADOEEuBB84BTwCKzgpI_PI ;;
+    34) echo PVTI_lADOEEuBB84BTwCKzgpI_PU ;;
+    35) echo PVTI_lADOEEuBB84BTwCKzgpI_P4 ;;
+    36) echo PVTI_lADOEEuBB84BTwCKzgpI_QY ;;
+    37) echo PVTI_lADOEEuBB84BTwCKzgpI_Qk ;;
+    38) echo PVTI_lADOEEuBB84BTwCKzgpI_Qw ;;
+    39) echo PVTI_lADOEEuBB84BTwCKzgpI_RU ;;
+    40) echo PVTI_lADOEEuBB84BTwCKzgpI_Rs ;;
+    41) echo PVTI_lADOEEuBB84BTwCKzgpI_R8 ;;
+    42) echo PVTI_lADOEEuBB84BTwCKzgpI_SQ ;;
+    43) echo PVTI_lADOEEuBB84BTwCKzgpI_SU ;;
+    44) echo PVTI_lADOEEuBB84BTwCKzgpI_Sg ;;
+    45) echo PVTI_lADOEEuBB84BTwCKzgpI_S4 ;;
+    46) echo PVTI_lADOEEuBB84BTwCKzgpI_TQ ;;
+    47) echo PVTI_lADOEEuBB84BTwCKzgpI_TY ;;
+    48) echo PVTI_lADOEEuBB84BTwCKzgpI_Ts ;;
+    49) echo PVTI_lADOEEuBB84BTwCKzgpI_Tw ;;
+    50) echo PVTI_lADOEEuBB84BTwCKzgpI_UM ;;
+    51) echo PVTI_lADOEEuBB84BTwCKzgpI_Uk ;;
+    52) echo PVTI_lADOEEuBB84BTwCKzgpI_Uw ;;
+    53) echo PVTI_lADOEEuBB84BTwCKzgpI_U0 ;;
+    54) echo PVTI_lADOEEuBB84BTwCKzgpI_VI ;;
+    55) echo PVTI_lADOEEuBB84BTwCKzgpI_Vc ;;
+    56) echo PVTI_lADOEEuBB84BTwCKzgpI_Vo ;;
+    57) echo PVTI_lADOEEuBB84BTwCKzgpI_Vs ;;
+    58) echo PVTI_lADOEEuBB84BTwCKzgpI_WE ;;
+    59) echo PVTI_lADOEEuBB84BTwCKzgpI_Wk ;;
+    60) echo PVTI_lADOEEuBB84BTwCKzgpI_Ww ;;
+    61) echo PVTI_lADOEEuBB84BTwCKzgpI_XE ;;
+    62) echo PVTI_lADOEEuBB84BTwCKzgpI_XM ;;
+    63) echo PVTI_lADOEEuBB84BTwCKzgpI_XU ;;
+    64) echo PVTI_lADOEEuBB84BTwCKzgpI_Xk ;;
+    65) echo PVTI_lADOEEuBB84BTwCKzgpI_Xs ;;
+    66) echo PVTI_lADOEEuBB84BTwCKzgpI_X0 ;;
+    67) echo PVTI_lADOEEuBB84BTwCKzgpI_YA ;;
+    68) echo PVTI_lADOEEuBB84BTwCKzgpI_YM ;;
+    69) echo PVTI_lADOEEuBB84BTwCKzgpI_YY ;;
+    70) echo PVTI_lADOEEuBB84BTwCKzgpI_Yk ;;
+    71) echo PVTI_lADOEEuBB84BTwCKzgpI_Ys ;;
+    72) echo PVTI_lADOEEuBB84BTwCKzgpI_ZA ;;
+    73) echo PVTI_lADOEEuBB84BTwCKzgpI_ZE ;;
+    74) echo PVTI_lADOEEuBB84BTwCKzgpI_ZU ;;
     *) echo ""; return 1 ;;
   esac
 }
@@ -175,4 +175,4 @@ for n in 63 64 65 66; do
   set_status "$(item_for_issue "$n")" "$BACKLOG"
 done
 
-echo "Project Status field updated for issues 1–74 (MVP + MLP + web/data + dashboard + macOS packaging + ideabank expansion)."
+echo "Org project 4 (sovereignsquad/impact) Status field updated for issues 1–74 (MVP + MLP + web/data + dashboard + macOS packaging + ideabank expansion)."
