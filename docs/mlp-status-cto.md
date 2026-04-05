@@ -4,7 +4,7 @@
 
 **Established:** 2026-04-03 · **Updated:** 2026-04-04 — **Vercel stats layer live** — same-origin **`/api/stats/*`** + **`/api/health`** (fallback or **`IMPACT_INGEST_UPSTREAM`** proxy); **`VITE_STATS_API_BASE`** on Production/Preview/Development; **main bottleneck** = **hosted SQLite ingest** + upstream wiring + volume (**#58** activation continues). **#34** = **npm** path unchanged. **Prior:** **2026-04-03** activation directive; **2026-04-12** background-system-first framing in [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md).
 
-**Maintain this doc when:** the public install gate (**#34**) closes; **hosted ingest** or **live stats** materially changes; **#58–#62** board closure; or **M1–M3** / **H\*** work materially changes state.
+**Maintain this doc when:** the public install gate (**#34**) closes; **hosted ingest** or **live stats** materially changes; **#58–#62** board closure; or **M1–M3** / **H\*** work materially changes state. **Step-by-step activation work** (evidence, endpoints, closure order): [mlp-activation-path.md](mlp-activation-path.md).
 
 <a id="cto-acceptance-leadership-dashboard"></a>
 

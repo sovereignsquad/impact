@@ -4,6 +4,8 @@
 
 **Execution spine (this doc):** **[#34](https://github.com/moldovancsaba/impact/issues/34)** install gate → dashboard **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** → macOS packaging **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**. **Process discipline:** prefer not to **distract** from **#34** with dashboard **board** work until **#34** is **Done**; **in-repo** dashboard code may **land early** (current state — see § *Current operating state*).
 
+**CTO activation execution (deliverables + evidence + closure order):** [mlp-activation-path.md](mlp-activation-path.md).
+
 **Project board (workflow SSOT):** [Project #2](https://github.com/users/moldovancsaba/projects/2) — [Programme (Not Done)](https://github.com/users/moldovancsaba/projects/2/views/3) · [Execution](https://github.com/users/moldovancsaba/projects/2/views/5) · [Full board](https://github.com/users/moldovancsaba/projects/2/views/1). **Status** on each card = column; issue **body** = scope/acceptance ([project-management.md](project-management.md), [ssot-map.md](ssot-map.md)).
 
 **Established:** CTO directive · **Accepted:** 2026-04-07 (initial) · **Confirmed SSOT:** 2026-04-08 · **Operating model:** 2026-04-09 · **Distribution reality + dual-track sequencing:** 2026-04-10 · **SSOT usability (board + index at top):** 2026-04-11 · **Background system first (#58–#62):** 2026-04-12.
