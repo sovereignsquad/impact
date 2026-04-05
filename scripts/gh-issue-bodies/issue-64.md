@@ -4,7 +4,7 @@
 
 ## SSOT
 
-[mlp-next-delivery-tranche.md](../../docs/mlp-next-delivery-tranche.md) Phase 3 · depends on [#63](https://github.com/moldovancsaba/impact/issues/63)
+[mlp-next-delivery-tranche.md](../../docs/mlp-next-delivery-tranche.md) Phase 3 · depends on [#63](https://github.com/sovereignsquad/impact/issues/63)
 
 ## Deliverables
 
@@ -15,4 +15,4 @@
 
 ## Related
 
-[#38](https://github.com/moldovancsaba/impact/issues/38) historical spike — fold learnings here.
+[#38](https://github.com/sovereignsquad/impact/issues/38) historical spike — fold learnings here.

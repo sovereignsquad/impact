@@ -13,7 +13,7 @@ The **v0.x discovery scanner** (local, privacy-first inventory of host, runtimes
 ## Based On
 
 - Charter: sovereign **Industrial Multi-Platform Agent Connector Test**
-- Open source delivery: [moldovancsaba/impact](https://github.com/moldovancsaba/impact)
+- Open source delivery: [sovereignsquad/impact](https://github.com/sovereignsquad/impact)
 - Prior v0.1 discovery MVP definition (inventory + export + consent)
 - Programme phases indexed in issue #16
 

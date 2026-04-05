@@ -6,7 +6,7 @@
 
 ---
 
-## 1. Public install ([#34](https://github.com/moldovancsaba/impact/issues/34))
+## 1. Public install ([#34](https://github.com/sovereignsquad/impact/issues/34))
 
 | Check | Result |
 | ----- | ------ |
@@ -26,7 +26,7 @@ npm view @impact/cli version
 
 ---
 
-## 2. Hosted ingest ([#58](https://github.com/moldovancsaba/impact/issues/58))
+## 2. Hosted ingest ([#58](https://github.com/sovereignsquad/impact/issues/58))
 
 | Check | Result |
 | ----- | ------ |
@@ -67,7 +67,7 @@ bash scripts/local-e2e-submit.sh
 
 ---
 
-## 3. Live stats path ([#61](https://github.com/moldovancsaba/impact/issues/61) / [#62](https://github.com/moldovancsaba/impact/issues/62))
+## 3. Live stats path ([#61](https://github.com/sovereignsquad/impact/issues/61) / [#62](https://github.com/sovereignsquad/impact/issues/62))
 
 | Check | Result |
 | ----- | ------ |
@@ -85,7 +85,7 @@ vercel --prod --scope narimato
 
 ---
 
-## 4. Seeding & thresholds ([#59](https://github.com/moldovancsaba/impact/issues/59) / [#60](https://github.com/moldovancsaba/impact/issues/60))
+## 4. Seeding & thresholds ([#59](https://github.com/sovereignsquad/impact/issues/59) / [#60](https://github.com/sovereignsquad/impact/issues/60))
 
 | Check | Result |
 | ----- | ------ |
@@ -95,7 +95,7 @@ vercel --prod --scope narimato
 
 ---
 
-## 5. `/data.html` product-live ([#62](https://github.com/moldovancsaba/impact/issues/62))
+## 5. `/data.html` product-live ([#62](https://github.com/sovereignsquad/impact/issues/62))
 
 | Check | Result |
 | ----- | ------ |

@@ -48,9 +48,9 @@ This is a future-support roadmap card, not an immediate delivery ticket.
 ## Dependencies / downstream links
 
 Key references:
-- [#10 — model inventory across supported runtimes](https://github.com/moldovancsaba/impact/issues/10)
-- [README](https://github.com/moldovancsaba/impact/blob/main/README.md)
-- [docs/support-matrix.md](https://github.com/moldovancsaba/impact/blob/main/docs/support-matrix.md)
+- [#10 — model inventory across supported runtimes](https://github.com/sovereignsquad/impact/issues/10)
+- [README](https://github.com/sovereignsquad/impact/blob/main/README.md)
+- [docs/support-matrix.md](https://github.com/sovereignsquad/impact/blob/main/docs/support-matrix.md)
 
 Likely downstream execution later:
 - Windows probe hardening
@@ -70,6 +70,6 @@ If misunderstood, the team may:
 ## Related execution issues
 
 Current execution remains focused on:
-- [#34](https://github.com/moldovancsaba/impact/issues/34) — public install gate
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62) — live dashboard path
-- [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66) — macOS packaging and trust
+- [#34](https://github.com/sovereignsquad/impact/issues/34) — public install gate
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62) — live dashboard path
+- [#63](https://github.com/sovereignsquad/impact/issues/63)–[#66](https://github.com/sovereignsquad/impact/issues/66) — macOS packaging and trust

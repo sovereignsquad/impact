@@ -1,6 +1,6 @@
 ## Objective
 
-**Install / download** page on the public site: **one obvious primary CTA** — install IMPACT — with **current truth** until [#34](https://github.com/moldovancsaba/impact/issues/34) closes.
+**Install / download** page on the public site: **one obvious primary CTA** — install IMPACT — with **current truth** until [#34](https://github.com/sovereignsquad/impact/issues/34) closes.
 
 ## Current truth (until #34)
 

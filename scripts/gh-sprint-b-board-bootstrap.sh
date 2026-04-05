@@ -4,7 +4,7 @@
 # Idempotent-ish: do not re-run if issues already exist (creates duplicates).
 set -euo pipefail
 
-REPO="moldovancsaba/impact"
+REPO="sovereignsquad/impact"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 BD="$ROOT/scripts/gh-issue-bodies"
 PROJECT_ID="PVT_kwHOACGtF84BTnzN"

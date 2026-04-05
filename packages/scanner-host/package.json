@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/moldovancsaba/impact.git",
+    "url": "git+https://github.com/sovereignsquad/impact.git",
     "directory": "packages/scanner-host"
   },
   "type": "module",

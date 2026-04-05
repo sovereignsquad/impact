@@ -10,7 +10,7 @@
 
 1. Standalone **binary** first  
 2. **.app** later if justified  
-3. **DMG** only after M2–M3 ([#64](https://github.com/moldovancsaba/impact/issues/64), [#65](https://github.com/moldovancsaba/impact/issues/65))
+3. **DMG** only after M2–M3 ([#64](https://github.com/sovereignsquad/impact/issues/64), [#65](https://github.com/sovereignsquad/impact/issues/65))
 
 ## Deliverables
 

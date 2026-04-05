@@ -16,7 +16,7 @@ Move IMPACT from personal ownership to **`sovereignsquad`** in a **controlled** 
 
 | Asset | After cutover |
 | ----- | ------------- |
-| **Repository** | **`sovereignsquad/impact`** (transfer from `moldovancsaba/impact`; GitHub serves redirects from the old URL; clones should **`git remote set-url`** to the canonical URL). |
+| **Repository** | **`sovereignsquad/impact`** (transfer from `sovereignsquad/impact`; GitHub serves redirects from the old URL; clones should **`git remote set-url`** to the canonical URL). |
 | **GitHub Project** | **Org-owned** project under **`sovereignsquad`** — **only active workflow board**. |
 | **Old personal Project #2** | **Frozen / archive / read-only reference** — not used for Status changes. |
 
@@ -73,7 +73,7 @@ Move IMPACT from personal ownership to **`sovereignsquad`** in a **controlled** 
 
 **Goal:** code ownership under the org.
 
-1. Transfer **`moldovancsaba/impact`** → **`sovereignsquad/impact`**.
+1. Transfer **`sovereignsquad/impact`** → **`sovereignsquad/impact`**.
 2. Verify issues, PRs, releases, redirects, Actions, secrets, webhooks, deploy keys, branch protection.
 3. Update **local remotes:** `git remote set-url origin <new-url>`.
 
@@ -86,7 +86,7 @@ Move IMPACT from personal ownership to **`sovereignsquad`** in a **controlled** 
 **Goal:** org + new project are the **operating base**.
 
 1. Update **Vercel** (or other) GitHub integration to the **new repo**.
-2. Update **docs and metadata:** README, `docs/**`, badges, `package.json` / workspace **repository** URLs where they embed `github.com/moldovancsaba/impact`.
+2. Update **docs and metadata:** README, `docs/**`, badges, `package.json` / workspace **repository** URLs where they embed `github.com/sovereignsquad/impact`.
 3. Re-point **automation** (see [Repo files to update after cutover](#repo-files-to-update-after-cutover)).
 4. Ensure **every** primary doc link targets the **new org project**, not personal Project #2.
 
@@ -146,7 +146,11 @@ Migration is **complete** when:
 
 ## Repo files to update after cutover
 
-Until transfer, **`moldovancsaba`** URLs and **Project #2** IDs remain the live references in-repo. After cutover, update at least:
+**Repository transfer (Phase 4) is done:** canonical remote is **`sovereignsquad/impact`** (redirects from `moldovancsaba/impact`). In-repo **`github.com/sovereignsquad/impact`** links and **`apply-updates.sh`** `REPO` are aligned.
+
+**Still pending** until the **new org-owned Project** exists: **`apply-status.sh`** project/item/field IDs; replacing **personal [Project #2](https://github.com/users/moldovancsaba/projects/2)** links in docs with the **org project** URL (until then, Project #2 remains **historical / archive** for workflow — do not treat as split SSOT if the org board is active).
+
+When the org project is live, update at least:
 
 | Area | Files / actions |
 | ---- | ---------------- |

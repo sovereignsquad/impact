@@ -4,12 +4,12 @@
 
 ## Unified Context
 
-Programme: [docs/mlp.md](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md). Recommendations are **interpretation**, not benchmarks. Prefer `@impact/core` or a small new module with **rule ids** + **evidence pointers** tied to profile fields.
+Programme: [docs/mlp.md](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md). Recommendations are **interpretation**, not benchmarks. Prefer `@impact/core` or a small new module with **rule ids** + **evidence pointers** tied to profile fields.
 
 ## Based On
 
-- [mlp.md — M3](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md#m3--conservative-recommendation-engine)
-- [confidence-rules.md](https://github.com/moldovancsaba/impact/blob/main/docs/confidence-rules.md) pattern (deterministic ids)
+- [mlp.md — M3](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md#m3--conservative-recommendation-engine)
+- [confidence-rules.md](https://github.com/sovereignsquad/impact/blob/main/docs/confidence-rules.md) pattern (deterministic ids)
 
 ## Problem
 
@@ -23,11 +23,11 @@ Raw inventory alone does not **guide**; users need trustworthy **next experiment
 ## Scope
 
 - Engine + wiring into HTML (and optionally JSON) report.
-- Documentation of rule ids in `docs/` (short) or inline with [schema-semantics](https://github.com/moldovancsaba/impact/blob/main/docs/schema-semantics-v0.3.md) style discipline.
+- Documentation of rule ids in `docs/` (short) or inline with [schema-semantics](https://github.com/sovereignsquad/impact/blob/main/docs/schema-semantics-v0.3.md) style discipline.
 
 ## Constraints
 
-- No **AI readiness score** marketing; no CRUD/shell benchmark scope; no GUI/DMG ([mlp.md — What not to do](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md#what-not-to-do-for-mlp)).
+- No **AI readiness score** marketing; no CRUD/shell benchmark scope; no GUI/DMG ([mlp.md — What not to do](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md#what-not-to-do-for-mlp)).
 
 ## Acceptance Checks
 

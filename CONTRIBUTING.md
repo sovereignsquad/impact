@@ -13,7 +13,7 @@ Thank you for your interest in **Impact**. This project is open source under the
 | What | Where |
 | ---- | ----- |
 | Roadmap themes, epics, sequencing | [GitHub Project #2 — Programme (Not Done)](https://github.com/users/moldovancsaba/projects/2/views/3) ([full board](https://github.com/users/moldovancsaba/projects/2/views/1)) |
-| Bug reports, feature requests, design discussion | [GitHub Issues](https://github.com/moldovancsaba/impact/issues) |
+| Bug reports, feature requests, design discussion | [GitHub Issues](https://github.com/sovereignsquad/impact/issues) |
 | Code review | Pull requests |
 
 **Rule of thumb:** If it belongs on a roadmap, backlog, or todo list for Impact, it should exist as a **GitHub Issue** (or linked PR) and be **on the project board** with the right Status and fields. Avoid parallel trackers that drift out of sync.
@@ -52,4 +52,4 @@ Be respectful and constructive in issues and PRs. For a formal policy, we can ad
 
 ## Questions
 
-Use [Discussions](https://github.com/moldovancsaba/impact/discussions) if enabled, or open an issue labeled appropriately once label conventions exist.
+Use [Discussions](https://github.com/sovereignsquad/impact/discussions) if enabled, or open an issue labeled appropriately once label conventions exist.

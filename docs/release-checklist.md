@@ -38,7 +38,7 @@ Use this for **tagged releases** and **release candidates**. Execute in order; d
 - [ ] From clean clone: **Path B** in [smoke-test-macos.md](smoke-test-macos.md)
 - [ ] Confirm `impact --version` and scan outputs
 
-*(Path A — standalone binary: [#38](https://github.com/moldovancsaba/impact/issues/38).)*
+*(Path A — standalone binary: [#38](https://github.com/sovereignsquad/impact/issues/38).)*
 
 **Path D (DMG):** optional artifact for users who cannot use the registry — see [macos-distribution.md](macos-distribution.md).
 
@@ -55,7 +55,7 @@ Use this for **tagged releases** and **release candidates**. Execute in order; d
 ## Post-release smoke
 
 - [ ] On a **fresh macOS** environment (VM or clean user): run [smoke-test-macos.md](smoke-test-macos.md) against the **tag** or release archive
-- [ ] Attach or paste evidence (commands + output paths) on the **GitHub Release** discussion and/or the **active distribution issue** ([#34](https://github.com/moldovancsaba/impact/issues/34) for Path C; Path B evidence historically on **#27** — use whichever issue tracks the release you are proving)
+- [ ] Attach or paste evidence (commands + output paths) on the **GitHub Release** discussion and/or the **active distribution issue** ([#34](https://github.com/sovereignsquad/impact/issues/34) for Path C; Path B evidence historically on **#27** — use whichever issue tracks the release you are proving)
 
 ## Optional submission sanity (non-default)
 

@@ -21,11 +21,11 @@ Instead, it exists to preserve the broader future direction for:
 - governance and publication safety
 
 The active first-live dashboard path is tracked in:
-- [#58](https://github.com/moldovancsaba/impact/issues/58)
-- [#59](https://github.com/moldovancsaba/impact/issues/59)
-- [#60](https://github.com/moldovancsaba/impact/issues/60)
-- [#61](https://github.com/moldovancsaba/impact/issues/61)
-- [#62](https://github.com/moldovancsaba/impact/issues/62)
+- [#58](https://github.com/sovereignsquad/impact/issues/58)
+- [#59](https://github.com/sovereignsquad/impact/issues/59)
+- [#60](https://github.com/sovereignsquad/impact/issues/60)
+- [#61](https://github.com/sovereignsquad/impact/issues/61)
+- [#62](https://github.com/sovereignsquad/impact/issues/62)
 
 ## Theme / Goal
 
@@ -61,10 +61,10 @@ This card exists to preserve the future service direction, not to override the c
 ## Dependencies / downstream links
 
 Key references:
-- [#13 — submission client and server contract](https://github.com/moldovancsaba/impact/issues/13)
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62) — active dashboard/ingest execution path
-- [docs/submission-contract.md](https://github.com/moldovancsaba/impact/blob/main/docs/submission-contract.md)
-- [docs/architecture.md](https://github.com/moldovancsaba/impact/blob/main/docs/architecture.md)
+- [#13 — submission client and server contract](https://github.com/sovereignsquad/impact/issues/13)
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62) — active dashboard/ingest execution path
+- [docs/submission-contract.md](https://github.com/sovereignsquad/impact/blob/main/docs/submission-contract.md)
+- [docs/architecture.md](https://github.com/sovereignsquad/impact/blob/main/docs/architecture.md)
 
 Likely downstream themes later:
 - anti-abuse controls
@@ -84,6 +84,6 @@ If misunderstood, the team may:
 ## Related execution issues
 
 Current execution remains:
-- [#34](https://github.com/moldovancsaba/impact/issues/34) — public install gate
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62) — real ingest, aggregation, privacy, stats API, and web wiring
-- [#51](https://github.com/moldovancsaba/impact/issues/51)–[#53](https://github.com/moldovancsaba/impact/issues/53) — historical-data display themes, now largely superseded in detail by the active dashboard spine
+- [#34](https://github.com/sovereignsquad/impact/issues/34) — public install gate
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62) — real ingest, aggregation, privacy, stats API, and web wiring
+- [#51](https://github.com/sovereignsquad/impact/issues/51)–[#53](https://github.com/sovereignsquad/impact/issues/53) — historical-data display themes, now largely superseded in detail by the active dashboard spine

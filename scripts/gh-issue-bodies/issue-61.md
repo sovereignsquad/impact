@@ -8,7 +8,7 @@
 
 ## Depends on
 
-[#59](https://github.com/moldovancsaba/impact/issues/59) + [#60](https://github.com/moldovancsaba/impact/issues/60) (or stub with enforcement stubs).
+[#59](https://github.com/sovereignsquad/impact/issues/59) + [#60](https://github.com/sovereignsquad/impact/issues/60) (or stub with enforcement stubs).
 
 ## Endpoints (intent)
 

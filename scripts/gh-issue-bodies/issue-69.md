@@ -38,9 +38,9 @@ This is a future system-hardening ideabank item.
 
 ## Dependencies / downstream links
 
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
-- [docs/submission-contract.md](https://github.com/moldovancsaba/impact/blob/main/docs/submission-contract.md)
-- [Issue #1](https://github.com/moldovancsaba/impact/issues/1)
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)
+- [docs/submission-contract.md](https://github.com/sovereignsquad/impact/blob/main/docs/submission-contract.md)
+- [Issue #1](https://github.com/sovereignsquad/impact/issues/1)
 
 ## Risks of misunderstanding
 
@@ -54,5 +54,5 @@ If misunderstood, the team may:
 ## Related execution issues
 
 Current execution remains focused on:
-- [#34](https://github.com/moldovancsaba/impact/issues/34)
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
+- [#34](https://github.com/sovereignsquad/impact/issues/34)
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)

@@ -2,7 +2,7 @@
 # Add any GitHub issues that are missing from User Project #2 (Impact board).
 # Safe to re-run: only calls item-add when issue number is not already on the board.
 set -euo pipefail
-REPO="moldovancsaba/impact"
+REPO="sovereignsquad/impact"
 OWNER="moldovancsaba"
 PROJ="2"
 

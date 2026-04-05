@@ -41,10 +41,10 @@ This is future ideabank, not a current launch blocker.
 
 ## Dependencies / downstream links
 
-- [#58](https://github.com/moldovancsaba/impact/issues/58)
-- [#60](https://github.com/moldovancsaba/impact/issues/60)
-- [#61](https://github.com/moldovancsaba/impact/issues/61)
-- [Issue #1](https://github.com/moldovancsaba/impact/issues/1)
+- [#58](https://github.com/sovereignsquad/impact/issues/58)
+- [#60](https://github.com/sovereignsquad/impact/issues/60)
+- [#61](https://github.com/sovereignsquad/impact/issues/61)
+- [Issue #1](https://github.com/sovereignsquad/impact/issues/1)
 
 ## Risks of misunderstanding
 
@@ -55,5 +55,5 @@ The main risk is either:
 ## Related execution issues
 
 Current execution remains focused on:
-- [#34](https://github.com/moldovancsaba/impact/issues/34)
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
+- [#34](https://github.com/sovereignsquad/impact/issues/34)
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)

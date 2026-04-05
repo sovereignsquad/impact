@@ -8,7 +8,7 @@
 
 ## Depends on
 
-[#61](https://github.com/moldovancsaba/impact/issues/61) + live backend.
+[#61](https://github.com/sovereignsquad/impact/issues/61) + live backend.
 
 ## Deliverables
 

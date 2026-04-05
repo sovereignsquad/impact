@@ -17,10 +17,10 @@ Failure modes without tests:
 
 - Sprint B — B3
 - `packages/reporting/src/html.test.ts` + validated fixtures under `fixtures/`
-- [docs/confidence-rules.md](https://github.com/moldovancsaba/impact/blob/main/docs/confidence-rules.md)
-- [docs/schema-semantics-v0.3.md](https://github.com/moldovancsaba/impact/blob/main/docs/schema-semantics-v0.3.md)
-- [docs/support-matrix.md](https://github.com/moldovancsaba/impact/blob/main/docs/support-matrix.md)
-- [docs/submission-contract.md](https://github.com/moldovancsaba/impact/blob/main/docs/submission-contract.md)
+- [docs/confidence-rules.md](https://github.com/sovereignsquad/impact/blob/main/docs/confidence-rules.md)
+- [docs/schema-semantics-v0.3.md](https://github.com/sovereignsquad/impact/blob/main/docs/schema-semantics-v0.3.md)
+- [docs/support-matrix.md](https://github.com/sovereignsquad/impact/blob/main/docs/support-matrix.md)
+- [docs/submission-contract.md](https://github.com/sovereignsquad/impact/blob/main/docs/submission-contract.md)
 
 ## Problem
 

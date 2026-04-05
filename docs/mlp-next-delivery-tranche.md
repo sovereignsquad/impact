@@ -1,12 +1,12 @@
 # MLP — next delivery tranche (CTO directive)
 
-**Purpose:** SSOT for the **next** delivery work after the **frozen** public-web/doc tranche ([mlp-status-cto.md](mlp-status-cto.md)). **Product:** (1) **real community dashboard data** on the webapp, (2) **downloadable macOS distribution** — **not equal in readiness**. **Reality:** the **product shell** (web pages, local scanner, docs) is **ahead** of **production infrastructure** (publish/trust, **data backend**). **Primary focus (CTO 2026-04-12):** **background system** — ingest → storage → aggregation → privacy → read API → web wiring (**#58–#62**). **Path D** (DMG) remains **not** consumer-grade until **signing + notarization** ([#65](https://github.com/moldovancsaba/impact/issues/65)).
+**Purpose:** SSOT for the **next** delivery work after the **frozen** public-web/doc tranche ([mlp-status-cto.md](mlp-status-cto.md)). **Product:** (1) **real community dashboard data** on the webapp, (2) **downloadable macOS distribution** — **not equal in readiness**. **Reality:** the **product shell** (web pages, local scanner, docs) is **ahead** of **production infrastructure** (publish/trust, **data backend**). **Primary focus (CTO 2026-04-12):** **background system** — ingest → storage → aggregation → privacy → read API → web wiring (**#58–#62**). **Path D** (DMG) remains **not** consumer-grade until **signing + notarization** ([#65](https://github.com/sovereignsquad/impact/issues/65)).
 
-**Execution spine (this doc):** **[#34](https://github.com/moldovancsaba/impact/issues/34)** install gate → dashboard **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** → macOS packaging **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**. **Process discipline:** prefer not to **distract** from **#34** with dashboard **board** work until **#34** is **Done**; **in-repo** dashboard code may **land early** (current state — see § *Current operating state*).
+**Execution spine (this doc):** **[#34](https://github.com/sovereignsquad/impact/issues/34)** install gate → dashboard **[#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)** → macOS packaging **[#63](https://github.com/sovereignsquad/impact/issues/63)–[#66](https://github.com/sovereignsquad/impact/issues/66)**. **Process discipline:** prefer not to **distract** from **#34** with dashboard **board** work until **#34** is **Done**; **in-repo** dashboard code may **land early** (current state — see § *Current operating state*).
 
 **CTO activation execution (deliverables + evidence + closure order):** [mlp-activation-path.md](mlp-activation-path.md). **Board management + issue quality + definition of success:** [mlp-cto-next-execution.md](mlp-cto-next-execution.md). **MLP execution — client summary + raw submission (active):** [mlp-cto-directive-mlp-summary-payload.md](mlp-cto-directive-mlp-summary-payload.md).
 
-**Project board (workflow SSOT):** [Project #2](https://github.com/users/moldovancsaba/projects/2) — [Programme (Not Done)](https://github.com/users/moldovancsaba/projects/2/views/3) · [Execution](https://github.com/users/moldovancsaba/projects/2/views/5) · [Full board](https://github.com/users/moldovancsaba/projects/2/views/1). **Status** on each card = column; issue **body** = scope/acceptance ([project-management.md](project-management.md), [ssot-map.md](ssot-map.md)). **Planned org cutover:** rebuild workflow SSOT under **`sovereignsquad`** — [mlp-cto-directive-org-migration-sovereignsquad.md](mlp-cto-directive-org-migration-sovereignsquad.md).
+**Project board (workflow SSOT):** [Project #2](https://github.com/users/moldovancsaba/projects/2) — [Programme (Not Done)](https://github.com/users/moldovancsaba/projects/2/views/3) · [Execution](https://github.com/users/moldovancsaba/projects/2/views/5) · [Full board](https://github.com/users/moldovancsaba/projects/2/views/1). **Status** on each card = column; issue **body** = scope/acceptance ([project-management.md](project-management.md), [ssot-map.md](ssot-map.md)). **Org repo:** **`sovereignsquad/impact`** (transferred). **Next:** org-owned Project as workflow SSOT — [mlp-cto-directive-org-migration-sovereignsquad.md](mlp-cto-directive-org-migration-sovereignsquad.md).
 
 **Established:** CTO directive · **Accepted:** 2026-04-07 (initial) · **Confirmed SSOT:** 2026-04-08 · **Operating model:** 2026-04-09 · **Distribution reality + dual-track sequencing:** 2026-04-10 · **SSOT usability (board + index at top):** 2026-04-11 · **Background system first (#58–#62):** 2026-04-12.
 
@@ -14,65 +14,65 @@
 
 ## Project board — linked issues (titles)
 
-Tables below list **related GitHub issues** that correspond to cards on **Project #2**, with **titles** for readers without issue access. Repo: **moldovancsaba/impact**. Base URL: `https://github.com/moldovancsaba/impact/issues/`
+Tables below list **related GitHub issues** that correspond to cards on **Project #2**, with **titles** for readers without issue access. Repo: **sovereignsquad/impact**. Base URL: `https://github.com/sovereignsquad/impact/issues/`
 
 ### Install gate & MLP spine
 
 | # | Title |
 | - | ----- |
-| [34](https://github.com/moldovancsaba/impact/issues/34) | IMPACT P1: Publish @impact/cli to npm registry |
-| [44](https://github.com/moldovancsaba/impact/issues/44) | IMPACT P0: MLP M1 — Public install and adoption |
-| [45](https://github.com/moldovancsaba/impact/issues/45) | IMPACT P0: MLP M2 — Report delight and first-run payoff |
-| [46](https://github.com/moldovancsaba/impact/issues/46) | IMPACT P0: MLP M3 — Conservative recommendation engine |
-| [47](https://github.com/moldovancsaba/impact/issues/47) | IMPACT P1: MLP M4 — Shareable result layer |
-| [48](https://github.com/moldovancsaba/impact/issues/48) | IMPACT P1: MLP M5 — Community visibility MVP |
-| [49](https://github.com/moldovancsaba/impact/issues/49) | IMPACT P1: MLP M6 — Install polish after npm |
+| [34](https://github.com/sovereignsquad/impact/issues/34) | IMPACT P1: Publish @impact/cli to npm registry |
+| [44](https://github.com/sovereignsquad/impact/issues/44) | IMPACT P0: MLP M1 — Public install and adoption |
+| [45](https://github.com/sovereignsquad/impact/issues/45) | IMPACT P0: MLP M2 — Report delight and first-run payoff |
+| [46](https://github.com/sovereignsquad/impact/issues/46) | IMPACT P0: MLP M3 — Conservative recommendation engine |
+| [47](https://github.com/sovereignsquad/impact/issues/47) | IMPACT P1: MLP M4 — Shareable result layer |
+| [48](https://github.com/sovereignsquad/impact/issues/48) | IMPACT P1: MLP M5 — Community visibility MVP |
+| [49](https://github.com/sovereignsquad/impact/issues/49) | IMPACT P1: MLP M6 — Install polish after npm |
 
 ### Public web shell (H1–H8)
 
 | # | Title |
 | - | ----- |
-| [50](https://github.com/moldovancsaba/impact/issues/50) | IMPACT P0: MLP Web H1 — Historical data information architecture |
-| [51](https://github.com/moldovancsaba/impact/issues/51) | IMPACT P0: MLP Web H2 — Historical hardware dataset MVP |
-| [52](https://github.com/moldovancsaba/impact/issues/52) | IMPACT P0: MLP Web H3 — Historical tools/runtimes dataset MVP |
-| [53](https://github.com/moldovancsaba/impact/issues/53) | IMPACT P0: MLP Web H4 — Historical LLM/model dataset MVP |
-| [54](https://github.com/moldovancsaba/impact/issues/54) | IMPACT P0: MLP Web H5 — Install / download page |
-| [55](https://github.com/moldovancsaba/impact/issues/55) | IMPACT P0: MLP Web H6 — Launch / use page |
-| [56](https://github.com/moldovancsaba/impact/issues/56) | IMPACT P0: MLP Web H7 — Submit result page |
-| [57](https://github.com/moldovancsaba/impact/issues/57) | IMPACT P0: MLP Web H8 — Homepage rework (four pillars) |
+| [50](https://github.com/sovereignsquad/impact/issues/50) | IMPACT P0: MLP Web H1 — Historical data information architecture |
+| [51](https://github.com/sovereignsquad/impact/issues/51) | IMPACT P0: MLP Web H2 — Historical hardware dataset MVP |
+| [52](https://github.com/sovereignsquad/impact/issues/52) | IMPACT P0: MLP Web H3 — Historical tools/runtimes dataset MVP |
+| [53](https://github.com/sovereignsquad/impact/issues/53) | IMPACT P0: MLP Web H4 — Historical LLM/model dataset MVP |
+| [54](https://github.com/sovereignsquad/impact/issues/54) | IMPACT P0: MLP Web H5 — Install / download page |
+| [55](https://github.com/sovereignsquad/impact/issues/55) | IMPACT P0: MLP Web H6 — Launch / use page |
+| [56](https://github.com/sovereignsquad/impact/issues/56) | IMPACT P0: MLP Web H7 — Submit result page |
+| [57](https://github.com/sovereignsquad/impact/issues/57) | IMPACT P0: MLP Web H8 — Homepage rework (four pillars) |
 
 ### Dashboard tranche (D1–D5) — Phase 2 of this doc
 
 | # | Title |
 | - | ----- |
-| [58](https://github.com/moldovancsaba/impact/issues/58) | IMPACT P0: Dashboard D1 — Ingest MVP |
-| [59](https://github.com/moldovancsaba/impact/issues/59) | IMPACT P0: Dashboard D2 — Aggregation model |
-| [60](https://github.com/moldovancsaba/impact/issues/60) | IMPACT P0: Dashboard D3 — Privacy thresholds |
-| [61](https://github.com/moldovancsaba/impact/issues/61) | IMPACT P0: Dashboard D4 — Dashboard read API |
-| [62](https://github.com/moldovancsaba/impact/issues/62) | IMPACT P0: Dashboard D5 — Wire webapp to real aggregates |
+| [58](https://github.com/sovereignsquad/impact/issues/58) | IMPACT P0: Dashboard D1 — Ingest MVP |
+| [59](https://github.com/sovereignsquad/impact/issues/59) | IMPACT P0: Dashboard D2 — Aggregation model |
+| [60](https://github.com/sovereignsquad/impact/issues/60) | IMPACT P0: Dashboard D3 — Privacy thresholds |
+| [61](https://github.com/sovereignsquad/impact/issues/61) | IMPACT P0: Dashboard D4 — Dashboard read API |
+| [62](https://github.com/sovereignsquad/impact/issues/62) | IMPACT P0: Dashboard D5 — Wire webapp to real aggregates |
 
 ### macOS packaging (M1–M4) — Phase 3 of this doc
 
 | # | Title |
 | - | ----- |
-| [63](https://github.com/moldovancsaba/impact/issues/63) | IMPACT P1: macOS M1 — Distribution decision (binary vs app) |
-| [64](https://github.com/moldovancsaba/impact/issues/64) | IMPACT P1: macOS M2 — Packaging pipeline & clean-Mac smoke |
-| [65](https://github.com/moldovancsaba/impact/issues/65) | IMPACT P1: macOS M3 — Signing & notarization plan |
-| [66](https://github.com/moldovancsaba/impact/issues/66) | IMPACT P1: macOS M4 — DMG packaging (after M1–M3) |
+| [63](https://github.com/sovereignsquad/impact/issues/63) | IMPACT P1: macOS M1 — Distribution decision (binary vs app) |
+| [64](https://github.com/sovereignsquad/impact/issues/64) | IMPACT P1: macOS M2 — Packaging pipeline & clean-Mac smoke |
+| [65](https://github.com/sovereignsquad/impact/issues/65) | IMPACT P1: macOS M3 — Signing & notarization plan |
+| [66](https://github.com/sovereignsquad/impact/issues/66) | IMPACT P1: macOS M4 — DMG packaging (after M1–M3) |
 
 ### Related programme issues (context — may also appear on the board)
 
 | # | Title |
 | - | ----- |
-| [35](https://github.com/moldovancsaba/impact/issues/35) | IMPACT P1: Anonymous ingest service MVP |
-| [36](https://github.com/moldovancsaba/impact/issues/36) | IMPACT P1: Community aggregates — governance, pipeline, metric definitions |
-| [37](https://github.com/moldovancsaba/impact/issues/37) | IMPACT P1: Public stats surface (dashboard or API) |
-| [38](https://github.com/moldovancsaba/impact/issues/38) | IMPACT P1: Standalone binary packaging — investigation |
-| [39](https://github.com/moldovancsaba/impact/issues/39) | IMPACT P1: Programme — signed releases and desktop-style macOS distribution |
-| [40](https://github.com/moldovancsaba/impact/issues/40) | IMPACT P1: Programme — public benchmark portal and compare vs crowd |
-| [41](https://github.com/moldovancsaba/impact/issues/41) | IMPACT P1: Programme — cross-platform parity for install and analytics |
-| [42](https://github.com/moldovancsaba/impact/issues/42) | IMPACT P2: Ideabank — DMG drag-drop installer |
-| [43](https://github.com/moldovancsaba/impact/issues/43) | IMPACT P2: Ideabank — native GUI, accounts, leaderboards, auto-update |
+| [35](https://github.com/sovereignsquad/impact/issues/35) | IMPACT P1: Anonymous ingest service MVP |
+| [36](https://github.com/sovereignsquad/impact/issues/36) | IMPACT P1: Community aggregates — governance, pipeline, metric definitions |
+| [37](https://github.com/sovereignsquad/impact/issues/37) | IMPACT P1: Public stats surface (dashboard or API) |
+| [38](https://github.com/sovereignsquad/impact/issues/38) | IMPACT P1: Standalone binary packaging — investigation |
+| [39](https://github.com/sovereignsquad/impact/issues/39) | IMPACT P1: Programme — signed releases and desktop-style macOS distribution |
+| [40](https://github.com/sovereignsquad/impact/issues/40) | IMPACT P1: Programme — public benchmark portal and compare vs crowd |
+| [41](https://github.com/sovereignsquad/impact/issues/41) | IMPACT P1: Programme — cross-platform parity for install and analytics |
+| [42](https://github.com/sovereignsquad/impact/issues/42) | IMPACT P2: Ideabank — DMG drag-drop installer |
+| [43](https://github.com/sovereignsquad/impact/issues/43) | IMPACT P2: Ideabank — native GUI, accounts, leaderboards, auto-update |
 
 ---
 
@@ -85,15 +85,15 @@ Tables below list **related GitHub issues** that correspond to cards on **Projec
 **Current operating state**
 
 - **Green:** MVP · **in-repo MLP shell** · **in-repo dashboard D1–D5** — [`apps/ingest`](../apps/ingest) (POST ingest + SQLite + **`GET /api/stats/*`**, privacy thresholds, CORS) and [`apps/web`](../apps/web) **`data.html`** with **`VITE_STATS_API_BASE`** ([ingest-server.md](ingest-server.md), [apps/web/README.md](../apps/web/README.md)) · **production same-origin `GET /api/stats/*` + `/api/health` on Vercel** ([`api/`](../api/), [web.md](web.md) § Deploy) · **`VITE_STATS_API_BASE`** in Vercel **Production, Preview, Development** · **tranche documentation**  
-- **Amber:** **Real** public aggregates — need **hosted durable ingest**, **`IMPACT_INGEST_UPSTREAM`**, **`IMPACT_SUBMIT_URL`**, and enough submissions (**fallback** is honest, not crowd data) · **[#34](https://github.com/moldovancsaba/impact/issues/34)** · **Path D** trust/compliance · GitHub **Done** / evidence on **#58–#62** may trail code  
+- **Amber:** **Real** public aggregates — need **hosted durable ingest**, **`IMPACT_INGEST_UPSTREAM`**, **`IMPACT_SUBMIT_URL`**, and enough submissions (**fallback** is honest, not crowd data) · **[#34](https://github.com/sovereignsquad/impact/issues/34)** · **Path D** trust/compliance · GitHub **Done** / evidence on **#58–#62** may trail code  
 - **Red:** _none for dashboard code path_ — **do not** claim **meaningful** community **dashboard data** until **upstream** + **volume** + thresholds allow publication
 
 **Immediate next steps**
 
-1. **Deploy / operate hosted ingest** → set **`IMPACT_INGEST_UPSTREAM`** on Vercel → **`IMPACT_SUBMIT_URL`** on clients → seed → verify **`/data.html`** shows **non-fallback** aggregates when thresholds allow → **close [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** with proof ([board closure model](#board-closure-dashboard))  
-2. **Close [#34](https://github.com/moldovancsaba/impact/issues/34)** (publish **`@impact/cli`**, `npm view`, clean-machine smoke) — **parallel** where capacity  
+1. **Deploy / operate hosted ingest** → set **`IMPACT_INGEST_UPSTREAM`** on Vercel → **`IMPACT_SUBMIT_URL`** on clients → seed → verify **`/data.html`** shows **non-fallback** aggregates when thresholds allow → **close [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)** with proof ([board closure model](#board-closure-dashboard))  
+2. **Close [#34](https://github.com/sovereignsquad/impact/issues/34)** (publish **`@impact/cli`**, `npm view`, clean-machine smoke) — **parallel** where capacity  
 3. **Mac trust** work **in parallel only if capacity** allows  
-4. **Keep DMG non-final** until **M3** ([#65](https://github.com/moldovancsaba/impact/issues/65)) is done  
+4. **Keep DMG non-final** until **M3** ([#65](https://github.com/sovereignsquad/impact/issues/65)) is done  
 
 **Decision:** **This file** is the **confirmed SSOT** for the **next public delivery phase** — a **clean, usable control document**.
 
@@ -103,7 +103,7 @@ Tables below list **related GitHub issues** that correspond to cards on **Projec
 
 ## CTO acceptance — dashboard backend in repo (2026-04-03)
 
-**Formal leadership acceptance:** [mlp-status-cto.md § CTO acceptance — leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard) — canonical **one-page verdict**; **repo-complete ≠ product-live**; canonical **leadership sentence**; **control stack** split; **steps 1–11** + **report-back**; GitHub **activation** tracked on **[#58](https://github.com/moldovancsaba/impact/issues/58)**, **npm** on **[#34](https://github.com/moldovancsaba/impact/issues/34)**.
+**Formal leadership acceptance:** [mlp-status-cto.md § CTO acceptance — leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard) — canonical **one-page verdict**; **repo-complete ≠ product-live**; canonical **leadership sentence**; **control stack** split; **steps 1–11** + **report-back**; GitHub **activation** tracked on **[#58](https://github.com/sovereignsquad/impact/issues/58)**, **npm** on **[#34](https://github.com/sovereignsquad/impact/issues/34)**.
 
 **Accepted in code:** D1–D5 (**#58–#62**) — ingest MVP, aggregation, privacy thresholds, stats read API, web wiring (**`VITE_STATS_API_BASE`** + `/data.html`); HTTP integration tests; CORS; SQLite persistence; duplicate handling per [submission-contract.md](submission-contract.md); **`npm run verify:release`** green.
 
@@ -117,9 +117,9 @@ Tables below list **related GitHub issues** that correspond to cards on **Projec
 
 | Issue | Toward Review / Done when |
 | ----- | ------------------------- |
-| **[#58](https://github.com/moldovancsaba/impact/issues/58)** | **Hosted** ingest accepts real submissions (contract-aligned). |
-| **[#59](https://github.com/moldovancsaba/impact/issues/59)**, **[#60](https://github.com/moldovancsaba/impact/issues/60)**, **[#61](https://github.com/moldovancsaba/impact/issues/61)** | **Hosted** API returns correct aggregates with **privacy suppression** verified. |
-| **[#62](https://github.com/moldovancsaba/impact/issues/62)** | **Public** webapp wired to **live** API and **verified** (real tables when thresholds allow; placeholders when not). |
+| **[#58](https://github.com/sovereignsquad/impact/issues/58)** | **Hosted** ingest accepts real submissions (contract-aligned). |
+| **[#59](https://github.com/sovereignsquad/impact/issues/59)**, **[#60](https://github.com/sovereignsquad/impact/issues/60)**, **[#61](https://github.com/sovereignsquad/impact/issues/61)** | **Hosted** API returns correct aggregates with **privacy suppression** verified. |
+| **[#62](https://github.com/sovereignsquad/impact/issues/62)** | **Public** webapp wired to **live** API and **verified** (real tables when thresholds allow; placeholders when not). |
 
 **#62 last:** keep **#62** open until **public** verification — see [mlp-status-cto.md](mlp-status-cto.md) (full CTO assessment).
 
@@ -132,7 +132,7 @@ Tables below list **related GitHub issues** that correspond to cards on **Projec
 **What is newly true — three distribution states**
 
 1. **Path B — repo-based install** — **real**, **verified**, **already usable**.  
-2. **Path C — `npm install`** — **implementation-ready** in repo; **not publicly live** until publish; **blocked** by **npm login / publish / `npm view` / clean-Mac smoke** — **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **still not Done**.  
+2. **Path C — `npm install`** — **implementation-ready** in repo; **not publicly live** until publish; **blocked** by **npm login / publish / `npm view` / clean-Mac smoke** — **[#34](https://github.com/sovereignsquad/impact/issues/34)** is **still not Done**.  
 3. **Path D — DMG** — **working local packaging pipeline** ([`packaging/macos/`](../packaging/macos/)); **`.dmg`**, **checksum**, **`Impact.app`**, **ad-hoc** signing, **local smoke** passed — **not** a **fully trusted, consumer-grade** Mac release until **Developer ID**, **notarization**, **release hosting**, and **clean end-user validation** from the **published** artifact. **Do not market** Path D as “the Mac app is done.”
 
 **Strategic correction**
@@ -149,10 +149,10 @@ Earlier sequencing assumed **#34 → dashboard → packaging → DMG last**. **W
 
 | Stage | Issue | Status call |
 | ----- | ----- | ----------- |
-| **M1** | [#63](https://github.com/moldovancsaba/impact/issues/63) | **Done enough** ([macos-distribution.md](macos-distribution.md)). |
-| **M2** | [#64](https://github.com/moldovancsaba/impact/issues/64) | **Partially to substantially done** (scripted DMG + artifact + docs; evidence on **released** artifact TBD). |
-| **M3** | [#65](https://github.com/moldovancsaba/impact/issues/65) | **Not done** (ad-hoc only). |
-| **M4** | [#66](https://github.com/moldovancsaba/impact/issues/66) | **Technically produced** — **not** public-quality Mac release until **M3** is done. |
+| **M1** | [#63](https://github.com/sovereignsquad/impact/issues/63) | **Done enough** ([macos-distribution.md](macos-distribution.md)). |
+| **M2** | [#64](https://github.com/sovereignsquad/impact/issues/64) | **Partially to substantially done** (scripted DMG + artifact + docs; evidence on **released** artifact TBD). |
+| **M3** | [#65](https://github.com/sovereignsquad/impact/issues/65) | **Not done** (ad-hoc only). |
+| **M4** | [#66](https://github.com/sovereignsquad/impact/issues/66) | **Technically produced** — **not** public-quality Mac release until **M3** is done. |
 
 **Current status call**
 
@@ -162,7 +162,7 @@ Earlier sequencing assumed **#34 → dashboard → packaging → DMG last**. **W
 
 **Operating model (updated)**
 
-1. **Close [#34](https://github.com/moldovancsaba/impact/issues/34)** — `npm login` → `npm run publish:npm` → `npm view` → **Path C** smoke → evidence — **still the most important short-term adoption step.**  
+1. **Close [#34](https://github.com/sovereignsquad/impact/issues/34)** — `npm login` → `npm run publish:npm` → `npm view` → **Path C** smoke → evidence — **still the most important short-term adoption step.**  
 2. **Attach DMG + checksum** to a **GitHub Release**; **do not overclaim** trust.  
 3. **Do not** call the DMG **finished** until **M3** is done.  
 4. **Board / evidence:** **#58–#62** — code is **in repo**; close issues when **production** ingest and web build point at real data per acceptance (may follow **#34**).  
@@ -189,7 +189,7 @@ Packaging progress is **accepted** (pipeline, app bundle, DMG, checksum, local s
 | Path | State |
 | ---- | ----- |
 | **B — repo install** | **Real** and **working** |
-| **C — npm** | **Prepared** in repo; **not live** until `@impact/cli` is **published** and **smoke-tested** (**[#34](https://github.com/moldovancsaba/impact/issues/34)**) |
+| **C — npm** | **Prepared** in repo; **not live** until `@impact/cli` is **published** and **smoke-tested** (**[#34](https://github.com/sovereignsquad/impact/issues/34)**) |
 | **D — DMG** | **Pipeline** produces **`.app` + DMG**; **not consumer-grade** without **Developer ID** signing, **Apple notarization**, and **release/distribution validation** on the **published** artifact |
 
 **Honest summary:** we can **build** the Mac artifact; we have **not** finished the **trust / release** layer for a **proper** downloadable Mac app.
@@ -226,39 +226,39 @@ The **next missing product value** is the **backend** that powers **real communi
 
 ### Delivery tranche — backend foundation for community visibility
 
-**Issue mapping (board):** conceptual phases below align with **D1–D5** / **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**; **#58** should include a **minimal persistent storage model** (Phases 1–2); **#59** covers normalization + aggregation (Phase 3); **#60–#62** follow as below.
+**Issue mapping (board):** conceptual phases below align with **D1–D5** / **[#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)**; **#58** should include a **minimal persistent storage model** (Phases 1–2); **#59** covers normalization + aggregation (Phase 3); **#60–#62** follow as below.
 
-#### Phase 1 — Submission ingest (→ D1 / [#58](https://github.com/moldovancsaba/impact/issues/58))
+#### Phase 1 — Submission ingest (→ D1 / [#58](https://github.com/sovereignsquad/impact/issues/58))
 
 **Deliver:** HTTP endpoint for profile submission · **schema validation** on inbound payloads · **duplicate detection** · **write** accepted submissions to storage · **reject** invalid payloads cleanly · **minimal** operational logging.
 
 **Minimum result:** a submitted `impact-profile.json` can be **received** and **stored safely**.
 
-#### Phase 2 — Storage model (within D1 / [#58](https://github.com/moldovancsaba/impact/issues/58))
+#### Phase 2 — Storage model (within D1 / [#58](https://github.com/sovereignsquad/impact/issues/58))
 
 **Persist at minimum:** submission id · received timestamp · schema version · normalized machine class · OS/platform · chip family · memory band · runtime/tool/model dimensions · raw or **canonical sanitized** profile payload · dedupe keys/hashes · processing status.
 
 **Minimum result:** backend can **persist records** suitable for **later aggregation**.
 
-#### Phase 3 — Normalization and aggregation (→ D2 / [#59](https://github.com/moldovancsaba/impact/issues/59))
+#### Phase 3 — Normalization and aggregation (→ D2 / [#59](https://github.com/sovereignsquad/impact/issues/59))
 
 **Normalize** dimensions: machine classes · chip families · memory bands · platform families · runtime families · tool families · model families · locality split. **Then aggregate:** counts · averages · medians where useful · top-N · distribution buckets.
 
 **Minimum result:** **first dashboard summaries** computable from **real** submissions.
 
-#### Phase 4 — Privacy threshold enforcement (→ D3 / [#60](https://github.com/moldovancsaba/impact/issues/60)) — mandatory before public display
+#### Phase 4 — Privacy threshold enforcement (→ D3 / [#60](https://github.com/sovereignsquad/impact/issues/60)) — mandatory before public display
 
 **Rules:** minimum cohort size · low-sample suppression · safe grouping · no fingerprintable slices · no raw unique-machine exposure.
 
 **Minimum result:** system can decide what is **safe to publish**.
 
-#### Phase 5 — Read API for the webapp (→ D4 / [#61](https://github.com/moldovancsaba/impact/issues/61))
+#### Phase 5 — Read API for the webapp (→ D4 / [#61](https://github.com/sovereignsquad/impact/issues/61))
 
 **After** Phases 1–4. **Example** endpoint shapes: `/api/stats/overview` · `/api/stats/hardware` · `/api/stats/tools` · `/api/stats/models` (exact paths TBD; **stable contract** required).
 
 **Minimum result:** website can **stop using placeholders** and show **real aggregates** (after **#62** wiring).
 
-#### Phase 6 — Web wiring (→ D5 / [#62](https://github.com/moldovancsaba/impact/issues/62))
+#### Phase 6 — Web wiring (→ D5 / [#62](https://github.com/sovereignsquad/impact/issues/62))
 
 Replace `data.html` (and related) placeholders with **real** aggregate data **only** when **D1–D4** are live.
 
@@ -296,11 +296,11 @@ Replace `data.html` (and related) placeholders with **real** aggregate data **on
 
 | Step | Issue | Deliver |
 | ---- | ----- | ------- |
-| 1 | [#58](https://github.com/moldovancsaba/impact/issues/58) | Ingest MVP: endpoint, validation, dup detection, **persistent** storage, logging, runbook |
-| 2 | [#59](https://github.com/moldovancsaba/impact/issues/59) | Normalized dimensions, aggregation schema, rollup/query layer, metric definitions |
-| 3 | [#60](https://github.com/moldovancsaba/impact/issues/60) | Low-sample suppression, publication thresholds, safe grouping |
-| 4 | [#61](https://github.com/moldovancsaba/impact/issues/61) | Stable stats endpoints (hardware, tools, models, overview) |
-| 5 | [#62](https://github.com/moldovancsaba/impact/issues/62) | Wire webapp to **real** aggregates **only** after D1–D4 live |
+| 1 | [#58](https://github.com/sovereignsquad/impact/issues/58) | Ingest MVP: endpoint, validation, dup detection, **persistent** storage, logging, runbook |
+| 2 | [#59](https://github.com/sovereignsquad/impact/issues/59) | Normalized dimensions, aggregation schema, rollup/query layer, metric definitions |
+| 3 | [#60](https://github.com/sovereignsquad/impact/issues/60) | Low-sample suppression, publication thresholds, safe grouping |
+| 4 | [#61](https://github.com/sovereignsquad/impact/issues/61) | Stable stats endpoints (hardware, tools, models, overview) |
+| 5 | [#62](https://github.com/sovereignsquad/impact/issues/62) | Wire webapp to **real** aggregates **only** after D1–D4 live |
 
 **WIP:** only **#58** active first · **#59** when D1 materially underway · **#60–#62** staged · **no** scattering across all tickets.
 
@@ -330,7 +330,7 @@ Replace `data.html` (and related) placeholders with **real** aggregate data **on
 
 The **web shell** exists; **in-repo** **read API + aggregation** exist under [`apps/ingest`](../apps/ingest). **`data.html`** can show **real** tables when built with **`VITE_STATS_API_BASE`** pointing at a running ingest. A **public** community dashboard still requires **hosted** ingest and enough submissions. **Expanded deliverables, phases, architecture, and success criteria:** § [CTO directive — background system delivery](#cto-directive-background) (2026-04-12).
 
-**Issue spine:** **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**. Legacy context: **[#48](https://github.com/moldovancsaba/impact/issues/48)**, **[#51](https://github.com/moldovancsaba/impact/issues/51)–[#53](https://github.com/moldovancsaba/impact/issues/53)** — superseded in execution detail by **#58–#62**.
+**Issue spine:** **[#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)**. Legacy context: **[#48](https://github.com/sovereignsquad/impact/issues/48)**, **[#51](https://github.com/sovereignsquad/impact/issues/51)–[#53](https://github.com/sovereignsquad/impact/issues/53)** — superseded in execution detail by **#58–#62**.
 
 ---
 
@@ -338,7 +338,7 @@ The **web shell** exists; **in-repo** **read API + aggregation** exist under [`a
 
 ### Phase 1 — Public install gate (mandatory)
 
-1. **Close [#34](https://github.com/moldovancsaba/impact/issues/34)** — publish `@impact/cli`, `npm view @impact/cli`, published-package smoke, evidence, board **Done**.
+1. **Close [#34](https://github.com/sovereignsquad/impact/issues/34)** — publish `@impact/cli`, `npm view @impact/cli`, published-package smoke, evidence, board **Done**.
 
 ### Phase 2 — Dashboard foundation (start immediately after #34)
 
@@ -346,11 +346,11 @@ The **web shell** exists; **in-repo** **read API + aggregation** exist under [`a
 
 | ID | Issue | Deliverables |
 | -- | ----- | ------------ |
-| **D1** | [#58](https://github.com/moldovancsaba/impact/issues/58) | **In repo:** [`apps/ingest`](../apps/ingest) — HTTP POST, Zod validation, SQLite, **409** dedupe; [ingest-server.md](ingest-server.md). **Ops/deploy** may remain before board **Done**. |
-| **D2** | [#59](https://github.com/moldovancsaba/impact/issues/59) | **In repo:** `impact.stats.v0.1` + rollups in [`aggregate.ts`](../apps/ingest/src/aggregate.ts) / [`stats-from-db.ts`](../apps/ingest/src/stats-from-db.ts); docs in [ingest-server.md](ingest-server.md) |
-| **D3** | [#60](https://github.com/moldovancsaba/impact/issues/60) | **In repo:** `IMPACT_STATS_MIN_BUCKET_COUNT`, global + per-bucket suppression in `buildPublicStats` |
-| **D4** | [#61](https://github.com/moldovancsaba/impact/issues/61) | **In repo:** `GET /api/stats/overview|full|hardware|tools|models`, `OPTIONS` + CORS; tests [`http-server.test.ts`](../apps/ingest/src/http-server.test.ts) |
-| **D5** | [#62](https://github.com/moldovancsaba/impact/issues/62) | **In repo:** [`data.html`](../apps/web/data.html) + [`data-entry.ts`](../apps/web/src/data-entry.ts) + **`VITE_STATS_API_BASE`**; no benchmark overlays |
+| **D1** | [#58](https://github.com/sovereignsquad/impact/issues/58) | **In repo:** [`apps/ingest`](../apps/ingest) — HTTP POST, Zod validation, SQLite, **409** dedupe; [ingest-server.md](ingest-server.md). **Ops/deploy** may remain before board **Done**. |
+| **D2** | [#59](https://github.com/sovereignsquad/impact/issues/59) | **In repo:** `impact.stats.v0.1` + rollups in [`aggregate.ts`](../apps/ingest/src/aggregate.ts) / [`stats-from-db.ts`](../apps/ingest/src/stats-from-db.ts); docs in [ingest-server.md](ingest-server.md) |
+| **D3** | [#60](https://github.com/sovereignsquad/impact/issues/60) | **In repo:** `IMPACT_STATS_MIN_BUCKET_COUNT`, global + per-bucket suppression in `buildPublicStats` |
+| **D4** | [#61](https://github.com/sovereignsquad/impact/issues/61) | **In repo:** `GET /api/stats/overview|full|hardware|tools|models`, `OPTIONS` + CORS; tests [`http-server.test.ts`](../apps/ingest/src/http-server.test.ts) |
+| **D5** | [#62](https://github.com/sovereignsquad/impact/issues/62) | **In repo:** [`data.html`](../apps/web/data.html) + [`data-entry.ts`](../apps/web/src/data-entry.ts) + **`VITE_STATS_API_BASE`**; no benchmark overlays |
 
 **Dimensions to support (D2):** machine classes, chip families, memory bands, platform counts, runtime/tool families, model families, locality split.
 
@@ -358,21 +358,21 @@ The **web shell** exists; **in-repo** **read API + aggregation** exist under [`a
 
 | ID | Issue | Deliverables / status (2026-04-10) |
 | -- | ----- | ------------------------------------ |
-| **M1** | [#63](https://github.com/moldovancsaba/impact/issues/63) | **Done enough** — [macos-distribution.md](macos-distribution.md) |
-| **M2** | [#64](https://github.com/moldovancsaba/impact/issues/64) | **Substantial** — scripted DMG, versioned artifact, Path D docs; **released-artifact** smoke evidence still open |
-| **M3** | [#65](https://github.com/moldovancsaba/impact/issues/65) | **Open** — Developer ID + notarization (ad-hoc only today) |
-| **M4** | [#66](https://github.com/moldovancsaba/impact/issues/66) | **DMG produced** — **not** “final public-quality Mac release” until **M3** |
+| **M1** | [#63](https://github.com/sovereignsquad/impact/issues/63) | **Done enough** — [macos-distribution.md](macos-distribution.md) |
+| **M2** | [#64](https://github.com/sovereignsquad/impact/issues/64) | **Substantial** — scripted DMG, versioned artifact, Path D docs; **released-artifact** smoke evidence still open |
+| **M3** | [#65](https://github.com/sovereignsquad/impact/issues/65) | **Open** — Developer ID + notarization (ad-hoc only today) |
+| **M4** | [#66](https://github.com/sovereignsquad/impact/issues/66) | **DMG produced** — **not** “final public-quality Mac release” until **M3** |
 
 ---
 
 ## Board movement & WIP discipline
 
-**Use the board to preserve sequence, not only visibility.** **`apply-status.sh`** template: **[#58](https://github.com/moldovancsaba/impact/issues/58)** **In Progress** (activation sprint owner); **#59–#62** **Todo** until closure order; **[#34](https://github.com/moldovancsaba/impact/issues/34)** **In Progress** (npm) — **parallel** allowed.
+**Use the board to preserve sequence, not only visibility.** **`apply-status.sh`** template: **[#58](https://github.com/sovereignsquad/impact/issues/58)** **In Progress** (activation sprint owner); **#59–#62** **Todo** until closure order; **[#34](https://github.com/sovereignsquad/impact/issues/34)** **In Progress** (npm) — **parallel** allowed.
 
 | When | Action |
 | ---- | ------ |
-| **Now** | **[#34](https://github.com/moldovancsaba/impact/issues/34)** + **[#58](https://github.com/moldovancsaba/impact/issues/58)** **In Progress** — execute **maintainer** path and **dashboard activation** (see issue bodies + [mlp-status-cto.md](mlp-status-cto.md#cto-acceptance-leadership-dashboard)). **#59–#62** **Todo** until hosted proof advances them. |
-| **After production ingest + web wired** | Close **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** per [closure model](#board-closure-dashboard) with evidence. |
+| **Now** | **[#34](https://github.com/sovereignsquad/impact/issues/34)** + **[#58](https://github.com/sovereignsquad/impact/issues/58)** **In Progress** — execute **maintainer** path and **dashboard activation** (see issue bodies + [mlp-status-cto.md](mlp-status-cto.md#cto-acceptance-leadership-dashboard)). **#59–#62** **Todo** until hosted proof advances them. |
+| **After production ingest + web wired** | Close **[#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)** per [closure model](#board-closure-dashboard) with evidence. |
 | **Low WIP** | Prefer **one** **dashboard** card **In Progress** (**#58** today); advance **#59–#62** only as closure model allows. |
 | **macOS tranche** | **Signing / notarization** (**#65**, **#66**) may run **in parallel** if capacity — **do not** market Path D finished until **M3**. |
 | **Ideabank** | GUI, accounts, leaderboards — no new issues required here. |
@@ -430,4 +430,4 @@ Next handoff must include:
 
 **Issue index (titles):** [§ Project board — linked issues](#github-issue-index) at the **top** of this file. **Backend tranche directive:** [§ CTO directive — background system delivery](#cto-directive-background). **Closure model:** [§ Board closure model](#board-closure-dashboard).
 
-- [mlp-status-cto.md](mlp-status-cto.md) · [mlp-execution.md](mlp-execution.md) · [mlp.md](mlp.md) · [web.md](web.md) · [submission-contract.md](submission-contract.md) · [#38](https://github.com/moldovancsaba/impact/issues/38) (historical binary spike — defer to **#63**)
+- [mlp-status-cto.md](mlp-status-cto.md) · [mlp-execution.md](mlp-execution.md) · [mlp.md](mlp.md) · [web.md](web.md) · [submission-contract.md](submission-contract.md) · [#38](https://github.com/sovereignsquad/impact/issues/38) (historical binary spike — defer to **#63**)

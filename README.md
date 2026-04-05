@@ -1,6 +1,6 @@
 # IMPACT
 
-**MVP — delivered:** The **discovery scanner MVP** is complete on `main` ([**v0.3.0** release](https://github.com/moldovancsaba/impact/releases/tag/v0.3.0); profile schema **`impact.v0.3`**). This is **not** “v1” and **not** a finished **benchmark programme** — it is the first shippable **local inventory + reports** slice. See [What users have today](docs/user-expectations-mvp.md).
+**MVP — delivered:** The **discovery scanner MVP** is complete on `main` ([**v0.3.0** release](https://github.com/sovereignsquad/impact/releases/tag/v0.3.0); profile schema **`impact.v0.3`**). This is **not** “v1” and **not** a finished **benchmark programme** — it is the first shippable **local inventory + reports** slice. See [What users have today](docs/user-expectations-mvp.md).
 
 **IMPACT is a privacy-first local scanner** that inventories the AI-relevant environment of a machine — system signals, runtimes, curated tools, and models discovered through supported local APIs — then writes a **structured profile** and **HTML report** on disk. **Optional** anonymous submission exists only after you configure an endpoint and **explicitly** consent; **nothing is uploaded by default.**
 
@@ -31,7 +31,7 @@ The **same release** should bump **Git tag**, **`@impact/*` npm packages** (e.g.
 
 Many people run or evaluate **local AI** and wonder what their machine can actually support. Most lack a single, honest picture of what is installed, reachable, and worth trying. IMPACT starts with an **inventory you can inspect**: conservative detection, provenance on fields, and clear confidence — not a hype score.
 
-Later programme phases (see [product spec](docs/product.md) and [phase ladder](https://github.com/moldovancsaba/impact/issues/16)) aim at **readiness hints**, **atomic tests**, and **capability benchmarks**. Those are **not** shipped as product truth in v0.x.
+Later programme phases (see [product spec](docs/product.md) and [phase ladder](https://github.com/sovereignsquad/impact/issues/16)) aim at **readiness hints**, **atomic tests**, and **capability benchmarks**. Those are **not** shipped as product truth in v0.x.
 
 ---
 
@@ -110,7 +110,7 @@ If that fails with **404**, use **Path B** (build from source) — same outputs.
 **Path B (from clone):**
 
 ```bash
-git clone https://github.com/moldovancsaba/impact.git
+git clone https://github.com/sovereignsquad/impact.git
 cd impact
 # optional: git checkout v0.3.0   # pin to tagged MVP; default is latest main
 npm ci
@@ -121,7 +121,7 @@ impact scan --no-submit -o ./reports
 open ./reports/impact-report.html
 ```
 
-Packaging track [#27](https://github.com/moldovancsaba/impact/issues/27) is **closed**. **Primary delivery:** [#34](https://github.com/moldovancsaba/impact/issues/34) (npm path) + **DMG** (`npm run build:dmg`). [#38](https://github.com/moldovancsaba/impact/issues/38) binary spike is **exploratory** only.
+Packaging track [#27](https://github.com/sovereignsquad/impact/issues/27) is **closed**. **Primary delivery:** [#34](https://github.com/sovereignsquad/impact/issues/34) (npm path) + **DMG** (`npm run build:dmg`). [#38](https://github.com/sovereignsquad/impact/issues/38) binary spike is **exploratory** only.
 
 **Without global install** (repo developers): `npm run impact -- scan --no-submit -o ./reports` after `npm ci` && `npm run build`.
 
@@ -143,7 +143,7 @@ This table is **conservative on purpose**: it sets expectations and **does not**
 | Today (v0.x) | Later (programme) |
 | ------------ | ------------------- |
 | Discovery **scanner** + HTML/JSON **profile** | Atomic reliability tests, **capability benchmarks** |
-| Coarse **readiness hints** (not benchmark scores) | Deeper evaluation ladder — [issue #16](https://github.com/moldovancsaba/impact/issues/16) |
+| Coarse **readiness hints** (not benchmark scores) | Deeper evaluation ladder — [issue #16](https://github.com/sovereignsquad/impact/issues/16) |
 | **Privacy-first**, optional anonymous **submission** | Richer programme surfaces as scoped in [product.md](docs/product.md) |
 
 Discovery comes first so later benchmarks attach to **observable truth** about what can run where — not guesses.
@@ -182,7 +182,7 @@ Full detail: [docs/support-matrix.md](docs/support-matrix.md).
 | Release QA | [docs/release-checklist.md](docs/release-checklist.md) · [docs/smoke-test-macos.md](docs/smoke-test-macos.md) |
 | Post-MVP / MLP track | [docs/mlp.md](docs/mlp.md) |
 
-**Planning & workflow:** [GitHub Issues](https://github.com/moldovancsaba/impact/issues) (scope/acceptance) · [Project #2](https://github.com/users/moldovancsaba/projects/2) (Status) · [Programme — not Done](https://github.com/users/moldovancsaba/projects/2/views/3) · [full board](https://github.com/users/moldovancsaba/projects/2/views/1) · **who wins when docs disagree:** [docs/ssot-map.md](docs/ssot-map.md)
+**Planning & workflow:** [GitHub Issues](https://github.com/sovereignsquad/impact/issues) (scope/acceptance) · [Project #2](https://github.com/users/moldovancsaba/projects/2) (Status) · [Programme — not Done](https://github.com/users/moldovancsaba/projects/2/views/3) · [full board](https://github.com/users/moldovancsaba/projects/2/views/1) · **who wins when docs disagree:** [docs/ssot-map.md](docs/ssot-map.md)
 
 ---
 

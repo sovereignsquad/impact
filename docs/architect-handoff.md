@@ -5,7 +5,7 @@
 **Where truth lives:** [ssot-map.md](ssot-map.md) — **issues** (scope/acceptance), **Project #2 Status** (workflow), **current-state** (operational snapshot), **code** (behaviour).  
 **Style reference for issue quality:** [mvp-factory-control#495](https://github.com/moldovancsaba/mvp-factory-control/issues/495)
 
-**Living snapshot of the repo + board mapping:** [current-state.md](current-state.md). For **operational truth now** (Path B vs Path C, the [#34](https://github.com/moldovancsaba/impact/issues/34) publish gate, and post-gate sequencing), use the opening **Operational status** section there — not this handoff doc. For **version alignment** (Git tag `v0.3.0`, npm `0.3.0`, JSON `impact.v0.3`, `impact --version`), use **§ Versioning (SSOT)** in that same file.
+**Living snapshot of the repo + board mapping:** [current-state.md](current-state.md). For **operational truth now** (Path B vs Path C, the [#34](https://github.com/sovereignsquad/impact/issues/34) publish gate, and post-gate sequencing), use the opening **Operational status** section there — not this handoff doc. For **version alignment** (Git tag `v0.3.0`, npm `0.3.0`, JSON `impact.v0.3`, `impact --version`), use **§ Versioning (SSOT)** in that same file.
 
 **Post-MVP product track (loveability, not benchmarks):** [mlp.md](mlp.md) — M1–M6, constraints, board placement hints.
 
@@ -101,7 +101,7 @@ Indexed in issue **#16**; doctrine in issue **#1**.
 ## 8. Quick verify
 
 ```bash
-git clone https://github.com/moldovancsaba/impact.git
+git clone https://github.com/sovereignsquad/impact.git
 cd impact
 npm ci
 npm run build
@@ -114,6 +114,6 @@ npm run impact -- scan --no-submit -o ./reports
 ## 9. Primary references
 
 - [ssot-map.md](ssot-map.md), [current-state.md](current-state.md), [Project #2](https://github.com/users/moldovancsaba/projects/2)
-- [#1](https://github.com/moldovancsaba/impact/issues/1) (doctrine), [#16](https://github.com/moldovancsaba/impact/issues/16) (phases)
+- [#1](https://github.com/sovereignsquad/impact/issues/1) (doctrine), [#16](https://github.com/sovereignsquad/impact/issues/16) (phases)
 - [product.md](product.md), [architecture.md](architecture.md), [privacy-policy.md](privacy-policy.md)
 - Issue template quality bar: [mvp-factory-control#495](https://github.com/moldovancsaba/mvp-factory-control/issues/495)

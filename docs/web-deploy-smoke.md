@@ -1,6 +1,6 @@
 # Public web shell — deploy and smoke checklist
 
-**Purpose:** operational QA after each deploy of [`apps/web`](../apps/web/) (Vite build → `apps/web/dist/`). **SSOT for build/deploy:** [web.md](web.md). **Product constraints:** [mlp-status-cto.md](mlp-status-cto.md#cto-acceptance-leadership-dashboard). **Activation sprint:** [issue #58](https://github.com/moldovancsaba/impact/issues/58) body + [ingest-server.md](ingest-server.md).
+**Purpose:** operational QA after each deploy of [`apps/web`](../apps/web/) (Vite build → `apps/web/dist/`). **SSOT for build/deploy:** [web.md](web.md). **Product constraints:** [mlp-status-cto.md](mlp-status-cto.md#cto-acceptance-leadership-dashboard). **Activation sprint:** [issue #58](https://github.com/sovereignsquad/impact/issues/58) body + [ingest-server.md](ingest-server.md).
 
 **When:** after merge to `main` (or before tagging a release that advertises the site).
 
@@ -13,7 +13,7 @@ Replace `ORIGIN` with production base (e.g. `https://impact.messmass.com`).
 | Path | Check |
 | ---- | ----- |
 | `ORIGIN/` | Home: hero, truth banner (**Path B** until **#34**), CTAs, no npm-as-primary lie |
-| `ORIGIN/install.html` | Path B first; Path C explicitly gated on [#34](https://github.com/moldovancsaba/impact/issues/34) |
+| `ORIGIN/install.html` | Path B first; Path C explicitly gated on [#34](https://github.com/sovereignsquad/impact/issues/34) |
 | `ORIGIN/use.html` | Scan flow, status vocabulary, links work |
 | `ORIGIN/submit.html` | Optional submission, privacy, no silent upload implication |
 | `ORIGIN/data.html` | **If build has no `VITE_STATS_API_BASE`:** placeholders honest; thresholds explained; **no fake counts**. **If live stats build:** tables or threshold copy match API; status line mentions live ingest (see § *Live stats* below). |
@@ -68,10 +68,10 @@ Replace **`WEB_ORIGIN`** with the static site base (same as `ORIGIN` above). **`
 
 ## Evidence (optional)
 
-Paste checklist result + date into deploy notes, release PR, or a short comment on [#57](https://github.com/moldovancsaba/impact/issues/57) / Vercel deployment thread.
+Paste checklist result + date into deploy notes, release PR, or a short comment on [#57](https://github.com/sovereignsquad/impact/issues/57) / Vercel deployment thread.
 
 ---
 
-## After [#34](https://github.com/moldovancsaba/impact/issues/34) closes
+## After [#34](https://github.com/sovereignsquad/impact/issues/34) closes
 
-Update **home** and **install** copy so **Path C** is **primary** and **Path B** is **fallback** — tracked under **[#44](https://github.com/moldovancsaba/impact/issues/44)**; re-run this smoke list for install-truth regression.
+Update **home** and **install** copy so **Path C** is **primary** and **Path B** is **fallback** — tracked under **[#44](https://github.com/sovereignsquad/impact/issues/44)**; re-run this smoke list for install-truth regression.

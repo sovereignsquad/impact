@@ -12,4 +12,4 @@ Benchmark leaderboards; accounts (unless later programme).
 
 ## Based on
 
-[Issue #1](https://github.com/moldovancsaba/impact/issues/1) — Backlog.
+[Issue #1](https://github.com/sovereignsquad/impact/issues/1) — Backlog.

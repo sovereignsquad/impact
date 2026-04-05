@@ -1,6 +1,6 @@
 ## Objective
 
-**Anonymous ingest service MVP** — HTTP API + storage to accept opt-in profiles per [submission-contract.md](https://github.com/moldovancsaba/impact/blob/main/docs/submission-contract.md).
+**Anonymous ingest service MVP** — HTTP API + storage to accept opt-in profiles per [submission-contract.md](https://github.com/sovereignsquad/impact/blob/main/docs/submission-contract.md).
 
 ## Scope
 
@@ -12,4 +12,4 @@ Blocks **community stats** until landed.
 
 ## Based on
 
-[Issue #1](https://github.com/moldovancsaba/impact/issues/1) — Todo/Backlog; relates to **#13**.
+[Issue #1](https://github.com/sovereignsquad/impact/issues/1) — Todo/Backlog; relates to **#13**.

@@ -16,4 +16,4 @@
 
 ## Depends on
 
-[#64](https://github.com/moldovancsaba/impact/issues/64) artifact shape known.
+[#64](https://github.com/sovereignsquad/impact/issues/64) artifact shape known.

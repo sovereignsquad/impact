@@ -8,7 +8,7 @@
 | **Path B — source** | Always works: clone, build, `npm install -g ./apps/cli`. |
 | **Path D — DMG** | **`.dmg`** with `Impact.app` (maintainer-built). Offline-friendly; still needs **Node.js 20+** on the Mac. See [macos-distribution.md](macos-distribution.md) and `npm run build:dmg`. |
 
-Maintainer publish flow: [npm-publish.md](npm-publish.md). DMG build: [`packaging/macos/README.md`](../packaging/macos/README.md). Binary spike: [#38](https://github.com/moldovancsaba/impact/issues/38).
+Maintainer publish flow: [npm-publish.md](npm-publish.md). DMG build: [`packaging/macos/README.md`](../packaging/macos/README.md). Binary spike: [#38](https://github.com/sovereignsquad/impact/issues/38).
 
 ## Requirements
 
@@ -35,7 +35,7 @@ If `npm install` returns **404**, the package is not published yet — use **Pat
 
 | Symptom | Likely cause | What to try |
 | ------- | ------------ | ----------- |
-| `npm ERR! 404 Not Found` for `@impact/cli` | Package not on the registry yet | Use **Path B**; track [#34](https://github.com/moldovancsaba/impact/issues/34). |
+| `npm ERR! 404 Not Found` for `@impact/cli` | Package not on the registry yet | Use **Path B**; track [#34](https://github.com/sovereignsquad/impact/issues/34). |
 | `EACCES` / permission errors on `npm install -g` | Global prefix not writable | Use a [Node version manager](https://github.com/nvm-sh/nvm) or configure `npm prefix` to a user-owned directory (see [npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)). |
 | `command not found: impact` after global install | `PATH` missing npm’s global bin | Re-open the shell, or add the directory printed by `npm bin -g` to `PATH`. |
 | Scan writes files but HTML looks sparse | Runtimes offline / no models | Start local runtimes (e.g. Ollama) and re-run; see **Suggested next steps** in `impact-report.html`. |
@@ -51,7 +51,7 @@ If `npm install` returns **404**, the package is not published yet — use **Pat
 ## Path B — build from clone
 
 ```bash
-git clone https://github.com/moldovancsaba/impact.git
+git clone https://github.com/sovereignsquad/impact.git
 cd impact
 npm ci
 npm run build
@@ -64,7 +64,7 @@ open ./reports/impact-report.html
 ### Optional: pin a released version
 
 ```bash
-git clone https://github.com/moldovancsaba/impact.git
+git clone https://github.com/sovereignsquad/impact.git
 cd impact
 git checkout v0.3.0
 npm ci
@@ -72,7 +72,7 @@ npm run build
 npm install -g ./apps/cli
 ```
 
-Release notes: [**v0.3.0**](https://github.com/moldovancsaba/impact/releases/tag/v0.3.0).
+Release notes: [**v0.3.0**](https://github.com/sovereignsquad/impact/releases/tag/v0.3.0).
 
 ---
 

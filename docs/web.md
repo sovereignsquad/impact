@@ -4,7 +4,7 @@
 
 **Code:** [`apps/web`](../apps/web/)
 
-**Board:** shell pages **[#50](https://github.com/moldovancsaba/impact/issues/50)**, **[#54](https://github.com/moldovancsaba/impact/issues/54)–[#57](https://github.com/moldovancsaba/impact/issues/57)**. **Real dashboard data** — **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md)); legacy **[#51](https://github.com/moldovancsaba/impact/issues/51)–[#53](https://github.com/moldovancsaba/impact/issues/53)** superseded in execution detail by **#58–#62**.
+**Board:** shell pages **[#50](https://github.com/sovereignsquad/impact/issues/50)**, **[#54](https://github.com/sovereignsquad/impact/issues/54)–[#57](https://github.com/sovereignsquad/impact/issues/57)**. **Real dashboard data** — **[#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md)); legacy **[#51](https://github.com/sovereignsquad/impact/issues/51)–[#53](https://github.com/sovereignsquad/impact/issues/53)** superseded in execution detail by **#58–#62**.
 
 ---
 
@@ -14,14 +14,14 @@ Vite **MPA** — each route is its own HTML entry (see `vite.config.ts` `rollupO
 
 | Path | Role |
 | ---- | ---- |
-| **`/`** (`index.html`) | **Home** — hero, install truth (**Path B** until **#34** closes), primary/secondary/tertiary CTAs, short FAQ ([**#57**](https://github.com/moldovancsaba/impact/issues/57)). |
-| **`/install.html`** | **Install / download** — Path B commands, Path C gated on **#34**, prerequisites, outputs, troubleshooting ([**#54**](https://github.com/moldovancsaba/impact/issues/54)). |
-| **`/use.html`** | **Run & results** — scan command, HTML/JSON outputs, `reachable` / `partial` / `unknown`, link to profile preview ([**#55**](https://github.com/moldovancsaba/impact/issues/55)). |
-| **`/submit.html`** | **Submit** — optional submission, preview/receipt, privacy, how aggregates appear later ([**#56**](https://github.com/moldovancsaba/impact/issues/56)). |
-| **`/data.html`** | **Community data** — placeholders by default; **live aggregate tables** when the site is built with **`VITE_STATS_API_BASE`** pointing at a running ingest (`GET /api/stats/full`). Privacy thresholds apply ([**#50**](https://github.com/moldovancsaba/impact/issues/50), [**#58–#62**](https://github.com/moldovancsaba/impact/issues/58)). |
+| **`/`** (`index.html`) | **Home** — hero, install truth (**Path B** until **#34** closes), primary/secondary/tertiary CTAs, short FAQ ([**#57**](https://github.com/sovereignsquad/impact/issues/57)). |
+| **`/install.html`** | **Install / download** — Path B commands, Path C gated on **#34**, prerequisites, outputs, troubleshooting ([**#54**](https://github.com/sovereignsquad/impact/issues/54)). |
+| **`/use.html`** | **Run & results** — scan command, HTML/JSON outputs, `reachable` / `partial` / `unknown`, link to profile preview ([**#55**](https://github.com/sovereignsquad/impact/issues/55)). |
+| **`/submit.html`** | **Submit** — optional submission, preview/receipt, privacy, how aggregates appear later ([**#56**](https://github.com/sovereignsquad/impact/issues/56)). |
+| **`/data.html`** | **Community data** — placeholders by default; **live aggregate tables** when the site is built with **`VITE_STATS_API_BASE`** pointing at a running ingest (`GET /api/stats/full`). Privacy thresholds apply ([**#50**](https://github.com/sovereignsquad/impact/issues/50), [**#58–#62**](https://github.com/sovereignsquad/impact/issues/58)). |
 | **`/profile.html`** | **Profile preview** — drop `impact-profile.json`; `ImpactProfileSchema.safeParse` + `buildRecommendations` in-browser only. |
 
-**Rule:** Do **not** present **npm Path C** as the live primary install until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is closed (publish, verify, smoke, evidence). Copy on **home** and **install** reflects that.
+**Rule:** Do **not** present **npm Path C** as the live primary install until **[#34](https://github.com/sovereignsquad/impact/issues/34)** is closed (publish, verify, smoke, evidence). Copy on **home** and **install** reflects that.
 
 ---
 

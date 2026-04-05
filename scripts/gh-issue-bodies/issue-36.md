@@ -14,4 +14,4 @@ Public-facing dashboard UI (see separate issue).
 
 ## Based on
 
-[Issue #1](https://github.com/moldovancsaba/impact/issues/1) — Backlog enablers for crowd stats.
+[Issue #1](https://github.com/sovereignsquad/impact/issues/1) — Backlog enablers for crowd stats.

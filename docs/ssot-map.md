@@ -6,7 +6,7 @@
 
 **Programme hub:** [GitHub Project #2 — Impact roadmap & backlog](https://github.com/users/moldovancsaba/projects/2) · [Programme (Not Done) view](https://github.com/users/moldovancsaba/projects/2/views/3) · [full board](https://github.com/users/moldovancsaba/projects/2/views/1)
 
-**Planned:** controlled migration to **`sovereignsquad`** org repo + **new org-owned Project** as workflow SSOT; personal Project #2 becomes archive. See [mlp-cto-directive-org-migration-sovereignsquad.md](mlp-cto-directive-org-migration-sovereignsquad.md).
+**In progress:** repo is **`sovereignsquad/impact`** (transferred). **New org-owned GitHub Project** still to become workflow SSOT; personal [Project #2](https://github.com/users/moldovancsaba/projects/2) is **archive/reference** until links are repointed. See [mlp-cto-directive-org-migration-sovereignsquad.md](mlp-cto-directive-org-migration-sovereignsquad.md).
 
 ---
 
@@ -18,11 +18,11 @@
 | **Scope, acceptance, delivery intent** for a ticket | **GitHub issue body** (live on github.com) | [`scripts/gh-issue-bodies/`](../scripts/gh-issue-bodies/) — bulk refresh only; **after push, GitHub wins** |
 | **Operational truth** on `main` (MVP, Path B/C, gates, sequencing) | [current-state.md](current-state.md) — **§ Operational status** | If this **contradicts Project Status** on *workflow*, **update this file** to match the Project |
 | **Version alignment** (tag, npm, `schema_version`, `impact --version`) | [current-state.md](current-state.md) — **§ Versioning (SSOT)** | [release-checklist.md](release-checklist.md), [npm-publish.md](npm-publish.md) |
-| **Product** definition and principles | [product.md](product.md) + [**#1** doctrine](https://github.com/moldovancsaba/impact/issues/1) | — |
-| **Phase ladder** 0–4 | [**#16**](https://github.com/moldovancsaba/impact/issues/16) | [product.md](product.md) |
+| **Product** definition and principles | [product.md](product.md) + [**#1** doctrine](https://github.com/sovereignsquad/impact/issues/1) | — |
+| **Phase ladder** 0–4 | [**#16**](https://github.com/sovereignsquad/impact/issues/16) | [product.md](product.md) |
 | **MLP programme** (M1–M6, phases, constraints, board hints) | [mlp.md](mlp.md) | [Project #2](https://github.com/users/moldovancsaba/projects/2) for execution **Status** |
 | **MLP CTO assessment** (delivered vs blocked, next tasks) | [mlp-status-cto.md](mlp-status-cto.md) | Supplements [mlp.md](mlp.md); **2026-04-03** — dashboard **in repo**; activation = **ops** |
-| **Next delivery tranche** (dashboard D1–D5, macOS M1–M4) | [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** code in repo; [board closure](mlp-next-delivery-tranche.md#board-closure-dashboard); **#63–#66** macOS |
+| **Next delivery tranche** (dashboard D1–D5, macOS M1–M4) | [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | **[#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)** code in repo; [board closure](mlp-next-delivery-tranche.md#board-closure-dashboard); **#63–#66** macOS |
 | **Field `confidence`** | [confidence-rules.md](confidence-rules.md) + `packages/schemas` | — |
 | **`status` / `presence` / provenance** (profile JSON) | [schema-semantics-v0.3.md](schema-semantics-v0.3.md) | — |
 | **Submission HTTP** to a server | [submission-contract.md](submission-contract.md) | — |

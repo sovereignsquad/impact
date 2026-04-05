@@ -15,12 +15,12 @@ Without B7:
 ## Based On
 
 - Sprint B — B7 (Todo until release path is verified end-to-end)
-- [docs/install-macos.md](https://github.com/moldovancsaba/impact/blob/main/docs/install-macos.md) (seed doc — extend with release checklist)
-- [docs/support-matrix.md](https://github.com/moldovancsaba/impact/blob/main/docs/support-matrix.md)
-- [README.md](https://github.com/moldovancsaba/impact/blob/main/README.md)
-- [docs/submission-contract.md](https://github.com/moldovancsaba/impact/blob/main/docs/submission-contract.md)
-- [docs/schema-semantics-v0.3.md](https://github.com/moldovancsaba/impact/blob/main/docs/schema-semantics-v0.3.md)
-- [docs/confidence-rules.md](https://github.com/moldovancsaba/impact/blob/main/docs/confidence-rules.md)
+- [docs/install-macos.md](https://github.com/sovereignsquad/impact/blob/main/docs/install-macos.md) (seed doc — extend with release checklist)
+- [docs/support-matrix.md](https://github.com/sovereignsquad/impact/blob/main/docs/support-matrix.md)
+- [README.md](https://github.com/sovereignsquad/impact/blob/main/README.md)
+- [docs/submission-contract.md](https://github.com/sovereignsquad/impact/blob/main/docs/submission-contract.md)
+- [docs/schema-semantics-v0.3.md](https://github.com/sovereignsquad/impact/blob/main/docs/schema-semantics-v0.3.md)
+- [docs/confidence-rules.md](https://github.com/sovereignsquad/impact/blob/main/docs/confidence-rules.md)
 
 ## Problem
 

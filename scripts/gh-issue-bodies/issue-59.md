@@ -8,7 +8,7 @@
 
 ## Depends on
 
-[#58](https://github.com/moldovancsaba/impact/issues/58) ingest live or parallel design with fixture data.
+[#58](https://github.com/sovereignsquad/impact/issues/58) ingest live or parallel design with fixture data.
 
 ## Dimensions
 

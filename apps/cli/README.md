@@ -28,5 +28,5 @@ Without a TTY, submission is skipped unless all of the above are set. See also [
 
 ## Docs
 
-- Repository: [github.com/moldovancsaba/impact](https://github.com/moldovancsaba/impact)
+- Repository: [github.com/sovereignsquad/impact](https://github.com/sovereignsquad/impact)
 - License: MIT

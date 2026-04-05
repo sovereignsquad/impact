@@ -46,11 +46,11 @@ This card is about **future** release/adoption maturity, not GUI/DMG-first execu
 ## Dependencies / downstream links
 
 Key references:
-- [#27 — macOS-first packaging and release path](https://github.com/moldovancsaba/impact/issues/27)
-- [#34 — public npm install gate](https://github.com/moldovancsaba/impact/issues/34)
-- [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66) — macOS packaging trust, signing, and DMG staging
-- [docs/install-macos.md](https://github.com/moldovancsaba/impact/blob/main/docs/install-macos.md)
-- [docs/release-checklist.md](https://github.com/moldovancsaba/impact/blob/main/docs/release-checklist.md)
+- [#27 — macOS-first packaging and release path](https://github.com/sovereignsquad/impact/issues/27)
+- [#34 — public npm install gate](https://github.com/sovereignsquad/impact/issues/34)
+- [#63](https://github.com/sovereignsquad/impact/issues/63)–[#66](https://github.com/sovereignsquad/impact/issues/66) — macOS packaging trust, signing, and DMG staging
+- [docs/install-macos.md](https://github.com/sovereignsquad/impact/blob/main/docs/install-macos.md)
+- [docs/release-checklist.md](https://github.com/sovereignsquad/impact/blob/main/docs/release-checklist.md)
 
 ## Risks of misunderstanding
 
@@ -64,6 +64,6 @@ If misunderstood, the team may:
 ## Related execution issues
 
 Current execution remains focused on:
-- [#34](https://github.com/moldovancsaba/impact/issues/34) — public install
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62) — live dashboard path
-- [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66) — packaging trust and staged Mac distribution
+- [#34](https://github.com/sovereignsquad/impact/issues/34) — public install
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62) — live dashboard path
+- [#63](https://github.com/sovereignsquad/impact/issues/63)–[#66](https://github.com/sovereignsquad/impact/issues/66) — packaging trust and staged Mac distribution

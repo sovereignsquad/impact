@@ -8,4 +8,4 @@ Roadmap planning only; execution after benchmark foundation phases (**#16**).
 
 ## Based on
 
-[Issue #1](https://github.com/moldovancsaba/impact/issues/1) — Roadmap.
+[Issue #1](https://github.com/sovereignsquad/impact/issues/1) — Roadmap.

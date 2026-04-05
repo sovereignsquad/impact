@@ -6,11 +6,11 @@ This page aligns **public messaging** with **shipped** behaviour. It complements
 
 **Delivered:** a **privacy-first local CLI** that inventories AI-relevant signals, writes **`impact-profile.json`** and **`impact-report.html`**, and supports **optional**, consent-based submission when an endpoint is configured.
 
-**Not delivered:** a **benchmark system**, **community dashboard**, **aggregate crowd statistics**, or **DMG / .app**. **Path C** (`npm install -g @impact/cli`) is **implemented in-repo** but **not publicly live** until [#34](https://github.com/moldovancsaba/impact/issues/34) (publish + smoke evidence). **Path B** (clone → build → global install from repo) remains **verified** today.
+**Not delivered:** a **benchmark system**, **community dashboard**, **aggregate crowd statistics**, or **DMG / .app**. **Path C** (`npm install -g @impact/cli`) is **implemented in-repo** but **not publicly live** until [#34](https://github.com/sovereignsquad/impact/issues/34) (publish + smoke evidence). **Path B** (clone → build → global install from repo) remains **verified** today.
 
 ## Can users see community / crowd stats?
 
-**No.** There is no public stats UI, no aggregation service in this repo, and no ingest pipeline productised yet. Optional submission can send an anonymised payload to **your** configured endpoint only; building **ingest, aggregation, thresholds, and a public dashboard** is **post-MVP** programme work (see [issue #1](https://github.com/moldovancsaba/impact/issues/1) planning comment).
+**No.** There is no public stats UI, no aggregation service in this repo, and no ingest pipeline productised yet. Optional submission can send an anonymised payload to **your** configured endpoint only; building **ingest, aggregation, thresholds, and a public dashboard** is **post-MVP** programme work (see [issue #1](https://github.com/sovereignsquad/impact/issues/1) planning comment).
 
 ## Where do users see *their* machine?
 

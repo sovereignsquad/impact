@@ -22,7 +22,7 @@ directory already on PATH.
 
 Privacy / docs
 --------------
-https://github.com/moldovancsaba/impact
+https://github.com/sovereignsquad/impact
 
 This build is not notarized. If Gatekeeper blocks it, right-click the app →
 Open, or use System Settings → Privacy & Security.

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Apply retitled issues + SSOT bodies + labels. Run from repo root.
-# Requires: gh auth, write access to moldovancsaba/impact
+# Requires: gh auth, write access to sovereignsquad/impact
 set -euo pipefail
-REPO="moldovancsaba/impact"
+REPO="sovereignsquad/impact"
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 BD="$ROOT/scripts/gh-issue-bodies"
 

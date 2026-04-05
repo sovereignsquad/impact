@@ -11,16 +11,16 @@ Sprint B semantic/submission work is **done**. The programme is in **distributio
 | ID | Deliverable |
 | -- | ----------- |
 | **B7.1** | Choose and implement **one** primary install path — **Path B** locked: `npm ci` → `npm run build` → `npm install -g ./apps/cli` → `impact scan` |
-| **B7.2** | [docs/release-checklist.md](https://github.com/moldovancsaba/impact/blob/main/docs/release-checklist.md) |
-| **B7.3** | [docs/smoke-test-macos.md](https://github.com/moldovancsaba/impact/blob/main/docs/smoke-test-macos.md) + handoff evidence on first RC |
+| **B7.2** | [docs/release-checklist.md](https://github.com/sovereignsquad/impact/blob/main/docs/release-checklist.md) |
+| **B7.3** | [docs/smoke-test-macos.md](https://github.com/sovereignsquad/impact/blob/main/docs/smoke-test-macos.md) + handoff evidence on first RC |
 | **B7.4** | README, `install-macos.md`, `current-state.md` aligned — **no contradictory** quick starts |
 | **B7.5** | Board: **#27 → Done** when verified; **#23 closed** as superseded |
 
 ## Based On
 
-- [docs/install-macos.md](https://github.com/moldovancsaba/impact/blob/main/docs/install-macos.md)
-- [docs/release-checklist.md](https://github.com/moldovancsaba/impact/blob/main/docs/release-checklist.md)
-- [docs/smoke-test-macos.md](https://github.com/moldovancsaba/impact/blob/main/docs/smoke-test-macos.md)
+- [docs/install-macos.md](https://github.com/sovereignsquad/impact/blob/main/docs/install-macos.md)
+- [docs/release-checklist.md](https://github.com/sovereignsquad/impact/blob/main/docs/release-checklist.md)
+- [docs/smoke-test-macos.md](https://github.com/sovereignsquad/impact/blob/main/docs/smoke-test-macos.md)
 - `npm run verify:release` (root `package.json`)
 
 ## Problem
@@ -40,8 +40,8 @@ Out of scope: benchmarks, GUI, Windows parity, npmjs.org publish (future subsect
 ## Execution Prompt
 
 1. Merge docs to `main`; run `npm run verify:release` on CI.  
-2. Execute [smoke-test-macos.md](https://github.com/moldovancsaba/impact/blob/main/docs/smoke-test-macos.md); paste evidence in comment.  
-3. First release: follow [release-checklist.md](https://github.com/moldovancsaba/impact/blob/main/docs/release-checklist.md).  
+2. Execute [smoke-test-macos.md](https://github.com/sovereignsquad/impact/blob/main/docs/smoke-test-macos.md); paste evidence in comment.  
+3. First release: follow [release-checklist.md](https://github.com/sovereignsquad/impact/blob/main/docs/release-checklist.md).  
 4. Close **#23** superseded; set **#27** Done.
 
 ## Constraints
@@ -52,7 +52,7 @@ Out of scope: benchmarks, GUI, Windows parity, npmjs.org publish (future subsect
 
 - [x] Canonical Path B documented in README + install-macos only
 - [x] `verify:release` passes in CI (local + workflow on `main`)
-- [x] Smoke test executed; evidence in [docs/smoke-test-macos.md](https://github.com/moldovancsaba/impact/blob/main/docs/smoke-test-macos.md) verification log (2026-04-03)
+- [x] Smoke test executed; evidence in [docs/smoke-test-macos.md](https://github.com/sovereignsquad/impact/blob/main/docs/smoke-test-macos.md) verification log (2026-04-03)
 - [x] #23 closed superseded; #27 Done (after push: set board Status + close on GitHub)
 
 ## Dependencies

@@ -4,11 +4,11 @@
 
 ## Unified Context
 
-Programme: [docs/mlp.md](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md). Builds on M2/M3 narrative; **privacy** must match [privacy-policy.md](https://github.com/moldovancsaba/impact/blob/main/docs/privacy-policy.md) and [privacy-for-users.md](https://github.com/moldovancsaba/impact/blob/main/docs/privacy-for-users.md).
+Programme: [docs/mlp.md](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md). Builds on M2/M3 narrative; **privacy** must match [privacy-policy.md](https://github.com/sovereignsquad/impact/blob/main/docs/privacy-policy.md) and [privacy-for-users.md](https://github.com/sovereignsquad/impact/blob/main/docs/privacy-for-users.md).
 
 ## Based On
 
-- [mlp.md — M4](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md#m4--shareable-result-layer)
+- [mlp.md — M4](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md#m4--shareable-result-layer)
 
 ## Goal
 

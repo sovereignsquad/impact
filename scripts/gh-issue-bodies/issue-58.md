@@ -4,7 +4,7 @@
 
 ## SSOT
 
-[mlp-next-delivery-tranche.md](../../docs/mlp-next-delivery-tranche.md) Phase 2 · [mlp-status-cto.md § Leadership view](../../docs/mlp-status-cto.md#cto-acceptance-leadership-dashboard) · relates **[#48](https://github.com/moldovancsaba/impact/issues/48)** · [submission-contract.md](../../docs/submission-contract.md)
+[mlp-next-delivery-tranche.md](../../docs/mlp-next-delivery-tranche.md) Phase 2 · [mlp-status-cto.md § Leadership view](../../docs/mlp-status-cto.md#cto-acceptance-leadership-dashboard) · relates **[#48](https://github.com/sovereignsquad/impact/issues/48)** · [submission-contract.md](../../docs/submission-contract.md)
 
 ## Activation sprint — dashboard **product-live** (CTO directive)
 
@@ -19,7 +19,7 @@
 5. **Redeploy web**.  
 6. **Seed** enough **real** submissions for meaningful buckets **or** document **threshold / volume** status honestly (no production privacy gaming).  
 7. **Smoke** **`/api/stats/overview`**, **`/full`**, **`/hardware`**, **`/tools`**, **`/models`**, and **`/data.html`** (placeholder vs live vs suppression).  
-8. Move **[#59](https://github.com/moldovancsaba/impact/issues/59)–[#62](https://github.com/moldovancsaba/impact/issues/62)** toward **Review / Done** per [closure model](../../docs/mlp-next-delivery-tranche.md#board-closure-dashboard) — **#62** last for public verification.
+8. Move **[#59](https://github.com/sovereignsquad/impact/issues/59)–[#62](https://github.com/sovereignsquad/impact/issues/62)** toward **Review / Done** per [closure model](../../docs/mlp-next-delivery-tranche.md#board-closure-dashboard) — **#62** last for public verification.
 
 **Report-back (comment on this issue or linked doc):**
 
@@ -30,7 +30,7 @@
 - **Volume** vs **`IMPACT_STATS_MIN_BUCKET_COUNT`**  
 - Which issues are **Review** / **Done**-ready  
 
-**Parallel:** **[#34](https://github.com/moldovancsaba/impact/issues/34)** (npm) can advance on maintainer capacity — see that issue for the **six-step** publish path.
+**Parallel:** **[#34](https://github.com/sovereignsquad/impact/issues/34)** (npm) can advance on maintainer capacity — see that issue for the **six-step** publish path.
 
 ## Start when (board)
 

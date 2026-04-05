@@ -45,9 +45,9 @@ This is a future ideabank item, not current execution.
 
 ## Dependencies / downstream links
 
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62) — real ingest and aggregate dashboard path
-- [#48](https://github.com/moldovancsaba/impact/issues/48) — MLP M5 community visibility MVP
-- [Issue #1](https://github.com/moldovancsaba/impact/issues/1) — Ideabank / programme doctrine
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62) — real ingest and aggregate dashboard path
+- [#48](https://github.com/sovereignsquad/impact/issues/48) — MLP M5 community visibility MVP
+- [Issue #1](https://github.com/sovereignsquad/impact/issues/1) — Ideabank / programme doctrine
 
 ## Risks of misunderstanding
 
@@ -61,6 +61,6 @@ If misunderstood, the team may:
 ## Related execution issues
 
 Current execution remains focused on:
-- [#34](https://github.com/moldovancsaba/impact/issues/34)
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
-- [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)
+- [#34](https://github.com/sovereignsquad/impact/issues/34)
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)
+- [#63](https://github.com/sovereignsquad/impact/issues/63)–[#66](https://github.com/sovereignsquad/impact/issues/66)

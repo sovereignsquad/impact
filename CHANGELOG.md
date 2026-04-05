@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Org migration directive (CTO):** [mlp-cto-directive-org-migration-sovereignsquad.md](docs/mlp-cto-directive-org-migration-sovereignsquad.md) — `sovereignsquad/impact` transfer plan, **new org GitHub Project** as future workflow SSOT (copy structure, rebuild items), freeze/reconnect/archive phases, post-cutover checklist for `apply-status.sh` / `apply-updates.sh` / docs links.
 
+- **Repository ownership:** default remote **`sovereignsquad/impact`**; in-repo **`github.com/sovereignsquad/impact`** links updated. Personal **Project #2** URLs retained as archive until org project replaces workflow SSOT (`apply-status.sh` IDs still target old project).
+
 - **MLP dashboard summary path (CTO):** [mlp-cto-directive-mlp-summary-payload.md](docs/mlp-cto-directive-mlp-summary-payload.md) — **`impact.summary.v0.1`** in **@impact/schemas**, **`buildDashboardSummary`** in **@impact/core**, local artifact **`impact-dashboard-summary.json`**, submission envelope **`impact.submission.v0.1`** (raw profile + summary); ingest stores **`dashboard_summary_json`**; stats rollup **prefers summary** when present ([submission-contract.md](docs/submission-contract.md)).
 
 - **`impact scan`:** non-interactive submission when stdin is not a TTY — set **`IMPACT_SUBMIT_URL`**, **`IMPACT_SUBMIT_NON_INTERACTIVE=1`**, and **`--yes-submit`** (see [apps/cli/README.md](apps/cli/README.md)); [scripts/local-e2e-submit.sh](scripts/local-e2e-submit.sh) runs ingest + real local scan + POST.
@@ -29,9 +31,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Docs:** [current-state.md](docs/current-state.md) + [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) § board movement — **#58**/**#34** parallel **In Progress**, activation vs npm; `apply-status` template documented.
 
-- **`apply-status.sh`:** **[#58](https://github.com/moldovancsaba/impact/issues/58)** → **In Progress** (activation sprint); **#59–#62** remain **Todo**.
+- **`apply-status.sh`:** **[#58](https://github.com/sovereignsquad/impact/issues/58)** → **In Progress** (activation sprint); **#59–#62** remain **Todo**.
 
-- **`apply-updates.sh`:** includes **[#34](https://github.com/moldovancsaba/impact/issues/34)** (`issue-34.md`) — npm publish gate; P1 label loop updated.
+- **`apply-updates.sh`:** includes **[#34](https://github.com/sovereignsquad/impact/issues/34)** (`issue-34.md`) — npm publish gate; P1 label loop updated.
 
 - **Deploy smoke:** [web-deploy-smoke.md](docs/web-deploy-smoke.md) — § **Live stats** (`VITE_STATS_API_BASE`, ingest curl checks, `/data.html`); [ingest-server.md](docs/ingest-server.md) — § **Hosted smoke** + production **`better-sqlite3`** note. [mlp-execution.md](docs/mlp-execution.md) — recommended order + developer message aligned with **activation** vs repo-complete.
 
@@ -56,7 +58,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Planned
 
 - **MLP track** after **#34** — [mlp.md](docs/mlp.md) (M1–M6); execution on [Project #2](https://github.com/users/moldovancsaba/projects/2).
-- Post-MVP **release hardening** and long-horizon programme (see board + [issue #1](https://github.com/moldovancsaba/impact/issues/1)).
+- Post-MVP **release hardening** and long-horizon programme (see board + [issue #1](https://github.com/sovereignsquad/impact/issues/1)).
 
 ### Changed
 
@@ -93,7 +95,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Next-delivery tranche accepted (CTO, 2026-04-07):** [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — CTO acceptance block, **verbatim developer directive**, **board/WIP discipline** (#58 In Progress first after #34; then #59…; **#63–#66** secondary + Backlog; **DMG last**), expanded constraints (no accounts layer). [mlp-status-cto.md](docs/mlp-status-cto.md), [project-management.md](docs/project-management.md) §6, `issue-58.md`, `apply-status.sh` comment aligned.
 
-- **Next delivery tranche (CTO — dashboard + macOS):** [docs/mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — Phase 1 **#34**; Phase 2 D1–D5 **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)**; Phase 3 macOS M1–M4 **[#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)**. Issue bodies `scripts/gh-issue-bodies/issue-58.md` … `issue-66.md`; [`apply-status.sh`](scripts/gh-issue-bodies/apply-status.sh) (**#58–#62** Todo, **#63–#66** Backlog). Wired from [mlp-status-cto.md](docs/mlp-status-cto.md), [mlp-execution.md](docs/mlp-execution.md), [current-state.md](docs/current-state.md), [mlp.md](docs/mlp.md), [ssot-map.md](docs/ssot-map.md), [project-management.md](docs/project-management.md).
+- **Next delivery tranche (CTO — dashboard + macOS):** [docs/mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md) — Phase 1 **#34**; Phase 2 D1–D5 **[#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)**; Phase 3 macOS M1–M4 **[#63](https://github.com/sovereignsquad/impact/issues/63)–[#66](https://github.com/sovereignsquad/impact/issues/66)**. Issue bodies `scripts/gh-issue-bodies/issue-58.md` … `issue-66.md`; [`apply-status.sh`](scripts/gh-issue-bodies/apply-status.sh) (**#58–#62** Todo, **#63–#66** Backlog). Wired from [mlp-status-cto.md](docs/mlp-status-cto.md), [mlp-execution.md](docs/mlp-execution.md), [current-state.md](docs/current-state.md), [mlp.md](docs/mlp.md), [ssot-map.md](docs/ssot-map.md), [project-management.md](docs/project-management.md).
 
 - **Tranche freeze (CTO):** [mlp-status-cto.md](docs/mlp-status-cto.md) — explicit **developer directive**: no further repo/doc reshaping; wait for deploy/smoke/**#34**; resume **#44** CTAs then **#44–#46** evidence; overall status line (green MVP / green web shell / amber npm).
 
@@ -103,7 +105,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **`apps/web` multi-page MLP shell:** `/`, `/install.html`, `/use.html`, `/submit.html`, `/data.html` (hardware/tools/LLM **IA** + honest placeholders), `/profile.html` (explorer); shared nav + **#34** install truth (Path B primary until npm live). Vite [`rollupOptions.input`](apps/web/vite.config.ts); [web.md](docs/web.md) + [apps/web/README.md](apps/web/README.md) updated.
 
-- **MLP public web / historical data (board + docs):** GitHub issues **[#50](https://github.com/moldovancsaba/impact/issues/50)–[#57](https://github.com/moldovancsaba/impact/issues/57)** (H1–H8) created, added to [Project #2](https://github.com/users/moldovancsaba/projects/2); [`apply-status.sh`](scripts/gh-issue-bodies/apply-status.sh) sets **Todo** for H1/H5–H8 and **Backlog** for H2–H4; bodies in [`scripts/gh-issue-bodies/issue-50.md`](scripts/gh-issue-bodies/issue-50.md) … `issue-57.md`; [`apply-updates.sh`](scripts/gh-issue-bodies/apply-updates.sh) extended. [mlp-status-cto.md](docs/mlp-status-cto.md) and [mlp-execution.md](docs/mlp-execution.md) updated for the slice; [project-management.md](docs/project-management.md) §6 snapshot.
+- **MLP public web / historical data (board + docs):** GitHub issues **[#50](https://github.com/sovereignsquad/impact/issues/50)–[#57](https://github.com/sovereignsquad/impact/issues/57)** (H1–H8) created, added to [Project #2](https://github.com/users/moldovancsaba/projects/2); [`apply-status.sh`](scripts/gh-issue-bodies/apply-status.sh) sets **Todo** for H1/H5–H8 and **Backlog** for H2–H4; bodies in [`scripts/gh-issue-bodies/issue-50.md`](scripts/gh-issue-bodies/issue-50.md) … `issue-57.md`; [`apply-updates.sh`](scripts/gh-issue-bodies/apply-updates.sh) extended. [mlp-status-cto.md](docs/mlp-status-cto.md) and [mlp-execution.md](docs/mlp-execution.md) updated for the slice; [project-management.md](docs/project-management.md) §6 snapshot.
 
 - **MLP CTO assessment doc:** [docs/mlp-status-cto.md](docs/mlp-status-cto.md) — delivered vs blocked, architectural notes, immediate and post-#34 next tasks; linked from [mlp.md](docs/mlp.md), [mlp-execution.md](docs/mlp-execution.md), [current-state.md](docs/current-state.md), [ssot-map.md](docs/ssot-map.md), [docs/README.md](docs/README.md).
 
@@ -113,7 +115,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **MLP execution plan:** [docs/mlp-execution.md](docs/mlp-execution.md) — CTO task breakdown (Gate #34, M1–M6, web W1–W4), linked from [mlp.md](docs/mlp.md).
 - **`apps/web` (`@impact/web`):** Vite public shell — hero, install (Path B/C honest), after-scan explainer, **in-browser** `impact-profile.json` via `ImpactProfileSchema.safeParse`, FAQ, community-stats placeholder; [docs/web.md](docs/web.md). Root `npm run build` + `dev:web`; [current-state.md](docs/current-state.md) CTO snapshot + shipped stack row.
-- **MLP execution:** GitHub **[#44](https://github.com/moldovancsaba/impact/issues/44)–[#49](https://github.com/moldovancsaba/impact/issues/49)** on [Project #2](https://github.com/users/moldovancsaba/projects/2) (M1–M3 **Todo**, M4–M6 **Backlog**); bodies `scripts/gh-issue-bodies/issue-44.md` … `issue-49.md`; [`apply-status.sh`](scripts/gh-issue-bodies/apply-status.sh) + [`apply-updates.sh`](scripts/gh-issue-bodies/apply-updates.sh) updated. [mlp.md](docs/mlp.md) — CTO acceptance + board table with issue links.
+- **MLP execution:** GitHub **[#44](https://github.com/sovereignsquad/impact/issues/44)–[#49](https://github.com/sovereignsquad/impact/issues/49)** on [Project #2](https://github.com/users/moldovancsaba/projects/2) (M1–M3 **Todo**, M4–M6 **Backlog**); bodies `scripts/gh-issue-bodies/issue-44.md` … `issue-49.md`; [`apply-status.sh`](scripts/gh-issue-bodies/apply-status.sh) + [`apply-updates.sh`](scripts/gh-issue-bodies/apply-updates.sh) updated. [mlp.md](docs/mlp.md) — CTO acceptance + board table with issue links.
 - **npm publish (#34):** all `@impact/*` workspaces at **0.3.0** with `files: ["dist"]`, `publishConfig.access: public`, pinned internal deps, `prepublishOnly` build; [docs/npm-publish.md](docs/npm-publish.md); `scripts/publish-npm-packages.sh`; root `npm run publish:npm` / `publish:npm:dry-run`; [smoke-test-macos.md](docs/smoke-test-macos.md) **Path C**; README / install-macos **registry-first** when live; `apps/cli/README.md`.
 
 ---

@@ -56,9 +56,9 @@ This is a future-shaping roadmap card, not an active delivery ticket.
 ## Dependencies / downstream links
 
 Key references:
-- [#16 — Phase ladder 0–4](https://github.com/moldovancsaba/impact/issues/16)
-- [docs/product.md](https://github.com/moldovancsaba/impact/blob/main/docs/product.md)
-- [docs/mlp.md](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md)
+- [#16 — Phase ladder 0–4](https://github.com/sovereignsquad/impact/issues/16)
+- [docs/product.md](https://github.com/sovereignsquad/impact/blob/main/docs/product.md)
+- [docs/mlp.md](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md)
 
 Likely downstream execution later:
 - atomic determinism and exactness layers
@@ -78,6 +78,6 @@ If misunderstood, the team may:
 ## Related execution issues
 
 Current execution remains elsewhere:
-- [#34](https://github.com/moldovancsaba/impact/issues/34) — public npm install gate
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62) — hosted ingest and live dashboard path
-- [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66) — macOS distribution trust and staged packaging
+- [#34](https://github.com/sovereignsquad/impact/issues/34) — public npm install gate
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62) — hosted ingest and live dashboard path
+- [#63](https://github.com/sovereignsquad/impact/issues/63)–[#66](https://github.com/sovereignsquad/impact/issues/66) — macOS distribution trust and staged packaging

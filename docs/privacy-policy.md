@@ -60,4 +60,4 @@ This policy will evolve with the project. Material changes should be reflected i
 
 ## Contact
 
-Use [GitHub Issues](https://github.com/moldovancsaba/impact/issues) for questions about this policy or the scanner’s behaviour.
+Use [GitHub Issues](https://github.com/sovereignsquad/impact/issues) for questions about this policy or the scanner’s behaviour.

@@ -1,6 +1,6 @@
 ## Developer execution pass — 2026-04-05
 
-**SSOT in repo:** [`docs/activation-execution-status.md`](https://github.com/moldovancsaba/impact/blob/main/docs/activation-execution-status.md).
+**SSOT in repo:** [`docs/activation-execution-status.md`](https://github.com/sovereignsquad/impact/blob/main/docs/activation-execution-status.md).
 
 ### #34 (this issue) — blocked on maintainer npm auth
 

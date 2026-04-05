@@ -26,7 +26,7 @@ CTO directive (2026-04): the website becomes the public home for install, use, s
 ## Dependencies
 
 - **#34** — public install weakens “download” story until closed; IA can still land.
-- Ingest MVP / [#48](https://github.com/moldovancsaba/impact/issues/48) class work for **real** numbers later.
+- Ingest MVP / [#48](https://github.com/sovereignsquad/impact/issues/48) class work for **real** numbers later.
 
 ## Board
 

@@ -14,7 +14,7 @@
 
 ### Specifically accepted
 
-- **`npm whoami` / `npm view`** confirmation that **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **still** blocked by **real npm auth / publish** (not repo gaps).
+- **`npm whoami` / `npm view`** confirmation that **[#34](https://github.com/sovereignsquad/impact/issues/34)** is **still** blocked by **real npm auth / publish** (not repo gaps).
 - Successful **`DRY_RUN=1 npm run publish:npm:dry-run`**.
 - **Docker ingest permission fix** in [`Dockerfile.ingest`](../Dockerfile.ingest) (`USER node` + writable **`/app/data`** / **`/data`**).
 - Successful **local** ingest image build; **restart persistence** proof (SQLite **`submission_count`** survives `docker restart`).
@@ -30,7 +30,7 @@ These are **maintainer / infrastructure** blockers, **not** repo-design blockers
 - **Hosted ingest** deployment (HTTPS origin)
 - **`IMPACT_INGEST_UPSTREAM`** on Vercel + **web redeploy**
 - **Submission volume** above privacy threshold
-- **Live public `/data.html`** aggregate proof before closing **[#62](https://github.com/moldovancsaba/impact/issues/62)**
+- **Live public `/data.html`** aggregate proof before closing **[#62](https://github.com/sovereignsquad/impact/issues/62)**
 
 ### Maintainer order (do these next, in sequence)
 
@@ -40,7 +40,7 @@ These are **maintainer / infrastructure** blockers, **not** repo-design blockers
 4. **Redeploy** the web app on Vercel  
 5. **Submit** enough profiles for thresholds  
 6. **Verify** real aggregate tables on **`/data.html`**  
-7. Close **[#34](https://github.com/moldovancsaba/impact/issues/34)** and **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** in **documented closure order** (**#62** last)
+7. Close **[#34](https://github.com/sovereignsquad/impact/issues/34)** and **[#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)** in **documented closure order** (**#62** last)
 
 ### Developer next tasks (after maintainer inputs land)
 
@@ -76,7 +76,7 @@ These are **maintainer / infrastructure** blockers, **not** repo-design blockers
 
 Use **[mlp-activation-path.md](mlp-activation-path.md)** as the operational source of truth.
 
-**First — close [#34](https://github.com/moldovancsaba/impact/issues/34)**
+**First — close [#34](https://github.com/sovereignsquad/impact/issues/34)**
 
 - `npm login`
 - `npm run publish:npm`
@@ -96,7 +96,7 @@ Use **[mlp-activation-path.md](mlp-activation-path.md)** as the operational sour
 - **Seed** enough submissions for thresholds ([mlp-activation-path.md](mlp-activation-path.md) §4)
 - Verify **`/api/stats/*`** (public same-origin path)
 - Verify **`/data.html`** with **real** aggregates
-- Close **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** in the **documented order**, with **[#62](https://github.com/moldovancsaba/impact/issues/62) last**
+- Close **[#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)** in the **documented order**, with **[#62](https://github.com/sovereignsquad/impact/issues/62) last**
 
 ### Report back with proof, not summary
 

@@ -23,4 +23,4 @@ Benchmark features, GUI, platform expansion, DMG.
 
 ## Based on
 
-[Issue #1](https://github.com/moldovancsaba/impact/issues/1) post-MVP directive; CTO “Post-MVP Release Hardening”.
+[Issue #1](https://github.com/sovereignsquad/impact/issues/1) post-MVP directive; CTO “Post-MVP Release Hardening”.

@@ -4,11 +4,11 @@
 
 ## Unified Context
 
-Programme: [docs/mlp.md](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md). Run after **M1** and registry install are proven in the wild.
+Programme: [docs/mlp.md](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md). Run after **M1** and registry install are proven in the wild.
 
 ## Based On
 
-- [mlp.md — M6](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md#m6--install-polish-after-npm)
+- [mlp.md — M6](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md#m6--install-polish-after-npm)
 
 ## Goal
 

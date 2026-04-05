@@ -8,7 +8,7 @@
 
 ## Constraints
 
-[#63](https://github.com/moldovancsaba/impact/issues/63)–[#65](https://github.com/moldovancsaba/impact/issues/65) satisfied in repo (signing **ad-hoc** per #65; production notarization still open).
+[#63](https://github.com/sovereignsquad/impact/issues/63)–[#65](https://github.com/sovereignsquad/impact/issues/65) satisfied in repo (signing **ad-hoc** per #65; production notarization still open).
 
 ## Deliverables
 

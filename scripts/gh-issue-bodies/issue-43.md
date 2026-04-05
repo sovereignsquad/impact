@@ -39,10 +39,10 @@ This is explicitly **ideabank**, not current roadmap execution.
 
 ## Dependencies / downstream links
 
-- [#34](https://github.com/moldovancsaba/impact/issues/34) — public install truth
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62) — real dashboard path
-- [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66) — packaging trust and macOS distribution
-- [Issue #1](https://github.com/moldovancsaba/impact/issues/1) — Ideabank / programme doctrine
+- [#34](https://github.com/sovereignsquad/impact/issues/34) — public install truth
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62) — real dashboard path
+- [#63](https://github.com/sovereignsquad/impact/issues/63)–[#66](https://github.com/sovereignsquad/impact/issues/66) — packaging trust and macOS distribution
+- [Issue #1](https://github.com/sovereignsquad/impact/issues/1) — Ideabank / programme doctrine
 
 ## Risks of misunderstanding
 
@@ -51,6 +51,6 @@ The main risk is pulling future convenience-surface ambition too far forward and
 ## Related execution issues
 
 Current execution remains focused on:
-- [#34](https://github.com/moldovancsaba/impact/issues/34)
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
-- [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)
+- [#34](https://github.com/sovereignsquad/impact/issues/34)
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)
+- [#63](https://github.com/sovereignsquad/impact/issues/63)–[#66](https://github.com/sovereignsquad/impact/issues/66)

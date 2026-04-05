@@ -8,4 +8,4 @@ Feasibility, size, signing gaps, CI story; recommendation doc.
 
 ## Based on
 
-[Issue #1](https://github.com/moldovancsaba/impact/issues/1) — Backlog; informs distribution decision with **#34**.
+[Issue #1](https://github.com/sovereignsquad/impact/issues/1) — Backlog; informs distribution decision with **#34**.

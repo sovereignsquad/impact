@@ -15,12 +15,12 @@ Failure modes without implementation:
 ## Based On
 
 - Sprint B — B5
-- [docs/submission-contract.md](https://github.com/moldovancsaba/impact/blob/main/docs/submission-contract.md)
-- [docs/privacy-policy.md](https://github.com/moldovancsaba/impact/blob/main/docs/privacy-policy.md)
+- [docs/submission-contract.md](https://github.com/sovereignsquad/impact/blob/main/docs/submission-contract.md)
+- [docs/privacy-policy.md](https://github.com/sovereignsquad/impact/blob/main/docs/privacy-policy.md)
 - `packages/submission` — `submitProfile`, receipt writers
-- [docs/schema-semantics-v0.3.md](https://github.com/moldovancsaba/impact/blob/main/docs/schema-semantics-v0.3.md)
-- [docs/confidence-rules.md](https://github.com/moldovancsaba/impact/blob/main/docs/confidence-rules.md)
-- [docs/support-matrix.md](https://github.com/moldovancsaba/impact/blob/main/docs/support-matrix.md)
+- [docs/schema-semantics-v0.3.md](https://github.com/sovereignsquad/impact/blob/main/docs/schema-semantics-v0.3.md)
+- [docs/confidence-rules.md](https://github.com/sovereignsquad/impact/blob/main/docs/confidence-rules.md)
+- [docs/support-matrix.md](https://github.com/sovereignsquad/impact/blob/main/docs/support-matrix.md)
 
 ## Problem
 

@@ -12,4 +12,4 @@ Execute DMG work here — **Ideabank** holds drag-drop until strategy exists.
 
 ## Based on
 
-[Issue #1](https://github.com/moldovancsaba/impact/issues/1) — Roadmap.
+[Issue #1](https://github.com/sovereignsquad/impact/issues/1) — Roadmap.

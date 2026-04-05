@@ -22,7 +22,7 @@ npm run dev:ingest
 
 ## Relation to the dashboard tranche
 
-**D1 / [#58](https://github.com/moldovancsaba/impact/issues/58)** — ingest, storage, dedupe, validation — is in this service.
+**D1 / [#58](https://github.com/sovereignsquad/impact/issues/58)** — ingest, storage, dedupe, validation — is in this service.
 
 **Read API & aggregates** — `GET` JSON under `/api/stats/*` reads validated profiles from SQLite, applies **privacy thresholds** (minimum bucket counts), and returns slice or full payloads. The static site can opt in via **`VITE_STATS_API_BASE`** when building [apps/web](../apps/web/). See [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md).
 

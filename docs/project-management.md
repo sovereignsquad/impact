@@ -26,8 +26,8 @@ The **only** authoritative sources for programme direction are:
 
 | Source | Role |
 | ------ | ---- |
-| **[Issue #1](https://github.com/moldovancsaba/impact/issues/1)** | Doctrine / north-star operating intent |
-| **[Issue #16](https://github.com/moldovancsaba/impact/issues/16)** | Phase ladder 0–4 / roadmap spine |
+| **[Issue #1](https://github.com/sovereignsquad/impact/issues/1)** | Doctrine / north-star operating intent |
+| **[Issue #16](https://github.com/sovereignsquad/impact/issues/16)** | Phase ladder 0–4 / roadmap spine |
 | **[docs/product.md](product.md)** | Narrative product and programme framing |
 
 **Ruling:** Do **not** create extra “vision” issues that restate doctrine. **Do** maintain **one** **board-visible navigation artifact** — preferably the GitHub Project **short description** plus **README** tab (see §2) — that **links** to the three SSOTs above. A single lightweight **Roadmap** issue with links only is the fallback if the project fields are insufficient. That artifact is **navigation only**, not a second strategy document.
@@ -108,8 +108,8 @@ These are **not** executable sprint tickets; they orient stakeholders.
 **Snapshot (post-MVP distribution — aligns with `main` + board template):**
 
 - **In Progress (NOW):** **#34** — publish `@impact/cli` to npm (Path C); stays here until maintainer publish + smoke evidence + issue closed.
-- **Todo (NEXT):** **MLP spine** — [#44](https://github.com/moldovancsaba/impact/issues/44)–[#46](https://github.com/moldovancsaba/impact/issues/46). **Public web pages** — [#50](https://github.com/moldovancsaba/impact/issues/50), [#54](https://github.com/moldovancsaba/impact/issues/54)–[#57](https://github.com/moldovancsaba/impact/issues/57) (shipped in repo; close when evidence OK). **Dashboard (after #34)** — [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62): keep **low WIP** — **#58** In Progress first, then **#59** when D1 is underway, etc. ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § Board movement). See [mlp-status-cto.md](mlp-status-cto.md).
-- **Backlog (SOONER):** **#4**, **#5**; **#13** when ingest is not the active slice; **#35–#37**; **#38** (binary spike — fold into **#63**); **MLP** [#47](https://github.com/moldovancsaba/impact/issues/47)–[#49](https://github.com/moldovancsaba/impact/issues/49); **#51**–**#53** (legacy aggregate rows; execution detail in **#58–#62**); **macOS packaging M1–M4** [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66) (after dashboard trajectory).
+- **Todo (NEXT):** **MLP spine** — [#44](https://github.com/sovereignsquad/impact/issues/44)–[#46](https://github.com/sovereignsquad/impact/issues/46). **Public web pages** — [#50](https://github.com/sovereignsquad/impact/issues/50), [#54](https://github.com/sovereignsquad/impact/issues/54)–[#57](https://github.com/sovereignsquad/impact/issues/57) (shipped in repo; close when evidence OK). **Dashboard (after #34)** — [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62): keep **low WIP** — **#58** In Progress first, then **#59** when D1 is underway, etc. ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) § Board movement). See [mlp-status-cto.md](mlp-status-cto.md).
+- **Backlog (SOONER):** **#4**, **#5**; **#13** when ingest is not the active slice; **#35–#37**; **#38** (binary spike — fold into **#63**); **MLP** [#47](https://github.com/sovereignsquad/impact/issues/47)–[#49](https://github.com/sovereignsquad/impact/issues/49); **#51**–**#53** (legacy aggregate rows; execution detail in **#58–#62**); **macOS packaging M1–M4** [#63](https://github.com/sovereignsquad/impact/issues/63)–[#66](https://github.com/sovereignsquad/impact/issues/66) (after dashboard trajectory).
 - **Done:** **#27** — Path B packaging / macOS smoke **complete**; do **not** keep **#27** in Todo/Backlog for “packaging completion”.
 - **Roadmap (LATER):** **#16**, theme cards **#29–#32**, and long-horizon programme issues **#39–#41**.
 - **#1** may stay **In Progress** as a **living doctrine** anchor (curated, not a one-shot ticket); **#3** similarly for architecture SSOT — or move to **Roadmap** if you prefer “stable reference, not active sprint”.
@@ -153,7 +153,7 @@ Issues are the **system of record** for **implementable** intent. Use a rich str
 
 ```bash
 gh project item-add 2 --owner moldovancsaba \
-  --url https://github.com/moldovancsaba/impact/issues/<number>
+  --url https://github.com/sovereignsquad/impact/issues/<number>
 ```
 
 ```bash

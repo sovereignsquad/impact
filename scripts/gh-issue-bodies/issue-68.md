@@ -38,9 +38,9 @@ This is a future ideabank item, not permission to fabricate public momentum.
 
 ## Dependencies / downstream links
 
-- [#57](https://github.com/moldovancsaba/impact/issues/57) — homepage/public web framing
-- [#62](https://github.com/moldovancsaba/impact/issues/62) — live aggregate web wiring
-- [Issue #1](https://github.com/moldovancsaba/impact/issues/1)
+- [#57](https://github.com/sovereignsquad/impact/issues/57) — homepage/public web framing
+- [#62](https://github.com/sovereignsquad/impact/issues/62) — live aggregate web wiring
+- [Issue #1](https://github.com/sovereignsquad/impact/issues/1)
 
 ## Risks of misunderstanding
 
@@ -54,5 +54,5 @@ If misunderstood, the team may:
 ## Related execution issues
 
 Current execution remains focused on:
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
-- [#34](https://github.com/moldovancsaba/impact/issues/34)
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)
+- [#34](https://github.com/sovereignsquad/impact/issues/34)

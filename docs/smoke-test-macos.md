@@ -44,7 +44,7 @@ Same **acceptance checks** as Path B below. Teardown: `npm uninstall -g @impact/
 **clone → install → build → global CLI → scan**
 
 ```bash
-git clone https://github.com/moldovancsaba/impact.git
+git clone https://github.com/sovereignsquad/impact.git
 cd impact
 npm ci
 npm run build
@@ -104,6 +104,6 @@ rm -rf ~/impact-smoke-out
 
 | Date | Source | `node -v` | `impact --version` | `schema_version` (from profile) | Result |
 | ---- | ------ | --------- | ------------------ | --------------------------------- | ------ |
-| 2026-04-03 | Fresh `git clone` of `https://github.com/moldovancsaba/impact` @ `55f01a6` (`main`) | v25.8.2 | `0.1.0` | `impact.v0.3` | PASS — pre-release CLI semver |
+| 2026-04-03 | Fresh `git clone` of `https://github.com/sovereignsquad/impact` @ `55f01a6` (`main`) | v25.8.2 | `0.1.0` | `impact.v0.3` | PASS — pre-release CLI semver |
 | 2026-04-03 | Fresh `git clone` at **tag `v0.3.0`** | v25.8.2 | `0.3.0` | `impact.v0.3` | PASS — Path B; `impact --version` from `package.json`; `--no-submit` |
 | *(add row)* | **`npm install -g @impact/cli`** (Path C) | | `0.3.0` | `impact.v0.3` | *(after first npm publish)* |

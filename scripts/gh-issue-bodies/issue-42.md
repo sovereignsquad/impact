@@ -33,9 +33,9 @@ This is explicitly **ideabank**, not current roadmap execution.
 
 ## Dependencies / downstream links
 
-- [#34](https://github.com/moldovancsaba/impact/issues/34) — public npm install gate
-- [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66) — macOS packaging trust, artifact flow, signing, DMG staging
-- [Issue #1](https://github.com/moldovancsaba/impact/issues/1) — Ideabank / programme doctrine
+- [#34](https://github.com/sovereignsquad/impact/issues/34) — public npm install gate
+- [#63](https://github.com/sovereignsquad/impact/issues/63)–[#66](https://github.com/sovereignsquad/impact/issues/66) — macOS packaging trust, artifact flow, signing, DMG staging
+- [Issue #1](https://github.com/sovereignsquad/impact/issues/1) — Ideabank / programme doctrine
 
 ## Risks of misunderstanding
 
@@ -44,6 +44,6 @@ The main risk is treating a `.dmg` as the next required milestone when the produ
 ## Related execution issues
 
 Current execution remains elsewhere:
-- [#34](https://github.com/moldovancsaba/impact/issues/34)
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
-- [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)
+- [#34](https://github.com/sovereignsquad/impact/issues/34)
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)
+- [#63](https://github.com/sovereignsquad/impact/issues/63)–[#66](https://github.com/sovereignsquad/impact/issues/66)

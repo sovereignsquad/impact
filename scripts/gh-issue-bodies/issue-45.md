@@ -4,14 +4,14 @@
 
 ## Unified Context
 
-Programme: [docs/mlp.md](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md). **Constraint:** do **not** land the full M2 slice until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is closed if the work depends on Path C UX testing; **HTML/report work** may start in parallel where it does not depend on registry.
+Programme: [docs/mlp.md](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md). **Constraint:** do **not** land the full M2 slice until **[#34](https://github.com/sovereignsquad/impact/issues/34)** is closed if the work depends on Path C UX testing; **HTML/report work** may start in parallel where it does not depend on registry.
 
 Implementation lives in `@impact/reporting` and fixtures/tests as today.
 
 ## Based On
 
-- [mlp.md — M2](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md#m2--report-delight-and-first-run-payoff)
-- [issue #12](https://github.com/moldovancsaba/impact/issues/12) / `@impact/reporting`
+- [mlp.md — M2](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md#m2--report-delight-and-first-run-payoff)
+- [issue #12](https://github.com/sovereignsquad/impact/issues/12) / `@impact/reporting`
 
 ## Problem
 
@@ -26,11 +26,11 @@ The report may be **correct** but not **rewarding**; users must dig through tabl
 ## Scope
 
 - HTML template + CSS hierarchy in `packages/reporting`.
-- Extend [html.test.ts](https://github.com/moldovancsaba/impact/blob/main/packages/reporting/src/html.test.ts) (or equivalent) for new copy/structure.
+- Extend [html.test.ts](https://github.com/sovereignsquad/impact/blob/main/packages/reporting/src/html.test.ts) (or equivalent) for new copy/structure.
 
 ## Constraints
 
-- No **opaque scores** or benchmark claims; conservative copy only ([mlp.md](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md)).
+- No **opaque scores** or benchmark claims; conservative copy only ([mlp.md](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md)).
 
 ## Acceptance Checks
 

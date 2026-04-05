@@ -4,13 +4,13 @@
 
 ## Unified Context
 
-Canonical programme: [docs/mlp.md](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md). **Do not** start heavy M2/M3 implementation until **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **operationally closed** (publish + smoke evidence). M1 completes the **adoption** layer around the npm path.
+Canonical programme: [docs/mlp.md](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md). **Do not** start heavy M2/M3 implementation until **[#34](https://github.com/sovereignsquad/impact/issues/34)** is **operationally closed** (publish + smoke evidence). M1 completes the **adoption** layer around the npm path.
 
 ## Based On
 
-- [mlp.md — M1](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md#m1--public-install-and-adoption)
-- [#34](https://github.com/moldovancsaba/impact/issues/34) — npm publish gate
-- [install-macos.md](https://github.com/moldovancsaba/impact/blob/main/docs/install-macos.md), [smoke-test-macos.md](https://github.com/moldovancsaba/impact/blob/main/docs/smoke-test-macos.md), [README.md](https://github.com/moldovancsaba/impact/blob/main/README.md)
+- [mlp.md — M1](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md#m1--public-install-and-adoption)
+- [#34](https://github.com/sovereignsquad/impact/issues/34) — npm publish gate
+- [install-macos.md](https://github.com/sovereignsquad/impact/blob/main/docs/install-macos.md), [smoke-test-macos.md](https://github.com/sovereignsquad/impact/blob/main/docs/smoke-test-macos.md), [README.md](https://github.com/sovereignsquad/impact/blob/main/README.md)
 
 ## Problem
 
@@ -29,11 +29,11 @@ Without a **live registry package** and **docs-first** quick start, install fric
 
 ## Constraints
 
-- **No** benchmark scoring, DMG, or GUI scope (see [mlp.md — What not to do](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md#what-not-to-do-for-mlp)).
+- **No** benchmark scoring, DMG, or GUI scope (see [mlp.md — What not to do](https://github.com/sovereignsquad/impact/blob/main/docs/mlp.md#what-not-to-do-for-mlp)).
 
 ## Acceptance Checks
 
-- [ ] **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **closed** with publish + Path C smoke evidence
+- [ ] **[#34](https://github.com/sovereignsquad/impact/issues/34)** is **closed** with publish + Path C smoke evidence
 - [ ] `npm install -g @impact/cli` works **following only** published docs
 - [ ] README quick start points at **Path C** first
 - [ ] Path B documented as fallback

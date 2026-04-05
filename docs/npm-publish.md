@@ -1,6 +1,6 @@
 # Publishing `@impact/cli` to npm
 
-**Audience:** maintainers executing [#34](https://github.com/moldovancsaba/impact/issues/34).
+**Audience:** maintainers executing [#34](https://github.com/sovereignsquad/impact/issues/34).
 
 **Version SSOT:** before publishing, confirm tag, npm semver, `schema_version`, and CLI version match [current-state.md](current-state.md) — **§ Versioning (SSOT)**. **Broader authority map:** [ssot-map.md](ssot-map.md).
 

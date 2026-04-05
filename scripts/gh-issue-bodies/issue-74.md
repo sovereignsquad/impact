@@ -39,9 +39,9 @@ This is future ideabank, not active execution.
 
 ## Dependencies / downstream links
 
-- [#60](https://github.com/moldovancsaba/impact/issues/60) — privacy thresholds
-- [#61](https://github.com/moldovancsaba/impact/issues/61) — public stats API
-- [Issue #1](https://github.com/moldovancsaba/impact/issues/1)
+- [#60](https://github.com/sovereignsquad/impact/issues/60) — privacy thresholds
+- [#61](https://github.com/sovereignsquad/impact/issues/61) — public stats API
+- [Issue #1](https://github.com/sovereignsquad/impact/issues/1)
 
 ## Risks of misunderstanding
 
@@ -55,5 +55,5 @@ If misunderstood, the team may:
 ## Related execution issues
 
 Current execution remains focused on:
-- [#34](https://github.com/moldovancsaba/impact/issues/34)
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
+- [#34](https://github.com/sovereignsquad/impact/issues/34)
+- [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)

@@ -47,7 +47,7 @@
 
 ### Immediate operational sequence
 
-**Dashboard activation (coordinate on [#58](https://github.com/moldovancsaba/impact/issues/58)) — not a documentation problem; execute:**
+**Dashboard activation (coordinate on [#58](https://github.com/sovereignsquad/impact/issues/58)) — not a documentation problem; execute:**
 
 1. Sync **GitHub** issue truth when ready (bodies + Project #2 for **#59–#62**).  
 2. **Deploy ingest** (TLS, durable volume, ops) — Node **`apps/ingest`** + SQLite.  
@@ -56,14 +56,14 @@
 5. **Reconfirm** **`VITE_STATS_API_BASE`** / **redeploy web** if the public URL ever changes (already aligned for **impact.messmass.com**).  
 6. **Seed** enough **safe** submissions (privacy thresholds real — **no** production gaming).  
 7. **Smoke** **`/api/stats/*`**, **`/api/health`**, and **`/data.html`** — **non-fallback** JSON when volume allows.  
-8. **Close [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** in **[closure model](mlp-next-delivery-tranche.md#board-closure-dashboard)** order, with **proof**.
+8. **Close [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)** in **[closure model](mlp-next-delivery-tranche.md#board-closure-dashboard)** order, with **proof**.
 
 **Report-back (required before mass board Done):** ingest **host URL** · **health** result · **stats endpoint** sample results · **web URL** using live stats · **volume / threshold** status · which issues are **Review** / **Done**-ready.
 
 **Then (MLP path continues):**  
 9. Full public **web smoke** — [web-deploy-smoke.md](web-deploy-smoke.md).  
-10. **[#34](https://github.com/moldovancsaba/impact/issues/34)** — real **npm install** (maintainer checklist on that issue).  
-11. **[#44](https://github.com/moldovancsaba/impact/issues/44)–[#46](https://github.com/moldovancsaba/impact/issues/46)** — evidence once live paths exist.
+10. **[#34](https://github.com/sovereignsquad/impact/issues/34)** — real **npm install** (maintainer checklist on that issue).  
+11. **[#44](https://github.com/sovereignsquad/impact/issues/44)–[#46](https://github.com/sovereignsquad/impact/issues/46)** — evidence once live paths exist.
 
 ### Current MLP push
 
@@ -95,7 +95,7 @@ The process is **not** waiting on more **planning**. **Active push:** **make the
 | **Historical / community data (`/data.html`)** | **Amber for “real” data** — **UI + fetch path work** with **`VITE_STATS_API_BASE`**; **honest fallback** until **`IMPACT_INGEST_UPSTREAM`**; **live crowd tables** only with **hosted ingest** + **volume** under privacy thresholds |
 | **Dashboard backend (D1–D5 / #58–#62)** | **Green** in repo — ingest, SQLite + dedupe, aggregation, privacy thresholds, **`GET /api/stats/*`**, CORS, HTTP tests, **`verify:release`** |
 | **Dashboard product-live** (hosted) | **Amber** — **public `/api` responds** but **real aggregates** need **`IMPACT_INGEST_UPSTREAM`** + **POST ingest** + enough submissions |
-| **Install truth on site** | **Green** — **strictly gated** on **[#34](https://github.com/moldovancsaba/impact/issues/34)** (Path B primary until close) |
+| **Install truth on site** | **Green** — **strictly gated** on **[#34](https://github.com/sovereignsquad/impact/issues/34)** (Path B primary until close) |
 | **Profile explorer** | **Green** — strong MLP asset (`/profile.html`) |
 | **In-repo MLP** (report + recommendations + web + ingest/stats) | **Green** |
 | **Tranche SSOT** ([mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md)) | **Green** — **Project #2** + views + spine + issue index **at top** |
@@ -145,7 +145,7 @@ The process is **not** waiting on more **planning**. **Active push:** **make the
 - [web-deploy-smoke.md](web-deploy-smoke.md) — public web shell **smoke checklist** (operational SSOT).  
 - **This file** — **post-acceptance** state (not pre-acceptance “build the slice” framing).  
 - [mlp-execution.md](mlp-execution.md) · [current-state.md](current-state.md) — **next sequence** (deploy → smoke → **#34** → **#44** → **#44–#46** evidence; **#51–#53** Backlog).  
-- Board note on **[#57](https://github.com/moldovancsaba/impact/issues/57)** (and related issue comments).
+- Board note on **[#57](https://github.com/sovereignsquad/impact/issues/57)** (and related issue comments).
 
 **CTO:** Further **repo-side reframing** is **not** required right now. The **next real moves are operational:** deploy the web shell → run [web-deploy-smoke.md](web-deploy-smoke.md) against **production** → close **#34** when npm is published and smoke-tested → update install CTA under **#44** → attach **#44–#46** completion evidence.
 
@@ -170,9 +170,9 @@ Same **steps 1–8** (dashboard activation) and **9–11** (web smoke → **#34*
 - **Ingest deploy:** **`IMPACT_INGEST_DB_PATH`**, backup posture, **`better-sqlite3`** on target OS/arch; smoke **POST** + all **`GET /api/stats/*`** routes; **health** + **logging** in ops.  
 - **Volume:** enough real profiles **or** **non-public** threshold tests — **never** weaken production suppression for optics.  
 - **Web:** [web-deploy-smoke.md](web-deploy-smoke.md) for six URLs + **`/data.html`** states.  
-- **#34 / #44–#46:** maintainer publish Path C (see **[#34](https://github.com/moldovancsaba/impact/issues/34)** body), then install CTA and MLP evidence.
+- **#34 / #44–#46:** maintainer publish Path C (see **[#34](https://github.com/sovereignsquad/impact/issues/34)** body), then install CTA and MLP evidence.
 
-**Backlog discipline:** **[#51](https://github.com/moldovancsaba/impact/issues/51)–[#53](https://github.com/moldovancsaba/impact/issues/53)** remain **legacy IA**; **#58–#62** are the **execution spine** for real aggregates — see [closure model](mlp-next-delivery-tranche.md#board-closure-dashboard).
+**Backlog discipline:** **[#51](https://github.com/sovereignsquad/impact/issues/51)–[#53](https://github.com/sovereignsquad/impact/issues/53)** remain **legacy IA**; **#58–#62** are the **execution spine** for real aggregates — see [closure model](mlp-next-delivery-tranche.md#board-closure-dashboard).
 
 ---
 
@@ -234,14 +234,14 @@ Executable issues on [Project #2](https://github.com/users/moldovancsaba/project
 
 | ID | Issue | Board (template) | Priority |
 | -- | ----- | ---------------- | -------- |
-| **H1** | [#50](https://github.com/moldovancsaba/impact/issues/50) Historical data **information architecture** (hardware / tools / LLMs sections) | **Todo (NEXT)** | P0 |
-| **H5** | [#54](https://github.com/moldovancsaba/impact/issues/54) **Install / download** page | **Todo (NEXT)** | P0 |
-| **H6** | [#55](https://github.com/moldovancsaba/impact/issues/55) **Launch / use** page | **Todo (NEXT)** | P0 |
-| **H7** | [#56](https://github.com/moldovancsaba/impact/issues/56) **Submit result** page | **Todo (NEXT)** | P0 |
-| **H8** | [#57](https://github.com/moldovancsaba/impact/issues/57) **Homepage** rework (four pillars) | **Todo (NEXT)** | P0 |
-| **H2** | [#51](https://github.com/moldovancsaba/impact/issues/51) Historical **hardware** dataset MVP | **Backlog (SOONER)** | P0 |
-| **H3** | [#52](https://github.com/moldovancsaba/impact/issues/52) Historical **tools/runtimes** dataset MVP | **Backlog (SOONER)** | P0 |
-| **H4** | [#53](https://github.com/moldovancsaba/impact/issues/53) Historical **LLM/model** dataset MVP | **Backlog (SOONER)** | P0 |
+| **H1** | [#50](https://github.com/sovereignsquad/impact/issues/50) Historical data **information architecture** (hardware / tools / LLMs sections) | **Todo (NEXT)** | P0 |
+| **H5** | [#54](https://github.com/sovereignsquad/impact/issues/54) **Install / download** page | **Todo (NEXT)** | P0 |
+| **H6** | [#55](https://github.com/sovereignsquad/impact/issues/55) **Launch / use** page | **Todo (NEXT)** | P0 |
+| **H7** | [#56](https://github.com/sovereignsquad/impact/issues/56) **Submit result** page | **Todo (NEXT)** | P0 |
+| **H8** | [#57](https://github.com/sovereignsquad/impact/issues/57) **Homepage** rework (four pillars) | **Todo (NEXT)** | P0 |
+| **H2** | [#51](https://github.com/sovereignsquad/impact/issues/51) Historical **hardware** dataset MVP | **Backlog (SOONER)** | P0 |
+| **H3** | [#52](https://github.com/sovereignsquad/impact/issues/52) Historical **tools/runtimes** dataset MVP | **Backlog (SOONER)** | P0 |
+| **H4** | [#53](https://github.com/sovereignsquad/impact/issues/53) Historical **LLM/model** dataset MVP | **Backlog (SOONER)** | P0 |
 
 **#34** remains **In Progress (NOW)** until maintainer closeout (publish + smoke + evidence).
 
@@ -267,7 +267,7 @@ Executable issues on [Project #2](https://github.com/users/moldovancsaba/project
 
 **Canonical:** § [CTO acceptance — leadership view](#cto-acceptance-leadership-dashboard) — **sentence for leadership**, **steps 1–11**, **report-back**, **#58** / **#34** issue bodies in [`scripts/gh-issue-bodies/`](../scripts/gh-issue-bodies/).
 
-**Summary:** **Dashboard backend accepted in code** — **`verify:release`** green — but **product not live** until **hosted deployment**, **aggregate activation**, and **closure-order verification**. **Execute** the **activation sprint** on **[#58](https://github.com/moldovancsaba/impact/issues/58)** and **maintainer actions** on **[#34](https://github.com/moldovancsaba/impact/issues/34)**; **then** close issues **with proof**.
+**Summary:** **Dashboard backend accepted in code** — **`verify:release`** green — but **product not live** until **hosted deployment**, **aggregate activation**, and **closure-order verification**. **Execute** the **activation sprint** on **[#58](https://github.com/sovereignsquad/impact/issues/58)** and **maintainer actions** on **[#34](https://github.com/sovereignsquad/impact/issues/34)**; **then** close issues **with proof**.
 
 **Bottom line:** **Ops** first (**live ingest · live stats · live web · real npm**); **Mac trust** (**#65** / **#66**) follows without blocking the above.
 

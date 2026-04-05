@@ -1,6 +1,6 @@
 # CTO directive — MLP delivery (client-prepared dashboard summary)
 
-**Status:** active execution spine for the **Minimum Loveable Product** path. **Board / issues:** [#34](https://github.com/moldovancsaba/impact/issues/34) (install), [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62) (dashboard activation). **Related:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md), [submission-contract.md](submission-contract.md).
+**Status:** active execution spine for the **Minimum Loveable Product** path. **Board / issues:** [#34](https://github.com/sovereignsquad/impact/issues/34) (install), [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62) (dashboard activation). **Related:** [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md), [submission-contract.md](submission-contract.md).
 
 ---
 

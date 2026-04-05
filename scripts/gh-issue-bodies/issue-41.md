@@ -4,8 +4,8 @@
 
 ## Scope
 
-Horizon planning; ties to [support-matrix.md](https://github.com/moldovancsaba/impact/blob/main/docs/support-matrix.md).
+Horizon planning; ties to [support-matrix.md](https://github.com/sovereignsquad/impact/blob/main/docs/support-matrix.md).
 
 ## Based on
 
-[Issue #1](https://github.com/moldovancsaba/impact/issues/1) — Roadmap.
+[Issue #1](https://github.com/sovereignsquad/impact/issues/1) — Roadmap.
