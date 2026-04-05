@@ -41,6 +41,14 @@ edit 26 "IMPACT P1: Add merge-path tests for multi-entity scan orchestration" "$
 edit 27 "IMPACT P1: Complete macOS-first packaging and release path" "$BD/issue-27.md"
 edit 28 "IMPACT P1: Implement explicit duplicate-submission handling for 409 responses" "$BD/issue-28.md"
 
+# Programme roadmap horizon markers + ideabank (board-quality bodies)
+edit 29 "IMPACT P1: Programme roadmap — benchmark phases and evaluation ladder" "$BD/issue-29.md"
+edit 30 "IMPACT P1: Programme roadmap — anonymous submission and ingest services" "$BD/issue-30.md"
+edit 31 "IMPACT P1: Programme roadmap — platform parity and runtime coverage" "$BD/issue-31.md"
+edit 32 "IMPACT P1: Programme roadmap — release/distribution and adoption surface" "$BD/issue-32.md"
+edit 42 "IMPACT P2: Ideabank — DMG drag-drop installer" "$BD/issue-42.md"
+edit 43 "IMPACT P2: Ideabank — native GUI, accounts, leaderboards, auto-update" "$BD/issue-43.md"
+
 # npm publish / Path C gate (docs/npm-publish.md, mlp-status-cto.md)
 edit 34 "IMPACT P1: Publish @impact/cli to npm registry" "$BD/issue-34.md"
 
@@ -73,6 +81,16 @@ edit 64 "IMPACT P1: macOS M2 — Packaging pipeline & clean-Mac smoke" "$BD/issu
 edit 65 "IMPACT P1: macOS M3 — Signing & notarization plan" "$BD/issue-65.md"
 edit 66 "IMPACT P1: macOS M4 — DMG packaging (after M1–M3)" "$BD/issue-66.md"
 
+# Ideabank — future analytics, ops, and distribution themes (P2)
+edit 67 "IMPACT P2: Ideabank — Compare my machine vs community cohort" "$BD/issue-67.md"
+edit 68 "IMPACT P2: Ideabank — Public demo dataset / sandbox dashboard mode" "$BD/issue-68.md"
+edit 69 "IMPACT P2: Ideabank — Raw-profile reprocessing and schema migration pipeline" "$BD/issue-69.md"
+edit 70 "IMPACT P2: Ideabank — Enterprise / self-hosted deployment pack" "$BD/issue-70.md"
+edit 71 "IMPACT P2: Ideabank — Submission anti-abuse and reputation controls" "$BD/issue-71.md"
+edit 72 "IMPACT P2: Ideabank — Historical trends and time-series dashboard" "$BD/issue-72.md"
+edit 73 "IMPACT P2: Ideabank — Release channel governance" "$BD/issue-73.md"
+edit 74 "IMPACT P2: Ideabank — Public dataset export / research snapshot" "$BD/issue-74.md"
+
 # Labels: P0/P1 + area; drop legacy "epic" from implementation workstreams
 for n in 1 2 6 7 8 10 11 12 15 16; do
   gh issue edit "$n" --repo "$REPO" --add-label "P0" 2>/dev/null || true
@@ -104,6 +122,16 @@ for n in 58 59 60 61 62; do
 done
 for n in 63 64 65 66; do
   gh issue edit "$n" --repo "$REPO" --add-label "P1" 2>/dev/null || true
+  gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
+done
+for n in 29 30 31 32; do
+  gh issue edit "$n" --repo "$REPO" --add-label "roadmap" 2>/dev/null || true
+  gh issue edit "$n" --repo "$REPO" --add-label "P1" 2>/dev/null || true
+  gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
+done
+for n in 67 68 69 70 71 72 73 74; do
+  gh issue edit "$n" --repo "$REPO" --add-label "P2" 2>/dev/null || true
+  gh issue edit "$n" --repo "$REPO" --add-label "phase-2" 2>/dev/null || true
   gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
 done
 for n in 6 7 8 9 10 11 12 13 14 15; do

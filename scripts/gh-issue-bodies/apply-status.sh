@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Set Project #2 Status from board columns (single source of truth for workflow).
 # Compatible with bash 3.2 (macOS).
-# Sprint B + post-MVP + MLP + public web/data + dashboard/mac tranche (2026-04): issues 17–66 item IDs from `gh project item-add` / item-list.
+# Sprint B + post-MVP + MLP + public web/data + dashboard/mac tranche + ideabank P2 (2026-04): issues 17–74 item IDs from `gh project item-add` / item-list.
 set -euo pipefail
 PROJECT_ID="PVT_kwHOACGtF84BTnzN"
 STATUS_FIELD="PVTSSF_lAHOACGtF84BTnzNzhA1jZc"
@@ -91,6 +91,14 @@ item_for_issue() {
     64) echo PVTI_lAHOACGtF84BTnzNzgpG2LQ ;;
     65) echo PVTI_lAHOACGtF84BTnzNzgpG2LY ;;
     66) echo PVTI_lAHOACGtF84BTnzNzgpG2Lg ;;
+    67) echo PVTI_lAHOACGtF84BTnzNzgpI6N0 ;;
+    68) echo PVTI_lAHOACGtF84BTnzNzgpI6OA ;;
+    69) echo PVTI_lAHOACGtF84BTnzNzgpI6OQ ;;
+    70) echo PVTI_lAHOACGtF84BTnzNzgpI6Oc ;;
+    71) echo PVTI_lAHOACGtF84BTnzNzgpI6Ow ;;
+    72) echo PVTI_lAHOACGtF84BTnzNzgpI6O4 ;;
+    73) echo PVTI_lAHOACGtF84BTnzNzgpI6O8 ;;
+    74) echo PVTI_lAHOACGtF84BTnzNzgpI6PQ ;;
     *) echo ""; return 1 ;;
   esac
 }
@@ -138,7 +146,7 @@ done
 for n in 39 40 41; do
   set_status "$(item_for_issue "$n")" "$ROADMAP"
 done
-for n in 42 43; do
+for n in 42 43 67 68 69 70 71 72 73 74; do
   set_status "$(item_for_issue "$n")" "$IDEABANK"
 done
 
@@ -167,4 +175,4 @@ for n in 63 64 65 66; do
   set_status "$(item_for_issue "$n")" "$BACKLOG"
 done
 
-echo "Project Status field updated for issues 1–66 (MVP + MLP + web/data + dashboard + macOS packaging)."
+echo "Project Status field updated for issues 1–74 (MVP + MLP + web/data + dashboard + macOS packaging + ideabank expansion)."
