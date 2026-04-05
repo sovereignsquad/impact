@@ -2,6 +2,8 @@
 
 **Purpose:** rolling **evidence** for the CTO report-back in [mlp-activation-path.md](mlp-activation-path.md). **Board / closure:** [mlp-cto-next-execution.md](mlp-cto-next-execution.md). **Last run:** 2026-04-05 (automated developer pass in repo).
 
+**CTO (2026-04-05):** latest pass **accepted** as real progress; remaining gaps are **operational** (npm publish, hosted ingest, upstream, volume, **`/data.html`** proof) — see **[mlp-cto-next-execution.md](mlp-cto-next-execution.md)** (section *Status — activation pass accepted (2026-04-05)*).
+
 ---
 
 ## 1. Public install ([#34](https://github.com/moldovancsaba/impact/issues/34))

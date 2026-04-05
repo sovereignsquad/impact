@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **MLP activation runbook:** [mlp-activation-path.md](docs/mlp-activation-path.md) — CTO execution order (**#34**, hosted ingest, **`IMPACT_INGEST_UPSTREAM`**, seeding, **`/data.html`**, **#58–#62** closure, report-back); linked from [mlp-next-delivery-tranche.md](docs/mlp-next-delivery-tranche.md), [mlp-status-cto.md](docs/mlp-status-cto.md), [docs/README.md](docs/README.md).
 
-- **CTO execution + board management:** [mlp-cto-next-execution.md](docs/mlp-cto-next-execution.md) — proof-first handoff, Project #2 **Status** baseline, low WIP during activation, issue body bar, cleanup waves, sync order (`scripts/gh-issue-bodies/` → `apply-updates.sh`).
+- **CTO execution + board management:** [mlp-cto-next-execution.md](docs/mlp-cto-next-execution.md) — proof-first handoff, Project #2 **Status** baseline, low WIP during activation, issue body bar, cleanup waves, sync order (`scripts/gh-issue-bodies/` → `apply-updates.sh`); section *Status — activation pass accepted (2026-04-05)* (developer pass accepted; maintainer vs operational blockers; next hosted validation pass).
 
 - **Activation execution log:** [activation-execution-status.md](docs/activation-execution-status.md) — npm dry-run, Docker ingest verification, blockers for **#34** / hosted URL / **#62**.
 

@@ -6,6 +6,68 @@
 
 ---
 
+## Status — activation pass accepted (2026-04-05)
+
+**Accepted.** The latest developer pass is **meaningful, valid progress** — not blocked by “what to build,” but by **credentials, hosting, and activation**.
+
+### Specifically accepted
+
+- **`npm whoami` / `npm view`** confirmation that **[#34](https://github.com/moldovancsaba/impact/issues/34)** is **still** blocked by **real npm auth / publish** (not repo gaps).
+- Successful **`DRY_RUN=1 npm run publish:npm:dry-run`**.
+- **Docker ingest permission fix** in [`Dockerfile.ingest`](../Dockerfile.ingest) (`USER node` + writable **`/app/data`** / **`/data`**).
+- Successful **local** ingest image build; **restart persistence** proof (SQLite **`submission_count`** survives `docker restart`).
+- Evidence in **[activation-execution-status.md](activation-execution-status.md)**.
+- **Issue comment** on **#34** with summary + link to status doc.
+- Fixes **pushed to `main`**.
+
+### What remains true (operational blockers)
+
+These are **maintainer / infrastructure** blockers, **not** repo-design blockers:
+
+- **npm publish** (credentials + `npm run publish:npm`)
+- **Hosted ingest** deployment (HTTPS origin)
+- **`IMPACT_INGEST_UPSTREAM`** on Vercel + **web redeploy**
+- **Submission volume** above privacy threshold
+- **Live public `/data.html`** aggregate proof before closing **[#62](https://github.com/moldovancsaba/impact/issues/62)**
+
+### Maintainer order (do these next, in sequence)
+
+1. `npm login` → `npm run publish:npm` → `npm view @impact/cli version`  
+2. Deploy ingest from **`Dockerfile.ingest`**; persistent **`IMPACT_INGEST_DB_PATH`**  
+3. `vercel env add IMPACT_INGEST_UPSTREAM production --value "https://YOUR-INGEST-ORIGIN" --yes` (no trailing slash)  
+4. **Redeploy** the web app on Vercel  
+5. **Submit** enough profiles for thresholds  
+6. **Verify** real aggregate tables on **`/data.html`**  
+7. Close **[#34](https://github.com/moldovancsaba/impact/issues/34)** and **[#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)** in **documented closure order** (**#62** last)
+
+### Developer next tasks (after maintainer inputs land)
+
+1. **Stay on activation / evidence** — do **not** switch back to general planning or doc churn for its own sake.
+
+2. **Hosted validation pass** — as soon as the maintainer provides **published npm package**, **ingest origin**, and **`IMPACT_INGEST_UPSTREAM`** is set, execute:
+   - Verify **`/api/health`** ( **`stats_mode: upstream`** )
+   - Verify **`/api/stats/*`** on the **public** origin
+   - Verify **fallback vs upstream** behaviour
+   - Verify **`/data.html`**
+   - Update **[activation-execution-status.md](activation-execution-status.md)**
+   - Post **issue evidence** for **#58–#62** in **closure order** (comments / attachments as appropriate)
+
+3. **Board discipline** until hosted proof exists:
+   - **#34** → **In Progress** until publish proof  
+   - **#58** → **In Progress**  
+   - **#59–#62** → staged per **[closure readiness](mlp-activation-path.md#issue-readiness-honest)** — **do not** mark **#62** **Done** before **public `/data.html`** live proof  
+
+4. **Issue quality** — continue **only** where helpful; **activation** remains the **primary** delivery track.
+
+### What not to do
+
+- No **fake** closure on **#34**  
+- No **fake** “dashboard live” claim  
+- No **production threshold weakening**  
+- No **doc reshaping** unless tied to **delivered evidence**
+
+---
+
 ## 1. What you do next
 
 ### Execute the activation runbook in order
