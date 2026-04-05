@@ -1,38 +1,66 @@
 ## Objective
 
-Preserve the idea of **historical trends** and **time-series** views: how hardware classes, runtimes, tools, and model families **shift over calendar time** in the aggregate dashboard.
+Preserve the future idea of showing historical trends over time for hardware, runtimes, tools, and model families once the submission base is large and stable enough.
 
 ## Unified Context
 
-First dashboard work aims at **current** trustworthy aggregates ([#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)). Temporal slicing needs stable storage, retention policy, and enough points per bucket to avoid fingerprinting — a **later** analytics layer.
+The current dashboard goal is simple and useful aggregate visibility:
+- hardware tested
+- tools/runtimes tested
+- model families tested
+- basic distributions
+
+Time-series analysis is a later layer. It becomes valuable only after:
+- enough submissions exist
+- timestamps are trustworthy
+- aggregate publication is already working well
 
 ## Theme / Goal
 
-Keep a visible slot for **trend charts** and period comparisons without promising a Bloomberg terminal on day one.
+Keep the future trend layer visible.
+
+Potential future value:
+- hardware mix over time
+- runtime/tool adoption trends
+- model-family shifts
+- platform distribution changes
 
 ## Why this matters
 
-Stakeholders often ask “are we winning week over week?” too early; an ideabank card sets expectations and ties future work to **privacy-preserving** bucketing.
+Trend visibility may later make the dashboard much more informative and strategic.
+
+It could support:
+- ecosystem awareness
+- adoption monitoring
+- longer-term product insights
+- public storytelling based on actual movement
 
 ## What this does not mean yet
 
 This issue does **not** mean:
-- building full time-series infra now
-- per-user history
-- real-time streaming dashboards
+- charts and trendlines belong in the current dashboard
+- low-volume data should be stretched into time-series claims
+- this should take priority over basic live aggregate truth
 
-This is **ideabank (Someday)**.
+This is future ideabank, not current execution.
 
 ## Dependencies / downstream links
 
-- [#59](https://github.com/moldovancsaba/impact/issues/59) — aggregation model (must support time keys later)
-- [#50](https://github.com/moldovancsaba/impact/issues/50)–[#53](https://github.com/moldovancsaba/impact/issues/53) — historical IA / dataset themes (may inform UX)
-- [docs/mlp-status-cto.md](https://github.com/moldovancsaba/impact/blob/main/docs/mlp-status-cto.md)
+- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
+- [#48](https://github.com/moldovancsaba/impact/issues/48)
+- [Issue #1](https://github.com/moldovancsaba/impact/issues/1)
 
 ## Risks of misunderstanding
 
-Shipping sparse or volatile trend lines that **re-identify** contributors or mislead when sample size is tiny.
+The main risk is producing misleading trends from weak or uneven data.
+
+If misunderstood, the team may:
+- imply significance where there is only noise
+- add chart complexity before basic aggregate usefulness is secure
+- create public overinterpretation of thin data
 
 ## Related execution issues
 
-Current execution: [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62); near-term web slice [#50](https://github.com/moldovancsaba/impact/issues/50)–[#57](https://github.com/moldovancsaba/impact/issues/57).
+Current execution remains focused on:
+- [#34](https://github.com/moldovancsaba/impact/issues/34)
+- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)

@@ -129,9 +129,10 @@ for n in 29 30 31 32; do
   gh issue edit "$n" --repo "$REPO" --add-label "P1" 2>/dev/null || true
   gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
 done
+# Ideabank P2 cards: P2 + area/platform only (not phase-2)
 for n in 67 68 69 70 71 72 73 74; do
+  gh issue edit "$n" --repo "$REPO" --remove-label "phase-2" 2>/dev/null || true
   gh issue edit "$n" --repo "$REPO" --add-label "P2" 2>/dev/null || true
-  gh issue edit "$n" --repo "$REPO" --add-label "phase-2" 2>/dev/null || true
   gh issue edit "$n" --repo "$REPO" --add-label "area/platform" 2>/dev/null || true
 done
 for n in 6 7 8 9 10 11 12 13 14 15; do

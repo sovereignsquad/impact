@@ -1,38 +1,58 @@
 ## Objective
 
-Preserve the idea of an **enterprise / self-hosted deployment pack**: teams run **local ingest**, a **local dashboard**, and **local policy** (retention, consent, network boundaries) without depending on the public hosted stack.
+Preserve the future product idea of an enterprise/self-hosted IMPACT mode for teams that want local ingest, local dashboard, and local governance controls.
 
 ## Unified Context
 
-IMPACT today targets **anonymous public submission** and a **hosted** web path. Some adopters will eventually want **air-gapped or tenant-controlled** deployments. That is a **different product shape** (ops, support, licensing) and belongs in ideabank until the public MLP is proven.
+The current product path is building:
+- local scan
+- optional submission
+- hosted dashboard visibility
+
+A later product layer may serve organisations that want:
+- no public submission dependency
+- local policy controls
+- local data residency
+- internal-only dashboards
 
 ## Theme / Goal
 
-Anchor a future **distribution and packaging** conversation for “IMPACT in your VPC” without implying multi-tenant SaaS is in scope now.
+Keep the self-hosted / enterprise mode visible as a future product direction.
+
+Potential future value:
+- privacy-sensitive team adoption
+- internal benchmarking
+- internal deployment portability
+- greater enterprise usefulness
 
 ## Why this matters
 
-Without a visible placeholder, sales-y requests can derail the activation spine or get answered with one-off scripts that never become a maintainable product.
+Without preserving this future:
+- enterprise/productization opportunities may be forgotten
+- architecture may drift too hard toward public-only assumptions
+- later self-hosted demand may be harder to serve
 
 ## What this does not mean yet
 
 This issue does **not** mean:
-- building on-prem Helm charts now
-- enterprise support SLAs
-- replacing the public programme with a closed offering
+- enterprise packaging now
+- multi-tenant complexity now
+- delaying the public MLP path for enterprise concerns
 
-This is **ideabank (Someday)**.
+This is future ideabank, not current execution.
 
 ## Dependencies / downstream links
 
-- [#30](https://github.com/moldovancsaba/impact/issues/30) — long-range ingest/governance theme (roadmap)
-- [#3](https://github.com/moldovancsaba/impact/issues/3) — architecture SSOT
+- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
+- [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)
 - [Issue #1](https://github.com/moldovancsaba/impact/issues/1)
 
 ## Risks of misunderstanding
 
-Treating self-hosted as the default path before **public** install and dashboard truth land.
+The main risk is allowing enterprise aspirations to distort the current MLP path before the public product loop is alive.
 
 ## Related execution issues
 
-Current execution: [#34](https://github.com/moldovancsaba/impact/issues/34), [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62).
+Current execution remains focused on:
+- [#34](https://github.com/moldovancsaba/impact/issues/34)
+- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)

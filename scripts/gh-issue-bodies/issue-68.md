@@ -1,38 +1,58 @@
 ## Objective
 
-Preserve the idea of a **public demo dataset** or **sandbox dashboard mode** so the website stays informative and trustworthy when live community submission volume is low.
+Preserve the future idea of a safe redacted sample dataset or sandbox dashboard mode so the public website remains useful even when live community volume is low.
 
 ## Unified Context
 
-The product needs a credible **empty/low-volume** story: the shell and API should not look broken before the activation path ([#34](https://github.com/moldovancsaba/impact/issues/34), [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)) has real traffic. A redacted or synthetic **sample** layer is a future polish lever, not a substitute for real ingest truth.
+One current product tension is that the public webapp should stay honest:
+- if there is no real data, it should not pretend
+- if thresholds are not met, it should show suppression honestly
+
+A future demo/sandbox layer may help visitors understand the product without relying on live production volume.
 
 ## Theme / Goal
 
-Document intent for a **safe, labelled** demo or sandbox path that never pretends to be live community data.
+Keep the future sample-data mode visible.
+
+Potential future value:
+- demonstrate dashboard structure safely
+- reduce the awkwardness of empty early-stage public states
+- help onboarding, demos, and documentation
 
 ## Why this matters
 
-Without this ideabank hook, teams may hack misleading placeholders into production, or leave the public site looking abandoned during early adoption.
+This may later improve:
+- first impressions
+- documentation clarity
+- sales/demo readiness
+- public understanding of what the system is intended to show
 
 ## What this does not mean yet
 
 This issue does **not** mean:
-- shipping fake stats as if they were live
-- delaying real dashboard activation for demo work
-- replacing privacy design with a public dump of real submissions
+- fake live community data is acceptable
+- production data rules should be weakened for cosmetic reasons
+- demo data should be mixed with real data without clear labeling
 
-This is **ideabank (Someday)**.
+This is a future ideabank item, not permission to fabricate public momentum.
 
 ## Dependencies / downstream links
 
-- [#61](https://github.com/moldovancsaba/impact/issues/61) / [#62](https://github.com/moldovancsaba/impact/issues/62) — read API and web wiring to real aggregates
-- [#60](https://github.com/moldovancsaba/impact/issues/60) — threshold and redaction thinking
-- [Issue #1](https://github.com/moldovancsaba/impact/issues/1) — ideabank doctrine
+- [#57](https://github.com/moldovancsaba/impact/issues/57) — homepage/public web framing
+- [#62](https://github.com/moldovancsaba/impact/issues/62) — live aggregate web wiring
+- [Issue #1](https://github.com/moldovancsaba/impact/issues/1)
 
 ## Risks of misunderstanding
 
-Confusing demo mode with production aggregates, or investing in demo UX before **live** dashboard truth exists.
+The main risk is confusing sandbox/demo mode with real community truth.
+
+If misunderstood, the team may:
+- blur the line between demo and production
+- damage trust
+- create optics-first pressure instead of product truth
 
 ## Related execution issues
 
-Current execution: [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62).
+Current execution remains focused on:
+- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
+- [#34](https://github.com/moldovancsaba/impact/issues/34)

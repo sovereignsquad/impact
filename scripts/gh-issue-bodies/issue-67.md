@@ -1,40 +1,66 @@
 ## Objective
 
-Preserve the idea of a **compare-my-machine** (or compare-my-profile) experience: users see how their hardware, runtimes, tools, and model footprint relate to **aggregate community cohorts**, once the dashboard and data foundations are mature.
+Preserve the future idea of letting a user compare their machine, tools, runtimes, and model environment against community cohorts once the dashboard and aggregate data are mature enough.
 
 ## Unified Context
 
-IMPACT is building toward honest **aggregate** visibility ([#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)), not personal scoring or competitive leaderboards. Cohort comparison is a **future** analytics layer that depends on stable aggregates, privacy thresholds, and enough volume to make cohorts meaningful.
+IMPACT is currently focused on:
+- local scan truth
+- install truth
+- hosted ingest
+- real aggregate dashboard data
+- privacy-safe publication
+
+That means compare-vs-crowd is **not** a current execution priority. It becomes meaningful only after community aggregates are real, stable, and trustworthy.
 
 ## Theme / Goal
 
-Keep visible a future path from “community stats” to **contextualised self-vs-cohort** views, without implying that comparison is a near-term deliverable or that individual profiles are exposed.
+Keep the future comparison layer visible.
+
+Potential future user value:
+- how common this hardware type is
+- where this memory/chip family sits relative to submissions
+- which runtimes/tools are common in similar environments
+- whether a user is close to or far from typical cohort patterns
 
 ## Why this matters
 
-Without an explicit ideabank anchor, comparison features can be assumed too early, or designed in ways that conflict with anonymity, k-anonymity, and the current summary-first aggregation model.
+This idea matters because comparison is one of the clearest ways to turn aggregate data into user-facing value.
+
+It could later improve:
+- curiosity
+- perceived usefulness
+- product stickiness
+- community orientation
 
 ## What this does not mean yet
 
 This issue does **not** mean:
-- building compare-my-machine now
-- exposing identifiable or row-level data
-- accounts, logins, or competitive rankings
-- benchmark or score overlays on the public site
+- compare-vs-crowd belongs in the current MLP
+- public comparison should be built before the dashboard itself is product-live
+- user-level ranking or social mechanics are required
+- low-sample comparison should be shown before privacy-safe cohorts exist
 
-This is **ideabank (Someday)**, not backlog execution.
+This is a future ideabank item, not current execution.
 
 ## Dependencies / downstream links
 
-- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62) — dashboard and aggregate path
-- [#60](https://github.com/moldovancsaba/impact/issues/60) — privacy thresholds (cohorts must stay safe)
-- [Issue #1](https://github.com/moldovancsaba/impact/issues/1) — programme / ideabank doctrine
-- [docs/mlp.md](https://github.com/moldovancsaba/impact/blob/main/docs/mlp.md)
+- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62) — real ingest and aggregate dashboard path
+- [#48](https://github.com/moldovancsaba/impact/issues/48) — MLP M5 community visibility MVP
+- [Issue #1](https://github.com/moldovancsaba/impact/issues/1) — Ideabank / programme doctrine
 
 ## Risks of misunderstanding
 
-Treating this as the next feature after the first live dashboard, or conflating it with leaderboards or accounts.
+The main risk is trying to build comparison before the aggregate foundation is trustworthy.
+
+If misunderstood, the team may:
+- overfit to low-volume data
+- create pseudo-insight from weak cohorts
+- add social/comparison pressure before product truth is mature
 
 ## Related execution issues
 
-Current execution: [#34](https://github.com/moldovancsaba/impact/issues/34), [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62), [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66).
+Current execution remains focused on:
+- [#34](https://github.com/moldovancsaba/impact/issues/34)
+- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
+- [#63](https://github.com/moldovancsaba/impact/issues/63)–[#66](https://github.com/moldovancsaba/impact/issues/66)

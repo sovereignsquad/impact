@@ -1,38 +1,58 @@
 ## Objective
 
-Preserve the idea of a **reprocessing and schema-migration pipeline**: recomputing summary aggregates and dashboard-facing data from **stored raw (or canonical) profiles** when schemas and rules evolve.
+Preserve the future capability to reprocess stored raw profiles into newer summary and aggregation versions as schemas evolve.
 
 ## Unified Context
 
-Long-lived telemetry products need a way to **re-run** normalization, bucketing, and aggregation after schema bumps without losing history or manually patching DBs. Today’s focus is first **live** ingest and aggregates ([#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)); batch recompute is a **later** operational maturity layer.
+The current fast path is to get useful dashboard data live, potentially using prepared summary payloads alongside raw profiles. Over time, schemas and normalization rules will evolve.
+
+This creates a future need:
+- re-derive new summaries from old raw profiles
+- migrate historical data safely
+- avoid losing value when the schema changes
 
 ## Theme / Goal
 
-Keep explicit that IMPACT may eventually need **versioned transforms** from stored payloads to current summary models, with governance over when and how reprocessing runs.
+Keep the future reprocessing/migration layer visible.
+
+Potential future value:
+- schema evolution without data loss
+- improved aggregates from older submissions
+- cleaner long-term analytics governance
 
 ## Why this matters
 
-Without this on the ideabank, schema work can paint the team into a corner where forward-only writes make honest historical charts impossible.
+Without this capability:
+- old data may become stranded
+- dashboard meaning may drift between client versions
+- summary logic changes may fragment historical comparability
 
 ## What this does not mean yet
 
 This issue does **not** mean:
-- building a full data platform or lakehouse now
-- blocking schema changes on a reprocessor
-- exposing raw profiles for download (see separate ideabank on research export)
+- full migration machinery must be built now
+- schema evolution is the current bottleneck
+- the active MLP path should slow down for this
 
-This is **ideabank (Someday)**.
+This is a future system-hardening ideabank item.
 
 ## Dependencies / downstream links
 
-- [#13](https://github.com/moldovancsaba/impact/issues/13) — submission contract
-- [#59](https://github.com/moldovancsaba/impact/issues/59) — aggregation model
-- [docs/architecture.md](https://github.com/moldovancsaba/impact/blob/main/docs/architecture.md)
+- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
+- [docs/submission-contract.md](https://github.com/moldovancsaba/impact/blob/main/docs/submission-contract.md)
+- [Issue #1](https://github.com/moldovancsaba/impact/issues/1)
 
 ## Risks of misunderstanding
 
-Starting heavy ETL before the first stable live loop, or conflating “reprocess” with “store PII-rich blobs.”
+The main risk is over-engineering migration infrastructure before the live system proves value.
+
+If misunderstood, the team may:
+- build a data platform before the product loop is alive
+- overcomplicate a still-early service
+- delay the first useful dashboard unnecessarily
 
 ## Related execution issues
 
-Current execution: [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62).
+Current execution remains focused on:
+- [#34](https://github.com/moldovancsaba/impact/issues/34)
+- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)

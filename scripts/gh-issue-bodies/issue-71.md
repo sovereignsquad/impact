@@ -1,38 +1,59 @@
 ## Objective
 
-Preserve the idea of **submission anti-abuse**, **rate limits**, **reputation**, and **trust tiers** once public submission volume and incentive to spam or poison aggregates grow.
+Preserve the future need for submission throttling, abuse controls, and trust safeguards as public submission volume grows.
 
 ## Unified Context
 
-The programme starts with **low volume** and **anonymous** submitters; heavy anti-abuse is **not** a current blocker ([#30](https://github.com/moldovancsaba/impact/issues/30) positions governance as a later theme). This card holds space for future controls without dragging them into the activation tranche.
+The current system is still trying to become product-live. As submission volume increases, the risk profile will change:
+- spam submissions
+- repeated noise
+- manipulation attempts
+- reputational trust problems
+
+These are not yet the immediate blocker, but they are important future system-governance concerns.
 
 ## Theme / Goal
 
-Signal that **integrity of aggregates** may eventually require more than “polite clients” — throttles, anomaly detection, optional attestations — **after** the honest baseline path works.
+Keep the anti-abuse layer visible as a future governance capability.
+
+Potential future areas:
+- submission throttling
+- dedupe hardening
+- anomaly detection
+- trust/reputation scoring
+- operational moderation rules
 
 ## Why this matters
 
-If abuse controls are never named, they arrive as emergency patches; if named too early, they bloat MVP and threaten anonymity promises.
+Without a visible anti-abuse future:
+- public stats can become easier to manipulate
+- trust in the dashboard can degrade
+- governance can lag behind adoption
 
 ## What this does not mean yet
 
 This issue does **not** mean:
-- accounts or identity as the default gate
-- blocking anonymous submission now
-- building ML abuse classifiers before baseline metrics exist
+- identity/account systems now
+- heavy moderation systems now
+- public submission should be blocked until a full trust stack exists
 
-This is **ideabank (Someday)**.
+This is future ideabank, not a current launch blocker.
 
 ## Dependencies / downstream links
 
-- [#30](https://github.com/moldovancsaba/impact/issues/30) — roadmap: ingest/governance evolution
-- [#11](https://github.com/moldovancsaba/impact/issues/11) — privacy pipeline (must stay aligned)
-- [#13](https://github.com/moldovancsaba/impact/issues/13) — submission contract
+- [#58](https://github.com/moldovancsaba/impact/issues/58)
+- [#60](https://github.com/moldovancsaba/impact/issues/60)
+- [#61](https://github.com/moldovancsaba/impact/issues/61)
+- [Issue #1](https://github.com/moldovancsaba/impact/issues/1)
 
 ## Risks of misunderstanding
 
-Equating “anti-abuse” with **de-anonymisation**, or delaying **#58–#62** to design reputation systems.
+The main risk is either:
+- ignoring abuse concerns too long, or
+- overbuilding control systems before the first live product loop exists
 
 ## Related execution issues
 
-Current execution: [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62).
+Current execution remains focused on:
+- [#34](https://github.com/moldovancsaba/impact/issues/34)
+- [#58](https://github.com/moldovancsaba/impact/issues/58)–[#62](https://github.com/moldovancsaba/impact/issues/62)
