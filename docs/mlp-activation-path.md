@@ -228,3 +228,9 @@ Close in **this** order on the board:
 - Which of **#58–#62** are **Review**-ready
 - Which are **Done**-ready
 - What still **blocks** the rest
+
+---
+
+## Execution log (rolling)
+
+Maintainers record automated or manual passes here: **[activation-execution-status.md](activation-execution-status.md)**.

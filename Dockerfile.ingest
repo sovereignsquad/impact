@@ -33,6 +33,9 @@ COPY --from=build /app/apps/ingest/dist ./apps/ingest/dist
 
 RUN npm ci --omit=dev
 
+# Default DB dir is cwd/data — `node` must own it; Fly/Railway mount often uses /data
+RUN mkdir -p /app/data /data && chown -R node:node /app/data /data
+
 EXPOSE 8787
 USER node
 

@@ -46,6 +46,7 @@
 | [mlp-next-delivery-tranche.md](mlp-next-delivery-tranche.md) | Dashboard **#58–#62** (code + [board closure](mlp-next-delivery-tranche.md#board-closure-dashboard)), macOS **#63–#66** |
 | [mlp-activation-path.md](mlp-activation-path.md) | **MLP activation** — npm **#34**, hosted ingest, Vercel **`IMPACT_INGEST_UPSTREAM`**, seeding, `/data.html` proof, **#58–#62** closure order, report-back format |
 | [mlp-cto-next-execution.md](mlp-cto-next-execution.md) | **CTO execution memo** — proof-first report-back, Project #2 **Status** rules, low WIP, issue body quality, cleanup waves, **`scripts/gh-issue-bodies/`** sync order |
+| [activation-execution-status.md](activation-execution-status.md) | **Activation log** — latest npm/Docker/Vercel/blocker evidence for **#34** / **#58–#62** |
 | [product.md](product.md) | Product definition |
 | [project-management.md](project-management.md) | Board workflow |
 | [submission-contract.md](submission-contract.md) | Submission HTTP contract |
