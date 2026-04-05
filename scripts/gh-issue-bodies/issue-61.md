@@ -21,6 +21,7 @@
 - [x] Stable API contract — normative markdown: [ingest-server.md](../../docs/ingest-server.md) § stats `GET` endpoints
 - [x] Documented response shapes — `impact.stats.*.v0.1` schema versions on payloads; slice vs full documented in README
 - [x] Sample payloads — exercise via `GET /api/stats/*` against local ingest; integration tests in [`http-server.test.ts`](../../apps/ingest/src/http-server.test.ts)
+- [x] **Summary-first path** — when rows include **`dashboard_summary_json`**, public JSON dimensions are driven from client-normalized fields (e.g. **`chip_family`**, **`model_families`**) while **`profile_json`** remains stored for reprocessing
 
 ## Acceptance
 

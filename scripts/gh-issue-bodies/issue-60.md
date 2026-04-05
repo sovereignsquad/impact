@@ -11,7 +11,8 @@
 - [x] Low-sample suppression — `IMPACT_STATS_MIN_BUCKET_COUNT` (default **5**); buckets with count `< min` omitted; global suppress when total submissions `< min`
 - [x] Safe grouping — coarse dimensions only (no raw fingerprint in aggregates); cap **50** buckets per dimension in `applyPrivacyThreshold`
 - [x] Publication thresholds — documented in [ingest-server.md](../../docs/ingest-server.md) + README
-- [x] Enforcement — `buildPublicStats` in [`aggregate.ts`](../../apps/ingest/src/aggregate.ts); API returns empty dimension maps when below global threshold
+- [x] Enforcement — `buildPublicStats` / **`buildPublicStatsFromRollup`** in [`aggregate.ts`](../../apps/ingest/src/aggregate.ts); API returns empty dimension maps when below global threshold
+- [x] **Summary-based aggregates** — same **`applyPrivacyThreshold`** / global floor for rollup fed by **`dashboard_summary`** ([mlp-cto-directive-mlp-summary-payload.md](../../docs/mlp-cto-directive-mlp-summary-payload.md))
 
 ## Acceptance
 

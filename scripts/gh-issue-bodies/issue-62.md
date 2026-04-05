@@ -16,6 +16,7 @@
 - [x] Real tools/runtimes section — same
 - [x] Real LLM/model section — same
 - [x] Copy — live status line + threshold note in rendered tables; static page stays honest when env unset ([`apps/web/README.md`](../../apps/web/README.md))
+- [x] **MLP closure** — **`/data.html`** shows real community aggregates from the **live** stats path when ingest has **summary (or raw) submissions** above thresholds; no fake data ([mlp-cto-directive-mlp-summary-payload.md](../../docs/mlp-cto-directive-mlp-summary-payload.md))
 - [x] No benchmark overlays
 
 ## Constraints
