@@ -18,6 +18,8 @@ Markdown here mirrors the **structure and intent** of issues on [moldovancsaba/i
 
 **CTO board + WIP + issue-quality rules (activation phase):** [docs/mlp-cto-next-execution.md](../../docs/mlp-cto-next-execution.md).
 
+**Activation pass comment (optional paste to #34):** [`activation-pass-comment-34.md`](activation-pass-comment-34.md) — edit + `gh issue comment 34 --body-file …`.
+
 **Sprint B:** Issues **#17–#28** are created from `issue-17.md` … `issue-28.md`. To bootstrap a **new** clone of the board rows, run **`scripts/gh-sprint-b-board-bootstrap.sh`** once (not idempotent). Then refresh **item IDs** in `apply-status.sh` via `gh project item-list 2 --owner moldovancsaba --format json`.
 
 Re-fetch **item IDs** if GitHub ever re-links items (rare); IDs are baked into `apply-status.sh` for automation.
