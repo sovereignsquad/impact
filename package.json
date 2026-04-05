@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "engines": {
-    "node": ">=20"
+    "node": "24.x"
   },
   "scripts": {
     "build": "npm run build -w @impact/schemas && npm run build -w @impact/scanner-host && npm run build -w @impact/scanner-runtimes && npm run build -w @impact/scanner-tools && npm run build -w @impact/scanner-models && npm run build -w @impact/privacy && npm run build -w @impact/reporting && npm run build -w @impact/submission && npm run build -w @impact/core && npm run build -w @impact/cli && npm run build -w @impact/ingest && npm run build -w @impact/web",
