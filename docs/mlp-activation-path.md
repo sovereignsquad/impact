@@ -4,6 +4,8 @@
 
 **When to use:** you are executing activation (not replanning engine work). **Do not** close **#62** before the **public** `/data.html` proof exists.
 
+**CTO — execution order, report-back expectations, board WIP rules, issue body bar, cleanup waves:** [mlp-cto-next-execution.md](mlp-cto-next-execution.md).
+
 ---
 
 ## Primary objective

@@ -16,6 +16,8 @@ Markdown here mirrors the **structure and intent** of issues on [moldovancsaba/i
 
 **Board column names** must not be pasted into issue titles. Use `apply-status.sh` or the UI.
 
+**CTO board + WIP + issue-quality rules (activation phase):** [docs/mlp-cto-next-execution.md](../../docs/mlp-cto-next-execution.md).
+
 **Sprint B:** Issues **#17–#28** are created from `issue-17.md` … `issue-28.md`. To bootstrap a **new** clone of the board rows, run **`scripts/gh-sprint-b-board-bootstrap.sh`** once (not idempotent). Then refresh **item IDs** in `apply-status.sh` via `gh project item-list 2 --owner moldovancsaba --format json`.
 
 Re-fetch **item IDs** if GitHub ever re-links items (rare); IDs are baked into `apply-status.sh` for automation.
