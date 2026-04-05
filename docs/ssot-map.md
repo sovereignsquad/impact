@@ -6,6 +6,8 @@
 
 **Programme hub:** [GitHub Project #2 — Impact roadmap & backlog](https://github.com/users/moldovancsaba/projects/2) · [Programme (Not Done) view](https://github.com/users/moldovancsaba/projects/2/views/3) · [full board](https://github.com/users/moldovancsaba/projects/2/views/1)
 
+**Planned:** controlled migration to **`sovereignsquad`** org repo + **new org-owned Project** as workflow SSOT; personal Project #2 becomes archive. See [mlp-cto-directive-org-migration-sovereignsquad.md](mlp-cto-directive-org-migration-sovereignsquad.md).
+
 ---
 
 ## Authority table

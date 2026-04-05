@@ -6,7 +6,7 @@
 
 ---
 
-**MLP product execution (summary + raw submission):** [mlp-cto-directive-mlp-summary-payload.md](mlp-cto-directive-mlp-summary-payload.md)
+**MLP product execution (summary + raw submission):** [mlp-cto-directive-mlp-summary-payload.md](mlp-cto-directive-mlp-summary-payload.md). **Org migration + project SSOT rebuild:** [mlp-cto-directive-org-migration-sovereignsquad.md](mlp-cto-directive-org-migration-sovereignsquad.md).
 
 ## Status — activation pass accepted (2026-04-05)
 

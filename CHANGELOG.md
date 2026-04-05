@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Org migration directive (CTO):** [mlp-cto-directive-org-migration-sovereignsquad.md](docs/mlp-cto-directive-org-migration-sovereignsquad.md) — `sovereignsquad/impact` transfer plan, **new org GitHub Project** as future workflow SSOT (copy structure, rebuild items), freeze/reconnect/archive phases, post-cutover checklist for `apply-status.sh` / `apply-updates.sh` / docs links.
+
 - **MLP dashboard summary path (CTO):** [mlp-cto-directive-mlp-summary-payload.md](docs/mlp-cto-directive-mlp-summary-payload.md) — **`impact.summary.v0.1`** in **@impact/schemas**, **`buildDashboardSummary`** in **@impact/core**, local artifact **`impact-dashboard-summary.json`**, submission envelope **`impact.submission.v0.1`** (raw profile + summary); ingest stores **`dashboard_summary_json`**; stats rollup **prefers summary** when present ([submission-contract.md](docs/submission-contract.md)).
 
 - **`impact scan`:** non-interactive submission when stdin is not a TTY — set **`IMPACT_SUBMIT_URL`**, **`IMPACT_SUBMIT_NON_INTERACTIVE=1`**, and **`--yes-submit`** (see [apps/cli/README.md](apps/cli/README.md)); [scripts/local-e2e-submit.sh](scripts/local-e2e-submit.sh) runs ingest + real local scan + POST.

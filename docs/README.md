@@ -18,6 +18,7 @@
 | **Run optional HTTP submission / ingest** | [submission-contract.md](submission-contract.md) · [ingest-server.md](ingest-server.md) — POST ingest + **`GET /api/stats/*`** |
 | **See what is actually shipped** | [current-state.md](current-state.md) · [user-expectations-mvp.md](user-expectations-mvp.md) |
 | **Contribute or follow the programme** | [project-management.md](project-management.md) · [product.md](product.md) · [mlp.md](mlp.md) |
+| **Planned org + GitHub Project migration** | [mlp-cto-directive-org-migration-sovereignsquad.md](mlp-cto-directive-org-migration-sovereignsquad.md) |
 
 ---
 
