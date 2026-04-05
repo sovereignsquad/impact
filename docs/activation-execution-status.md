@@ -71,7 +71,7 @@ bash scripts/local-e2e-submit.sh
 
 | Check | Result |
 | ----- | ------ |
-| Production `https://impact.messmass.com/api/*` | **Live** (prior deploy) — fallback when **`IMPACT_INGEST_UPSTREAM`** unset. |
+| Production `https://impact.sovereignsquad.com/api/*` (and other Vercel hostnames) | **Live** (prior deploy) — fallback when **`IMPACT_INGEST_UPSTREAM`** unset. |
 | `IMPACT_INGEST_UPSTREAM` on Vercel | **Not set** — **no public ingest URL** yet to point at. |
 | `stats_mode: upstream` on `/api/health` | **Not yet** — still **`fallback`** until upstream is set. |
 

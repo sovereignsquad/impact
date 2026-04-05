@@ -11,7 +11,7 @@
 Set **`VITE_STATS_API_BASE`** at **build** time so `/data.html` fetches live stats JSON and renders aggregate tables when privacy thresholds allow. If unset, the honest placeholder copy stays as-is (Vite drops the fetch path as dead code).
 
 - **Ingest origin** (paths include `/api/stats/…`): e.g. `http://127.0.0.1:8787` or `https://api.example.com` → requests go to `BASE/api/stats/full`, etc.
-- **API mount** (base already ends with `/api`): e.g. `https://impact.messmass.com/api` when the host routes `/api/*` to ingest → same final URLs without doubling `/api`.
+- **API mount** (base already ends with `/api`): e.g. `/api` on Vercel (any production hostname) or `https://example.com/api` when the host routes `/api/*` to ingest → same final URLs without doubling `/api`.
 
 See [docs/web.md](../../docs/web.md) § **`VITE_STATS_API_BASE`** for same-origin vs separate-origin hosting and Vercel rewrites.
 

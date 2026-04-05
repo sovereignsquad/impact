@@ -1,7 +1,8 @@
 /**
- * Build URL for ingest stats JSON. Supports two `VITE_STATS_API_BASE` shapes:
- * - **Site origin** (ingest path prefix `/api/stats/…`): `https://example.com` → `…/api/stats/full`
- * - **API mount** (stats live under `BASE/stats/…`): `https://example.com/api` → `…/api/stats/full` on the wire
+ * Build URL for ingest stats JSON. Supports `VITE_STATS_API_BASE` shapes:
+ * - **Same-origin path** (Vercel multi-domain): `/api` → `/api/stats/full` (resolved against the page origin)
+ * - **Site origin** (absolute): `https://example.com` → `…/api/stats/full`
+ * - **API mount** (absolute, base ends with `/api`): `https://example.com/api` → `…/api/stats/full`
  */
 export function statsJsonUrl(apiBase: string, segment: "overview" | "full" | "hardware" | "tools" | "models"): string {
   const b = apiBase.trim().replace(/\/$/, "");

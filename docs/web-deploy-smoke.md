@@ -8,7 +8,7 @@
 
 ## URLs to hit
 
-Replace `ORIGIN` with production base (e.g. `https://impact.messmass.com`).
+Replace `ORIGIN` with production base — canonical **`https://impact.sovereignsquad.com`**, or any other hostname attached to the same Vercel deployment (e.g. legacy **`https://impact.messmass.com`**). Smoke each hostname you care about.
 
 | Path | Check |
 | ---- | ----- |
@@ -42,7 +42,7 @@ Replace `ORIGIN` with production base (e.g. `https://impact.messmass.com`).
 
 Use only when production is wired to a **hosted** ingest (see [mlp-status-cto.md § Leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard) steps 1–8).
 
-Replace **`WEB_ORIGIN`** with the static site base (same as `ORIGIN` above). **`INGEST_ORIGIN`** is the host (no trailing slash) that serves ingest **health** and **`/api/stats/*`** — either the **same** host as the web app when `/api` is proxied to ingest, or a **dedicated** API host. Example same-origin: `INGEST_ORIGIN=https://impact.messmass.com` and stats at `WEB_ORIGIN/api/stats/full` (build with `VITE_STATS_API_BASE=https://impact.messmass.com` or `https://impact.messmass.com/api` — see [web.md](web.md) § **`VITE_STATS_API_BASE`**).
+Replace **`WEB_ORIGIN`** with the static site base (same as `ORIGIN` above). **`INGEST_ORIGIN`** is the host (no trailing slash) that serves ingest **health** and **`/api/stats/*`** — either the **same** host as the web app when `/api` is proxied to ingest, or a **dedicated** API host. Example same-origin: `INGEST_ORIGIN=https://impact.sovereignsquad.com` and stats at `WEB_ORIGIN/api/stats/full` (production build uses **`VITE_STATS_API_BASE=/api`** — see [web.md](web.md) § **`VITE_STATS_API_BASE`**).
 
 ### Ingest API (direct)
 

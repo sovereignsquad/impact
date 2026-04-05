@@ -60,7 +60,7 @@ vercel --prod --yes
 
 echo ""
 echo "Done. Check:"
-echo "  curl -sS https://impact.messmass.com/api/health"
+echo "  curl -sS https://impact.sovereignsquad.com/api/health"
 echo "  # expect stats_mode upstream once edge config propagates"
 echo ""
 echo "Submit from CLI:"

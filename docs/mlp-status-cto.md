@@ -36,7 +36,7 @@
 **Also true**
 
 - **Dashboard backend** is **implemented and accepted in repo** (**#58–#62**).  
-- **Public stats HTTP path** is **live** on **impact.messmass.com** — **`GET /api/stats/*`** returns **200** (schema-correct **fallback** without **`IMPACT_INGEST_UPSTREAM`**).  
+- **Public stats HTTP path** is **live** on production hostnames (**impact.sovereignsquad.com** and aliases on the same Vercel deployment) — **`GET /api/stats/*`** returns **200** (schema-correct **fallback** without **`IMPACT_INGEST_UPSTREAM`**).  
 - **Real crowd aggregates** on **`/data.html`** are **not** product-live until **hosted ingest** + **`IMPACT_INGEST_UPSTREAM`** + **`IMPACT_SUBMIT_URL`** + **enough safe submission volume** + **hosted verification** — **not** more repo planning for the engine.
 
 **Current status call (leadership)**
@@ -53,7 +53,7 @@
 2. **Deploy ingest** (TLS, durable volume, ops) — Node **`apps/ingest`** + SQLite.  
 3. Configure **DB / runtime** — **`IMPACT_INGEST_DB_PATH`**, **`better-sqlite3`** on target arch, **`/health`**, **logging**.  
 4. On **Vercel**, set **`IMPACT_INGEST_UPSTREAM`** to that ingest **origin** (no trailing slash) so **`/api/stats/*`** **proxies** instead of **fallback**; set **`IMPACT_SUBMIT_URL`** on clients to the same **hosted** base for **POST**.  
-5. **Reconfirm** **`VITE_STATS_API_BASE`** / **redeploy web** if the public URL ever changes (already aligned for **impact.messmass.com**).  
+5. **Reconfirm** **`VITE_STATS_API_BASE`** / **redeploy web** if you move off same-origin **`/api`** or change API hosting (production uses **`/api`** so multiple web hostnames stay correct).  
 6. **Seed** enough **safe** submissions (privacy thresholds real — **no** production gaming).  
 7. **Smoke** **`/api/stats/*`**, **`/api/health`**, and **`/data.html`** — **non-fallback** JSON when volume allows.  
 8. **Close [#58](https://github.com/sovereignsquad/impact/issues/58)–[#62](https://github.com/sovereignsquad/impact/issues/62)** in **[closure model](mlp-next-delivery-tranche.md#board-closure-dashboard)** order, with **proof**.
@@ -91,7 +91,7 @@ The process is **not** waiting on more **planning**. **Active push:** **make the
 | ------ | ---- |
 | **MVP** | **Green** — shipped |
 | **Public web shell** (multi-page, honest copy) | **Green** — **in repo**; **deploy + smoke** remain operational ([web-deploy-smoke.md](web-deploy-smoke.md)) |
-| **Same-origin stats API (production)** | **Green** — **`GET /api/stats/*`** and **`/api/health`** on **impact.messmass.com** via Vercel Functions ([web.md](web.md) § Deploy, [ingest-server.md](ingest-server.md) § *Vercel stats routes*) |
+| **Same-origin stats API (production)** | **Green** — **`GET /api/stats/*`** and **`/api/health`** on production web hostnames via Vercel Functions ([web.md](web.md) § Deploy, [ingest-server.md](ingest-server.md) § *Vercel stats routes*) |
 | **Historical / community data (`/data.html`)** | **Amber for “real” data** — **UI + fetch path work** with **`VITE_STATS_API_BASE`**; **honest fallback** until **`IMPACT_INGEST_UPSTREAM`**; **live crowd tables** only with **hosted ingest** + **volume** under privacy thresholds |
 | **Dashboard backend (D1–D5 / #58–#62)** | **Green** in repo — ingest, SQLite + dedupe, aggregation, privacy thresholds, **`GET /api/stats/*`**, CORS, HTTP tests, **`verify:release`** |
 | **Dashboard product-live** (hosted) | **Amber** — **public `/api` responds** but **real aggregates** need **`IMPACT_INGEST_UPSTREAM`** + **POST ingest** + enough submissions |

@@ -23,7 +23,7 @@
 
 **Programme health (CTO snapshot):** **Green** — MVP; **green** — web shell; **green** — **stats API layer on Vercel** (same-origin **`/api/stats/*`**, **`/api/health`**, **`VITE_STATS_API_BASE`** in Production/Preview/Development); **amber** — **real** dashboard data (fallback until **`IMPACT_INGEST_UPSTREAM`**) + **public npm** (**#34**) + **Path D** trust. Board **[#44](https://github.com/sovereignsquad/impact/issues/44)–[#49](https://github.com/sovereignsquad/impact/issues/49)**. Next moves **operational**: [mlp-status-cto.md § Leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard).
 
-**Status:** Path **B** verified. Path **C** awaits **#34**. **Dashboard engine** is **in repo**; **public `/api` path** is **live** on **impact.messmass.com**; **closure** of **#58–#62** still needs **hosted ingest**, **upstream env**, **submissions**, and **verification**. **MLP** report/web slices in-repo — [mlp-status-cto.md](mlp-status-cto.md). Programme: [mlp.md](mlp.md).
+**Status:** Path **B** verified. Path **C** awaits **#34**. **Dashboard engine** is **in repo**; **public `/api` path** is **live** on production hostnames (**[impact.sovereignsquad.com](https://impact.sovereignsquad.com)** and any other domains on the Vercel project); **closure** of **#58–#62** still needs **hosted ingest**, **upstream env**, **submissions**, and **verification**. **MLP** report/web slices in-repo — [mlp-status-cto.md](mlp-status-cto.md). Programme: [mlp.md](mlp.md).
 
 ---
 

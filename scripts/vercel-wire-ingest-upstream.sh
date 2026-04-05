@@ -29,5 +29,5 @@ echo "==> vercel --prod"
 vercel --prod --yes
 
 echo ""
-echo "Smoke: curl -sS https://impact.messmass.com/api/health"
+echo "Smoke: curl -sS https://impact.sovereignsquad.com/api/health"
 echo "  expect stats_mode \"upstream\" after propagation"

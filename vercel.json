@@ -4,6 +4,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "apps/web/dist",
   "env": {
-    "VITE_STATS_API_BASE": "https://impact.messmass.com/api"
+    "VITE_STATS_API_BASE": "/api"
   }
 }
