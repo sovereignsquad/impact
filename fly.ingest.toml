@@ -1,0 +1,32 @@
+# Fly.io app for @impact/ingest (Dockerfile.ingest). Deploy from repo root:
+#   flyctl volumes create ingest_data --region iad --size 1 -a impact-mm-ingest --yes   # once per app
+#   flyctl deploy --config fly.ingest.toml --remote-only
+#
+# Then set Vercel (production):
+#   printf '%s' 'https://impact-mm-ingest.fly.dev' | vercel env add IMPACT_INGEST_UPSTREAM production
+#   vercel --prod
+#
+# CLI submissions: IMPACT_SUBMIT_URL=https://impact-mm-ingest.fly.dev/
+
+app = "impact-mm-ingest"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile.ingest"
+
+[http_service]
+  internal_port = 8787
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[mounts]
+  source = "ingest_data"
+  destination = "/data"
+
+[env]
+  HOST = "0.0.0.0"
+  PORT = "8787"
+  IMPACT_INGEST_DB_PATH = "/data/ingest.db"

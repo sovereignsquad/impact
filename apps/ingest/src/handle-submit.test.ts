@@ -68,4 +68,37 @@ describe("processSubmission", () => {
       expect(r2.body.message).toContain("run_id");
     }
   });
+
+  it("accepts impact.submission.v0.1 envelope and stores dashboard_summary_json", () => {
+    const profile = JSON.parse(readFileSync(fixturePath, "utf8")) as Record<string, unknown>;
+    const dashboard_summary = {
+      summary_version: "impact.summary.v0.1",
+      normalization_version: "1",
+      profile_schema_version: "impact.v0.3",
+      platform_family: "macos",
+      machine_class: "apple_m1_pro_16gb_arm64",
+      chip_family: "apple_m_series",
+      memory_band_gb: "16_32gb",
+      runtime_families: ["mlx_python", "ollama"],
+      tool_families: ["codex_cli"],
+      model_families: ["llama"],
+      local_model_count: 1,
+      cloud_tool_present: false,
+      reachable_runtime_count: 1,
+      partial_runtime_count: 1,
+      architecture: "arm64",
+    };
+    const body = JSON.stringify({
+      submission_kind: "impact.submission.v0.1",
+      profile,
+      dashboard_summary,
+    });
+    const r = processSubmission(db, body);
+    expect(r.status).toBe(200);
+    const row = db
+      .prepare(`SELECT profile_json, dashboard_summary_json FROM submissions LIMIT 1`)
+      .get() as { profile_json: string; dashboard_summary_json: string };
+    expect(JSON.parse(row.profile_json).schema_version).toBe("impact.v0.3");
+    expect(JSON.parse(row.dashboard_summary_json).summary_version).toBe("impact.summary.v0.1");
+  });
 });

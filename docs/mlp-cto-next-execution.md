@@ -6,6 +6,8 @@
 
 ---
 
+**MLP product execution (summary + raw submission):** [mlp-cto-directive-mlp-summary-payload.md](mlp-cto-directive-mlp-summary-payload.md)
+
 ## Status — activation pass accepted (2026-04-05)
 
 **Accepted.** The latest developer pass is **meaningful, valid progress** — not blocked by “what to build,” but by **credentials, hosting, and activation**.

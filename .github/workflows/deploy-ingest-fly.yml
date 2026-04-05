@@ -1,0 +1,30 @@
+# Deploy @impact/ingest to Fly.io using fly.ingest.toml + Dockerfile.ingest.
+#
+# One-time bootstrap (local machine with flyctl auth, or token):
+#   flyctl apps create impact-mm-ingest
+#   flyctl volumes create ingest_data --region iad --size 1 -a impact-mm-ingest --yes
+#
+# GitHub: add repository secret FLY_API_TOKEN (Deploy token from https://fly.io/user/personal_access_tokens)
+# then run this workflow manually (Actions → Deploy ingest (Fly.io) → Run workflow).
+#
+# After deploy, wire Vercel + redeploy web:
+#   bash scripts/vercel-wire-ingest-upstream.sh https://impact-mm-ingest.fly.dev
+#
+name: Deploy ingest (Fly.io)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Deploy ingest image
+        run: flyctl deploy --config fly.ingest.toml --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

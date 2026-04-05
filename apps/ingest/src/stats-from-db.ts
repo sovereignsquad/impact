@@ -1,21 +1,48 @@
 import type Database from "better-sqlite3";
-import { validateImpactProfile, type ImpactProfile } from "@impact/schemas";
-import { buildPublicStats, type PublicStatsPayload } from "./aggregate.js";
+import { validateDashboardSummary, validateImpactProfile } from "@impact/schemas";
+import {
+  accumulateDashboardSummary,
+  accumulateProfile,
+  buildPublicStatsFromRollup,
+  emptyRollup,
+  type PublicStatsPayload,
+} from "./aggregate.js";
 
-export function loadValidatedProfiles(db: Database.Database): ImpactProfile[] {
-  const rows = db.prepare(`SELECT profile_json FROM submissions ORDER BY received_at ASC`).all() as {
-    profile_json: string;
-  }[];
-  const out: ImpactProfile[] = [];
-  for (const row of rows) {
+export type SubmissionRow = {
+  profile_json: string;
+  dashboard_summary_json: string | null;
+};
+
+export function loadSubmissionRows(db: Database.Database): SubmissionRow[] {
+  return db
+    .prepare(`SELECT profile_json, dashboard_summary_json FROM submissions ORDER BY received_at ASC`)
+    .all() as SubmissionRow[];
+}
+
+function accumulateRowIntoRollup(r: ReturnType<typeof emptyRollup>, row: SubmissionRow): void {
+  if (row.dashboard_summary_json) {
     try {
-      const parsed = JSON.parse(row.profile_json) as unknown;
-      out.push(validateImpactProfile(parsed));
+      const s = validateDashboardSummary(JSON.parse(row.dashboard_summary_json) as unknown);
+      accumulateDashboardSummary(r, s);
+      return;
     } catch {
-      /* skip corrupt rows for stats — ops should fix DB */
+      /* fall through to profile */
     }
   }
-  return out;
+  try {
+    const p = validateImpactProfile(JSON.parse(row.profile_json) as unknown);
+    accumulateProfile(r, p);
+  } catch {
+    /* skip corrupt rows */
+  }
+}
+
+export function buildRollupFromDb(db: Database.Database) {
+  const r = emptyRollup();
+  for (const row of loadSubmissionRows(db)) {
+    accumulateRowIntoRollup(r, row);
+  }
+  return r;
 }
 
 export type OverviewPayload = {
@@ -27,8 +54,7 @@ export type OverviewPayload = {
 };
 
 export function getOverview(db: Database.Database, minBucketCount: number): OverviewPayload {
-  const profiles = loadValidatedProfiles(db);
-  const stats = buildPublicStats(profiles, minBucketCount);
+  const stats = buildPublicStatsFromRollup(buildRollupFromDb(db), minBucketCount);
   return {
     schema_version: "impact.stats.overview.v0.1",
     generated_at: stats.generated_at,
@@ -39,7 +65,7 @@ export function getOverview(db: Database.Database, minBucketCount: number): Over
 }
 
 export function getFullStats(db: Database.Database, minBucketCount: number): PublicStatsPayload {
-  return buildPublicStats(loadValidatedProfiles(db), minBucketCount);
+  return buildPublicStatsFromRollup(buildRollupFromDb(db), minBucketCount);
 }
 
 export function getHardwareSlice(stats: PublicStatsPayload): object {

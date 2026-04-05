@@ -35,7 +35,7 @@ npm view @impact/cli version
 | `GET /health`, `/healthz` | **PASS** in container — `{"ok":true,"service":"impact-ingest"}`. |
 | `POST` accept + duplicate | **PASS** — `200` + `submission_id`, then **`409`** duplicate with same `submission_id` / message. |
 | SQLite after `docker restart` | **PASS** — `submission_count` remains **1** after restart. |
-| Public HTTPS origin | **Not deployed** — **Fly/Railway CLIs not installed** in this environment; maintainer must deploy and record URL. |
+| Public HTTPS origin | **Automation ready, credentials pending** — root [`fly.ingest.toml`](../fly.ingest.toml), [`scripts/deploy-ingest-fly-and-wire-vercel.sh`](../scripts/deploy-ingest-fly-and-wire-vercel.sh), GitHub [`.github/workflows/deploy-ingest-fly.yml`](../.github/workflows/deploy-ingest-fly.yml). **Requires:** `flyctl auth login` or **`FLY_API_TOKEN`** (then run script or workflow); then `bash scripts/vercel-wire-ingest-upstream.sh https://<app>.fly.dev` if Vercel wiring is separate. **This Cursor agent:** Fly token not available → **no live deploy executed**. |
 
 **Local verification commands used:**
 

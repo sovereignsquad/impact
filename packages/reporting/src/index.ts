@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import type { ImpactProfile } from "@impact/schemas";
+import type { DashboardSummary, ImpactProfile } from "@impact/schemas";
 import { renderHtmlReport } from "./html.js";
 
 export { renderHtmlReport };
@@ -23,5 +23,12 @@ export async function writeHtmlReport(dir: string, profile: ImpactProfile): Prom
   await ensureDir(dir);
   const file = path.join(dir, "impact-report.html");
   await writeFile(file, renderHtmlReport(profile), "utf8");
+  return file;
+}
+
+export async function writeDashboardSummaryJson(dir: string, summary: DashboardSummary): Promise<string> {
+  await ensureDir(dir);
+  const file = path.join(dir, "impact-dashboard-summary.json");
+  await writeFile(file, `${JSON.stringify(summary, null, 2)}\n`, "utf8");
   return file;
 }

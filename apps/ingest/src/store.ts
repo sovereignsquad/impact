@@ -7,6 +7,8 @@ export type InsertInput = {
   run_id: string;
   schema_version: string;
   profile_json: string;
+  /** Client-prepared dashboard summary JSON; null for legacy submissions. */
+  dashboard_summary_json: string | null;
 };
 
 export function initSchema(db: Database.Database): void {
@@ -17,10 +19,19 @@ export function initSchema(db: Database.Database): void {
       payload_sha256 TEXT NOT NULL UNIQUE,
       run_id TEXT NOT NULL UNIQUE,
       schema_version TEXT NOT NULL,
-      profile_json TEXT NOT NULL
+      profile_json TEXT NOT NULL,
+      dashboard_summary_json TEXT
     );
     CREATE INDEX IF NOT EXISTS idx_submissions_received ON submissions(received_at);
   `);
+  migrateSubmissionsAddSummaryColumn(db);
+}
+
+function migrateSubmissionsAddSummaryColumn(db: Database.Database): void {
+  const cols = db.prepare(`PRAGMA table_info(submissions)`).all() as { name: string }[];
+  if (!cols.some((c) => c.name === "dashboard_summary_json")) {
+    db.exec(`ALTER TABLE submissions ADD COLUMN dashboard_summary_json TEXT`);
+  }
 }
 
 export type InsertOk = { ok: true; submission_id: string; received_at: string };
@@ -33,8 +44,8 @@ export type InsertConflict = {
 export function insertSubmission(db: Database.Database, row: InsertInput): InsertOk | InsertConflict {
   try {
     db.prepare(
-      `INSERT INTO submissions (submission_id, received_at, payload_sha256, run_id, schema_version, profile_json)
-       VALUES (@submission_id, @received_at, @payload_sha256, @run_id, @schema_version, @profile_json)`
+      `INSERT INTO submissions (submission_id, received_at, payload_sha256, run_id, schema_version, profile_json, dashboard_summary_json)
+       VALUES (@submission_id, @received_at, @payload_sha256, @run_id, @schema_version, @profile_json, @dashboard_summary_json)`
     ).run(row);
     return { ok: true, submission_id: row.submission_id, received_at: row.received_at };
   } catch (e: unknown) {

@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { randomUUID } from "node:crypto";
-import { validateImpactProfile } from "@impact/schemas";
+import { parseSubmissionBody } from "@impact/schemas";
 import { ZodError } from "zod";
 import type Database from "better-sqlite3";
 import { insertSubmission } from "./store.js";
@@ -44,9 +44,9 @@ export function processSubmission(db: Database.Database, rawBody: string): Submi
     return { status: 400, body: { error: "Invalid JSON" } };
   }
 
-  let profile;
+  let submission;
   try {
-    profile = validateImpactProfile(parsed);
+    submission = parseSubmissionBody(parsed);
   } catch (e) {
     if (e instanceof ZodError) {
       const msg = e.issues.map((x) => `${x.path.join(".")}: ${x.message}`).join("; ");
@@ -54,6 +54,12 @@ export function processSubmission(db: Database.Database, rawBody: string): Submi
     }
     throw e;
   }
+
+  const profile = submission.profile;
+  const profile_json = JSON.stringify(profile);
+  const dashboard_summary_json = submission.dashboard_summary
+    ? JSON.stringify(submission.dashboard_summary)
+    : null;
 
   const payload_sha256 = sha256Hex(rawBody);
   const submission_id = randomUUID();
@@ -65,7 +71,8 @@ export function processSubmission(db: Database.Database, rawBody: string): Submi
     payload_sha256,
     run_id: profile.run_id,
     schema_version: profile.schema_version,
-    profile_json: rawBody,
+    profile_json,
+    dashboard_summary_json,
   });
 
   if (result.ok) {

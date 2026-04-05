@@ -88,6 +88,6 @@ docker run --rm -e HOST=0.0.0.0 -e PORT=8787 -p 8787:8787 impact-ingest
 - **`.dockerignore`** excludes **`**/*.tsbuildinfo`** so TypeScript **composite** incremental state from the host cannot skip emitting **`dist/`** in a clean image.
 - Rolling verification notes: [activation-execution-status.md](activation-execution-status.md).
 
-**Fly.io (example):** copy [`deploy/ingest-fly.example.toml`](../deploy/ingest-fly.example.toml) → `fly.toml`, create a **volume** for `/data`, set **`IMPACT_INGEST_DB_PATH=/data/ingest.db`**, deploy. Then set Vercel **`IMPACT_INGEST_UPSTREAM=https://<app>.fly.dev`** (no trailing slash).
+**Fly.io:** repo root [`fly.ingest.toml`](../fly.ingest.toml) (volume **`ingest_data`** → **`/data`**, **`IMPACT_INGEST_DB_PATH=/data/ingest.db`**). **Local / CI:** [`scripts/deploy-ingest-fly-and-wire-vercel.sh`](../scripts/deploy-ingest-fly-and-wire-vercel.sh) after `flyctl auth login` or **`FLY_API_TOKEN`**; **GitHub:** [`.github/workflows/deploy-ingest-fly.yml`](../.github/workflows/deploy-ingest-fly.yml) (secret **`FLY_API_TOKEN`**) then [`scripts/vercel-wire-ingest-upstream.sh`](../scripts/vercel-wire-ingest-upstream.sh) `https://<app>.fly.dev`. **Reference copy:** [`deploy/ingest-fly.example.toml`](../deploy/ingest-fly.example.toml).
 
 **Railway / Render / other:** run the same image; mount persistent disk for the SQLite file; expose **8787** (or set **`PORT`** to the platform’s assigned port).

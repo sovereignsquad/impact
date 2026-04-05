@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { ImpactProfile } from "@impact/schemas";
-import { submitProfile } from "./submit-profile.js";
+import { buildSubmissionWireBody, submitProfile } from "./submit-profile.js";
 
 const minimalProfile = (): ImpactProfile => ({
   schema_version: "impact.v0.3",
@@ -19,6 +19,22 @@ const minimalProfile = (): ImpactProfile => ({
   tools: [],
   models: [],
   privacy: { raw_identifiers_stored: false, consent_required_for_submission: true },
+});
+
+const minimalSummary = () => ({
+  summary_version: "impact.summary.v0.1" as const,
+  profile_schema_version: "impact.v0.3" as const,
+  platform_family: "macos" as const,
+  machine_class: "x",
+  chip_family: "apple_m_series",
+  memory_band_gb: "8_16gb",
+  runtime_families: [] as string[],
+  tool_families: [] as string[],
+  model_families: [] as string[],
+  local_model_count: 0,
+  cloud_tool_present: false,
+  reachable_runtime_count: 0,
+  partial_runtime_count: 0,
 });
 
 describe("submitProfile", () => {
@@ -53,6 +69,24 @@ describe("submitProfile", () => {
     const r = await submitProfile(minimalProfile(), { timeoutMs: 5000, maxAttempts: 1 });
     expect(r.ok).toBe(true);
     if (r.ok) expect(r.submission_id).toBe("srv-1");
+  });
+
+  it("POSTs envelope when dashboardSummary is set", async () => {
+    process.env.IMPACT_SUBMIT_URL = "https://example.com/ingest";
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      text: async () => JSON.stringify({ submission_id: "e1" }),
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    const profile = minimalProfile();
+    const summary = minimalSummary();
+    await submitProfile(profile, { dashboardSummary: summary, timeoutMs: 5000, maxAttempts: 1 });
+    const call = fetchMock.mock.calls[0] as [string, RequestInit];
+    const body = call[1].body as string;
+    expect(body).toContain("impact.submission.v0.1");
+    expect(body).toContain("dashboard_summary");
+    expect(buildSubmissionWireBody(profile, summary)).toBe(body);
   });
 
   it("retries on 500 then succeeds", async () => {

@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import Database from "better-sqlite3";
 import { describe, expect, it, beforeEach } from "vitest";
 import { initSchema, insertSubmission } from "./store.js";
-import { getFullStats, getOverview, loadValidatedProfiles } from "./stats-from-db.js";
+import { getFullStats, getOverview, loadSubmissionRows } from "./stats-from-db.js";
 import { randomUUID } from "node:crypto";
 import { createHash } from "node:crypto";
 
@@ -34,14 +34,16 @@ describe("stats-from-db", () => {
       run_id: runId,
       schema_version: "impact.v0.3",
       profile_json: body,
+      dashboard_summary_json: null,
     });
   }
 
-  it("loadValidatedProfiles returns parsed profiles", () => {
+  it("loadSubmissionRows returns stored rows", () => {
     insertFixture(randomUUID());
-    const list = loadValidatedProfiles(db);
-    expect(list).toHaveLength(1);
-    expect(list[0].schema_version).toBe("impact.v0.3");
+    const rows = loadSubmissionRows(db);
+    expect(rows).toHaveLength(1);
+    expect(rows[0].profile_json).toContain("impact.v0.3");
+    expect(rows[0].dashboard_summary_json).toBeNull();
   });
 
   it("getOverview reflects count", () => {

@@ -13,6 +13,19 @@ export {
 } from "./profile.js";
 
 export {
+  DashboardSummarySchema,
+  type DashboardSummary,
+  validateDashboardSummary,
+} from "./dashboard-summary.js";
+
+export {
+  ImpactSubmissionEnvelopeV01Schema,
+  type ImpactSubmissionEnvelopeV01,
+  type ParsedSubmissionBody,
+  parseSubmissionBody,
+} from "./submission-body.js";
+
+export {
   ValueSourceSchema,
   FieldConfidenceSchema,
   ProvenancedStringSchema,

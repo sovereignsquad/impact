@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
-import type { ImpactProfile } from "@impact/schemas";
+import type { DashboardSummary, ImpactProfile } from "@impact/schemas";
+import { ImpactSubmissionEnvelopeV01Schema } from "@impact/schemas";
 
 export type SubmitProfileOptions = {
   /** Per-attempt timeout (ms). Default 15000. */
@@ -7,6 +8,11 @@ export type SubmitProfileOptions = {
   /** Max HTTP attempts including first try. Default 3. */
   maxAttempts?: number;
   signal?: AbortSignal;
+  /**
+   * When set, POST `impact.submission.v0.1` envelope (profile + dashboard_summary).
+   * When omitted, POST legacy single ImpactProfile JSON.
+   */
+  dashboardSummary?: DashboardSummary;
 };
 
 export type SubmissionResult =
@@ -43,18 +49,37 @@ function shouldRetryHttp(status: number): boolean {
 
 export function sha256Payload(profile: ImpactProfile): string {
   const body = JSON.stringify(profile);
-  return createHash("sha256").update(body).digest("hex");
+  return createHash("sha256").update(body, "utf8").digest("hex");
+}
+
+function sha256Utf8(body: string): string {
+  return createHash("sha256").update(body, "utf8").digest("hex");
+}
+
+/** Build validated JSON body for MLP submission (profile + summary). */
+export function buildSubmissionWireBody(profile: ImpactProfile, summary: DashboardSummary): string {
+  const envelope = {
+    submission_kind: "impact.submission.v0.1" as const,
+    profile,
+    dashboard_summary: summary,
+  };
+  ImpactSubmissionEnvelopeV01Schema.parse(envelope);
+  return JSON.stringify(envelope);
 }
 
 /**
- * POST profile with bounded retries and per-attempt timeout (see docs/submission-contract.md).
+ * POST profile (and optional dashboard summary) with bounded retries (see docs/submission-contract.md).
  */
 export async function submitProfile(
   profile: ImpactProfile,
   opts?: SubmitProfileOptions
 ): Promise<SubmissionResult> {
   const url = process.env.IMPACT_SUBMIT_URL?.trim();
-  const payload_sha256 = sha256Payload(profile);
+  const body =
+    opts?.dashboardSummary !== undefined
+      ? buildSubmissionWireBody(profile, opts.dashboardSummary)
+      : JSON.stringify(profile);
+  const payload_sha256 = sha256Utf8(body);
   const timeoutMs = opts?.timeoutMs ?? DEFAULT_TIMEOUT_MS;
   const maxAttempts = opts?.maxAttempts ?? DEFAULT_ATTEMPTS;
 
@@ -67,8 +92,6 @@ export async function submitProfile(
       attempts: 0,
     };
   }
-
-  const body = JSON.stringify(profile);
   let lastStatus: number | undefined;
   let lastError: string | undefined;
 

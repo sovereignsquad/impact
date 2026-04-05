@@ -5,8 +5,13 @@ import path from "node:path";
 import readline from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
 import { Command } from "commander";
-import { runScan } from "@impact/core";
-import { buildDiagnostics, writeHtmlReport, writeJsonReport } from "@impact/reporting";
+import { buildDashboardSummary, runScan } from "@impact/core";
+import {
+  buildDiagnostics,
+  writeDashboardSummaryJson,
+  writeHtmlReport,
+  writeJsonReport,
+} from "@impact/reporting";
 import {
   appendLocalReceipt,
   submitProfile,
@@ -73,6 +78,10 @@ program
       console.log(`Wrote ${jsonPath}`);
       console.log(`Wrote ${htmlPath}`);
 
+      const dashboardSummary = buildDashboardSummary(profile);
+      const summaryPath = await writeDashboardSummaryJson(outDir, dashboardSummary);
+      console.log(`Wrote ${summaryPath}`);
+
       const diag = buildDiagnostics(profile);
       if (diag.length > 0) {
         console.log("\nDiagnostics:");
@@ -112,9 +121,11 @@ program
           );
         }
 
-        const previewPath = await writePayloadPreview(outDir, profile);
+        const previewPath = await writePayloadPreview(outDir, profile, dashboardSummary);
         console.log(`\nExact payload preview written to:\n  ${previewPath}`);
-        console.log("\nPayload is the same object as impact-profile.json (anonymised profile).");
+        console.log(
+          "\nPayload is the submission envelope: canonical profile plus impact.summary.v0.1 dashboard_summary (see docs/submission-contract.md)."
+        );
 
         if (rl && !opts.yesSubmit) {
           const ok = await promptExact(
@@ -128,7 +139,7 @@ program
           }
         }
 
-        const result = await submitProfile(profile);
+        const result = await submitProfile(profile, { dashboardSummary });
         const receiptPath = await writeSubmissionReceiptJson(outDir, {
           schema_version: "impact.submission_receipt.v1",
           created_at: new Date().toISOString(),

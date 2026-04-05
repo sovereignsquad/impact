@@ -1,4 +1,4 @@
-import type { ImpactProfile } from "@impact/schemas";
+import type { DashboardSummary, ImpactProfile } from "@impact/schemas";
 
 /** Coarse memory bands for aggregate display */
 export function memoryBandGb(gb: number): string {
@@ -65,6 +65,24 @@ export function accumulateProfile(r: RawAggregateRollup, p: ImpactProfile): void
   }
 }
 
+/** Fast-path rollup from client-prepared summary (MLP). */
+export function accumulateDashboardSummary(r: RawAggregateRollup, s: DashboardSummary): void {
+  r.submission_count += 1;
+  bump(r.machine_class, s.machine_class);
+  bump(r.chip, s.chip_family);
+  bump(r.memory_band, s.memory_band_gb);
+  bump(r.os_name, s.platform_family);
+  if (s.architecture) bump(r.architecture, s.architecture);
+  for (const id of s.runtime_families) bump(r.runtime_id, id);
+  const reachB =
+    s.reachable_runtime_count === 0 ? "0" : s.reachable_runtime_count === 1 ? "1" : "2plus";
+  bump(r.runtime_id_status, `summary_reachable::${reachB}`);
+  const partB = s.partial_runtime_count === 0 ? "0" : s.partial_runtime_count === 1 ? "1" : "2plus";
+  bump(r.runtime_id_status, `summary_partial::${partB}`);
+  for (const id of s.tool_families) bump(r.tool_id, id);
+  for (const mf of s.model_families) bump(r.model_id_locality, `${mf}::summary`);
+}
+
 export type Bucket = { key: string; count: number };
 
 /** Keep only buckets with count >= minCount; sort by count desc; cap at maxBuckets */
@@ -105,16 +123,11 @@ export type PublicStatsPayload = {
   };
 };
 
-export function buildPublicStats(
-  profiles: ImpactProfile[],
+export function buildPublicStatsFromRollup(
+  r: RawAggregateRollup,
   minBucketCount: number,
   maxBuckets = 50
 ): PublicStatsPayload {
-  const r = emptyRollup();
-  for (const p of profiles) {
-    accumulateProfile(r, p);
-  }
-
   const belowGlobal = r.submission_count < minBucketCount;
 
   if (belowGlobal) {
@@ -158,4 +171,16 @@ export function buildPublicStats(
       by_id_locality: applyPrivacyThreshold(r.model_id_locality, minBucketCount, maxBuckets),
     },
   };
+}
+
+export function buildPublicStats(
+  profiles: ImpactProfile[],
+  minBucketCount: number,
+  maxBuckets = 50
+): PublicStatsPayload {
+  const r = emptyRollup();
+  for (const p of profiles) {
+    accumulateProfile(r, p);
+  }
+  return buildPublicStatsFromRollup(r, minBucketCount, maxBuckets);
 }

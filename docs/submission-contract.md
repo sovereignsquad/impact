@@ -19,7 +19,19 @@ Define how the **optional** anonymous profile submission works over HTTP when `I
 | Method | `POST` |
 | URL | Value of `IMPACT_SUBMIT_URL` (HTTPS recommended in production) |
 | Headers | `Content-Type: application/json` |
-| Body | **Exactly** one JSON document: an `ImpactProfile` validating `impact.v0.3` schema (`packages/schemas`). No wrapping envelope unless a future version bumps this doc. |
+| Body | **Exactly** one JSON document, one of: **(A)** legacy — an `ImpactProfile` validating **`impact.v0.3`**; **(B)** MLP envelope — **`submission_kind`: `"impact.submission.v0.1"`** plus **`profile`** (same schema) and **`dashboard_summary`** (`impact.summary.v0.1`). See **@impact/schemas** `parseSubmissionBody`. |
+
+**MLP envelope (recommended for new clients):**
+
+```json
+{
+  "submission_kind": "impact.submission.v0.1",
+  "profile": { "schema_version": "impact.v0.3", "...": "..." },
+  "dashboard_summary": { "summary_version": "impact.summary.v0.1", "...": "..." }
+}
+```
+
+Servers **persist** canonical **`profile`** JSON and optional **`dashboard_summary`** JSON separately; **dedupe** uses the **full raw HTTP body** SHA-256 and **`run_id`** as today. **Aggregation** may prefer **`dashboard_summary`** when present ([mlp-cto-directive-mlp-summary-payload.md](mlp-cto-directive-mlp-summary-payload.md)).
 
 ### No-PII guarantee on the wire
 
@@ -96,7 +108,7 @@ Configurable via `submitProfile(profile, { timeoutMs })` for tests or constraine
 
 | File | When |
 | ---- | ---- |
-| `impact-submission-preview.json` | After consent, **before** POST — exact bytes that will be sent (same canonical object as the profile payload). |
+| `impact-submission-preview.json` | After consent, **before** POST — exact JSON that will be sent (legacy: profile only; MLP: **envelope** with **`dashboard_summary`**). |
 | `impact-submission-receipt.json` | After the HTTP attempt sequence completes (success or final failure) — timestamp, endpoint, `payload_sha256`, `preview_payload_sha256` (same hash when preview unchanged), outcome, attempts, optional `submission_id` / error / `last_status`. |
 | `~/.impact/submission-receipts.log` | Append-only one-line audit (legacy-friendly). |
 
@@ -107,6 +119,8 @@ Receipts are **local audit**, not telemetry.
 ## Versioning
 
 - **`schema_version`** inside the profile (`impact.v0.3` today) is independent of this HTTP contract revision.  
+- **`impact.summary.v0.1`** and **`normalization_version`** (optional inside summary) track client-side bucketing rules.  
+- **`submission_kind`** distinguishes legacy body vs **`impact.submission.v0.1`** envelope.  
 - Breaking HTTP changes should bump a `X-Impact-Contract-Version` header **or** a path version — not yet required for v0.x.
 
 ---
