@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **`impact scan`:** non-interactive submission when stdin is not a TTY — set **`IMPACT_SUBMIT_URL`**, **`IMPACT_SUBMIT_NON_INTERACTIVE=1`**, and **`--yes-submit`** (see [apps/cli/README.md](apps/cli/README.md)); [scripts/local-e2e-submit.sh](scripts/local-e2e-submit.sh) runs ingest + real local scan + POST.
+
 ### Changed
 
 - **`Dockerfile.ingest`:** create **`/app/data`** and **`/data`** owned by **`node`** so the default SQLite path works under **`USER node`** (Fly volume typically mounts **`/data`**).

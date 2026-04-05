@@ -1,6 +1,6 @@
 # MLP activation — execution status (developer log)
 
-**Purpose:** rolling **evidence** for the CTO report-back in [mlp-activation-path.md](mlp-activation-path.md). **Board / closure:** [mlp-cto-next-execution.md](mlp-cto-next-execution.md). **Last run:** 2026-04-05 (automated developer pass in repo).
+**Purpose:** rolling **evidence** for the CTO report-back in [mlp-activation-path.md](mlp-activation-path.md). **Board / closure:** [mlp-cto-next-execution.md](mlp-cto-next-execution.md). **Last run:** 2026-04-03 — real **CLI → local ingest** submission on dev hardware (this pass) + prior 2026-04-05 automated pass.
 
 **CTO (2026-04-05):** latest pass **accepted** as real progress; remaining gaps are **operational** (npm publish, hosted ingest, upstream, volume, **`/data.html`** proof) — see **[mlp-cto-next-execution.md](mlp-cto-next-execution.md)** (section *Status — activation pass accepted (2026-04-05)*).
 
@@ -47,6 +47,22 @@ curl -sS -X POST http://127.0.0.1:18787/ingest -H "Content-Type: application/jso
 # second POST → 409
 docker restart impact-ingest-test
 curl -sS http://127.0.0.1:18787/api/stats/overview
+```
+
+### Local CLI → ingest — real machine scan (2026-04-03)
+
+| Check | Result |
+| ----- | ------ |
+| **`impact scan`** on dev hardware | **PASS** — `impact-profile.json` + `impact-report.html`; diagnostics environment-specific (e.g. MLX partial). |
+| Non-interactive POST | **PASS** — `IMPACT_SUBMIT_URL` + `IMPACT_SUBMIT_NON_INTERACTIVE=1` + `impact scan --yes-submit` (see [apps/cli/README.md](../apps/cli/README.md)). |
+| [`scripts/local-e2e-submit.sh`](../scripts/local-e2e-submit.sh) | **PASS** — temp SQLite DB; ingest **`POST /`** → **200** + `submission_id`; **`GET /api/stats/overview`** → `submission_count: 1`, `below_global_threshold: true` (default min bucket **5**). |
+| Receipt artifacts | `impact-submission-preview.json`, `impact-submission-receipt.json` under temp report dir. |
+
+**Command:**
+
+```bash
+npm run build
+bash scripts/local-e2e-submit.sh
 ```
 
 ---

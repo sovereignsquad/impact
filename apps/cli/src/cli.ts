@@ -84,24 +84,39 @@ program
         return;
       }
 
-      const rl = readline.createInterface({ input, output });
-      try {
-        if (!input.isTTY) {
-          console.log("\nNot a TTY: submission prompt skipped. Use IMPACT_SUBMIT_URL and a future flag if needed.");
-          return;
-        }
+      const endpoint = process.env.IMPACT_SUBMIT_URL?.trim() ?? "";
+      const allowNonInteractiveSubmit =
+        !input.isTTY &&
+        opts.yesSubmit &&
+        Boolean(endpoint) &&
+        process.env.IMPACT_SUBMIT_NON_INTERACTIVE === "1";
 
-        const wants = await promptYesNo(rl, "\nSubmit anonymous profile to configured endpoint?");
-        if (!wants) {
-          console.log("Not submitting. Your local files are unchanged.");
-          return;
+      if (!input.isTTY && !allowNonInteractiveSubmit) {
+        console.log(
+          "\nNot a TTY: submission prompt skipped. For automation: set IMPACT_SUBMIT_URL, export IMPACT_SUBMIT_NON_INTERACTIVE=1, and use --yes-submit (see apps/cli/README.md)."
+        );
+        return;
+      }
+
+      const rl = input.isTTY ? readline.createInterface({ input, output }) : undefined;
+      try {
+        if (rl) {
+          const wants = await promptYesNo(rl, "\nSubmit anonymous profile to configured endpoint?");
+          if (!wants) {
+            console.log("Not submitting. Your local files are unchanged.");
+            return;
+          }
+        } else {
+          console.log(
+            "\nNon-interactive submission (IMPACT_SUBMIT_NON_INTERACTIVE=1 + --yes-submit + IMPACT_SUBMIT_URL)."
+          );
         }
 
         const previewPath = await writePayloadPreview(outDir, profile);
         console.log(`\nExact payload preview written to:\n  ${previewPath}`);
         console.log("\nPayload is the same object as impact-profile.json (anonymised profile).");
 
-        if (!opts.yesSubmit) {
+        if (rl && !opts.yesSubmit) {
           const ok = await promptExact(
             rl,
             'Type SUBMIT to confirm sending this payload (or press Enter to cancel): ',
@@ -113,7 +128,6 @@ program
           }
         }
 
-        const endpoint = process.env.IMPACT_SUBMIT_URL?.trim() ?? "";
         const result = await submitProfile(profile);
         const receiptPath = await writeSubmissionReceiptJson(outDir, {
           schema_version: "impact.submission_receipt.v1",
@@ -157,7 +171,7 @@ program
           await appendLocalReceipt(homedir(), `fail run_id=${profile.run_id} ${result.error}`);
         }
       } finally {
-        rl.close();
+        rl?.close();
       }
     }
   );

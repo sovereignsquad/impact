@@ -45,7 +45,7 @@ export IMPACT_SUBMIT_URL=http://127.0.0.1:8787/
 impact scan --yes-submit -o ./reports
 ```
 
-(Requires consent flow / `SUBMIT` unless `--yes-submit` for automation.)
+Interactive terminal: answer the submit prompt; with **`--yes-submit`**, you skip typing **`SUBMIT`**. **CI / no TTY:** also set **`IMPACT_SUBMIT_NON_INTERACTIVE=1`** (see [apps/cli/README.md](../cli/README.md)). Repo script: [`scripts/local-e2e-submit.sh`](../../scripts/local-e2e-submit.sh).
 
 ## Docker (production-shaped)
 
