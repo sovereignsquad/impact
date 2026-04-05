@@ -12,7 +12,8 @@
 
 - **MVP:** complete
 - **Path B (repo-based install):** live and verified
-- **Path C (npm install):** implementation-complete on `main`, not yet publicly live
+- **Path C (npm install):** **Infrastructure Complete** — `scripts/publish-npm-packages.sh` and `verify-mlp-system.sh` are implemented and verified. Gated only on final `npm publish`.
+- **Path D (DMG Distribution):** **Infrastructure Complete** — High-fidelity pipeline and `scripts/macos-sign-notarize.sh` are implemented. Gated only on Developer ID credentials (#65).
 - **Immediate gates:** [#34](https://github.com/sovereignsquad/impact/issues/34) — maintainer publish + npm smoke; [#58](https://github.com/sovereignsquad/impact/issues/58) — **dashboard activation** — **same-origin `/api/stats/*` + `VITE_STATS_API_BASE` are live on Vercel**; **real aggregate data** still needs **hosted SQLite ingest**, **`IMPACT_INGEST_UPSTREAM`**, **`IMPACT_SUBMIT_URL`**, volume, and proof — **parallel** where capacity ([mlp-status-cto.md § Leadership view](mlp-status-cto.md#cto-acceptance-leadership-dashboard)).
 - **Top operational tasks:** **deploy durable ingest** · **set `IMPACT_INGEST_UPSTREAM` on Vercel** · **`IMPACT_SUBMIT_URL` + seed** · **publish npm** · [web-deploy-smoke.md](web-deploy-smoke.md) (§ **Live stats**). **Product-live community aggregates** = upstream + submissions, not the honest **fallback** JSON ([ingest-server.md](ingest-server.md) § *Vercel stats routes*).
 - **MLP in-repo:** partially implemented (deterministic recommendations, richer HTML report, multi-page web shell + profile explorer); P0 web/data slice **accepted** per [mlp-status-cto.md](mlp-status-cto.md)

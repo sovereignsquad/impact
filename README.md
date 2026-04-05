@@ -127,6 +127,17 @@ Packaging track [#27](https://github.com/sovereignsquad/impact/issues/27) is **c
 
 ---
 
+## Maintainer Operations (MLP delivery)
+
+The following scripts bridge the gap between in-repo code and public delivery:
+
+- **System Verification**: `./scripts/verify-mlp-system.sh` (Check builds, tests, and readiness).
+- **npm Publish**: `./scripts/publish-npm-packages.sh` (Requires `npm login`; `DRY_RUN=1` by default).
+- **Ingest/Stats Deploy**: `./scripts/deploy-ingest-fly-and-wire-vercel.sh` (One-click Fly deployment + Vercel environment sync).
+- **macOS Distribution**: `./packaging/macos/build-dmg.sh` (Produces the DMG; add `APPLE_TEAM_ID` to environment for automated signing/notarization).
+
+See `docs/mlp-status-cto.md` for the current delivery assessment.
+
 ## Privacy and trust
 
 - **Local-first:** default scan does not send data off your machine.

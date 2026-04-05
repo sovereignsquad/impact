@@ -58,6 +58,11 @@ hdiutil create -volname "Impact ${VERSION}" -srcfolder "$STAGE" -ov -format UDZO
 echo "==> SHA-256"
 ( cd "$OUT" && shasum -a 256 "$DMG_NAME" | tee "${DMG_NAME}.sha256" )
 
+if [[ -n "${APPLE_TEAM_ID:-}" ]]; then
+  echo "==> macOS Signing & Notarization (#65)"
+  "$ROOT/scripts/macos-sign-notarize.sh" "$OUT/$DMG_NAME"
+fi
+
 echo "==> restore dev dependencies (npm ci)"
 npm ci
 
