@@ -97,3 +97,7 @@ npm run impact -- scan --no-submit -o /tmp/impact-shot
 ```
 
 Adjust the Chrome path on non-macOS hosts.
+
+## Project board review
+
+[Read-only review and manual Scrum journal](PROJECT_BOARD_MOVEMENT_LOG.md).

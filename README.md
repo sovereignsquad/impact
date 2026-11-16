@@ -206,3 +206,7 @@ Bug reports, ideas, and code: [CONTRIBUTING.md](CONTRIBUTING.md). MIT License â€
 ## Programme note
 
 IMPACT is **open source**. The **scanner** and **reports** are the current product slice; **benchmarks** in the programme sense are **roadmap**, not current claims. If copy disagrees with **runnable code** on `main`, **code wins**. If copy disagrees with **org project Status** or **issue acceptance**, **GitHub wins** â€” then refresh docs. See [docs/ssot-map.md](docs/ssot-map.md).
+
+## Project board review
+
+[Read-only review and manual Scrum journal](docs/PROJECT_BOARD_MOVEMENT_LOG.md).
